@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Commons Parkour</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 700px){
+            .hidden-mobile {
+                display: none !important;
+            }
+            .grid-off-mobile{
+                display: block !important;
+            }
+        }
+        @media (max-width: 820px){
+            .hidden-tablet {
+            display: none;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="commons-js-main.js"></script>
+</head>
+<body>
+<div class="newsy-header">
+    <div class="header-item-1">
+        <h3 class="hidden-mobile" id="header-quote">"By the people, for the people"</h3>
+    </div>
+    <div class="header-item-2">
+        <h1>The Commons</h1>
+    </div>
+    <div class="header-item-3">
+        <h3 class="hidden-tablet"  id="header-blurb">Serving the North American parkour community since 2018</h3>
+    </div>
+</div>
+<div class="header-spacer"></div></div>
+
+<div class="header-menu">
+
+</div>
+
+<div class="newsy-container grid-off-mobile" id="newsy-container">
+    <div class="grid-item grid-item-1" id="about-us">
+        <div id="about-us-content">
+            <h2 onclick="popOut('about-us')">About us</h2>
+            <p class="newsy">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis animi aperiam sunt deleniti quod. Qui id dolorem pariatur est quia architecto tenetur molestias ratione officiis modi non, sequi cum quis tempore expedita ipsam optio illo asperiores adipisci unde ad? Dolore id iure itaque aperiam quis, rem voluptate. Officiis, odit culpa?
+            </p>
+        </div>
+    </div>
+    <div class="grid-item grid-item-2" id="features">
+        <div id="features-content">
+            <h2 onclick="popOut('features')">Features</h2>
+            <img src="group_pallets_crop.png" alt="group pallets" id="group-pallets" width="300" height="200">
+            <p class="newsy">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nostrum in quis debitis qui unde iusto adipisci corrupti animi! Molestiae porro iusto sapiente, nisi inventore illum sint at itaque quae, nemo aut enim eius eaque, fugiat explicabo omnis perferendis? Quo placeat corporis laudantium magni beatae earum dolorem iste sequi velit.
+            </p>
+        </div>
+    </div>
+    <div class="grid-item grid-item-3" id="blog">
+        <div id="blog-content">
+            <h2 onclick="popOut('blog')">Blog</h2>
+            <div class="blog-flex-container">
+                <div class="blog-item-1">
+                    <h3>item-1</h3>
+                    <p class="newsy-small">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
+                    </p>
+                </div>
+                <div class="blog-item-2">
+                    <h3>item-2</h3>
+                    <p class="newsy-small">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum provident voluptates delectus similique voluptatum ipsam est illo temporibus, corrupti maiores, nemo ipsa neque beatae quis. Ratione quibusdam commodi similique ut nostrum iste nesciunt optio tempora? Nesciunt inventore et, eveniet quae unde blanditiis cupiditate magnam. Quidem beatae necessitatibus sapiente tempora. Nostrum.
+                    </p>
+                </div>
+                <div class="blog-item-3">
+                    <h3>item-3</h3>
+                    <p class="newsy-small">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corrupti totam sequi mollitia quis porro unde atque placeat iusto amet? Iste velit similique totam autem quia sed? Officia inventore corrupti tenetur consequatur error sequi dolor, quam vel veniam eligendi, fugiat velit, asperiores eaque odit expedita? Praesentium sunt quaerat beatae voluptates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item grid-item-4" id="get-involved">
+        <div id="get-involved-content">
+            <h2 onclick="popOut('get-involved')">Get Involved</h2>
+            <p class="newsy">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
+<div class="popout-container" id="popout-container"></div>
+
+</body>
+</html>
