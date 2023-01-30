@@ -4,10 +4,7 @@ function popOut(activeID){
     var active_element = document.getElementById(activeID+"-content");
 
     if(popout_container.contains(active_element)){
-        popout_container.style.width = grid_container.offsetWidth+"px";
-        popout_container.style.height = grid_container.offsetHeight+"px";
-        popout_container.style.top = grid_container.offsetTop+"px";
-        popout_container.style.left = grid_container.offsetLeft+"px";
+        resetPopout(activeID);
         opacityToggle("1");
         setTimeout(function(){
             popout_container.style.display = "none";
@@ -21,10 +18,7 @@ function popOut(activeID){
             console.log("check");
         }
         else{
-            popout_container.style.width = grid_container.offsetWidth+"px";
-            popout_container.style.height = grid_container.offsetHeight+"px";
-            popout_container.style.top = grid_container.offsetTop+"px";
-            popout_container.style.left = grid_container.offsetLeft+"px";
+            resetPopout(activeID);
             popout_container.style.display = "block";
             grid_container.style.visibility = "hidden";
             opacityToggle("0");
@@ -40,7 +34,19 @@ function popOut(activeID){
     }
 }
 
+/*toggle the opacity of the grid element*/
 function opacityToggle(opacity_level){
     var grid = document.getElementById("newsy-container");
     grid.style.opacity = opacity_level;
+}
+
+/*sets the popout container to the size of the grid element it is replacing*/
+function resetPopout(activeID){
+    var popout_container = document.getElementById("popout-container");
+    var grid_container = document.getElementById(activeID);
+
+    popout_container.style.width = grid_container.offsetWidth+"px";
+    popout_container.style.height = grid_container.offsetHeight+"px";
+    popout_container.style.top = grid_container.offsetTop+"px";
+    popout_container.style.left = grid_container.offsetLeft+"px";
 }
