@@ -24,17 +24,17 @@ function popOut(activeID){
             opacityToggle("0");
             popout_container.appendChild(active_element);
             setTimeout(function(){
-                popout_container.style.width = "100%";
+                popout_container.style.width = document.getElementById("newsy-container").offsetWidth-20+"px";;
                 popout_container.style.height = document.getElementById("newsy-container").offsetHeight-20+"px";
-                popout_container.style.top = "15vh";
-                popout_container.style.left = "0px";
+                popout_container.style.top = document.getElementById("newsy-container").offsetTop+10+"px";
+                popout_container.style.left = "10px";
             },50);
             window.scrollTo(0, 0);
         }
     }
 }
 
-/*toggle the opacity of the grid element*/
+/*toggle the opacity of the grid*/
 function opacityToggle(opacity_level){
     var grid = document.getElementById("newsy-container");
     grid.style.opacity = opacity_level;

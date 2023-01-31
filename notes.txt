@@ -1,0 +1,8 @@
+Notes for Gregg 1/31/23
+
+featured blog posts on home page?
+featured shop items?
+
+how to load new content without pausing
+to load a new page? php?
+
