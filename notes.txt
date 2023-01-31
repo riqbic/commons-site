@@ -6,3 +6,5 @@ featured shop items?
 how to load new content without pausing
 to load a new page? php?
 
+How to detect touch device? Want to turn off
+hover features for them.

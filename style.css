@@ -13,6 +13,24 @@
     src: url(oswald-variablefont_wght-webfont.woff);
 }
 
+@media (max-width: 700px){
+    .hidden-mobile {
+        display: none !important;
+    }
+    .grid-off-mobile{
+        display: block !important;
+    }
+    .grid-item:hover{
+        scale: 1.00 !important;
+    }
+}
+
+@media (max-width: 820px){
+    .hidden-tablet {
+    display: none;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -42,11 +60,6 @@ h2{
     max-width: auto;
     background-color: #0b0a09;
     color: white;
-    cursor: pointer;
-}
-
-h2:hover{
-    background-color: #C02130;
 }
 
 h3{
@@ -77,6 +90,7 @@ h3{
 
 .header-item-2{
     width: 400px;
+    cursor: pointer;
 }
 
 .header-item-3{
@@ -132,6 +146,15 @@ h3{
     background-color: #F2F3ED;
     border: 3px solid #0b0a09;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.grid-content{
+    height: 100%;
+}
+
+.grid-item:hover{
+    scale: 1.01;
 }
 
 .grid-item-1{
@@ -164,6 +187,7 @@ h3{
     background-color: #F2F3ED;
     border: 3px solid #0b0a09;
     transition: all 1s ease;
+    cursor: pointer;
 }
 
 .blog-flex-container{
