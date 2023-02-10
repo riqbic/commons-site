@@ -11,6 +11,7 @@ function popOut(activeID){
             grid_container.appendChild(active_element);
             grid_container.style.visibility = "visible";
         },1000);
+        history.pushState(activeID,"","http://127.0.0.1:5500/grid-test.html");
     }
 
     else{
@@ -30,6 +31,7 @@ function popOut(activeID){
                 popout_container.style.left = "10px";
             },50);
             window.scrollTo(0, 0);
+            history.pushState(activeID,activeID,activeID);
         }
     }
 }
@@ -49,4 +51,12 @@ function resetPopout(activeID){
     popout_container.style.height = grid_container.offsetHeight+"px";
     popout_container.style.top = grid_container.offsetTop+"px";
     popout_container.style.left = grid_container.offsetLeft+"px";
+}
+
+window.addEventListener('popstate', onPopState);
+function onPopState(ev) {
+    console.log("popstate");
+    let activeID = ev.state;
+    popOut(activeID);
+    console.log(activeID);
 }
