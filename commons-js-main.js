@@ -1,10 +1,44 @@
-function popOut(activeID){
+//global variables
+var popout_state = 0;
+var push_state = 0;
+
+// decide what state to push based on the same logic as popOut(), this exists so we can call popOut without also pushing a state
+function pushStateHandler(activeID){
+    var popout_container = document.getElementById("popout-container");
+    var active_element = document.getElementById(activeID+"-content");
+    if(popout_state===1){
+        console.log("push popout");
+        history.pushState(activeID,activeID,activeID);
+    }
+    else if(popout_state===0){
+        console.log("push reset");
+        history.pushState(activeID,"The Commons","http://127.0.0.1:5500/grid-test.html");
+    }
+}
+
+window.addEventListener('popstate', onPopState);
+function onPopState(ev) {
+   activeID = ev.state;
+   console.log('activeID:'+activeID);
+   popOut(activeID,0);
+}
+
+function popOut(activeID,call_from_page){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
     var active_element = document.getElementById(activeID+"-content");
 
-    if(popout_container.contains(active_element)){
-        resetPopout(activeID);
+    if(popout_container.contains(active_element)  && popout_state===1){
+        if(call_from_page){
+            history.pushState(activeID,"The Commons","http://127.0.0.1:5500/grid-test.html");
+            console.log("push reset");
+        }
+        popout_state = 0; b
+        var contentID = popout_container.firstChild.id;
+        var activeID = contentID.split("-content").join("")
+        var active_element = document.getElementById(contentID);
+        var grid_container = document.getElementById(activeID);
+        resetPopoutSize(contentID.split("-content").join(""));
         opacityToggle("1");
         setTimeout(function(){
             popout_container.style.display = "none";
@@ -12,13 +46,14 @@ function popOut(activeID){
             grid_container.style.visibility = "visible";
         },1000);
     }
-
     else{
-        if(popout_container.hasChildNodes()){
-            console.log("check");
-        }
-        else{
-            resetPopout(activeID);
+        if(!popout_container.hasChildNodes() && popout_state===0){
+            if(call_from_page){
+                history.pushState(activeID,activeID,activeID);
+                console.log("push popout");
+            }
+            popout_state = 1;
+            resetPopoutSize(activeID);
             popout_container.style.display = "block";
             grid_container.style.visibility = "hidden";
             opacityToggle("0");
@@ -41,7 +76,7 @@ function opacityToggle(opacity_level){
 }
 
 /*sets the popout container to the size of the grid element it is replacing*/
-function resetPopout(activeID){
+function resetPopoutSize(activeID){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
 
