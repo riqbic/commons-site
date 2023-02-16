@@ -171,6 +171,19 @@ h3{
     order: 2;
 }
 
+.about-us-grid{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(auto,70vh) minmax(auto,70vh);
+    grid-gap: 10px;
+}
+
+.about-us-content-full{
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
 .grid-item-2{
     order: 1;
 }

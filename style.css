@@ -179,6 +179,26 @@ h3{
     order: 2;
 }
 
+.about-us-flexbox{
+    padding: 10px;
+    display: flex;
+    align-items: top;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.about-us-flex-item{
+    max-width: 400px;
+    margin: 10px;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.about-us-content-full{
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
 .grid-item-2{
     order: 1;
 }
