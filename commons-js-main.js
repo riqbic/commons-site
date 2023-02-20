@@ -1,17 +1,22 @@
 //global variables
 var popout_state = 0;
 var push_state = 1;
+var history_count = 0;
 
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {
    activeID = ev.state;
-   console.log('activeID:'+activeID);
    popOut(activeID,0);
-   console.log(push_state);
-   if(!push_state){
-    console.log("history forward");
-    //window.history.forward();
-   }
+   history_count -= 1;
+}
+
+window.addEventListener('load',onPageLoad);
+function onPageLoad(){
+    console.log('hi');
+    //pull URL window.location
+    //get URL parameters
+    //call popOut with correct params
+    //append transition class to popout container
 }
 
 window.addEventListener('resize',resize);
@@ -30,10 +35,12 @@ function popOut(activeID,call_from_page){
     var grid_container = document.getElementById(activeID);
     var active_element = document.getElementById(activeID+"-content");
     var full_content = document.getElementsByClassName(activeID+"-content-full");
+
     if(popout_container.hasChildNodes() && popout_state){
         if(call_from_page && push_state){
             history.pushState(activeID,"The Commons","http://127.0.0.1:5500/grid-test.html");
             //console.log("push reset");
+            history_count += 1;
         }
         popout_state = 0;
         push_state = 0;
@@ -45,7 +52,7 @@ function popOut(activeID,call_from_page){
             full_content[i].style.opacity = 0;
         }
         resetPopoutSize(activeID);
-        opacityToggle("1");
+        //opacityToggle("1");
         setTimeout(function(){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
@@ -53,16 +60,18 @@ function popOut(activeID,call_from_page){
             push_state = 1;
         },10);
     }
+
+    //if the popout container is empty, and
     else if(!popout_container.hasChildNodes() && !popout_state){
         if(call_from_page){
             history.pushState(activeID,activeID,activeID);
-            //console.log("push popout");
+            history_count += 1;
         }
         popout_state = 1;
         resetPopoutSize(activeID);
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
-        opacityToggle("0");
+        //opacityToggle("0");
         popout_container.appendChild(active_element);
         setTimeout(function(){
             popout_container.style.width = document.getElementById("newsy-container").offsetWidth-20+"px";
