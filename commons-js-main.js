@@ -11,12 +11,14 @@ function onPopState(ev) {
 }
 
 window.addEventListener('load',onPageLoad);
-function onPageLoad(){
-    console.log('hi');
-    //pull URL window.location
-    //get URL parameters
-    //call popOut with correct params
-    //append transition class to popout container
+function onPageLoad() {
+    let url = window.location.search;
+    let params = new URLSearchParams(url);
+    var popout_container = document.getElementById("popout-container");
+
+    if (params.getAll("pop").length !== 0) {
+        popOut(params.get("pop"));
+    }
 }
 
 window.addEventListener('resize',resize);
@@ -64,7 +66,7 @@ function popOut(activeID,call_from_page){
     //if the popout container is empty, and
     else if(!popout_container.hasChildNodes() && !popout_state){
         if(call_from_page){
-            history.pushState(activeID,activeID,activeID);
+            history.pushState(activeID,activeID,"?pop="+activeID);
             history_count += 1;
         }
         popout_state = 1;
