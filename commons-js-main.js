@@ -1,24 +1,28 @@
 //global variables
 var popout_state = 0;
 var push_state = 1;
-var history_count = 0;
 
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {
    activeID = ev.state;
    popOut(activeID,0);
-   history_count -= 1;
 }
 
 window.addEventListener('load',onPageLoad);
 function onPageLoad() {
     let url = window.location.search;
     let params = new URLSearchParams(url);
-    var popout_container = document.getElementById("popout-container");
-
-    if (params.getAll("pop").length !== 0) {
-        popOut(params.get("pop"));
+    if (params.getAll("pop").length !== 0){
+        popOut(params.get("pop"),0,0);
     }
+}
+
+window.addEventListener('transitionend',transitionToggle);
+function transitionToggle(){
+    var newsy_container = document.getElementById("newsy-container");
+    var popout_container = document.getElementById("popout-container");
+    popout_container.classList.remove("transitions");
+    newsy_container.classList.remove("transitions");
 }
 
 window.addEventListener('resize',resize);
@@ -32,17 +36,24 @@ function resize(){
     }
 }
 
-function popOut(activeID,call_from_page){
+
+//params (the ID of the grid item being popped out, did the function call come from the page? 0 or 1, should the transition play? 0 or 1)
+function popOut(activeID,call_from_page,transition){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
     var active_element = document.getElementById(activeID+"-content");
     var full_content = document.getElementsByClassName(activeID+"-content-full");
+    var newsy_container = document.getElementById("newsy-container");
+
+    if(transition){
+        popout_container.classList.add("transitions");
+        newsy_container.classList.add("transitions");
+    }
 
     if(popout_container.hasChildNodes() && popout_state){
         if(call_from_page && push_state){
             history.pushState(activeID,"The Commons","http://127.0.0.1:5500/grid-test.html");
             //console.log("push reset");
-            history_count += 1;
         }
         popout_state = 0;
         push_state = 0;
@@ -67,7 +78,6 @@ function popOut(activeID,call_from_page){
     else if(!popout_container.hasChildNodes() && !popout_state){
         if(call_from_page){
             history.pushState(activeID,activeID,"?pop="+activeID);
-            history_count += 1;
         }
         popout_state = 1;
         resetPopoutSize(activeID);
@@ -76,9 +86,9 @@ function popOut(activeID,call_from_page){
         //opacityToggle("0");
         popout_container.appendChild(active_element);
         setTimeout(function(){
-            popout_container.style.width = document.getElementById("newsy-container").offsetWidth-20+"px";
-            popout_container.style.height = document.getElementById("newsy-container").offsetHeight-20+"px";
-            popout_container.style.top = document.getElementById("newsy-container").offsetTop+10+"px";
+            popout_container.style.width = newsy_container.offsetWidth-20+"px";
+            popout_container.style.height = newsy_container.offsetHeight-20+"px";
+            popout_container.style.top = newsy_container.offsetTop+10+"px";
             popout_container.style.left = "10px";
             for (var i = 0; i < full_content.length; i ++) {
                 full_content[i].style.opacity = 1;
@@ -86,7 +96,6 @@ function popOut(activeID,call_from_page){
         },10);
         window.scrollTo(0, 0);
     }
-    //console.log(history.state);
 }
 
 /*toggle the opacity of the grid*/
