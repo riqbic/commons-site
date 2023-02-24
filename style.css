@@ -87,7 +87,7 @@ h3{
 }
 
 .transitions{
-    transition: all 1s ease;
+    transition: all 0.75s ease;
 }
 
 .newsy-header{
@@ -200,6 +200,7 @@ h3{
 .about-us-content-full{
     opacity: 0;
     transition: opacity 1s ease;
+    border: 2px solid red;
 }
 
 .grid-item-2{

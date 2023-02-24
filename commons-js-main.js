@@ -5,15 +5,34 @@ var push_state = 1;
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {
    activeID = ev.state;
-   popOut(activeID,0);
+   popOut(activeID,0,1);
 }
 
 window.addEventListener('load',onPageLoad);
 function onPageLoad() {
     let url = window.location.search;
     let params = new URLSearchParams(url);
+    var activeID = params.get("pop");
+
+    var popout_container = document.getElementById("popout-container");
+    var grid_container = document.getElementById(activeID);
+    var active_element = document.getElementById(activeID+"-content");
+    var full_content = document.getElementsByClassName(activeID+"-content-full");
+    var newsy_container = document.getElementById("newsy-container");
+
     if (params.getAll("pop").length !== 0){
-        popOut(params.get("pop"),0,0);
+        //popOut(params.get("pop"),0,0);
+        popout_state = 1;
+        popout_container.style.display = "block";
+        grid_container.style.visibility = "hidden";
+        popout_container.appendChild(active_element);
+        popout_container.style.width = newsy_container.offsetWidth-20+"px";
+        popout_container.style.height = newsy_container.offsetHeight-20+"px";
+        popout_container.style.top = newsy_container.offsetTop+10+"px";
+        popout_container.style.left = "10px";
+        for (var i = 0; i < full_content.length; i ++) {
+            full_content[i].style.opacity = 1;
+        }
     }
 }
 
@@ -58,6 +77,7 @@ function popOut(activeID,call_from_page,transition){
         popout_state = 0;
         push_state = 0;
         var contentID = popout_container.firstChild.id;
+        var full_content = document.getElementsByClassName(contentID+"-full");
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
@@ -65,7 +85,7 @@ function popOut(activeID,call_from_page,transition){
             full_content[i].style.opacity = 0;
         }
         resetPopoutSize(activeID);
-        //opacityToggle("1");
+        opacityToggle("1");
         setTimeout(function(){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
@@ -83,7 +103,7 @@ function popOut(activeID,call_from_page,transition){
         resetPopoutSize(activeID);
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
-        //opacityToggle("0");
+        opacityToggle("0");
         popout_container.appendChild(active_element);
         setTimeout(function(){
             popout_container.style.width = newsy_container.offsetWidth-20+"px";
