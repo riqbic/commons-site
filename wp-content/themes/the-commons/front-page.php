@@ -92,6 +92,4 @@
 <!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
 <div class="popout-container" id="popout-container"></div>
 
-<script>resize();</script>
-
 <?php get_footer(); ?>

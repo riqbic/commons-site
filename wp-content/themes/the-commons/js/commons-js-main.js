@@ -34,6 +34,7 @@ function onPageLoad() {
             full_content[i].style.opacity = 1;
         }
     }
+    resize();
 }
 
 window.addEventListener('transitionend',transitionToggle);
