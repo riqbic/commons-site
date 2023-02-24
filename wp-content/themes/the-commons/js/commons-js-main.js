@@ -71,7 +71,7 @@ function popOut(activeID,call_from_page,transition){
 
     if(popout_container.hasChildNodes() && popout_state){
         if(call_from_page && push_state){
-            history.pushState(activeID,"The Commons","http://127.0.0.1:5500/grid-test.html");
+            history.pushState(activeID,"The Commons","thecommons.boston");
             //console.log("push reset");
         }
         popout_state = 0;
