@@ -5,22 +5,22 @@ Author URI: http://reduker.wordpress.com
 Description: Theme for The Commons Parkour brand
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.0
+Version: 1.01
 */
 
 @font-face {
     font-family: Brokenscript;
-    src: url('fonts/brokenscript-boldcond-webfont.woff');
+    src: url(brokenscript-boldcond-webfont.woff);
 }
 
 @font-face {
     font-family: Century-Old-Style;
-    src: url('fonts/century_old_style_std_bold-webfont.woff');
+    src: url(century_old_style_std_bold-webfont.woff);
 }
 
 @font-face {
     font-family: Oswald;
-    src: url('fonts/oswald-variablefont_wght-webfont.woff');
+    src: url(oswald-variablefont_wght-webfont.woff);
 }
 
 @media (max-width: 700px){
@@ -76,6 +76,10 @@ h3{
     font-family: Brokenscript;
     font-size: 1rem;
     text-align: center;
+}
+
+.transitions{
+    transition: all 0.75s ease;
 }
 
 .newsy-header{
@@ -149,7 +153,6 @@ h3{
     max-width: 100vw;
     min-height: 100vh;
     overflow: hidden;
-    transition: opacity 1s ease;
 }
 
 .grid-item{
@@ -171,17 +174,25 @@ h3{
     order: 2;
 }
 
-.about-us-grid{
+.about-us-flexbox{
     padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: minmax(auto,70vh) minmax(auto,70vh);
-    grid-gap: 10px;
+    display: flex;
+    align-items: top;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.about-us-flex-item{
+    max-width: 400px;
+    margin: 10px;
+    flex-shrink: 0;
+    flex-grow: 1;
 }
 
 .about-us-content-full{
     opacity: 0;
     transition: opacity 1s ease;
+    border: 2px solid red;
 }
 
 .grid-item-2{
@@ -209,8 +220,8 @@ h3{
     position: absolute;
     background-color: #F2F3ED;
     border: 3px solid #0b0a09;
-    transition: all 1s ease;
     cursor: pointer;
+    z-index: 1;
 }
 
 .blog-flex-container{
@@ -252,8 +263,4 @@ h3{
     font-family:Century-Old-Style;
     font-weight:bold;
     font-size: .7rem;
-}
-
-.menu-item{
-    opacity:0%;
 }
