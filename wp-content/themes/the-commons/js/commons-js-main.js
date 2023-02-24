@@ -72,7 +72,7 @@ function popOut(activeID,call_from_page,transition){
 
     if(popout_container.hasChildNodes() && popout_state){
         if(call_from_page && push_state){
-            history.pushState(activeID,"The Commons",);
+            history.pushState(activeID,"The Commons","home");
             //console.log("push reset");
         }
         popout_state = 0;
