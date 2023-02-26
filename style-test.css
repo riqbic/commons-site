@@ -1,21 +1,3 @@
-/*
-Theme Name: The Commons
-Theme URI:
-Author: Alec Reduker
-Author URI:
-Description: The made for The Commons Parkour brand
-Tags:
-Version: 0.1
-Requires at least: 5.0 this is wrong
-Tested up to: 5.4 also wrong
-Requires PHP: 7.0 i don't know
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: the commons
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-*/
-
 @font-face {
     font-family: Brokenscript;
     src: url(brokenscript-boldcond-webfont.woff);
@@ -134,7 +116,7 @@ h3{
     background-color: #F2F3ED;
     border-top: 3px solid #0b0a09;
     border-bottom: 3px solid #0b0a09;
-    z-index: 1;
+    z-index: 2;
 }
 
 #header-quote{
@@ -154,11 +136,12 @@ h3{
 
 .newsy-container{
     padding: 10px;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: minmax(auto,70vh) minmax(auto,70vh);
     grid-gap: 10px;
-    max-width: 100vw;
+    max-width: 1200px;
     min-height: 100vh;
     overflow: hidden;
 }
