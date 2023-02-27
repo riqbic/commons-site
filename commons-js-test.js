@@ -21,7 +21,6 @@ function onPageLoad() {
     var newsy_container = document.getElementById("newsy-container");
 
     if (params.getAll("pop").length !== 0){
-        //popOut(params.get("pop"),0,0);
         popout_state = 1;
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
@@ -49,7 +48,9 @@ function resize(){
     var about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
     var popout_container = document.getElementById("popout-container");
-    popout_container.style.width = document.getElementById("newsy-container").offsetWidth-20+"px";
+    var newsy_container = document.getElementById("newsy-container");
+    popout_container.style.width = newsy_container.offsetWidth-20+"px";
+    popout_container.style.left = newsy_container.offsetLeft+10+"px";
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
@@ -72,7 +73,6 @@ function popOut(activeID,call_from_page,transition){
     if(popout_container.hasChildNodes() && popout_state){
         if(call_from_page && push_state){
             history.pushState(activeID,"The Commons","http://127.0.0.1:5500/grid-test.html");
-            //console.log("push reset");
         }
         popout_state = 0;
         push_state = 0;
@@ -107,7 +107,7 @@ function popOut(activeID,call_from_page,transition){
         popout_container.appendChild(active_element);
         setTimeout(function(){
             popout_container.style.width = newsy_container.offsetWidth-20+"px";
-            popout_container.style.height = newsy_container.offsetHeight-20+"px";
+            popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
             popout_container.style.top = newsy_container.offsetTop+10+"px";
             popout_container.style.left = newsy_container.offsetLeft+10+"px";
             for (var i = 0; i < full_content.length; i ++) {
