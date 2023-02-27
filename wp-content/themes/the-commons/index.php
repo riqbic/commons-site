@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="newsy-container grid-off-mobile">
+<!-- <div class="newsy-container grid-off-mobile">
     <?php 
     if ( have_posts() ) {
         while ( have_posts() ) {
@@ -10,5 +10,5 @@
         } // end while
     } // end if
     ?>
-</div>
+</div> -->
 <?php get_footer(); ?>
