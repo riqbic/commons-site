@@ -109,7 +109,8 @@ function popOut(activeID,call_from_page,transition){
         popout_container.appendChild(active_element);
         setTimeout(function(){
             popout_container.style.width = newsy_container.offsetWidth-20+"px";
-            popout_container.style.height = newsy_container.offsetHeight-20+"px";
+            popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
+            popout_container.style.height = "auto";
             popout_container.style.top = newsy_container.offsetTop+10+"px";
             popout_container.style.left = newsy_container.offsetLeft+10+"px";
             for (var i = 0; i < full_content.length; i ++) {
