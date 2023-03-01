@@ -27,7 +27,7 @@
 
                 <div class="about-us-flexbox about-us-content-full">
                     <div class="about-us-image">
-                        <img src="placeholder.jpg" alt="placeholder image" width="400" height="400">
+                        <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
                     </div>
                     <div class="about-us-text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu euismod, scelerisque mi sed, lacinia orci. Sed ultrices ex dolor, in dapibus odio congue et. Donec et turpis purus.</p>
@@ -37,7 +37,7 @@
 
                 <div class="about-us-flexbox about-us-content-full">
                     <div class="about-us-image">
-                        <img src="placeholder.jpg" alt="placeholder image" width="400" height="400">
+                        <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
                     </div>
                     <div class="about-us-text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu euismod, scelerisque mi sed, lacinia orci. Sed ultrices ex dolor, in dapibus odio congue et. Donec et turpis purus.</p>
