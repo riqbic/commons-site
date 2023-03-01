@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="newsy-container grid-off-mobile" id="newsy-container">
+<div class="newsy-container grid-mobile" id="newsy-container">
     <div class="grid-item grid-item-1" id="about-us">
         <div class="grid-content" id="about-us-content"  onclick="popOut('about-us',1,1)">
             <h2>About us</h2>

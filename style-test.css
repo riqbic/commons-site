@@ -17,8 +17,12 @@
     .hidden-mobile {
         display: none !important;
     }
-    .grid-off-mobile{
-        display: block !important;
+    .grid-mobile{
+        min-height: calc(85vh - 26px) !important;
+        height: calc(85vh - 26px) !important;
+    }
+    h2{
+        font-size: 2rem !important;
     }
     .grid-item:hover{
         scale: 1.00 !important;
