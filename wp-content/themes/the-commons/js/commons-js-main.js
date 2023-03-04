@@ -63,7 +63,7 @@ function popOut(activeID,call_from_page,transition){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
     var active_element = document.getElementById(activeID+"-content");
-    var full_content = document.getElementsByClassName(activeID+"-content-full");
+    var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
 
     if(transition){
@@ -79,18 +79,15 @@ function popOut(activeID,call_from_page,transition){
         popout_state = 0;
         push_state = 0;
         var contentID = popout_container.firstChild.id;
-        var full_content = document.getElementsByClassName(contentID+"-full");
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
-        for (var i = 0; i < full_content.length; i ++) {
-            full_content[i].style.opacity = 0;
-        }
         resetPopoutSize(activeID);
         opacityToggle("1");
         setTimeout(function(){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
+            active_element.style.display = "none";
             grid_container.style.visibility = "visible";
             push_state = 1;
         },10);
@@ -107,15 +104,13 @@ function popOut(activeID,call_from_page,transition){
         grid_container.style.visibility = "hidden";
         opacityToggle("0");
         popout_container.appendChild(active_element);
+        active_element.style.display = "block";
         setTimeout(function(){
             popout_container.style.width = newsy_container.offsetWidth-20+"px";
             popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
             popout_container.style.height = "auto";
             popout_container.style.top = newsy_container.offsetTop+10+"px";
             popout_container.style.left = newsy_container.offsetLeft+10+"px";
-            for (var i = 0; i < full_content.length; i ++) {
-                full_content[i].style.opacity = 1;
-            }
         },10);
         window.scrollTo(0, 0);
     }
