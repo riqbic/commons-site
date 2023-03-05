@@ -10,15 +10,23 @@
 </head>
 <body>
 <div class="newsy-header">
-    <div class="header-item-1">
-        <h3 class="hidden-mobile" id="header-quote">"By the people, for the people"</h3>
-    </div>
-    <div class="header-item-2">
+    <svg width="100%" height="100%">
+        <rect width="100%" height="1" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
+        <rect width="1" height="25" x="100%" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(-10px,-15px);" />
+      Sorry, your browser does not support inline SVG.
+      </svg>
+    <div class="header-item-2" style="margin-left:20px;margin-right:20px">
         <h1>The Commons</h1>
     </div>
-    <div class="header-item-3">
-        <h3 class="hidden-tablet"  id="header-blurb">Serving the North American parkour community since 2018</h3>
-    </div>
+    <svg width="100%" height="100%">
+        <rect width="100%" height="1" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)"/>
+        <rect width="1" height="45" x="0" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(40px,-10px);" />
+      Sorry, your browser does not support inline SVG.
+    </svg>
 </div>
 <div class="header-spacer"></div></div>
 
@@ -128,6 +136,17 @@
         </div>
     </div>
     <div class="grid-item grid-item-5" id="market">
+        <div class="grid-preview" id="market-preview"  onclick="popOut('market',1,1)">
+            <h2>Market</h2>
+        </div>
+        <div class="grid-content" id="market-content"  onclick="popOut('market',1,1)">
+            <h2>Market</h2>
+            <p class="newsy">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
+            </p>
+        </div>
+    </div>
+    <div class="grid-item grid-item-6" id="blog-alt">
         <div class="grid-preview" id="market-preview"  onclick="popOut('market',1,1)">
             <h2>Market</h2>
         </div>
