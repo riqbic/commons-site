@@ -8,17 +8,23 @@
 </head>
 <body>
 <div class="newsy-header">
-    <div class="header-item-1">
-        <h3 class="hidden-mobile" id="header-quote">"By the people, for the people"</h3>
-    </div>
+    <svg width="100%" height="100%">
+        <rect width="100%" height="1" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
+        <rect width="1" height="25" x="100%" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(-10px,-20px);" />
+      </svg>
     <div class="header-item-2">
         <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons">
             <h1>The Commons</h1>
         </a>
     </div>
-    <div class="header-item-3">
-        <h3 class="hidden-tablet"  id="header-blurb">Serving the North American parkour community since 2018</h3>
-    </div>
+    <svg width="100%" height="100%">
+        <rect width="100%" height="1" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
+        <rect width="1" height="40" x="0" y="50%"
+        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(40px,-5px);" />
+    </svg>
 </div>
 <div class="header-spacer"></div></div>
 

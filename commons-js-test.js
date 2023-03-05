@@ -25,6 +25,7 @@ function onPageLoad() {
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
         popout_container.appendChild(active_element);
+        active_element.style.display = "block";
         popout_container.style.width = newsy_container.offsetWidth-20+"px";
         popout_container.style.height = newsy_container.offsetHeight-20+"px";
         popout_container.style.top = newsy_container.offsetTop+10+"px";
@@ -51,11 +52,11 @@ function resize(){
     var newsy_container = document.getElementById("newsy-container");
     popout_container.style.width = newsy_container.offsetWidth-20+"px";
     popout_container.style.left = newsy_container.offsetLeft+10+"px";
+    popout_container.style.top = newsy_container.offsetTop+10+"px";
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
 }
-
 
 //params (the ID of the grid item being popped out, did the function call come from the page? 0 or 1, should the transition play? 0 or 1)
 function popOut(activeID,call_from_page,transition){
