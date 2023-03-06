@@ -76,9 +76,12 @@
                         'posts_per_page'	=> -1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
+                        'category__not_in' => 26,
                     );
                     $posts_query = new WP_Query( $post_args );
+                    $blogct = 0;
                     if( $posts_query->have_posts() ) {
+                        ++$blogct;
                         //Declare an iterator for blog-item class
                         $blog_item_count = 0;
                         while($posts_query->have_posts() ) {
@@ -87,11 +90,13 @@
                             ++$blog_item_count; ?>
                             <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
-                                <div class="newsy-small">
-                                    <?php the_excerpt(); ?>
-                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                    READ MORE
-                                </div>
+                                <?php if($blogct <= 3) { ?>
+                                    <div class="newsy-small">
+                                        <?php the_excerpt(); ?>
+                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                        READ MORE
+                                    </div>
+                                <?php } ?>
                             </div>
                             <?php 
                         }
@@ -113,15 +118,18 @@
             <h2>Blog</h2>
             <div class="blog-flex-container">
                 <div class="blog-sidebar">
-                    <?php 
+                <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
                         'posts_per_page'	=> -1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
+                        'cat' => 26,
                     );
                     $posts_query = new WP_Query( $post_args );
+                    $blogct = 0;
                     if( $posts_query->have_posts() ) {
+                        ++$blogct;
                         //Declare an iterator for blog-item class
                         $blog_item_count = 0;
                         while($posts_query->have_posts() ) {
@@ -130,11 +138,13 @@
                             ++$blog_item_count; ?>
                             <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
-                                <div class="newsy-small">
-                                    <?php the_excerpt(); ?>
-                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                    READ MORE
-                                </div>
+                                <?php if($blogct <= 3) { ?>
+                                    <div class="newsy-small">
+                                        <?php the_excerpt(); ?>
+                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                        READ MORE
+                                    </div>
+                                <?php } ?>
                             </div>
                             <?php 
                         }
