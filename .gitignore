@@ -120,5 +120,12 @@ wp-config-local.php
 .vscode
 node_modules/
 .sass-cache/
+wp-content/ai1wm-backups/
+wp-content/mu-plugins/
+wp-content/themes/genesis-block-theme/
+wp-content/themes/index.php
+wp-content/themes/twentytwentyone/
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentytwo/
 #WF
 wp-content/wflogs
