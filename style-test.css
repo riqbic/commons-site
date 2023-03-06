@@ -127,6 +127,54 @@ h3{
     z-index: 2;
 }
 
+.menu-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .menu {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    transform: translate(0,3px);
+}
+  
+  .menu-spacer{
+    flex-grow: 1;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu li:last-child {
+    margin-right: 20px;
+    justify-self: right;
+  }
+
+  .menu li:first-child {
+    margin-left: 20px;
+}
+  
+  .account {
+    margin-left: auto;
+  }
+
+  .menu-item{
+    font-family: Oswald;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #0b0a09;
+  }
+
 .newsy-container{
     padding: 10px;
     margin: auto;
