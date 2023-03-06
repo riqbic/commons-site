@@ -116,7 +116,7 @@
         </div>
         <div class="grid-content" id="blog-alt-content"  onclick="popOut('blog-alt',1,1)">
             <h2>Blog</h2>
-            <div class="blog-flex-container">
+            <div class="blog-flex-container flex-row">
                 <div class="blog-sidebar">
                 <?php 
                     //Query 3 most recent posts that are published

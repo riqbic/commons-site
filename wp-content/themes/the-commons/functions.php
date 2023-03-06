@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
-    $version = '1.0'; //For cache busting css/js
+    $version = '1.1'; //For cache busting css/js
     //Theme CSS
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, $version, 'all' );
     //Theme JS
@@ -12,7 +12,8 @@ function commons_theme_assets() {
     if(is_home() || is_front_page()) {
         wp_enqueue_script( 'commons-home' );
         $localized = array( 
-            'ajax_url' => admin_url( 'admin-ajax.php' )
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'blog_url' => get_bloginfo('url'),
         );
         wp_localize_script( 'commons-home', 'home_js', $localized );
     }

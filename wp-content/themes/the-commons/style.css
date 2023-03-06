@@ -242,6 +242,9 @@ h3{
 .blog-flex-container .blog-sidebar {
     width: 30%;
 }
+.blog-flex-container .blog-sidebar .blog-item.is-active {
+    background: rgba(0,0,0,.5);
+}
 .blog-flex-container .blog-single-content {
     width: 70%;
     flex: 1;

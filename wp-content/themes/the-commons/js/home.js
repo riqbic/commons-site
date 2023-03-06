@@ -1,42 +1,90 @@
 
 (function($) {
-	//$(document).ready(function() {
+	$(document).ready(function() {
         //bool var to see if we loaded a post automatically yet
         var loadedPost = 0;
-        //Mutation observer to watch for dom changes
-        var popoutContainer = new MutationObserver(function() {
-            if($('#popout-container').hasClass('active-blog') && loadedPost == 0) {
-                //load first post by clicking the first item in the sidebar
-                $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
-                //set our bool var to true so it doesnt happen again
-                loadedPost = 1;
-            } else if($('#popout-container').hasClass('active-blog-alt') && loadedPost == 0) {
-                //load first post by clicking the first item in the sidebar
-                $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
-                //set our bool var to true so it doesnt happen again
-                loadedPost = 1;
-            } else if (loadedPost == 1) { //!$('#popout-container').hasClass('active-blog') && !$('#popout-container').hasClass('active-blog-alt') && 
+        //automatically load a post on page load or pop
+        function loadPost() {
+            //see if the popout container has a blog post
+            if(($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-blog-alt'))) {
+                //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
+                setTimeout(function() {
+                    //check if a post has been loaded or not
+                    if(loadedPost == 0) {
+                        //Check if a post id is set in the url
+                        let current_url = window.location.search;
+                        let params = new URLSearchParams(current_url);
+                        var activePost = params.get("post_id");
+                        if(activePost != null) {
+                            //we found a post in the url, load that
+                            $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']').trigger('click');
+                        } else {
+                            //no post in url, click the first item in the sidebar
+                            $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
+                        }
+                        //set our bool var to true so it doesnt happen again
+                        loadedPost = 1;
+                    } else {
+                    //do nothing for now  
+                    }
+                },50);
+            } else {
                 //reset it so we load the post automatically the next time blog is clicked
                 loadedPost = 0;
             }
+        }
+        //Mutation observer to watch for changes in popcontainer and load the post if so
+        var popoutContainer = new MutationObserver(function() {
+            loadPost();
         });
-        //watch popout-container for changes
+
+        //watch popout-container for changes and trigger load post function if so (line 36)
         popoutContainer.observe($("#popout-container")[0], {
             attributes: true
         });
+        
+        //Load post on popstate change
+        window.addEventListener('popstate', function() {
+            //loadedPost = 0;
+            loadPost();
+        });
+        
         //load the blog item into the blog ajax container when clicked
         $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {
             e.stopPropagation();
             var post_id = $(this).attr('data-id');
-            jQuery.ajax({
-                url: home_js.ajax_url,
-                data: {
-                    'action': 'load_commons_blog_post',
-                    'post_id': post_id
-                }, success: function( data ) {
-                    $('#blog-ajax-container').html(data);
+            let current_url = window.location.search;
+            let params = new URLSearchParams(current_url);
+            var activePost = params.get("post_id");
+
+            //Dont do anything if the user clicks a link that is already loaded
+            if(post_id != activePost || loadedPost == 0) {
+                //remove other is-active
+                $('.blog-item.is-active').removeClass('is-active');
+                //add current class
+                $(this).addClass('is-active');
+                //Pop history, buggy but kind of working
+                if($('#popout-container').hasClass('active-blog')) {
+                    history.pushState(null, "", home_js.blog_url+'?pop=blog&post_id='+post_id);
+                } else if($('#popout-container').hasClass('active-blog-alt')) {
+                    history.pushState(null, "", home_js.blog_url+'?pop=blog-alt&post_id='+post_id);
                 }
-            });
+                //get content for post from ajax function in functions.php
+                var post_id = $(this).attr('data-id');
+                jQuery.ajax({
+                    url: home_js.ajax_url,
+                    data: {
+                        'action': 'load_commons_blog_post',
+                        'post_id': post_id
+                    }, success: function( data ) {
+                        //load post into container
+                        $('#popout-container #blog-ajax-container').html(data);
+                    }
+                });
+            } else {
+                //user clicked the same post that already is loaded
+                console.log('already here');
+            }
         });
-	//});
+	});
 })(jQuery); // Fully reference jQuery after this point.
