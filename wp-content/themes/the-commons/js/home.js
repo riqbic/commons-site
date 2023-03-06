@@ -59,6 +59,8 @@
 
             //Dont do anything if the user clicks a link that is already loaded
             if(post_id != activePost || loadedPost == 0) {
+                //Add loading style
+                $('.blog-single-content').addClass('loading');
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
                 //add current class
@@ -79,6 +81,8 @@
                     }, success: function( data ) {
                         //load post into container
                         $('#popout-container #blog-ajax-container').html(data);
+                        //remove loading class
+                        $('.blog-single-content').removeClass('loading');
                     }
                 });
             } else {
