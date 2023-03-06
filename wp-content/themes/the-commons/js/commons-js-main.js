@@ -85,7 +85,7 @@ function popOut(activeID,call_from_page,transition){
 
     
     //Stop popout container from closing if we click it, since this function does not check for if it's a child item or parent item being clicked
-    if(popout_container.hasChildNodes() && activeID == 'blog') {
+    if(popout_container.hasChildNodes() && (activeID == 'blog' || activeID == 'blog-alt')) {
         //Blog is open, do nothing for now
         console.log(activeID + ' clicked but is active, not doing anything for now');
     } 

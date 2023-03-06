@@ -5,7 +5,12 @@
         var loadedPost = 0;
         //Mutation observer to watch for dom changes
         var popoutContainer = new MutationObserver(function() {
-            if(($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-blog-alt')) && loadedPost == 0) {
+            if($('#popout-container').hasClass('active-blog') && loadedPost == 0) {
+                //load first post by clicking the first item in the sidebar
+                $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
+                //set our bool var to true so it doesnt happen again
+                loadedPost = 1;
+            } else if($('#popout-container').hasClass('active-blog-alt') && loadedPost == 0) {
                 //load first post by clicking the first item in the sidebar
                 $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
                 //set our bool var to true so it doesnt happen again
