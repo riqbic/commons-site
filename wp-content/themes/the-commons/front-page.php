@@ -73,7 +73,7 @@
                     <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
-                        'posts_per_page'	=> 3,
+                        'posts_per_page'	=> -1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
                     );
@@ -116,7 +116,7 @@
                     <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
-                        'posts_per_page'	=> 3,
+                        'posts_per_page'	=> -1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
                     );
