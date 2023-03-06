@@ -109,6 +109,8 @@ h3{
 .header-item-2{
     width: 400px;
     cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .header-item-3{
@@ -137,13 +139,33 @@ h3{
     padding: 10px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: minmax(auto,70vh) minmax(auto,70vh);
-    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-areas: 
+    "blog features features features about-us"
+    "blog features features features about-us"
+    "blog features features features promo-space-1"
+    "blog get-involved get-involved promo-space-2 shop"
+    "blog get-involved get-involved promo-space-2 shop"
+    "events events blog-alt blog-alt shop"
+    "events events blog-alt blog-alt shop"
+    "events events blog-alt blog-alt shop"
+    "events events blog-alt blog-alt shop"; 
+    gap: 10px 10px;
     max-width: 1200px;
-    min-height: 100vh;
+    min-height: 1500px;
     overflow: hidden;
 }
+
+#features { grid-area: features; }
+#blog { grid-area: blog; }
+#about-us { grid-area: about-us; }
+#shop { grid-area: shop; }
+#events { grid-area: events; }
+#blog-alt { grid-area: blog-alt; }
+#get-involved { grid-area: get-involved; }
+#promo-space-1 { grid-area: promo-space-1; }
+#promo-space-2 { grid-area: promo-space-2; }
 
 .grid-item{
     background-color: #F2F3ED;
@@ -165,10 +187,6 @@ h3{
 
 .grid-item:hover{
     scale: 1.01;
-}
-
-.grid-item-1{
-    order: 2;
 }
 
 .about-us-container {
@@ -199,25 +217,6 @@ h3{
 
 .about-us-fill{
 	flex: 1;
-}
-
-.grid-item-2{
-    order: 1;
-}
-
-.grid-item-3{
-    grid-row: span 2;
-    order: 0;
-}
-
-.grid-item-4{
-    grid-column: span 2;
-    order: 3;
-}
-
-.grid-item-5{
-    grid-column: span 3;
-    order: 4;
 }
 
 .popout-container{

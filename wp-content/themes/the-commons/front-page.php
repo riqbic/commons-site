@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="newsy-container grid-mobile" id="newsy-container">
-    <div class="grid-item grid-item-1" id="about-us">
+    <div class="grid-item" id="about-us">
         <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
             <h2>About us</h2>
         </div>
@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>
-    <div class="grid-item grid-item-2" id="features">
+    <div class="grid-item" id="features">
         <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
             <h2>Features</h2>
         </div>
@@ -62,7 +62,7 @@
             </p>
         </div>
     </div>
-    <div class="grid-item grid-item-3" id="blog">
+    <div class="grid-item" id="blog">
         <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
             <h2>Blog</h2>
         </div>
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="grid-item grid-item-4" id="get-involved">
+    <div class="grid-item" id="get-involved">
         <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
             <h2>Get Involved</h2>
         </div>
@@ -110,16 +110,33 @@
             </p>
         </div>
     </div>
-    <div class="grid-item grid-item-5" id="market">
-        <div class="grid-preview" id="market-preview"  onclick="popOut('market',1,1)">
-            <h2>Market</h2>
+    <div class="grid-item" id="shop">
+        <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
+            <h2>Shop</h2>
         </div>
-        <div class="grid-content" id="market-content"  onclick="popOut('market',1,1)">
-            <h2>Market</h2>
+        <div class="grid-content" id="shop-content"  onclick="popOut('shop',1,1)">
+            <h2>Shop</h2>
             <p class="newsy">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
             </p>
         </div>
+    </div>
+    <div class="grid-item" id="events">
+        <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
+            <h2>Events</h2>
+        </div>
+        <div class="grid-content" id="events-content"  onclick="popOut('events',1,1)">
+            <h2>Events</h2>
+            <p class="newsy">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
+            </p>
+        </div>
+    </div>
+    <div class="grid-item" id="promo-space-1">
+        <p>promo-space-1</p>
+    </div>
+    <div class="grid-item" id="promo-space-2">
+        <p>promo-space-2</p>
     </div>
 </div>
 

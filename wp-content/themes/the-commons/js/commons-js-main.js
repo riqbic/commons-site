@@ -55,8 +55,9 @@ function resize(){
     var about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
     var popout_container = document.getElementById("popout-container");
+    var newsy_container = document.getElementById("newsy-container");
     popout_container.style.left = newsy_container.offsetLeft+10+"px";
-    popout_container.style.width = document.getElementById("newsy-container").offsetWidth-20+"px";
+    popout_container.style.width = newsy_container.offsetWidth-20+"px";
     popout_container.style.top = newsy_container.offsetTop+10+"px";
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
