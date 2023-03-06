@@ -35,6 +35,9 @@ function onPageLoad() {
         popout_container.style.height = "auto";
         popout_container.style.top = newsy_container.offsetTop+10+"px";
         popout_container.style.left = newsy_container.offsetLeft+10+"px";
+
+        //Add which div id active
+        popout_container.classList.add("active-"+activeID);
     }
     //don't remember why this is here but it's important (?)
     resize();
@@ -80,10 +83,19 @@ function popOut(activeID,call_from_page,transition){
         newsy_container.classList.add("transitions");
     }
 
+    
+    //Stop popout container from closing if we click it, since this function does not check for if it's a child item or parent item being clicked
+    if(popout_container.hasChildNodes() && activeID == 'blog') {
+        //Blog is open, do nothing for now
+        console.log(activeID + ' clicked but is active, not doing anything for now');
+    } 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
-    if(popout_container.hasChildNodes() && popout_state){
+    else if(popout_container.hasChildNodes() && popout_state){
         
+         //Add which div id active
+         popout_container.classList.remove("active-"+activeID);
+
         //push the history stack, as long as the call came from the user, and not from a history push
         if(call_from_page && push_state){
             history.pushState(activeID,"The Commons","https://thecommons.boston");
@@ -111,6 +123,9 @@ function popOut(activeID,call_from_page,transition){
     //then add the content to the popout container, and pop it out.
     else if(!popout_container.hasChildNodes() && !popout_state){
         
+        //Remove active div from classlist
+        popout_container.classList.add("active-"+activeID);
+
         //push the history stack, as long as the call came from the user, and not from a history push
         if(call_from_page){
             history.pushState(activeID,activeID,"?pop="+activeID);

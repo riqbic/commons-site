@@ -236,7 +236,17 @@ h3{
     max-height: 100%;
     overflow-y: auto;
 }
-
+.blog-flex-container.flex-row {
+    flex-direction: row;
+}
+.blog-flex-container .blog-sidebar {
+    width: 30%;
+}
+.blog-flex-container .blog-single-content {
+    width: 70%;
+    flex: 1;
+    padding: 20px;
+}
 .blog-item-1{
     flex: 2 1 33.3%;
     text-overflow: ellipsis ellipsis;
