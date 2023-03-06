@@ -10,7 +10,7 @@
                 $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
                 //set our bool var to true so it doesnt happen again
                 loadedPost = 1;
-            } else if (!$('#popout-container').hasClass('active-blog') && !$('#popout-container').hasClass('active-blog-alt') && loadedPost == 1) {
+            } else if (loadedPost == 1) { //!$('#popout-container').hasClass('active-blog') && !$('#popout-container').hasClass('active-blog-alt') && 
                 //reset it so we load the post automatically the next time blog is clicked
                 loadedPost = 0;
             }
