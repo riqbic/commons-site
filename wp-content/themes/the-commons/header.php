@@ -31,11 +31,11 @@
 <div class="header-menu">
     <div class="menu-container">
         <ul class="menu">
-        <li class="menu-item"><a class ="menu-item" href="#">Home</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/">Home</a></li>
         <li class="menu-item"><a class ="menu-item" href="#">Market</a></li>
-        <li class="menu-item"><a class ="menu-item" href="#">Features</a></li>
-        <li class="menu-item"><a class ="menu-item" href="#">Blog</a></li>
-        <li class="menu-item"><a class ="menu-item" href="#">Events</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=features">Features</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=events">Events</a></li>
         <li class="menu-spacer"></li>
         <li class="account menu-item"><a class ="menu-item" href="#">My Account</a></li>
         </ul>
