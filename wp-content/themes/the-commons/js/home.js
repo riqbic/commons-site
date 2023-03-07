@@ -67,9 +67,9 @@
                 $(this).addClass('is-active');
                 //Pop history, buggy but kind of working
                 if($('#popout-container').hasClass('active-blog')) {
-                    history.replaceState('blog', "",'&post_id='+post_id);
+                    history.replaceState('blog', "",'?pop=blog&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-blog-alt')) {
-                    history.replaceState('blog-alt', "",'&post_id='+post_id);
+                    history.replaceState('blog-alt', "",'?pop=blog-alt&post_id='+post_id);
                 }
                 //get content for post from ajax function in functions.php
                 var post_id = $(this).attr('data-id');
