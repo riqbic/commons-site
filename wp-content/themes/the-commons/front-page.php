@@ -57,7 +57,7 @@
         <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
             <h2>Features</h2>
         </div>
-        <div class="grid-content" id="features-content"  onclick="popOut('features',1,1)">
+        <div class="grid-content" id="features-content">
             <div class="content-title">
                 <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('features',1,1)">
                 <h2 style="flex-grow: 1">Features</h2>
