@@ -85,7 +85,7 @@ function popOut(activeID,call_from_page,transition){
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
-    else if(popout_container.hasChildNodes() && popout_state){
+    if(popout_container.hasChildNodes() && popout_state){
         
          //Add which div id active
          popout_container.classList.remove("active-"+activeID);
