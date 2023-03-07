@@ -1,4 +1,3 @@
-
 (function($) {
 	$(document).ready(function() {
         //bool var to see if we loaded a post automatically yet
@@ -67,9 +66,9 @@
                 $(this).addClass('is-active');
                 //Pop history, buggy but kind of working
                 if($('#popout-container').hasClass('active-blog')) {
-                    history.replaceState('blog', "",'?pop=blog&post_id='+post_id);
+                    history.replaceState('blog', "",'?pop=blog&post_id='+activePost);
                 } else if($('#popout-container').hasClass('active-blog-alt')) {
-                    history.replaceState('blog-alt', "",'?pop=blog-alt&post_id='+post_id);
+                    history.replaceState('blog-alt', "",'?pop=blog-alt&post_id='+activePost);
                 }
                 //get content for post from ajax function in functions.php
                 var post_id = $(this).attr('data-id');
