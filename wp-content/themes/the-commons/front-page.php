@@ -5,8 +5,11 @@
         <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
             <h2>About us</h2>
         </div>
-        <div class="grid-content" id="about-us-content"  onclick="popOut('about-us',1,1)">
-            <h2>About us</h2>
+        <div class="grid-content" id="about-us-content">
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('about-us',1,1)">
+                <h2 style="flex-grow: 1">About Us</h2>
+            </div>
             <div class="about-us-container">
                 <div class="about-us-flexbox">
                     <div class="about-us-image">
@@ -55,7 +58,10 @@
             <h2>Features</h2>
         </div>
         <div class="grid-content" id="features-content"  onclick="popOut('features',1,1)">
-            <h2>Features</h2>
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('features',1,1)">
+                <h2 style="flex-grow: 1">Features</h2>
+            </div>
             <img src="<?php echo get_template_directory_uri(); ?>/img/group_pallets_crop.png" alt="group pallets" id="group-pallets" width="300" height="200">
             <p class="newsy">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nostrum in quis debitis qui unde iusto adipisci corrupti animi! Molestiae porro iusto sapiente, nisi inventore illum sint at itaque quae, nemo aut enim eius eaque, fugiat explicabo omnis perferendis? Quo placeat corporis laudantium magni beatae earum dolorem iste sequi velit.
@@ -66,8 +72,11 @@
         <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
             <h2>Blog</h2>
         </div>
-        <div class="grid-content" id="blog-content" onclick="popOut('blog',1,1)">
-            <h2>Blog</h2>
+        <div class="grid-content" id="blog-content">
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('blog',1,1)">
+                <h2 style="flex-grow: 1">Blog</h2>
+            </div>
             <div class="blog-flex-container flex-row">
                 <div class="blog-sidebar">
                     <?php 
@@ -114,8 +123,11 @@
         <div class="grid-preview" id="blog-alt-preview"  onclick="popOut('blog-alt',1,1)">
             <h2>Blog</h2>
         </div>
-        <div class="grid-content" id="blog-alt-content"  onclick="popOut('blog-alt',1,1)">
-            <h2>Blog</h2>
+        <div class="grid-content" id="blog-alt-content">
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('blog-alt',1,1)">
+                <h2 style="flex-grow: 1">Blog-Alt</h2>
+            </div>
             <div class="blog-flex-container flex-row">
                 <div class="blog-sidebar">
                 <?php 
@@ -162,8 +174,11 @@
         <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
             <h2>Get Involved</h2>
         </div>
-        <div class="grid-content" id="get-involved-content"  onclick="popOut('get-involved',1,1)">
-            <h2>Get Involved</h2>
+        <div class="grid-content" id="get-involved-content">
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('get-involved',1,1)">
+                <h2 style="flex-grow: 1">Get Involved</h2>
+            </div>
             <p class="newsy">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
             </p>
@@ -173,8 +188,11 @@
         <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
             <h2>Shop</h2>
         </div>
-        <div class="grid-content" id="shop-content"  onclick="popOut('shop',1,1)">
-            <h2>Shop</h2>
+        <div class="grid-content" id="shop-content">
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('shop',1,1)">
+                <h2 style="flex-grow: 1">Shop</h2>
+            </div>
             <p class="newsy">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
             </p>
@@ -184,8 +202,11 @@
         <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
             <h2>Events</h2>
         </div>
-        <div class="grid-content" id="events-content"  onclick="popOut('events',1,1)">
-            <h2>Events</h2>
+        <div class="grid-content" id="events-content">
+            <div class="content-title">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('events',1,1)">
+                <h2 style="flex-grow: 1">Events</h2>
+            </div>
             <p class="newsy">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
             </p>

@@ -69,17 +69,25 @@ h2{
     font-family: Oswald;
     font-size: 3rem;
     margin: 0px;
-    padding: 10px;
+    padding-top: 5px;
     text-align: center;
     max-width: auto;
     background-color: #0b0a09;
     color: white;
+    height: 35px;
 }
 
 h3{
     font-family: Brokenscript;
     font-size: 1rem;
     text-align: center;
+}
+
+.content-title{
+    display: flex;
+    padding: 5px;
+    height: 50px;
+    background-color: #0b0a09;
 }
 
 .transitions{
