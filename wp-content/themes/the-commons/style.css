@@ -90,6 +90,10 @@ h3{
     background-color: #0b0a09;
 }
 
+#close-icon-white{
+    cursor: pointer;
+}
+
 .transitions{
     transition: all 0.75s ease;
 }
@@ -281,7 +285,6 @@ h3{
     position: absolute;
     background-color: #F2F3ED;
     border: 3px solid #0b0a09;
-    cursor: pointer;
     z-index: 1;
 }
 

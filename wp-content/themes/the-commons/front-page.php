@@ -7,7 +7,7 @@
         </div>
         <div class="grid-content" id="about-us-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('about-us',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('about-us',1,1)">
                 <h2 style="flex-grow: 1">About Us</h2>
             </div>
             <div class="about-us-container">
@@ -59,7 +59,7 @@
         </div>
         <div class="grid-content" id="features-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('features',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('features',1,1)">
                 <h2 style="flex-grow: 1">Features</h2>
             </div>
             <img src="<?php echo get_template_directory_uri(); ?>/img/group_pallets_crop.png" alt="group pallets" id="group-pallets" width="300" height="200">
@@ -74,7 +74,7 @@
         </div>
         <div class="grid-content" id="blog-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('blog',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('blog',1,1)">
                 <h2 style="flex-grow: 1">Blog</h2>
             </div>
             <div class="blog-flex-container flex-row">
@@ -125,7 +125,7 @@
         </div>
         <div class="grid-content" id="blog-alt-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('blog-alt',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('blog-alt',1,1)">
                 <h2 style="flex-grow: 1">Blog-Alt</h2>
             </div>
             <div class="blog-flex-container flex-row">
@@ -176,7 +176,7 @@
         </div>
         <div class="grid-content" id="get-involved-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('get-involved',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('get-involved',1,1)">
                 <h2 style="flex-grow: 1">Get Involved</h2>
             </div>
             <p class="newsy">
@@ -190,7 +190,7 @@
         </div>
         <div class="grid-content" id="shop-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('shop',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('shop',1,1)">
                 <h2 style="flex-grow: 1">Shop</h2>
             </div>
             <p class="newsy">
@@ -204,7 +204,7 @@
         </div>
         <div class="grid-content" id="events-content">
             <div class="content-title">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close_icon_white" width="40" height="40" onclick="popOut('events',1,1)">
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('events',1,1)">
                 <h2 style="flex-grow: 1">Events</h2>
             </div>
             <p class="newsy">
