@@ -66,7 +66,7 @@
         <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
             <h2>Blog</h2>
         </div>
-        <div class="grid-content" id="blog-content"  onclick="popOut('blog',1,1)">
+        <div class="grid-content" id="blog-content" onclick="popOut('blog',1,1)">
             <h2>Blog</h2>
             <div class="blog-flex-container flex-row">
                 <div class="blog-sidebar">
