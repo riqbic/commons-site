@@ -151,7 +151,6 @@
                     } else { ?>
                         <p>There are no posts to show right now.</p>
                     <?php } ?>
-                </div><!-- close sidebar -->
         </div>
         <div class="grid-content" id="blog-alt-content">
             <div class="content-title">
