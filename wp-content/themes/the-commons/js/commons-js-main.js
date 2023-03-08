@@ -36,6 +36,9 @@ function onPageLoad() {
         popout_container.style.top = newsy_container.offsetTop+10+"px";
         popout_container.style.left = newsy_container.offsetLeft+10+"px";
 
+        //replace history state to match pop variable
+        history.replaceState(activeID,activeID,"?pop="+activeID);
+
         //Add which div id active
         popout_container.classList.add("active-"+activeID);
     }
