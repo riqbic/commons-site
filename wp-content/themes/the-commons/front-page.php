@@ -131,14 +131,11 @@
                         'cat' => 26,
                     );
                     $posts_query = new WP_Query( $post_args );
-                    $blogct = 0;
                     if( $posts_query->have_posts() ) {
-                        ++$blogct;
-                        //Declare an iterator for blog-item class
                         while($posts_query->have_posts() ) {
                             $posts_query->the_post(); 
                             ?>
-                            <div class="blog-item blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                            <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                             <h3><?php the_title(); ?></h3>
                                 <div class="newsy-small">
                                     <?php the_excerpt(); ?>
