@@ -312,6 +312,12 @@ h3{
 #blog-ajax-container.loading {
     filter: blur(2px);
 }
+.blog-item{
+    cursor: pointer;
+}
+.blog-item:hover{
+    background-color: #796d61;
+}
 .blog-item-1{
     flex: 2 1 33.3%;
     text-overflow: ellipsis ellipsis;
