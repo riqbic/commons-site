@@ -213,7 +213,7 @@ h3{
     "events events blog-alt blog-alt shop"; 
     gap: 10px 10px;
     max-width: 1200px;
-    min-height: 1500px;
+    height: 1500px;
     overflow: hidden;
 }
 
