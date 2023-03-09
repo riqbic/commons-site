@@ -54,23 +54,111 @@
         </div>
     </div>
     <div class="grid-item" id="features">
-        <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
+    <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
             <h2>Features</h2>
+            <?php 
+                    //Query 3 most recent posts that are published
+                    $post_args = array(
+                        'posts_per_page'	=> 1,
+                        'post_type'		=> 'post',
+                        'post_status' => 'publish',
+                        'cat' => 26,
+                    );
+                    $posts_query = new WP_Query( $post_args );
+                    if( $posts_query->have_posts() ) {
+                        while($posts_query->have_posts() ) {
+                            $posts_query->the_post(); 
+                            ?>
+                            <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                            <h3><?php the_title(); ?></h3>
+                                <div class="newsy-small">
+                                    <?php the_content(); ?>
+                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                    READ MORE
+                                </div>
+                            </div>
+                            <?php 
+                        }
+                    } else { ?>
+                        <p>There are no posts to show right now.</p>
+                    <?php } ?>
         </div>
         <div class="grid-content" id="features-content">
             <div class="content-title">
                 <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('features',1,1)">
                 <h2 style="flex-grow: 1">Features</h2>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/group_pallets_crop.png" alt="group pallets" id="group-pallets" width="300" height="200">
-            <p class="newsy">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nostrum in quis debitis qui unde iusto adipisci corrupti animi! Molestiae porro iusto sapiente, nisi inventore illum sint at itaque quae, nemo aut enim eius eaque, fugiat explicabo omnis perferendis? Quo placeat corporis laudantium magni beatae earum dolorem iste sequi velit.
-            </p>
+            <div class="blog-flex-container flex-row">
+                <div class="blog-sidebar">
+                <?php 
+                    //Query 3 most recent posts that are published
+                    $post_args = array(
+                        'posts_per_page'	=> -1,
+                        'post_type'		=> 'post',
+                        'post_status' => 'publish',
+                        'cat' => 26,
+                    );
+                    $posts_query = new WP_Query( $post_args );
+                    $blogct = 0;
+                    if( $posts_query->have_posts() ) {
+                        ++$blogct;
+                        //Declare an iterator for blog-item class
+                        $blog_item_count = 0;
+                        while($posts_query->have_posts() ) {
+                            $posts_query->the_post(); 
+                            //Incremenent blog item count
+                            ++$blog_item_count; ?>
+                            <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
+                                <h3><?php the_title(); ?></h3>
+                                <?php if($blogct <= 3) { ?>
+                                    <div class="newsy-small">
+                                        <?php the_excerpt(); ?>
+                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                        READ MORE
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <?php 
+                        }
+                    } else { ?>
+                        <p>There are no posts to show right now.</p>
+                    <?php } ?>
+                </div><!-- close sidebar -->
+                <div class="blog-single-content" id="blog-ajax-container">
+                    
+                </div><!-- close blog content-->
+            </div>
         </div>
     </div>
     <div class="grid-item" id="blog">
         <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
-            <h2>Blog</h2>
+        <h2>Blog</h2>
+            <?php 
+                //Query 3 most recent posts that are published
+                $post_args = array(
+                    'posts_per_page'	=> 1,
+                    'post_type'		=> 'post',
+                    'post_status' => 'publish',
+                    'cat' => 21,
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                        <h3><?php the_title(); ?></h3>
+                            <div class="newsy-small">
+                                <?php the_content(); ?>
+                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                READ MORE
+                            </div>
+                        </div>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
         </div>
         <div class="grid-content" id="blog-content">
             <div class="content-title">
@@ -85,7 +173,7 @@
                         'posts_per_page'	=> -1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'category__not_in' => 26,
+                        'cat' => 21,
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
