@@ -5,7 +5,7 @@
         //automatically load a post on page load or pop
         function loadPost() {
             //see if the popout container has a blog post
-            if(($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-blog-alt'))) {
+            if(($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-blog-alt')) || $('#popout-container').hasClass('active-features')) {
                 //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
                 setTimeout(function() {
                     //check if a post has been loaded or not
@@ -69,6 +69,9 @@
                     history.replaceState('blog', "",'?pop=blog&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-blog-alt')) {
                     history.replaceState('blog-alt', "",'?pop=blog-alt&post_id='+post_id);
+                }
+                else if($('#popout-container').hasClass('active-features')) {
+                    history.replaceState('features', "",'?pop=features&post_id='+post_id);
                 }
                 //get content for post from ajax function in functions.php
                 var post_id = $(this).attr('data-id');

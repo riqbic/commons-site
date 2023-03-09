@@ -213,7 +213,7 @@
             <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
-                        'posts_per_page'	=> 1,
+                        'posts_per_page'	=> 2,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
                         'cat' => 21,
@@ -223,7 +223,7 @@
                         while($posts_query->have_posts() ) {
                             $posts_query->the_post(); 
                             ?>
-                            <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                            <div class="blog-preview blog-item-2;" data-id="<?php echo get_the_ID(); ?>">
                             <h3><?php the_title(); ?></h3>
                                 <div class="newsy-small">
                                     <?php the_content(); ?>
