@@ -37,7 +37,7 @@
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=features">Features</a></li>
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=events">Events</a></li>
-        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=56" style="color: A40606">Subscribe</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=56" style="color: #F20000">Subscribe</a></li>
         <li class="menu-spacer"></li>
         <li class="account menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=11">My Account</a></li>
         </ul>
