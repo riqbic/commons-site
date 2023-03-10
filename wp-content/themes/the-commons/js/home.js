@@ -19,7 +19,12 @@
                             $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']').trigger('click');
                         } else {
                             //no post in url, click the first item in the sidebar
-                            $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
+                            if($('#popout-container').hasClass('active-blog-alt')) {
+                                $('#popout-container .blog-sidebar .blog-item:nth-of-type(2)').trigger('click');
+                            } else {
+                                $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
+                            }
+                            
                         }
                         //set our bool var to true so it doesnt happen again
                         loadedPost = 1;
