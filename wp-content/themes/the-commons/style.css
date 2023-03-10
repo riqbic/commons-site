@@ -195,6 +195,10 @@ h3{
     color: #0b0a09;
 }
 
+.menu-item:hover{
+    text-decoration: underline;
+}
+
 .newsy-container{
     padding: 10px;
     margin: auto;
