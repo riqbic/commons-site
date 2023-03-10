@@ -41,7 +41,7 @@ function onPageLoad() {
         history.replaceState(activeID,activeID,"?pop="+activeID);
 
         if (params.getAll("post_id").length !== 0){
-            history.replaceState(activeID,activeID,"&post_id="+postID);
+            history.replaceState(activeID,activeID,"?pop="+activeID+"&post_id="+postID);
         }
 
         //Add which div id active
