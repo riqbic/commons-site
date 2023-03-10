@@ -16,6 +16,7 @@ function onPageLoad() {
     let url = window.location.search;
     let params = new URLSearchParams(url);
     var activeID = params.get("pop");
+    var postID = params.get("post_id");
 
     //declarations
     var popout_container = document.getElementById("popout-container");
@@ -38,6 +39,10 @@ function onPageLoad() {
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
+
+        if (params.getAll("post_id").length !== 0){
+            history.replaceState(activeID,activeID,"&post_id="+postID);
+        }
 
         //Add which div id active
         popout_container.classList.add("active-"+activeID);
