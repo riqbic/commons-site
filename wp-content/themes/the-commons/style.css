@@ -83,7 +83,7 @@ h2{
     text-align: center;
     max-width: auto;
     background-color: #0b0a09;
-    color: white;
+    color: white !important;
     height: 35px;
 }
 
@@ -371,11 +371,12 @@ h3{
 }
 
 .subpage-container{
-    margin-top: 40px;
+    margin: 40px;
+    background: #f2f3ed;
     border: 2px solid #0b0a09;
 }
 .woocommerce-form-login{
-    border: none;
+    border: none !important;
 }
 
 .woocommerce-form{
@@ -384,4 +385,8 @@ h3{
 
 .lost_password{
     font-family: Oswald;
+}
+
+.wc-block-grid{
+    padding:20px;
 }
