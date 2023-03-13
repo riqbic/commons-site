@@ -30,6 +30,16 @@ Version: 1.12
     .grid-mobile{
         min-height: calc(85vh - 28px) !important;
         height: calc(85vh - 28px) !important;
+        grid-template-areas: 
+        "blog blog features features features"
+        "blog blog features features features"
+        "blog blog features features features"
+        "about-us about-us about-us get-involved get-involved"
+        "about-us about-us about-us get-involved get-involved"
+        "ad-space-1 blog-alt blog-alt shop shop"
+        "ad-space-1 blog-alt blog-alt shop shop"
+        "events events events shop shop"
+        "events events events ad-space-2 ad-space-2" !important; 
     }
     h2{
         font-size: 2rem !important;
