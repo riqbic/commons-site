@@ -28,8 +28,8 @@ Version: 1.10
         display: none !important;
     }
     .grid-mobile{
-        min-height: calc(85vh - 26px) !important;
-        height: calc(85vh - 26px) !important;
+        min-height: calc(85vh - 28px) !important;
+        height: calc(85vh - 28px) !important;
     }
     h2{
         font-size: 2rem !important;
