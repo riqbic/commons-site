@@ -36,10 +36,10 @@ Version: 1.12
         "blog blog features features features"
         "about-us about-us about-us get-involved get-involved"
         "about-us about-us about-us get-involved get-involved"
-        "ad-space-1 blog-alt blog-alt shop shop"
-        "ad-space-1 blog-alt blog-alt shop shop"
+        "promo-space-1 blog-alt blog-alt shop shop"
+        "promo-space-1 blog-alt blog-alt shop shop"
         "events events events shop shop"
-        "events events events ad-space-2 ad-space-2" !important;
+        "events events events promo-space-2 promo-space-2" !important;
     }
     h2{
         font-size: 2rem !important;
