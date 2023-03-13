@@ -369,3 +369,19 @@ h3{
     font-weight:bold;
     font-size: .7rem;
 }
+
+.subpage-container{
+    margin-top: 40px;
+    border: 2px solid #0b0a09;
+}
+.woocommerce-form-login{
+    border: none;
+}
+
+.woocommerce-form{
+    font-family: Oswald;
+}
+
+.lost_password{
+    font-family: Oswald;
+}
