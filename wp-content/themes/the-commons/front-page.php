@@ -62,7 +62,7 @@
                         'posts_per_page'	=> 1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'cat' => 26,
+                        'cat' => 28,
                     );
                     $posts_query = new WP_Query( $post_args );
                     if( $posts_query->have_posts() ) {
@@ -96,7 +96,7 @@
                         'posts_per_page'	=> -1,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'cat' => 26,
+                        'cat' => 28,
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
