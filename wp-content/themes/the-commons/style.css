@@ -390,3 +390,23 @@ h3{
 .wc-block-grid{
     padding:20px;
 }
+
+.show-password-input{
+    top: auto;
+}
+
+.products{
+    padding: 20px;
+}
+
+.woocommerce-result-count{
+    margin: 0 0 20px 20px;
+}
+
+.woocommerce-ordering{
+    margin: 0 20px 20px 0;
+}
+
+.woocommerce-MyAccount-content{
+    padding: 0 20px;
+}
