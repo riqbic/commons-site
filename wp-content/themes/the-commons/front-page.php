@@ -4,7 +4,6 @@
     <div class="flex-desktop-sidebar">
         <div class="grid-item" id="blog">
             <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
-            <h2>Blog</h2>
                 <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
@@ -34,8 +33,7 @@
             </div>
             <div class="grid-content" id="blog-content">
                 <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('blog',1,1)">
-                    <h2 style="flex-grow: 1">Blog</h2>
+                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog',1,1)">
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
@@ -81,7 +79,6 @@
         </div>
         <div class="grid-item" id="blog-alt">
             <div class="grid-preview" id="blog-alt-preview"  onclick="popOut('blog-alt',1,1)">
-                <h2>Blog</h2>
                 <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
@@ -112,8 +109,7 @@
             </div>
             <div class="grid-content" id="blog-alt-content">
                 <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('blog-alt',1,1)">
-                    <h2 style="flex-grow: 1">Blog-Alt</h2>
+                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog-alt',1,1)">
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
@@ -161,12 +157,10 @@
     <div class="flex-desktop-grid">
         <div class="grid-item" id="about-us">
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
-                <h2>About us</h2>
             </div>
             <div class="grid-content" id="about-us-content">
                 <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('about-us',1,1)">
-                    <h2 style="flex-grow: 1">About Us</h2>
+                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('about-us',1,1)">
                 </div>
                 <div class="about-us-container">
                     <div class="about-us-flexbox">
@@ -213,7 +207,7 @@
         </div>
         <div class="grid-item" id="features">
             <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
-                <h2>Features</h2>
+                <h2>Feature</h2>
                 <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
@@ -244,7 +238,7 @@
             <div class="grid-content" id="features-content">
                 <div class="content-title">
                     <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('features',1,1)">
-                    <h2 style="flex-grow: 1">Features</h2>
+                    <h2 style="flex-grow: 1">Feature</h2>
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
@@ -290,12 +284,10 @@
         </div>
         <div class="grid-item" id="get-involved">
             <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
-                <h2>Get Involved</h2>
             </div>
             <div class="grid-content" id="get-involved-content">
                 <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('get-involved',1,1)">
-                    <h2 style="flex-grow: 1">Get Involved</h2>
+                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('get-involved',1,1)">
                 </div>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
@@ -304,12 +296,10 @@
         </div>
         <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
-                <h2>Shop</h2>
             </div>
             <div class="grid-content" id="shop-content">
                 <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('shop',1,1)">
-                    <h2 style="flex-grow: 1">Shop</h2>
+                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('shop',1,1)">
                 </div>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
@@ -318,12 +308,10 @@
         </div>
         <div class="grid-item" id="events">
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
-                <h2>Events</h2>
             </div>
             <div class="grid-content" id="events-content">
                 <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('events',1,1)">
-                    <h2 style="flex-grow: 1">Events</h2>
+                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('events',1,1)">
                 </div>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.

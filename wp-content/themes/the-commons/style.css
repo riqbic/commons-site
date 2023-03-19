@@ -100,6 +100,10 @@ h3{
     background-color: #0b0a09;
 }
 
+#close-icon{
+    cursor: pointer;
+}
+
 #close-icon-white{
     cursor: pointer;
 }
@@ -230,15 +234,6 @@ h3{
     max-width: 1200px;
     background: #f2f3ed;
 }
-#features { grid-area: features; }
-#blog { grid-area: blog; }
-#about-us { grid-area: about-us; }
-#shop { grid-area: shop; }
-#events { grid-area: events; }
-#blog-alt { grid-area: blog-alt; }
-#get-involved { grid-area: get-involved; }
-#promo-space-1 { grid-area: promo-space-1; }
-#promo-space-2 { grid-area: promo-space-2; }
 
 .grid-item{
     background-color: #F2F3ED;
@@ -248,7 +243,6 @@ h3{
 
 .grid-item:hover{
     border: 3px solid #0b0a09;
-    scale: 1.01;
 }
 
 .grid-content{
