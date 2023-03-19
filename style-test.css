@@ -186,7 +186,8 @@ h3{
 .newsy-container{
     padding: 10px;
     margin: auto;
-    display: grid;
+    display: flex;
+    gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     grid-template-areas: 
@@ -203,6 +204,15 @@ h3{
     max-width: 1200px;
     min-height: 1500px;
     overflow: hidden;
+}
+
+.flex-desktop-sidebar{
+    flex: 1;
+}
+
+.flex-desktop-grid{
+    flex: 3;
+    display: grid;
 }
 
 .grid-item{

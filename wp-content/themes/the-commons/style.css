@@ -62,7 +62,7 @@ html {
 body{
     margin: 0;
     padding: 0;
-    background-color: #CBCCB4;
+    background-color: #f2f3ed;
 }
 
 h1{
@@ -212,23 +212,18 @@ h3{
 .newsy-container{
     padding: 10px;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-areas: 
-    "blog features features features about-us"
-    "blog features features features about-us"
-    "blog features features features promo-space-1"
-    "blog get-involved get-involved promo-space-2 shop"
-    "blog get-involved get-involved promo-space-2 shop"
-    "events events blog-alt blog-alt shop"
-    "events events blog-alt blog-alt shop"
-    "events events blog-alt blog-alt shop"
-    "events events blog-alt blog-alt shop"; 
-    gap: 10px 10px;
+    display: flex;
+    gap: 10px;
     max-width: 1200px;
-    height: 1500px;
     overflow: hidden;
+}
+
+.flex-desktop-sidebar{
+    flex: 1;
+}
+
+.flex-desktop-grid{
+    flex: 3;
 }
 .subpage-container {
     margin: auto;
@@ -247,9 +242,13 @@ h3{
 
 .grid-item{
     background-color: #F2F3ED;
-    border: 3px solid #0b0a09;
     overflow: hidden;
     cursor: pointer;
+}
+
+.grid-item:hover{
+    border: 3px solid #0b0a09;
+    scale: 1.01;
 }
 
 .grid-content{
@@ -262,10 +261,6 @@ h3{
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-
-.grid-item:hover{
-    scale: 1.01;
 }
 
 .about-us-container {
