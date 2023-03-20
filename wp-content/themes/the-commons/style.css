@@ -19,8 +19,8 @@ Version: 1.12
 }
 
 @font-face {
-    font-family: Helmswald Post;
-    src: url('fonts/HelmswaldPost.otf');
+    font-family: Helmswald-Post;
+    src: url('fonts/HelmswaldPost.otf') format("opentype");
 }
 
 @font-face {
@@ -54,7 +54,7 @@ body{
 }
 
 .title{
-    font-family: Helmwald Post;
+    font-family: Helmwald-Post;
     font-size: 4rem;
     font-variant-alternates: 1;
     font-variant-ligatures: 0;
@@ -66,12 +66,13 @@ body{
 
 h1{
     font-family: Century-Old-Style;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0;
     max-width: auto;
     text-align: center;
     color: #0b0a09;
-    width: 50%;
+    width: 60%;
+    margin: auto;
 }
 
 h2{
