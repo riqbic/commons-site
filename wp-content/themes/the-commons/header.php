@@ -16,7 +16,7 @@
       </svg>
     <div class="header-item-2">
         <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
-            <h1>The Commons</h1>
+            <h1 style="white-space: nowrap;">The Commons</h1>
         </a>
     </div>
     <svg width="100%" height="100%">
