@@ -55,13 +55,11 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
-                                    <?php if($blog_item_count <= 3) { ?>
-                                        <div class="newsy-small">
-                                            <?php the_excerpt(); ?>
-                                            <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                            READ MORE
-                                        </div>
-                                    <?php } ?>
+                                    <div class="newsy-small">
+                                        <?php the_excerpt(); ?>
+                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                        READ MORE
+                                    </div>
                                 </div>
                                 <?php 
                             }
@@ -129,13 +127,11 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
-                                    <?php if($blogct <= 3) { ?>
-                                        <div class="newsy-small">
-                                            <?php the_excerpt(); ?>
-                                            <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                            READ MORE
-                                        </div>
-                                    <?php } ?>
+                                    <div class="newsy-small">
+                                        <?php the_excerpt(); ?>
+                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                        READ MORE
+                                    </div>
                                 </div>
                                 <?php 
                             }
