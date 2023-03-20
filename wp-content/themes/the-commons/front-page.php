@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="newsy-container grid-mobile" id="newsy-container">
+<div class="newsy-container" id="newsy-container">
     <div class="flex-desktop-sidebar">
         <div class="grid-item" id="blog">
             <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
