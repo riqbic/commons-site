@@ -54,7 +54,6 @@ h1{
     margin: 0;
     max-width: auto;
     text-align: center;
-    white-space: nowrap;
     color: #0b0a09;
 }
 
@@ -292,7 +291,7 @@ h3{
     width: 30%;
 }
 .blog-flex-container .blog-sidebar .blog-item.is-active {
-    background: rgba(0,0,0,.5);
+    background: #a7a5a4;
 }
 .blog-flex-container .blog-single-content {
     width: 70%;
@@ -306,19 +305,7 @@ h3{
     cursor: pointer;
 }
 .blog-item:hover{
-    background-color: #918e8b;
-}
-.blog-item-1{
-    flex: 2 1 33.3%;
-    text-overflow: ellipsis ellipsis;
-}
-.blog-item-2{
-    flex: 1 1 33.3%;
-    text-overflow: ellipsis;
-}
-.blog-item-3{
-    flex: 1 1 33.3%;
-    text-overflow: ellipsis;
+    background-color: #c4c2c1;
 }
 
 #group-pallets{
