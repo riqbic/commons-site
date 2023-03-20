@@ -20,7 +20,7 @@
                             <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                             <h3><?php the_title(); ?></h3>
                                 <div class="newsy-small">
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                                     <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                     READ MORE
                                 </div>
@@ -32,9 +32,7 @@
                     <?php } ?>
             </div>
             <div class="grid-content" id="blog-content">
-                <div class="content-title">
-                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog',1,1)">
-                </div>
+                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog',1,1)">
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
                         <?php 
@@ -96,7 +94,7 @@
                                 <div class="blog-preview blog-item-2;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
                                     <div class="newsy-small">
-                                        <?php the_content(); ?>
+                                        <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
                                     </div>
@@ -108,9 +106,7 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="blog-alt-content">
-                <div class="content-title">
-                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog-alt',1,1)">
-                </div>
+                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog-alt',1,1)">
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
                     <?php 
@@ -159,9 +155,7 @@
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
             </div>
             <div class="grid-content" id="about-us-content">
-                <div class="content-title">
                     <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('about-us',1,1)">
-                </div>
                 <div class="about-us-container">
                     <div class="about-us-flexbox">
                         <div class="about-us-image">
@@ -224,7 +218,7 @@
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
                                     <div class="newsy-small">
-                                        <?php the_content(); ?>
+                                        <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
                                     </div>
@@ -236,10 +230,8 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="features-content">
-                <div class="content-title">
-                    <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('features',1,1)">
-                    <h2 style="flex-grow: 1">Feature</h2>
-                </div>
+                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('features',1,1)">
+                <h2 style="flex-grow: 1">Feature</h2>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
                     <?php 
@@ -286,9 +278,7 @@
             <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
             </div>
             <div class="grid-content" id="get-involved-content">
-                <div class="content-title">
-                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('get-involved',1,1)">
-                </div>
+                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('get-involved',1,1)">
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
@@ -298,9 +288,7 @@
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
             </div>
             <div class="grid-content" id="shop-content">
-                <div class="content-title">
-                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('shop',1,1)">
-                </div>
+                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('shop',1,1)">
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
@@ -310,9 +298,7 @@
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
             </div>
             <div class="grid-content" id="events-content">
-                <div class="content-title">
-                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('events',1,1)">
-                </div>
+                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('events',1,1)">
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>

@@ -27,25 +27,8 @@ Version: 1.12
     .hidden-mobile {
         display: none !important;
     }
-    .grid-mobile{
-        min-height: calc(85vh - 28px) !important;
-        height: calc(85vh - 28px) !important;
-        grid-template-areas: 
-        "blog blog features features features"
-        "blog blog features features features"
-        "blog blog features features features"
-        "about-us about-us about-us get-involved get-involved"
-        "about-us about-us about-us get-involved get-involved"
-        "promo-space-1 blog-alt blog-alt shop shop"
-        "promo-space-1 blog-alt blog-alt shop shop"
-        "events events events shop shop"
-        "events events events promo-space-2 promo-space-2" !important;
-    }
     h2{
         font-size: 2rem !important;
-    }
-    .grid-item:hover{
-        scale: 1.00 !important;
     }
 }
 
@@ -82,30 +65,28 @@ h2{
     padding-top: 5px;
     text-align: center;
     max-width: auto;
-    background-color: #0b0a09;
-    color: white !important;
+    color: #0b0a09 !important;
     height: 35px;
 }
 
 h3{
-    font-family: Brokenscript;
-    font-size: 1rem;
+    font-family: Century-Old-Style;
+    font-size: 2rem;
     text-align: center;
 }
 
-.content-title{
-    display: flex;
-    padding: 5px;
-    height: 50px;
-    background-color: #0b0a09;
-}
-
 #close-icon{
+    position: absolute;
     cursor: pointer;
+    top: .7em;
+    right: .7em;
 }
 
 #close-icon-white{
+    position: absolute;
     cursor: pointer;
+    top: .7em;
+    right: .7em;
 }
 
 .transitions{
@@ -116,7 +97,7 @@ h3{
     position: absolute;
     width: 100%;
     height: 10vh;
-    background-color: #F2F3ED;
+    background-color: #f2f3ed;
     border-bottom: 2px single #0b0a09;
     display: flex;
     flex-wrap: nowrap;
@@ -155,7 +136,7 @@ h3{
     width: 100%;
     height: 5vh;
     top: 0px;
-    background-color: #F2F3ED;
+    background-color: #f2f3ed;
     border-top: 2px solid #0b0a09;
     border-bottom: 6px solid #0b0a09;
     z-index: 2;
@@ -236,11 +217,10 @@ h3{
 }
 
 .grid-item{
-    background-color: #F2F3ED;
+    background-color: #f2f3ed;
     overflow: hidden;
     cursor: pointer;
-    border: 3px;
-    border-style: hidden;
+    border: 3px solid #f2f3ed;
 }
 
 .grid-item:hover{
@@ -294,7 +274,6 @@ h3{
     display: none;
     position: absolute;
     background-color: #F2F3ED;
-    border: 3px solid #0b0a09;
     z-index: 1;
 }
 
@@ -348,14 +327,12 @@ h3{
 
 .newsy{
     text-align: justify;
-    margin: 10px;
     font-family:Century-Old-Style;
     font-weight:bold;
     font-size: 1rem;
 }
 .newsy-small{
     text-align: justify;
-    margin: 10px;
     font-family:Century-Old-Style;
     font-weight:bold;
     font-size: .7rem;
