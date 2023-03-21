@@ -94,6 +94,12 @@ h3{
     margin: 5px;
 }
 
+.blog-thumbnail{
+    width: 200px;
+    margin: auto;
+    filter: grayscale(1);
+}
+
 #close-icon{
     position: absolute;
     cursor: pointer;
