@@ -222,14 +222,6 @@ h3{
     overflow: hidden;
 }
 
-.bottom-border{
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-bottom: 10px;
-    padding-top: 5px;
-    border-bottom: 1px solid #0b0a09;
-}
-
 .flex-desktop-sidebar{
     flex: 1;
     min-width: 215px;
@@ -254,6 +246,14 @@ h3{
 
 .grid-item:hover{
     border: 1px solid #5e5e5e;
+}
+
+.bottom-border{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-bottom: 1px solid #0b0a09 !important;
 }
 
 .grid-content{
@@ -333,9 +333,11 @@ h3{
 }
 .blog-item{
     cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-bottom: 10px;
-    margin: 5px;
-    padding: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid #0b0a09 !important;
 }
 .blog-item:hover{
     background-color: #c4c2c1;
