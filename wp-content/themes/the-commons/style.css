@@ -90,6 +90,7 @@ h3{
     font-family: Century-Old-Style;
     font-size: 2rem;
     text-align: center;
+    color: #252421;
     margin: 5px;
 }
 
@@ -344,11 +345,13 @@ h3{
     text-align: justify;
     font-family: Century-Old-Style;
     font-size: 1rem;
+    color: #252421;
 }
 .newsy-small{
     text-align: justify;
     font-family: Century-Old-Style;
     font-size: .7rem;
+    color: #252421;
 }
 
 .subpage-container{
