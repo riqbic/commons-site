@@ -2,7 +2,7 @@
 
 <div class="newsy-container" id="newsy-container">
     <div class="flex-desktop-sidebar">
-        <div class="grid-item" id="blog">
+        <div class="grid-item bottom-border" id="blog">
             <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
                 <?php 
                     //Query 3 most recent posts that are published
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item" id="blog-alt">
+        <div class="grid-item bottom-border" id="blog-alt">
             <div class="grid-preview" id="blog-alt-preview"  onclick="popOut('blog-alt',1,1)">
                 <?php 
                         //Query 3 most recent posts that are published
@@ -226,7 +226,7 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="features-content">
-                <img src="close_icon_white.png" alt="close_icon_white" id="close-icon-white" width="40" height="40" onclick="popOut('features',1,1)">
+                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('features',1,1)">
                 <h2 style="flex-grow: 1">Feature</h2>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
