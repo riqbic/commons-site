@@ -274,13 +274,13 @@ h3{
     order: -1;
 }
 
-.features { grid-area: features; }
-.about-us { grid-area: about-us; }
-.promo-space-1 { grid-area: promo-space-1; }
-.events { grid-area: events; }
-.shop { grid-area: shop; }
-.get-involved { grid-area: get-involved; }
-.promo-space-2 { grid-area: promo-space-2; }
+#features { grid-area: features; }
+#about-us { grid-area: about-us; }
+#promo-space-1 { grid-area: promo-space-1; }
+#events { grid-area: events; }
+#shop { grid-area: shop; }
+#get-involved { grid-area: get-involved; }
+#promo-space-2 { grid-area: promo-space-2; }
 
 .subpage-container {
     margin: auto;
