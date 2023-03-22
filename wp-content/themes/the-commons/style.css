@@ -243,6 +243,10 @@ h3{
     text-decoration: underline;
 }
 
+.hamburger-menu{
+    height: 0px;
+}
+
 #menu__toggle {
     opacity: 0;
   }
