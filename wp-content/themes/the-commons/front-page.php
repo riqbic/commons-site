@@ -150,6 +150,7 @@
     <div class="flex-desktop-grid" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
+            <p>about us</p>
             </div>
             <div class="grid-content" id="about-us-content">
                     <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('about-us',1,1)">
@@ -198,7 +199,6 @@
         </div>
         <div class="grid-item" id="features">
             <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
-                <h2>Feature</h2>
                 <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
@@ -213,7 +213,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                <h3><?php the_title(); ?></h3>
+                                <h2><?php the_title(); ?></h2>
                                     <div class="newsy-small">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -228,7 +228,6 @@
             </div>
             <div class="grid-content" id="features-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('features',1,1)">
-                <h2 style="flex-grow: 1">Feature</h2>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
                     <?php 
@@ -250,7 +249,7 @@
                                 //Incremenent blog item count
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h3><?php the_title(); ?></h3>
+                                    <h2><?php the_title(); ?></h2>
                                     <?php if($blogct <= 3) { ?>
                                         <div class="newsy-small">
                                             <?php the_excerpt(); ?>
@@ -273,6 +272,7 @@
         </div>
         <div class="grid-item" id="get-involved">
             <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
+            <p> get involved </p>
             </div>
             <div class="grid-content" id="get-involved-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('get-involved',1,1)">
@@ -283,6 +283,7 @@
         </div>
         <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
+            <p?>shop</p>
             </div>
             <div class="grid-content" id="shop-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('shop',1,1)">
@@ -293,6 +294,7 @@
         </div>
         <div class="grid-item" id="events">
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
+            <p>events</p>
             </div>
             <div class="grid-content" id="events-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('events',1,1)">

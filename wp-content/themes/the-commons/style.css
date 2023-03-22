@@ -237,6 +237,7 @@ h3{
 .flex-desktop-grid{
     flex: 3;
     min-width: 430px;
+    display: grid;
 }
 
 #features{
