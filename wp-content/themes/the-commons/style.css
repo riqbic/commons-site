@@ -73,6 +73,17 @@ body{
     color: #252421;
 }
 
+.title{
+    font-family: Helmswald-Post;
+    font-size: 4rem;
+    font-variant-ligatures: none;
+    font-feature-settings: 'ss01';
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    color: #252421;
+}
+
 h1{
     font-family: Century-Old-Style;
     font-size: 3rem;
@@ -246,13 +257,13 @@ h3{
     left: 0 !important;
   }
   .menu__btn {
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 20px;
     width: 26px;
     height: 26px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
   }
   .menu__btn > span,
   .menu__btn > span::before,
@@ -274,7 +285,7 @@ h3{
   }
   .menu__box {
     display: block;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: -100%;
     width: 300px;
@@ -282,23 +293,30 @@ h3{
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #ECEFF1;
+    background-color: #f2f3ed;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
+    z-index: 2;
   }
   .menu__item {
     display: block;
     padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
+    color: #252421;
+    font-family: 'Oswald', sans-serif;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     transition-duration: .25s;
   }
   .menu__item:hover {
-    background-color: #CFD8DC;
+    background-color: #f2f3ed;
   }
+
+.account-icon{
+    position: absolute;
+    right: .7em;
+    top: .7em;
+}
 
 .newsy-container{
     padding: 10px;

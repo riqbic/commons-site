@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
-<div class="newsy-header">
+<div class="newsy-header hidden-mobile">
     <svg width="100%" height="100%">
         <rect width="100%" height="1" y="50%"
         style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
@@ -44,18 +44,26 @@
     </div>
 </div>
 
-<div class="hamburger-menu shown-mobile" >
-    <input id="menu__toggle" type="checkbox" />
-    <label class="menu__btn" for="menu__toggle">
-      <span></span>
-    </label>
+<div class="newsy-header-mobile shown-mobile">
+    <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
+        <div class="title-mobile">The Commons</div>
+    </a>
+    <div class="hamburger-menu" >
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+        <span></span>
+        </label>
 
-    <ul class="menu__box">
-        <li><a class ="menu__item" href="https://thecommons.boston/">Home</a></li>
-        <li><a class ="menu__item" href="https://thecommons.boston/?page_id=8">Market</a></li>
-        <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
-        <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
-        <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
-        <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
-    </ul>
-  </div>
+        <ul class="menu__box">
+            <li><a class ="menu__item" href="https://thecommons.boston/">Home</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=8">Market</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
+        </ul>
+    </div>
+    <a class="account-icon" href="https://thecommons.boston/?page_id=11">
+        <img src="account_icon.png" alt="My Account" style="width:42px;height:42px;">
+    </a>
+</div>
