@@ -21,7 +21,7 @@ function handleTabletChange(e){
 }
 
 // Register event listener
-mediaQuery.addEventListener(handleTabletChange);
+mediaQuery.addEventListener("change",handleTabletChange);
 
 // Initial check
 handleTabletChange(mediaQuery);
