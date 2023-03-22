@@ -38,17 +38,12 @@ Version: 1.12
     .grid-mobile{
     grid-auto-rows: 1fr !important; 
     grid-template-columns: 1fr 1fr !important; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important; 
+    grid-template-rows: 1fr 1fr 1fr 1fr !important; 
+    gap: 10px 10px; 
     grid-template-areas: 
     "about-us promo-space-1"
-    "about-us promo-space-1"
-    "events events"
-    "events events"
-    "shop get-involved"
-    "shop get-involved"
-    "shop get-involved"
-    "shop get-involved"
-    "promo-space-2 get-involved"
+    "shop shop"
+    "shop shop"
     "promo-space-2 get-involved" !important; 
     }
 }
@@ -249,25 +244,16 @@ h3{
     display: grid;
     grid-auto-rows: 1fr; 
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     gap: 10px 10px; 
     grid-template-areas: 
     "features features"
     "features features"
-    "features features"
-    "features features"
-    "features features"
-    "features features"
     "about-us promo-space-1"
-    "about-us promo-space-1"
-    "events events"
-    "events events"
     "shop get-involved"
     "shop get-involved"
-    "shop get-involved"
-    "shop get-involved"
-    "promo-space-2 get-involved"
-    "promo-space-2 get-involved"; 
+    "shop promo-space-2"
+    "events events"; 
 }
 
 #features{
