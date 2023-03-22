@@ -238,6 +238,11 @@ h3{
     flex: 3;
     min-width: 430px;
 }
+
+.features{
+    order: 1;
+}
+
 .subpage-container {
     margin: auto;
     max-width: 1200px;

@@ -17,15 +17,21 @@ function handleTabletChange(e){
   //(we are under 768px)
   if (e.matches) {
     var newsy_container = document.getElementById("newsy-container");
+    var flex_container = document.getElementById("flex-desktop-grid");
     var features = document.getElementById("features");
+    var blog_alt = document.getElementById("blog-alt");
     newsy_container.appendChild(features);
+    flex_container.appendChild(blog_alt);
     console.log('Media Query Matched!');
   }
   //over 768px
   else{
-    var flex_container = document.getElementById("flex-desktop-grid");
+    var flex_container_grid = document.getElementById("flex-desktop-grid");
+    var flex_container_sidebar = document.getElementById("flex-desktop-sidebar");
     var features = document.getElementById("features");
-    flex_container.appendChild(features);
+    var blog_alt = document.getElementById("blog-alt");
+    flex_container_grid.appendChild(features);
+    flex_desktop_sidebar.appendChild(blog_alt);
     console.log('check');
   }
 }
