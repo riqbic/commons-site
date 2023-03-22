@@ -9,14 +9,17 @@ function onPopState(ev) {
    popOut(activeID,0,1);
 }
 
-// Create a condition that targets viewports at least 768px wide
-const mediaQuery = window.matchMedia('(min-width: 768px)');
+// Create a condition that targets viewports below 768px wide
+const mediaQuery = window.matchMedia('(max-width: 768px)');
 
 function handleTabletChange(e){
   // Check if the media query is true
   if (e.matches) {
     // Then log the following message to the console
     console.log('Media Query Matched!');
+  }
+  else{
+    console.log('check');
   }
 }
 
