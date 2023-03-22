@@ -73,12 +73,12 @@ body{
     color: #252421;
 }
 
-.title{
+.title-mobile{
     font-family: Helmswald-Post;
-    font-size: 4rem;
+    font-size: 2rem;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
-    margin: 0;
+    margin: auto;
     white-space: nowrap;
     text-align: center;
     color: #252421;
@@ -148,6 +148,10 @@ h3{
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.newsy-header-mobile{
+    height: 5vh;
 }
 
 .header-item-1{
@@ -314,8 +318,8 @@ h3{
 
 .account-icon{
     position: absolute;
-    right: .7em;
-    top: .7em;
+    right: 20px;
+    top: 20px;
 }
 
 .newsy-container{
