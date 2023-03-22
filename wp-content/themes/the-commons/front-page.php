@@ -197,7 +197,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item" id="features">
+        <div class="grid-item bottom-border" id="features">
             <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
                 <?php 
                         //Query 3 most recent posts that are published
