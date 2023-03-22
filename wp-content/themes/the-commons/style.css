@@ -38,12 +38,13 @@ Version: 1.12
     .grid-mobile{
     grid-auto-rows: 1fr !important; 
     grid-template-columns: 1fr 1fr !important; 
-    grid-template-rows: 1fr 1fr 1fr 1fr !important; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr !important; 
     gap: 10px 10px; 
     grid-template-areas: 
     "about-us promo-space-1"
     "shop shop"
     "shop shop"
+    "blot-alt blot-alt"
     "promo-space-2 get-involved" !important; 
     }
 }
@@ -267,6 +268,7 @@ h3{
 #shop { grid-area: shop; }
 #get-involved { grid-area: get-involved; }
 #promo-space-2 { grid-area: promo-space-2; }
+#blog-alt { grid-area: blog-alt; }
 
 .subpage-container {
     margin: auto;
