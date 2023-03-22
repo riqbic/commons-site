@@ -29,17 +29,33 @@
     <div class="header-spacer"></div>
 </div>
 
-<div class="header-menu">
+<div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/">Home</a></li>
-        <li class="menu-item hidden-mobile"><a class ="menu-item" href="https://thecommons.boston/?page_id=8">Market</a></li>
-        <li class="menu-item hidden-mobile"><a class ="menu-item" href="https://thecommons.boston/?pop=features">Features</a></li>
-        <li class="menu-item hidden-mobile"><a class ="menu-item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
-        <li class="menu-item hidden-mobile"><a class ="menu-item" href="https://thecommons.boston/?pop=events">Events</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=8">Market</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=features">Features</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
+        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=events">Events</a></li>
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
         <li class="menu-spacer"></li>
         <li class="account menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=11">My Account</a></li>
         </ul>
     </div>
 </div>
+
+<div class="hamburger-menu shown-mobile" >
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+        <li><a class ="menu__item" href="https://thecommons.boston/">Home</a></li>
+        <li><a class ="menu__item" href="https://thecommons.boston/?page_id=8">Market</a></li>
+        <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
+        <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
+        <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
+        <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
+    </ul>
+  </div>
