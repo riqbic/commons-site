@@ -274,6 +274,7 @@ h3{
     order: -1;
 }
 
+.features { grid-area: features; }
 .about-us { grid-area: about-us; }
 .promo-space-1 { grid-area: promo-space-1; }
 .events { grid-area: events; }
