@@ -239,8 +239,8 @@ h3{
     min-width: 430px;
 }
 
-.features{
-    order: 1;
+#features{
+    order: -1;
 }
 
 .subpage-container {
