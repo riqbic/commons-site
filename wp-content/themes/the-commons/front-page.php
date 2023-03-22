@@ -147,7 +147,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-desktop-grid" id="flex-desktop-grid">
+    <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
             <p>about us</p>
@@ -213,7 +213,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                <h2><?php the_title(); ?></h2>
+                                <h3><?php the_title(); ?></h3>
                                     <div class="newsy-small">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->

@@ -28,18 +28,28 @@ Version: 1.12
     src: url('fonts/oswald-variablefont_wght-webfont.woff');
 }
 
-@media (max-width: 700px){
+@media (max-width: 768px){
     .hidden-mobile {
         display: none !important;
     }
     h2{
         font-size: 2rem !important;
     }
-}
-
-@media (max-width: 820px){
-    .hidden-tablet {
-    display: none;
+    .grid-mobile{
+    grid-auto-rows: 1fr !important; 
+    grid-template-columns: 1fr 1fr !important; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important; 
+    grid-template-areas: 
+    "about-us promo-space-1"
+    "about-us promo-space-1"
+    "events events"
+    "events events"
+    "shop get-involved"
+    "shop get-involved"
+    "shop get-involved"
+    "shop get-involved"
+    "promo-space-2 get-involved"
+    "promo-space-2 get-involved" !important; 
     }
 }
 
@@ -236,13 +246,40 @@ h3{
 
 .flex-desktop-grid{
     flex: 3;
-    min-width: 430px;
     display: grid;
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 10px 10px; 
+    grid-template-areas: 
+    "features features"
+    "features features"
+    "features features"
+    "features features"
+    "features features"
+    "features features"
+    "about-us promo-space-1"
+    "about-us promo-space-1"
+    "events events"
+    "events events"
+    "shop get-involved"
+    "shop get-involved"
+    "shop get-involved"
+    "shop get-involved"
+    "promo-space-2 get-involved"
+    "promo-space-2 get-involved"; 
 }
 
 #features{
     order: -1;
 }
+
+.about-us { grid-area: about-us; }
+.promo-space-1 { grid-area: promo-space-1; }
+.events { grid-area: events; }
+.shop { grid-area: shop; }
+.get-involved { grid-area: get-involved; }
+.promo-space-2 { grid-area: promo-space-2; }
 
 .subpage-container {
     margin: auto;
