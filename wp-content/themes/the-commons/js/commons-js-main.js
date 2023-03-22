@@ -14,11 +14,18 @@ const mediaQuery = window.matchMedia('(max-width: 768px)');
 
 function handleTabletChange(e){
   // Check if the media query is true
+  //(we are under 768px)
   if (e.matches) {
-    // Then log the following message to the console
+    var newsy_container = document.getElementById("newsy-container");
+    var features = document.getElementById("features");
+    newsy_container.appendChild(features);
     console.log('Media Query Matched!');
   }
+  //over 768px
   else{
+    var flex_container = document.getElementById("flex-desktop-grid");
+    var features = document.getElementById("features");
+    flex_container.appendChild(features);
     console.log('check');
   }
 }

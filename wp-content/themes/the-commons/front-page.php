@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="newsy-container" id="newsy-container">
-    <div class="flex-desktop-sidebar">
+    <div class="flex-desktop-sidebar" id="flex-desktop-sidebar">
         <div class="grid-item bottom-border" id="blog">
             <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
                 <?php 
@@ -147,7 +147,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-desktop-grid">
+    <div class="flex-desktop-grid" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
             </div>
