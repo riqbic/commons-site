@@ -156,8 +156,7 @@ h3{
 
 .newsy-header-mobile{
     position: fixed;
-    margin-left: 75px;
-    width: 150px;
+    width: 100%;
     background-color: #f2f3ed;
 }
 
@@ -345,6 +344,12 @@ h3{
     position: fixed;
     right: 10px;
     top: 5px;
+}
+
+#title-link-mobile{
+    display: block;
+    width: 150px;
+    margin-left: 75px;
 }
 
 .newsy-container{

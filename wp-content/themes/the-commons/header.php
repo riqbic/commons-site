@@ -45,7 +45,7 @@
 </div>
 
 <div class="newsy-header-mobile hidden-desktop">
-    <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
+    <a id="title-link-mobile" href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
         <div class="title-mobile">The Commons</div>
     </a>
     <div class="hamburger-menu" >
