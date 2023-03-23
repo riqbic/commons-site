@@ -213,7 +213,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                <h3><?php the_title(); ?></h3>
+                                <h4><?php the_title(); ?></h4>
                                     <div class="newsy-small">
                                         <?php the_content(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -249,7 +249,7 @@
                                 //Incremenent blog item count
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h2><?php the_title(); ?></h2>
+                                    <h4><?php the_title(); ?></h4>
                                     <?php if($blogct <= 3) { ?>
                                         <div class="newsy-small">
                                             <?php the_excerpt(); ?>

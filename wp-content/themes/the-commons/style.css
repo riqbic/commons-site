@@ -122,6 +122,17 @@ h3{
     margin: 5px;
 }
 
+h4{
+    font-family: Oswald;
+    font-size: 3rem;
+    margin: 0px;
+    padding-top: 5px;
+    text-align: center;
+    max-width: auto;
+    color: #f2f3ed !important;
+    background-color: #252421;
+}
+
 .blog-thumbnail{
     width: 200px;
     margin: auto;
