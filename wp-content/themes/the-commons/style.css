@@ -78,11 +78,14 @@ body{
 
 .title-mobile{
     font-family: Helmswald-Post;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     white-space: nowrap;
     color: #252421;
+    display: flex;
+    align-items: center;
+    height: 52px;
 }
 
 h1{
@@ -152,7 +155,6 @@ h3{
 }
 
 .newsy-header-mobile{
-    height: 5vh;
     margin-left: 75px;
     width: 150px;
 }
@@ -187,7 +189,6 @@ h3{
     height: 0px;
     width: 100%;
     border-bottom: 3px solid #252421;
-    margin-top: 5px;
     margin-bottom: 20px;
 }
 
@@ -277,11 +278,11 @@ h3{
   }
   .menu__btn {
     position: fixed;
-    top: 20px;
+    top: 0px;
     left: 20px;
     width: 26px;
     height: 26px;
-    padding-top: 20px;
+    padding-top: 26px;
     cursor: pointer;
     z-index: 3;
   }
@@ -335,7 +336,7 @@ h3{
 .account-icon{
     position: absolute;
     right: 10px;
-    top: 0px;
+    top: 5px;
 }
 
 .newsy-container{
