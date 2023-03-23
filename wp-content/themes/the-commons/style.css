@@ -60,7 +60,7 @@ Version: 1.12
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
-        border-bottom: inherit;
+        border-bottom: inherit !important;
     }
 }
 
