@@ -47,6 +47,10 @@ Version: 1.12
     "blog-alt blog-alt"
     "promo-space-2 get-involved" !important; 
     }
+    .flex-mobile{
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+    }
 }
 
 @media (min-width: 769px){
@@ -363,7 +367,6 @@ h3{
 
 .flex-desktop-grid{
     flex: 3;
-    min-width: 507px;
     display: grid;
     grid-auto-rows: minmax(100,auto);
     grid-template-columns: 1fr 1fr; 
