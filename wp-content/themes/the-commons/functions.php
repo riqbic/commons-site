@@ -28,4 +28,7 @@ function load_commons_blog_post($paged = NULL) {
     echo '<h1>'.$title.'</h1><div class="post-conent">'.$content.'</div>';
     wp_die();
 } 
+
+//Add responsive videos in gutenberg
+add_theme_support( 'responsive-embeds' );
 ?>

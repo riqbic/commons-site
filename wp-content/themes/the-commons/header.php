@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <div class="newsy-header hidden-mobile">
     <svg width="100%" height="100%">
         <rect width="100%" height="1" y="50%"
