@@ -414,11 +414,17 @@ h4{
     background-color: #f2f3ed;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid #f2f3ed;
+    border-top: 3px solid #f2f3ed;
+    border-left: 3px solid #f2f3ed;
+    border-right: 1px solid #f2f3ed;
+    border-bottom: 1px solid #f2f3ed;
 }
 
 .grid-item:hover{
-    border: 1px solid #252421;
+    border-top: 3px solid #252421;
+    border-left: 3px solid #252421;
+    border-right: 1px solid #252421;
+    border-bottom: 1px solid #252421;
 }
 
 .bottom-border{
