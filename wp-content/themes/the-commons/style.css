@@ -52,10 +52,15 @@ Version: 1.12
         flex-wrap: nowrap !important;
     }
     .grid-item{
-        border: none !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
     }
     .grid-item:hover{
-        border: none !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: inherit;
     }
 }
 
