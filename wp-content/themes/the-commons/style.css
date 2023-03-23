@@ -32,8 +32,8 @@ Version: 1.12
     .hidden-mobile{
         display: none !important;
     }
-    .shown-mobile{
-        display: block !important;
+    .hidden-desktop{
+        display: none !important;
     }
     h2{
         font-size: 2rem !important;
@@ -265,7 +265,7 @@ h3{
     left: 0 !important;
   }
   .menu__btn {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     width: 26px;
@@ -293,7 +293,7 @@ h3{
   }
   .menu__box {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -100%;
     width: 300px;

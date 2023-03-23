@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<div class="newsy-header-mobile shown-mobile">
+<div class="newsy-header-mobile hidden-desktop">
     <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
         <div class="title-mobile">The Commons</div>
     </a>
