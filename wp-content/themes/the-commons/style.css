@@ -51,6 +51,12 @@ Version: 1.12
         flex-direction: column !important;
         flex-wrap: nowrap !important;
     }
+    .grid-item{
+        border: none !important;
+    }
+    .grid-item:hover{
+        border: none !important;
+    }
 }
 
 @media (min-width: 769px){
