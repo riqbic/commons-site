@@ -67,3 +67,5 @@
         <img src="account_icon.png" alt="My Account" style="width:42px;height:42px;">
     </a>
 </div>
+
+<div class="header-spacer-mobile hidden-desktop"></div>
