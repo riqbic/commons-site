@@ -13,7 +13,7 @@
         style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
         <rect width="1" height="25" x="100%" y="50%"
         style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(-10px,-20px);" />
-      </svg>
+    </svg>
     <div class="header-item-2">
         <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
             <div class="title">The Commons</div>
@@ -25,7 +25,6 @@
         <rect width="1" height="40" x="0" y="50%"
         style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(40px,-5px);" />
     </svg>
-    </div>
     <div class="header-spacer"></div>
 </div>
 
