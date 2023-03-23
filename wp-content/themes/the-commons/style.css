@@ -158,6 +158,8 @@ h3{
     position: fixed;
     width: 100%;
     background-color: #f2f3ed;
+    border-bottom: 4px solid #252421;
+    z-index: 1;
 }
 
 .header-item-1{
@@ -189,14 +191,6 @@ h3{
 .header-spacer-mobile{
     height: 52px;
     margin-bottom: 20px;
-}
-
-.header-border-mobile{
-    position: fixed;
-    margin-top: 52px;
-    height: 0px;
-    width: 100%;
-    border-bottom: 4px solid #252421;
 }
 
 .header-menu{
