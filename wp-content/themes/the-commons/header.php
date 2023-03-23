@@ -69,3 +69,4 @@
 </div>
 
 <div class="header-spacer-mobile hidden-desktop"></div>
+<div class="header-border-mobile hidden-desktop"></div>
