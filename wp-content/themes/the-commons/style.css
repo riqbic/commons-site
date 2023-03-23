@@ -274,7 +274,7 @@ h3{
     width: 26px;
     height: 26px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
   }
   .menu__btn > span,
   .menu__btn > span::before,

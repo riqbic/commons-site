@@ -25,8 +25,9 @@
         <rect width="1" height="40" x="0" y="50%"
         style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(40px,-5px);" />
     </svg>
-    <div class="header-spacer"></div>
 </div>
+
+<div class="header-spacer hidden-mobile"></div>
 
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
