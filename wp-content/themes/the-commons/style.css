@@ -158,6 +158,7 @@ h3{
     position: fixed;
     margin-left: 75px;
     width: 150px;
+    background-color: #f2f3ed;
 }
 
 .header-item-1{
@@ -341,7 +342,7 @@ h3{
   }
 
 .account-icon{
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 5px;
 }
