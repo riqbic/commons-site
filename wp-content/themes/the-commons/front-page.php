@@ -249,7 +249,7 @@
                                 //Incremenent blog item count
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h4><?php the_title(); ?></h4>
+                                    <h3><?php the_title(); ?></h3>
                                     <?php if($blogct <= 3) { ?>
                                         <div class="newsy-small">
                                             <?php the_excerpt(); ?>
