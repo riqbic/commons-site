@@ -442,6 +442,7 @@ h4{
     border-right: 1px solid #f2f3ed;
     border-bottom: 1px solid #f2f3ed;
     filter: grayscale(1);
+    transition: filter .5s;
 }
 
 .grid-item:hover{
