@@ -56,11 +56,16 @@ Version: 1.12
         border-left: none !important;
         border-right: none !important;
     }
-    .grid-item:hover{
+    .grid-item:hover:not(.bottom-border){
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
-        border-bottom: inherit !important;
+        border-bottom: none !important;
+    }
+    .grid-item:hover.bottom-border{
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
     }
 }
 
