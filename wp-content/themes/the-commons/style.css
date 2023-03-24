@@ -59,6 +59,10 @@ Version: 1.12
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
+        filter: grayscale(0) !important;
+    }
+    .grid-item:hover{
+        filter: grayscale(0) !important;
     }
     .grid-item:hover:not(.bottom-border){
         border-top: none !important;
@@ -156,7 +160,6 @@ h4{
 .blog-thumbnail{
     width: 200px;
     margin: auto;
-    filter: grayscale(1);
 }
 
 #close-icon{
@@ -438,6 +441,7 @@ h4{
     border-left: 3px solid #f2f3ed;
     border-right: 1px solid #f2f3ed;
     border-bottom: 1px solid #f2f3ed;
+    filter: grayscale(1);
 }
 
 .grid-item:hover{
@@ -445,6 +449,7 @@ h4{
     border-left: 3px solid #252421;
     border-right: 1px solid #252421;
     border-bottom: 1px solid #252421;
+    filter: grayscale(0);
 }
 
 .bottom-border{
