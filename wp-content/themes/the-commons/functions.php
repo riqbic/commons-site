@@ -29,12 +29,8 @@ function load_commons_blog_post($paged = NULL) {
     wp_die();
 }
 
-add_action('after_setup_theme', 'remove_admin_bar');
-function remove_admin_bar() {
-if (!current_user_can('administrator') && !is_admin()) {
-  show_admin_bar(false);
-}
-}
+//Remove admin bar for all users
+add_filter('show_admin_bar', '__return_false');
 
 //Add responsive videos in gutenberg
 add_theme_support( 'responsive-embeds' );
