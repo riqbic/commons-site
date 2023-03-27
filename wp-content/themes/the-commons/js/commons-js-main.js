@@ -22,7 +22,6 @@ function handleTabletChange(e){
     var blog_alt = document.getElementById("blog-alt");
     newsy_container.appendChild(features);
     flex_desktop_grid.appendChild(blog_alt);
-    console.log('Media Query Matched!');
   }
   //over 768px
   else{
@@ -32,7 +31,6 @@ function handleTabletChange(e){
     var blog_alt = document.getElementById("blog-alt");
     flex_desktop_grid.appendChild(features);
     flex_desktop_sidebar.appendChild(blog_alt);
-    console.log('check');
   }
 }
 
