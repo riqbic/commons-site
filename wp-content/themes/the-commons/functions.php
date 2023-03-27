@@ -27,7 +27,14 @@ function load_commons_blog_post($paged = NULL) {
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
     echo '<h1>'.$title.'</h1><div class="post-conent">'.$content.'</div>';
     wp_die();
-} 
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
+}
 
 //Add responsive videos in gutenberg
 add_theme_support( 'responsive-embeds' );
