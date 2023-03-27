@@ -599,6 +599,6 @@ h4{
     padding: 0 20px !important;
 }
 
-#shop-preview > div > ul > li > .add-to-cart-button{
+#shop-preview > div > ul > li > .add_to_cart_button{
     display: none;
 }
