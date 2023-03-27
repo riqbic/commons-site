@@ -602,3 +602,7 @@ h4{
 #shop-preview > div > ul > li > .add_to_cart_button{
     display: none;
 }
+
+#shop-preview > div > ul > li > a{
+    pointer-events: none;
+}
