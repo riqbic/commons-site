@@ -598,3 +598,7 @@ h4{
 .woocommerce-MyAccount-content{
     padding: 0 20px !important;
 }
+
+#shop-preview > div > ul > li > .add-to-cart-button{
+    display: none;
+}
