@@ -283,13 +283,11 @@
         </div>
         <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
-            <p?>shop</p>
+            <?php do_shortcode('[products limit="4" columns="2" visibility="featured"]'); ?>
             </div>
             <div class="grid-content" id="shop-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('shop',1,1)">
-                <p class="newsy">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
-                </p>
+                <?php do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
             </div>
         </div>
         <div class="grid-item" id="events">
