@@ -34,4 +34,7 @@ add_filter('show_admin_bar', '__return_false');
 
 //Add responsive videos in gutenberg
 add_theme_support( 'responsive-embeds' );
+
+//Add post thumbnails
+add_theme_support( 'post-thumbnails' );
 ?>

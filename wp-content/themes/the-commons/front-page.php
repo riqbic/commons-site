@@ -215,7 +215,8 @@
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                 <h4><?php the_title(); ?></h4>
                                     <div class="newsy-small">
-                                        <?php the_content(); ?>
+                                        <div class="features-thumbnail"><?php echo the_post_thumbnail($size = 'post-thumbnail'); ?></div>
+                                        <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
                                     </div>

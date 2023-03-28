@@ -162,6 +162,11 @@ h4{
     margin: auto;
 }
 
+.features-thumbnail{
+    width: 100%;
+    height: auto;
+}
+
 #close-icon{
     position: absolute;
     cursor: pointer;
