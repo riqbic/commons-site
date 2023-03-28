@@ -158,6 +158,11 @@ h4{
 }
 
 .size-blog-thumbnail{
+    width: 100%;
+    height: auto;
+}
+
+.blog-thumbnail-container{
     width: 200px;
     margin: auto;
 }

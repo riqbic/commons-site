@@ -19,10 +19,11 @@
                             ?>
                             <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
-                                <?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?>
-                                <div class="newsy-small"><?php echo the_excerpt(); ?></div>
-                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                READ MORE
+                                <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
+                                <div class="newsy-small"><?php echo the_excerpt(); ?>
+                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                    READ MORE
+                                </div>
                             </div>
                             <?php 
                         }
@@ -213,11 +214,12 @@
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
-                                    <div class="newsy-small"><?php echo the_excerpt(); ?></div>
-                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                    READ MORE
+                                    <div class="newsy-small"><?php echo the_excerpt(); ?>
+                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                        READ MORE
+                                    </div>
                                 </div>
-                                <?php 
+                                <?php
                             }
                         } else { ?>
                             <p>There are no posts to show right now.</p>
