@@ -172,6 +172,18 @@ h4{
     height: auto;
 }
 
+.features-thumbnail-container{
+    background-color: #252421;
+    padding: 10px;
+}
+
+.features-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+
 #close-icon{
     position: absolute;
     cursor: pointer;

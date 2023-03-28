@@ -212,8 +212,11 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <h4><?php the_title(); ?></h4>
-                                    <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
+                                    <h4>FEATURES</h4>
+                                    <div class="features-thumbnail-container">
+                                        <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
+                                        <h3 class="features-title"><?php the_title(); ?></h3>
+                                    </div>
                                     <div class="newsy-small"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
