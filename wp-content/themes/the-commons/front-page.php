@@ -17,9 +17,9 @@
                         while($posts_query->have_posts() ) {
                             $posts_query->the_post(); 
                             ?>
-                            <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                            <h3><?php the_title(); ?></h3>
-                            <div class="blog-thumbnail"><?php echo the_post_thumbnail($size = 'post-thumbnail'); ?></div>
+                            < class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                                <h3><?php the_title(); ?></h3>
+                                <?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?>
                                 <div class="newsy-small">
                                     <?php the_excerpt(); ?>
                                     <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -213,13 +213,11 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                <h4><?php the_title(); ?></h4>
-                                    <div class="newsy-small">
-                                        <div class="features-thumbnail"><?php echo the_post_thumbnail($size = 'post-thumbnail'); ?></div>
-                                        <?php the_excerpt(); ?>
-                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                        READ MORE
-                                    </div>
+                                    <h4><?php the_title(); ?></h4>
+                                    <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
+                                    <?php the_excerpt(); ?>
+                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                    READ MORE
                                 </div>
                                 <?php 
                             }

@@ -157,12 +157,12 @@ h4{
     background-color: #252421;
 }
 
-.blog-thumbnail{
+.size-blog-thumbnail{
     width: 200px;
     margin: auto;
 }
 
-.features-thumbnail{
+.size-features-thumbnail{
     width: 100%;
     height: auto;
 }
