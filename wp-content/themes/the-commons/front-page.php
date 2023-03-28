@@ -17,14 +17,12 @@
                         while($posts_query->have_posts() ) {
                             $posts_query->the_post(); 
                             ?>
-                            < class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                            <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
                                 <?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?>
-                                <div class="newsy-small">
-                                    <?php the_excerpt(); ?>
-                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                    READ MORE
-                                </div>
+                                <?php the_excerpt(); ?>
+                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                READ MORE
                             </div>
                             <?php 
                         }
