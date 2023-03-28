@@ -20,7 +20,7 @@
                             <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
                                 <?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?>
-                                <p class="newsy-small"><?php the_excerpt(); ?></p>
+                                <p class="newsy-small"><?php echo the_excerpt(); ?></p>
                                 <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                 READ MORE
                             </div>
@@ -213,7 +213,7 @@
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
-                                    <p class="newsy-small"><?php the_excerpt(); ?></p>
+                                    <p class="newsy-small"><?php echo the_excerpt(); ?></p>
                                     <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                     READ MORE
                                 </div>
