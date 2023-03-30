@@ -37,6 +37,8 @@ Version: 1.14
     }
     .blog-item > h3{
         color: #f2f3ed !important;
+        border-bottom: 1px solid #f2f3ed;
+        padding-bottom: 10px;
     }
     h4{
         font-size: 3rem !important;
@@ -590,7 +592,7 @@ h4{
     .more-posts-toggle.is-active span.chevron {
         transform: scale(-1);
     }
-    .blog-flex-container .blog-sidebar {
+    .blog-sidebar {
         max-height: 0; /*using height: 0 to height: auto; doesnt allow the transition animation*/
         overflow: hidden;
         transition: .2s max-height;
@@ -599,9 +601,10 @@ h4{
         background: #252421;
         z-index: 1;
     }
-    .blog-flex-container .blog-sidebar.is-active {
+    .blog-sidebar.is-active {
         max-height: 999px;
         z-index: 1;
+        box-shadow: 0 5px 10px #616161;
     }
 }
 
