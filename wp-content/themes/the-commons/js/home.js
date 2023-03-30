@@ -11,9 +11,10 @@
             $this.find('.toggle-text').text(text == "Show More Posts" ? "Collapse Posts" : "Show More Posts");
             //Toggle the sidebar to expand or contract
             $(this).parent().find('.blog-sidebar').toggleClass('is-active');
-
-            var active_blog = document.getElementsByClassName("blog-item is-active")[0]
-            active_blog.scrollIntoView();
+            if(text==="Show More Posts"){
+                var active_blog = document.getElementsByClassName("blog-item is-active")[0]
+                active_blog.scrollIntoView({block:"center"});
+            }
         });
         //Reset toggle when close button is clicked
         $('#popout-container').on('click','#close-icon,.blog-item',function() {
