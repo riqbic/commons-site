@@ -14,9 +14,12 @@
             console.log(text);
             if(text == "Show More Posts"){
                 console.log("check");
-                var active_blog = document.getElementsByClassName("blog-item is-active")[0]
+                var active_blog = document.getElementsByClassName("blog-item is-active")[0];
                 active_blog.scrollIntoView({block:"center"});
             }
+            else{
+                var active_blog = document.getElementsByClassName("blog-item is-active")[0];
+            }   
         });
         //Reset toggle when close button is clicked
         $('#popout-container').on('click','#close-icon,.blog-item',function() {
