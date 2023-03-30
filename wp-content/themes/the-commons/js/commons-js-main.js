@@ -153,7 +153,7 @@ function popOut(activeID,call_from_page,transition){
         },10);
     }
 
-    //if the popout container is empty, and we are not currently do a pop out
+    //if the popout container is empty, and we are not currently doing a pop out
     //then add the content to the popout container, and pop it out.
     else if(!popout_container.hasChildNodes() && !popout_state){
         
