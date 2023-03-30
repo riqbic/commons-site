@@ -13,10 +13,11 @@
             $(this).parent().find('.blog-sidebar').toggleClass('is-active');
             if(text == "Show More Posts"){
                 var active_blog = document.getElementsByClassName("blog-item is-active")[0];
-                active_blog.scrollIntoView({ block: "center" });
+                window.scrollTo(0,active_blog.offsetTop());
             }
             else{
                 var active_blog = document.getElementsByClassName("blog-item is-active")[0];
+                window.scrollTo(0, 0);
             }   
         });
         //Reset toggle when close button is clicked
