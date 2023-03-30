@@ -37,8 +37,10 @@ Version: 1.14
     }
     .blog-item > h3{
         color: #f2f3ed !important;
-        border-bottom: 1px solid #f2f3ed;
-        padding-bottom: 10px;
+    }
+    .blog-item{
+        border-bottom: 1px solid #f2f3ed !important;
+        padding: 0px !important;
     }
     h4{
         font-size: 3rem !important;
