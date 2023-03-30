@@ -34,6 +34,10 @@
             <div class="grid-content" id="blog-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog',1,1)">
                 <div class="blog-flex-container flex-row">
+                    <div class="hidden-desktop more-posts-toggle">
+                        <span class="chevron"></span>
+                        <span class="toggle-text">Show More Posts</span><!-- this text is toggle in home.js line 8-->
+                    </div>
                     <div class="blog-sidebar">
                         <?php 
                         //Query 3 most recent posts that are published
@@ -106,6 +110,10 @@
             <div class="grid-content" id="blog-alt-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog-alt',1,1)">
                 <div class="blog-flex-container flex-row">
+                    <div class="hidden-desktop more-posts-toggle">
+                        <span class="chevron"></span>
+                        <span class="toggle-text">Show More Posts</span><!-- this text is toggle in home.js line 8-->
+                    </div>
                     <div class="blog-sidebar">
                     <?php 
                         //Query 3 most recent posts that are published
@@ -231,6 +239,10 @@
             <div class="grid-content" id="features-content">
                 <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('features',1,1)">
                 <div class="blog-flex-container flex-row">
+                    <div class="hidden-desktop more-posts-toggle">
+                        <span class="chevron"></span>
+                        <span class="toggle-text">Show More Posts</span><!-- this text is toggle in home.js line 8-->
+                    </div>
                     <div class="blog-sidebar">
                     <?php 
                         //Query 3 most recent posts that are published

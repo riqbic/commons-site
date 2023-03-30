@@ -5,7 +5,7 @@ Author URI: http://reduker.wordpress.com
 Description: Theme for The Commons Parkour brand
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.12
+Version: 1.13
 */
 
 @font-face {
@@ -552,6 +552,53 @@ h4{
     flex: 1;
     padding: 20px;
 }
+@media all and (max-width: 768px) {
+    .blog-flex-container.flex-row {
+        display: block;
+    }
+    .blog-flex-container .blog-sidebar,
+    .blog-flex-container .blog-single-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .more-posts-toggle {
+        width: 100%;
+        background: #000;
+        color: #fff;
+        height: 65px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+    .more-posts-toggle span.chevron {
+        background-color: #fff;
+        -webkit-mask-image: url(img/chevron-down.svg);
+        mask-image: url(img/chevron-down.svg);
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        transform: scale(1);
+        transition: .2s transform;
+    }
+    .more-posts-toggle.is-active span.chevron {
+        transform: scale(-1);
+    }
+    .blog-flex-container .blog-sidebar {
+        max-height: 0; /*using height: 0 to height: auto; doesnt allow the transition animation*/
+        overflow: hidden;
+        transition: .2s max-height;
+        position: absolute;
+        top: 65px;
+        background: #000;
+    }
+    .blog-flex-container .blog-sidebar.is-active {
+        max-height: 999px;
+    }
+}
+
 #blog-ajax-container.loading {
     filter: blur(2px);
 }

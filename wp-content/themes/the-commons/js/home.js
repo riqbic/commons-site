@@ -1,5 +1,14 @@
 (function($) {
 	$(document).ready(function() {
+        //More posts toggle
+        $('#popout-container').on('click','.more-posts-toggle',function() {
+            var $this = $(this);
+            $this.toggleClass('is-active');
+            var text = $this.find('.toggle-text').text();
+            $this.find('.toggle-text').text(text == "Show More Posts" ? "Collapse Posts" : "Show More Posts");
+            $(this).parent().find('.blog-sidebar').toggleClass('is-active');
+        });
+
         //bool var to see if we loaded a post automatically yet
         var loadedPost = 0;
         //automatically load a post on page load or pop
