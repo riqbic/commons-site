@@ -25,7 +25,7 @@ function load_commons_blog_post($paged = NULL) {
     $post_id = $_GET['post_id'];
     $title = get_the_title($post_id);
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-    echo '<h1>'.$title.'</h1><div class="post-conent">'.$content.'</div>';
+    echo '<h1>'.$title.'</h1><div class="post-content">'.$content.'</div>';
     wp_die();
 }
 
