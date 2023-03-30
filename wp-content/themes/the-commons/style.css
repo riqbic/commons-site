@@ -7,33 +7,26 @@ License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Version: 1.14
 */
-
-@font-face {
-    font-family: Brokenscript;
-    src: url('fonts/brokenscript-boldcond-webfont.woff');
-}
-
 @font-face {
     font-family: "CenturyOldStyleRegular";
-    src: url('webFonts/CenturyOldStyleRegular/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleRegular/font.woff') format('woff');
+    src: url('fonts/webFonts/CenturyOldStyleRegular/font.woff2') format('woff2'), url('fonts/webFonts/CenturyOldStyleRegular/font.woff') format('woff');
   }
   @font-face {
     font-family: "CenturyOldStyleDiscapsRegular(d)";
-    src: url('webFonts/CenturyOldStyleDiscapsRegulard/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleDiscapsRegulard/font.woff') format('woff');
+    src: url('fonts/webFonts/CenturyOldStyleDiscapsRegulard/font.woff2') format('woff2'), url('fonts/webFonts/CenturyOldStyleDiscapsRegulard/font.woff') format('woff');
   }
   @font-face {
     font-family: "CenturyOldStyleSmallCapsRegular";
-    src: url('webFonts/CenturyOldStyleSmallCapsRegular/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleSmallCapsRegular/font.woff') format('woff');
+    src: url('fonts/webFonts/CenturyOldStyleSmallCapsRegular/font.woff2') format('woff2'), url('fonts/webFonts/CenturyOldStyleSmallCapsRegular/font.woff') format('woff');
   }
   @font-face {
     font-family: "CenturyOldStyleRegularItalic";
-    src: url('webFonts/CenturyOldStyleRegularItalic/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleRegularItalic/font.woff') format('woff');
+    src: url('fonts/webFonts/CenturyOldStyleRegularItalic/font.woff2') format('woff2'), url('fonts/webFonts/CenturyOldStyleRegularItalic/font.woff') format('woff');
   }
   @font-face {
     font-family: "CenturyOldStyleBold";
-    src: url('webFonts/CenturyOldStyleBold/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleBold/font.woff') format('woff');
+    src: url('fonts/webFonts/CenturyOldStyleBold/font.woff2') format('woff2'), url('fonts/webFonts/CenturyOldStyleBold/font.woff') format('woff');
   }
-  
 
 @font-face {
     font-family: Helmswald-Post;
