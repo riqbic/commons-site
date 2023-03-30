@@ -14,9 +14,26 @@ Version: 1.14
 }
 
 @font-face {
-    font-family: Century-Old-Style;
-    src: url('fonts/century_old_style_std_bold-webfont.woff');
-}
+    font-family: "CenturyOldStyleRegular";
+    src: url('webFonts/CenturyOldStyleRegular/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleRegular/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "CenturyOldStyleDiscapsRegular(d)";
+    src: url('webFonts/CenturyOldStyleDiscapsRegulard/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleDiscapsRegulard/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "CenturyOldStyleSmallCapsRegular";
+    src: url('webFonts/CenturyOldStyleSmallCapsRegular/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleSmallCapsRegular/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "CenturyOldStyleRegularItalic";
+    src: url('webFonts/CenturyOldStyleRegularItalic/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleRegularItalic/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "CenturyOldStyleBold";
+    src: url('webFonts/CenturyOldStyleBold/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleBold/font.woff') format('woff');
+  }
+  
 
 @font-face {
     font-family: Helmswald-Post;
@@ -127,7 +144,7 @@ body{
 }
 
 h1{
-    font-family: Century-Old-Style;
+    font-family: CenturyOldStyleDiscapsRegular(d);
     font-size: 3rem;
     margin: 0;
     max-width: auto;
@@ -149,7 +166,7 @@ h2{
 }
 
 h3{
-    font-family: Century-Old-Style;
+    font-family: CenturyOldStyleSmallCapsRegular;
     font-size: 2rem;
     text-align: center;
     color: #252421;
@@ -537,7 +554,7 @@ h4{
     box-sizing: border-box;
     display: none;
     position: absolute;
-    background-color: #F2F3ED;
+    background-color: #f2f3ed;
     border: 2px solid #252421;
     z-index: 1;
 }
@@ -635,13 +652,13 @@ h4{
 
 .newsy{
     text-align: justify;
-    font-family: Century-Old-Style;
+    font-family: CenturyOldStyleRegular;
     font-size: 1rem;
     color: #252421;
 }
 .newsy-small{
     text-align: justify;
-    font-family: Century-Old-Style;
+    font-family: CenturyOldStyleRegular;
     font-size: .7rem;
     color: #252421;
 }

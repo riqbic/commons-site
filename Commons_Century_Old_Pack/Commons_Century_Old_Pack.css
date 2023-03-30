@@ -1,0 +1,55 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Century Old Style Discaps Regular (d) by URW Type Foundry
+ * URL: https://www.myfonts.com/products/dc-d-regular-century-old-style-329156
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Century Old Style Regular by URW Type Foundry
+ * URL: https://www.myfonts.com/products/t-regular-century-old-style-329141
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Century Old Style Small Caps Regular by URW Type Foundry
+ * URL: https://www.myfonts.com/products/sc-t-regular-century-old-style-329161
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Century Old Style Regular Italic by URW Type Foundry
+ * URL: https://www.myfonts.com/products/t-regular-italic-century-old-style-329151
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ *
+ * Webfont: Century Old Style Bold by URW Type Foundry
+ * URL: https://www.myfonts.com/products/t-bold-century-old-style-329147
+ * Copyright: Copyright © 2023 Monotype Imaging Inc. All rights reserved.
+ * 
+ * © 2023 MyFonts Inc. */
+
+
+  
+@font-face {
+  font-family: "CenturyOldStyleRegular";
+  src: url('webFonts/CenturyOldStyleRegular/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleRegular/font.woff') format('woff');
+}
+@font-face {
+  font-family: "CenturyOldStyleDiscapsRegular(d)";
+  src: url('webFonts/CenturyOldStyleDiscapsRegulard/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleDiscapsRegulard/font.woff') format('woff');
+}
+@font-face {
+  font-family: "CenturyOldStyleSmallCapsRegular";
+  src: url('webFonts/CenturyOldStyleSmallCapsRegular/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleSmallCapsRegular/font.woff') format('woff');
+}
+@font-face {
+  font-family: "CenturyOldStyleRegularItalic";
+  src: url('webFonts/CenturyOldStyleRegularItalic/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleRegularItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: "CenturyOldStyleBold";
+  src: url('webFonts/CenturyOldStyleBold/font.woff2') format('woff2'), url('webFonts/CenturyOldStyleBold/font.woff') format('woff');
+}
+
