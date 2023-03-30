@@ -597,6 +597,7 @@ h4{
     }
     .blog-flex-container .blog-sidebar.is-active {
         max-height: 999px;
+        z-index: 1;
     }
 }
 
