@@ -12,6 +12,12 @@
             //Toggle the sidebar to expand or contract
             $(this).parent().find('.blog-sidebar').toggleClass('is-active');
         });
+        //Reset toggle when close button is clicked
+        $('#popout-container').on('click','#close-icon',function() {
+            $('.more-posts-toggle,.blog-sidebar').removeClass('is-active');
+            $('.more-posts-toggle').find('.toggle-text').text('Show More Posts');
+        });
+        
 
         //bool var to see if we loaded a post automatically yet
         var loadedPost = 0;
