@@ -59,7 +59,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
-                                    <div class="newsy-small">
+                                    <div class="newsy-small hidden-mobile">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -135,7 +135,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
-                                    <div class="newsy-small">
+                                    <div class="newsy-small hidden-mobile">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -225,7 +225,7 @@
                                         <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
                                         <h3 class="features-title" style="color: f2f3ed;"><?php the_title(); ?></h3>
                                     </div>
-                                    <div class="newsy-small"><?php echo the_excerpt(); ?>
+                                    <div class="newsy-small hidden-mobile"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
                                     </div>
