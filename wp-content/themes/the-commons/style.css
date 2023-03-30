@@ -619,8 +619,13 @@ h4{
     margin-right: 5px;
     padding-bottom: 10px;
     padding-top: 5px;
-    border-bottom: 1px solid #252421 !important;
+    border-bottom: 1px solid #252421;
 }
+
+.blog-item:last-child{
+    border-bottom: none;
+}
+
 .blog-item:hover{
     background-color: #c4c2c1;
 }
