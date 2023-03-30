@@ -136,6 +136,10 @@ body{
     height: 52px;
 }
 
+p{
+    font-family: CenturyOldStyleRegular;
+}
+
 h1{
     font-family: CenturyOldStyleDiscapsRegular;
     font-size: 3rem;
