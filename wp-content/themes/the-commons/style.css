@@ -35,6 +35,9 @@ Version: 1.14
     h2{
         font-size: 2rem !important;
     }
+    .blog-item > h3{
+        color: #f2f3ed !important;
+    }
     h4{
         font-size: 3rem !important;
         padding-top: 10px !important;
@@ -564,8 +567,8 @@ h4{
     }
     .more-posts-toggle {
         width: 100%;
-        background: #000;
-        color: #fff;
+        background: #252421;
+        color: #f2f3ed;
         height: 65px;
         padding: 0 20px;
         display: flex;
@@ -575,7 +578,7 @@ h4{
         box-sizing: border-box;
     }
     .more-posts-toggle span.chevron {
-        background-color: #fff;
+        background-color: #f2f3ed;
         -webkit-mask-image: url(img/chevron-down.svg);
         mask-image: url(img/chevron-down.svg);
         width: 25px;
@@ -593,7 +596,8 @@ h4{
         transition: .2s max-height;
         position: absolute;
         top: 65px;
-        background: #000;
+        background: #252421;
+        z-index: 1;
     }
     .blog-flex-container .blog-sidebar.is-active {
         max-height: 999px;
