@@ -15,7 +15,7 @@
             if(text == "Show More Posts"){
                 console.log("check");
                 var active_blog = document.getElementsByClassName("blog-item is-active")[0];
-                active_blog.scrollIntoView({block:"center"});
+                active_blog.scrollIntoView();
             }
             else{
                 var active_blog = document.getElementsByClassName("blog-item is-active")[0];
