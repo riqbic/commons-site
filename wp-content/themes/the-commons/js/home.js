@@ -1,11 +1,15 @@
 (function($) {
 	$(document).ready(function() {
-        //More posts toggle
+        //More posts toggle for blog sidebar
         $('#popout-container').on('click','.more-posts-toggle',function() {
             var $this = $(this);
+            //Toggle the toggle itself to be active or not
             $this.toggleClass('is-active');
+            // Toggle the text in the toggle
+            // The toggle text should match what is in the <span class="toggle-text"></span> on front-page.php
             var text = $this.find('.toggle-text').text();
             $this.find('.toggle-text').text(text == "Show More Posts" ? "Collapse Posts" : "Show More Posts");
+            //Toggle the sidebar to expand or contract
             $(this).parent().find('.blog-sidebar').toggleClass('is-active');
         });
 
