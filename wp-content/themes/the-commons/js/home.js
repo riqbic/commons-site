@@ -14,16 +14,13 @@
             if(text == "Show More Posts"){
                 var active_blog = document.getElementsByClassName("blog-item is-active")[0];
                 window.scrollTo(0,active_blog.offsetTop);
-            }
-            // else{
-            //     var active_blog = document.getElementsByClassName("blog-item is-active")[0];
-            //     window.scrollTo(0, 0);
-            // }   
+            } 
         });
         //Reset toggle when close button is clicked
         $('#popout-container').on('click','#close-icon,.blog-item',function() {
             $('.more-posts-toggle,.blog-sidebar').removeClass('is-active');
             $('.more-posts-toggle').find('.toggle-text').text('Show More Posts');
+            window.scrollTo(0,0);
         });
         
 
