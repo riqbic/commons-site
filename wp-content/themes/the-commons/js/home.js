@@ -13,6 +13,7 @@
             $(this).parent().find('.blog-sidebar').toggleClass('is-active');
             console.log(text);
             if(text == "Show More Posts"){
+                console.log("check");
                 var active_blog = document.getElementsByClassName("blog-item is-active")[0]
                 active_blog.scrollIntoView({block:"center"});
             }
