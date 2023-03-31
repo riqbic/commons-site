@@ -32,7 +32,7 @@
                     <?php } ?>
             </div>
             <div class="grid-content" id="blog-content">
-                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog',1,1)">
+                <span class="close" onclick="popOut('blog',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
