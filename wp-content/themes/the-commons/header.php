@@ -62,9 +62,9 @@
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">
                 <?php if(is_user_logged_in()) {
-                echo "My Account";
+                echo 'My Account';
                 } else {
-                echo "Login/Register";
+                echo 'Login/Register';
                 }?>
             </a></li>
         </ul>
