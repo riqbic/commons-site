@@ -96,7 +96,7 @@ Version: 1.14
         border-right: none !important;
     }
     .blog-close:before, .blog-close:after{
-        background-color: #f2f3ed;
+        background-color: #f2f3ed !important;
     }
 }
 

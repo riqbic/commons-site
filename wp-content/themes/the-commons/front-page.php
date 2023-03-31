@@ -289,7 +289,7 @@
             <p> get involved </p>
             </div>
             <div class="grid-content" id="get-involved-content">
-                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('get-involved',1,1)">
+                <span class="close blog-close" onclick="popOut('get-involved',1,1)"></span>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
@@ -300,7 +300,7 @@
             <?php echo do_shortcode('[products limit="4" columns="2" visibility="featured"]'); ?>
             </div>
             <div class="grid-content" id="shop-content">
-                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('shop',1,1)">
+            <span class="close blog-close" onclick="popOut('shop',1,1)"></span>
                 <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
             </div>
         </div>
@@ -309,7 +309,7 @@
             <p>events</p>
             </div>
             <div class="grid-content" id="events-content">
-                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('events',1,1)">
+                <span class="close blog-close" onclick="popOut('events',1,1)"></span>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
