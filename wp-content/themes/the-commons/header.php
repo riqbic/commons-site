@@ -60,7 +60,13 @@
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">
+                <?php if(is_user_logged_in()) {
+                echo "My Account";
+                } else {
+                echo "Login/Register";
+                }?>
+            </a></li>
         </ul>
     </div>
     <a class="account-icon" href="https://thecommons.boston/?page_id=11">
