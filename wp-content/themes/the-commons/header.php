@@ -39,7 +39,13 @@
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=events">Events</a></li>
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
         <li class="menu-spacer"></li>
-        <li class="account menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=11">My Account</a></li>
+        <li class="account menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=11">
+            <?php if(is_user_logged_in()) {
+            echo 'My Account';
+            } else {
+            echo 'Login/Register';
+            }?>
+        </a></li>
         </ul>
     </div>
 </div>
@@ -60,13 +66,7 @@
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">
-                <?php if(is_user_logged_in()) {
-                echo 'check';
-                } else {
-                echo 'Login/Register';
-                }?>
-            </a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
         </ul>
     </div>
     <a class="account-icon" href="https://thecommons.boston/?page_id=11">
