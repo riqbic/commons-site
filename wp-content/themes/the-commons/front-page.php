@@ -32,7 +32,7 @@
                     <?php } ?>
             </div>
             <div class="grid-content" id="blog-content">
-                <span class="close" onclick="popOut('blog',1,1)"></span>
+                <span class="close blog-close" onclick="popOut('blog',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
@@ -108,7 +108,7 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="blog-alt-content">
-                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('blog-alt',1,1)">
+            <span class="close blog-close" onclick="popOut('blog-alt',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
@@ -237,7 +237,7 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="features-content">
-                <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('features',1,1)">
+                <span class="close blog-close" onclick="popOut('features',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>

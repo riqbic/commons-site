@@ -95,6 +95,9 @@ Version: 1.14
         border-left: none !important;
         border-right: none !important;
     }
+    .blog-close:before, .blog-close:after{
+        background-color: #f2f3ed;
+    }
 }
 
 @media (min-width: 769px){
@@ -230,11 +233,12 @@ h4{
 
 .close {
     position: absolute;
-    right: 32px;
-    top: 32px;
+    right: 10px;
+    top: 10px;
     width: 32px;
     height: 32px;
     opacity: 1;
+    cursor: pointer;
   }
   .close:hover {
     opacity: 1;
