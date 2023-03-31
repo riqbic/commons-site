@@ -56,7 +56,7 @@
 
         <ul class="menu__box">
             <li><a class ="menu__item" href="https://thecommons.boston/">Home</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=8">Market</a></li>
+            <li><a class ="menu__item" href="https://thecommons.boston/?pop=shop">Market</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
             <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
