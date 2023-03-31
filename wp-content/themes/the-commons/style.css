@@ -230,6 +230,7 @@ h4{
 
 .transitions{
     transition: all 0.75s ease;
+    transition-delay: .25s;
 }
 
 .newsy-header{
@@ -510,7 +511,7 @@ h4{
     border-top: 1px solid #252421;
     border-left: 1px solid #252421;
     border-right: 3px solid #252421;
-    border-bottom: 3px solid #252421;
+    border-bottom: 3px solid #252421 !important;
     border-radius: 10px;
     filter: grayscale(0);
 }
