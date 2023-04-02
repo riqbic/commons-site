@@ -107,6 +107,23 @@ function resize(){
     }
 }
 
+function menuHandler(activeID){
+    var popout_container = document.getElementById("popout-container");
+
+    if (activeID=="home"){
+        popOut(popout_container.firstChild.id,1,1);
+    }
+    else if (popout_container.hasChildNodes()){
+        popOut(popout_container.firstChild.id,1,1);
+        setTimeout(function(){
+            popOut(activeID,1,1);
+        },500);
+    }
+    else{
+        popOut(activeID,1,1);
+    }
+}
+
 
 //popOut(the ID of the grid item being popped out, did the function call come from the page? 0 or 1, should the transition play? 0 or 1)
 function popOut(activeID,call_from_page,transition){
