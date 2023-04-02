@@ -170,7 +170,7 @@ function popOut(activeID,call_from_page,transition){
         setTimeout(function(){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
-            active_element.style.display = "none";
+            active_element.style.visibility = "hidden";
             grid_container.style.visibility = "visible";
             push_state = 1;
         },10);
@@ -190,7 +190,7 @@ function popOut(activeID,call_from_page,transition){
 
         popout_state = 1;
         resetPopoutSize(activeID);
-        popout_container.style.display = "block";
+        popout_container.style.visibility = "visible";
         grid_container.style.visibility = "hidden";
         opacityToggle("0.2");
         popout_container.appendChild(active_element);
