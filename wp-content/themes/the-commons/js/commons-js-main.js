@@ -202,6 +202,7 @@ function popOut(activeID,call_from_page,transition){
             var scaleY = newsy_container.offsetHeight/popout_container.style.height;
             var translateX = newsy_container.offsetLeft;
             var translateY = newsy_container.offsetTop;
+            console.log("matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")");
 
             popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
         },10);
@@ -225,6 +226,8 @@ function resetPopoutSize(activeID){
     var scaleY = grid_container.offsetHeight/popout_container.style.height;
     var translateX = grid_container.offsetLeft;
     var translateY = grid_container.offsetTop;
+
+    console.log("matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")");
 
     popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
 }
