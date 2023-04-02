@@ -111,7 +111,7 @@ function menuHandler(activeID){
     var url = window.location.href.split('?')[0];
     var popout_container = document.getElementById("popout-container");
 
-    console.log(url)
+    console.log(url);
     if (url!=='https://thecommons.boston'){
         window.location.href='https://thecommons.boston?pop='+activeID;
     }
