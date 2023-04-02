@@ -603,10 +603,10 @@ h4{
     border: 2px solid red;
     border-radius: 10px;
     z-index: 1;
-    left: 0px;
-    top: 0px;
-    width: 100px;
-    height: 100px;
+    left: 0px !important;
+    top: 0px !important;
+    width: 100px !important;
+    height: 100px !important;
     transform-origin: top left;
     transform-box: border-box;
 }
