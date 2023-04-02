@@ -143,6 +143,7 @@ function popOut(activeID,call_from_page,transition){
     var active_element = document.getElementById(activeID+"-content");
     var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
+    var popout_content_wrapper = document.getElementById("popout-content-wrapper");
 
     //turn on transitions if specified in params
     if(transition){
@@ -197,7 +198,7 @@ function popOut(activeID,call_from_page,transition){
         popout_container.style.visibility = "visible";
         grid_container.style.visibility = "visible";
         opacityToggle("0.2");
-        popout_container.appendChild(active_element);
+        popout_content_wrapper.appendChild(active_element);
         active_element.style.visibility = "visible";
         
         //the setTimeout just forces this code to run syncronously
