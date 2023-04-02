@@ -32,11 +32,11 @@
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
-        <li class="menu-item" onclick="menuHandler('home')">Home</li>
+        <li class="menu-item" onclick="menuHandler('')">Home</li>
         <li class="menu-item" onclick="menuHandler('shop')">Market</li>
-        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=features">Features</a></li>
-        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
-        <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?pop=events">Events</a></li>
+        <li class="menu-item" onclick="menuHandler('features')">Features</li>
+        <li class="menu-item" onclick="menuHandler('blog')">Blog</li>
+        <li class="menu-item" onclick="menuHandler('events')">Events</li>
         <li class="menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
         <li class="menu-spacer"></li>
         <li class="account menu-item"><a class ="menu-item" href="https://thecommons.boston/?page_id=11">

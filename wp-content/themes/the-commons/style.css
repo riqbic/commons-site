@@ -371,6 +371,7 @@ h4{
     font-size: 1.5rem;
     text-decoration: none;
     color: #252421;
+    cursor: pointer;
 }
 
 .menu-item:hover{

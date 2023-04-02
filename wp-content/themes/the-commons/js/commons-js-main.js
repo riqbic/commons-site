@@ -108,16 +108,21 @@ function resize(){
 }
 
 function menuHandler(activeID){
+    var url = window.location.href.split('?')[0];
     var popout_container = document.getElementById("popout-container");
 
-    if (activeID=="home"){
+    if (url!='https://thecommons.boston'){
+        window.location.href='https://thecommons.boston'+activeID;
+    }
+
+    if (activeID==""){
         popOut(popout_container.firstChild.id,1,1);
     }
     else if (popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
         setTimeout(function(){
             popOut(activeID,1,1);
-        },500);
+        },1000);
     }
     else{
         popOut(activeID,1,1);
