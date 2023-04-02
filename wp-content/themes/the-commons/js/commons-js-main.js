@@ -63,12 +63,11 @@ function onPageLoad() {
         grid_container.style.visibility = "hidden";
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
-
-        var scaleX = newsy_container.offsetWidth/popout_container.style.width;
-        var scaleY = newsy_container.offsetHeight/popout_container.style.height;
-        var translateX = newsy_container.offsetLeft;
-        var translateY = newsy_container.offsetTop;
-        popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")"
+        popout_container.style.width = newsy_container.offsetWidth-20+"px";
+        popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
+        popout_container.style.height = "auto";
+        popout_container.style.top = newsy_container.offsetTop+10+"px";
+        popout_container.style.left = newsy_container.offsetLeft+10+"px";
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
@@ -100,13 +99,9 @@ function resize(){
     var about_us_grid_item = document.getElementById("about-us");
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
-    var scaleX = newsy_container.offsetWidth/100;
-    var scaleY = newsy_container.offsetHeight/100;
-    var translateX = newsy_container.offsetLeft;
-    var translateY = newsy_container.offsetTop;
-    console.log("matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")");
-    popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
-
+    popout_container.style.left = newsy_container.offsetLeft+10+"px";
+    popout_container.style.width = newsy_container.offsetWidth-20+"px";
+    popout_container.style.top = newsy_container.offsetTop+10+"px";
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
@@ -121,10 +116,10 @@ function menuHandler(activeID){
         window.location.href='https://thecommons.boston?pop='+activeID;
     }
     else if (activeID==""){
-        popOut(popout_container.firstChild.firstChild.id,1,1);
+        popOut(popout_container.firstChild.id,1,1);
     }
-    else if (popout_container.firstChild.hasChildNodes()){
-        popOut(popout_container.firstChild.firstChild.id,1,1);
+    else if (popout_container.hasChildNodes()){
+        popOut(popout_container.firstChild.id,1,1);
         setTimeout(function(){
             popOut(activeID,1,1);
         },1000);
@@ -143,7 +138,6 @@ function popOut(activeID,call_from_page,transition){
     var active_element = document.getElementById(activeID+"-content");
     var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
-    var popout_content_wrapper = document.getElementById("popout-content-wrapper");
 
     //turn on transitions if specified in params
     if(transition){
@@ -153,7 +147,7 @@ function popOut(activeID,call_from_page,transition){
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
-    if(popout_container.firstChild.hasChildNodes() && popout_state){
+    if(popout_container.hasChildNodes() && popout_state){
         
          //Add which div id active
          popout_container.classList.remove("active-"+activeID);
@@ -165,7 +159,7 @@ function popOut(activeID,call_from_page,transition){
 
         popout_state = 0;
         push_state = 0;
-        var contentID = popout_container.firstChild.firstChild.id;
+        var contentID = popout_container.firstChild.id;
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
@@ -173,9 +167,9 @@ function popOut(activeID,call_from_page,transition){
         opacityToggle("1");
         
         setTimeout(function(){
-            popout_container.style.visibility = "visible";
+            popout_container.style.display = "none";
             grid_container.appendChild(active_element);
-            active_element.style.visibility = "visible";
+            active_element.style.display = "none";
             grid_container.style.visibility = "visible";
             push_state = 1;
         },10);
@@ -183,7 +177,7 @@ function popOut(activeID,call_from_page,transition){
 
     //if the popout container is empty, and we are not currently doing a pop out
     //then add the content to the popout container, and pop it out.
-    else if(!popout_container.firstChild.hasChildNodes() && !popout_state){
+    else if(!popout_container.hasChildNodes() && !popout_state){
         
         //Remove active div from classlist
         popout_container.classList.add("active-"+activeID);
@@ -195,21 +189,19 @@ function popOut(activeID,call_from_page,transition){
 
         popout_state = 1;
         resetPopoutSize(activeID);
-        popout_container.style.visibility = "visible";
-        grid_container.style.visibility = "visible";
+        popout_container.style.display = "block";
+        grid_container.style.visibility = "hidden";
         opacityToggle("0.2");
-        popout_content_wrapper.appendChild(active_element);
-        active_element.style.visibility = "visible";
+        popout_container.appendChild(active_element);
+        active_element.style.display = "block";
         
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
-            var scaleX = newsy_container.offsetWidth/100; //100 is the width of the popout container, not important but needs to be consistent with stylesheet and not 0
-            var scaleY = newsy_container.offsetHeight/100;
-            var translateX = newsy_container.offsetLeft;
-            var translateY = newsy_container.offsetTop;
-            console.log("matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")");
-
-            popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
+            popout_container.style.width = newsy_container.offsetWidth-20+"px";
+            popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
+            popout_container.style.height = "auto";
+            popout_container.style.top = newsy_container.offsetTop+10+"px";
+            popout_container.style.left = newsy_container.offsetLeft+10+"px";
         },10);
 
         window.scrollTo(0, 0);
@@ -227,12 +219,8 @@ function resetPopoutSize(activeID){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
 
-    var scaleX = grid_container.offsetWidth/100;
-    var scaleY = grid_container.offsetHeight/100;
-    var translateX = grid_container.offsetLeft;
-    var translateY = grid_container.offsetTop;
-
-    console.log("matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")");
-
-    popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
+    popout_container.style.width = grid_container.offsetWidth+"px";
+    popout_container.style.height = grid_container.offsetHeight+"px";
+    popout_container.style.top = grid_container.offsetTop+"px";
+    popout_container.style.left = grid_container.offsetLeft+"px";
 }
