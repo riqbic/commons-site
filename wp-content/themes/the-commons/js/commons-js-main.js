@@ -210,7 +210,7 @@ function popOut(activeID,call_from_page,transition){
         //add the content when animation is done
         setTimeout(function(){
             popout_container.appendChild(active_element);
-        },1000);
+        },980);
 
         window.scrollTo(0, 0);
     }
