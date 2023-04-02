@@ -168,9 +168,9 @@ function popOut(activeID,call_from_page,transition){
         opacityToggle("1");
         
         setTimeout(function(){
-            popout_container.style.display = "none";
+            popout_container.style.visibility = "visible";
             grid_container.appendChild(active_element);
-            active_element.style.visibility = "hidden";
+            active_element.style.visibility = "visible";
             grid_container.style.visibility = "visible";
             push_state = 1;
         },10);
@@ -191,10 +191,10 @@ function popOut(activeID,call_from_page,transition){
         popout_state = 1;
         resetPopoutSize(activeID);
         popout_container.style.visibility = "visible";
-        grid_container.style.visibility = "hidden";
+        grid_container.style.visibility = "visible";
         opacityToggle("0.2");
         popout_container.appendChild(active_element);
-        active_element.style.display = "block";
+        active_element.style.visibility = "visible";
         
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
