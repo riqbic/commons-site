@@ -198,8 +198,8 @@ function popOut(activeID,call_from_page,transition){
         
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
-            var scaleX = newsy_container.offsetWidth/popout_container.style.width;
-            var scaleY = newsy_container.offsetHeight/popout_container.style.height;
+            var scaleX = newsy_container.offsetWidth/100; //100 is the width of the popout container, not important but needs to be consistent with stylesheet and not 0
+            var scaleY = newsy_container.offsetHeight/100;
             var translateX = newsy_container.offsetLeft;
             var translateY = newsy_container.offsetTop;
             console.log("matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")");
@@ -222,8 +222,8 @@ function resetPopoutSize(activeID){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
 
-    var scaleX = grid_container.offsetWidth/popout_container.style.width;
-    var scaleY = grid_container.offsetHeight/popout_container.style.height;
+    var scaleX = grid_container.offsetWidth/100;
+    var scaleY = grid_container.offsetHeight/100;
     var translateX = grid_container.offsetLeft;
     var translateY = grid_container.offsetTop;
 
