@@ -326,7 +326,7 @@
 
 <!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
 <div class="popout-container" id="popout-container">
-    <div class="popout-content-wrapper" id="popout-content-wrapper"></div>
+    <span class="popout-content-wrapper" id="popout-content-wrapper"></span>
 </div>
 
 <?php get_footer(); ?>
