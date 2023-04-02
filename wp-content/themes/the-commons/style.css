@@ -259,8 +259,7 @@ h4{
   }
 
 .transitions{
-    transition: transform 0.75s ease;
-    transition: opacity 0.75s ease;
+    transition: all 0.75s ease;
     transition-delay: .25s;
 }
 

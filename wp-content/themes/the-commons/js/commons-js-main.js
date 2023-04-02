@@ -115,8 +115,11 @@ function menuHandler(activeID){
     if (url!=='https://thecommons.boston/'){
         window.location.href='https://thecommons.boston?pop='+activeID;
     }
-    else if (activeID==""){
+    else if (activeID=="" && popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
+    }
+    else if (activeID==""){
+        return;
     }
     else if (popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
