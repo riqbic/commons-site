@@ -123,7 +123,7 @@ function menuHandler(activeID){
     else if (activeID==""){
         popOut(popout_container.firstChild.firstChild.id,1,1);
     }
-    else if (popout_container.hasChildNodes()){
+    else if (popout_container.firstChild.hasChildNodes()){
         popOut(popout_container.firstChild.firstChild.id,1,1);
         setTimeout(function(){
             popOut(activeID,1,1);
@@ -153,7 +153,7 @@ function popOut(activeID,call_from_page,transition){
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
-    if(popout_container.hasChildNodes() && popout_state){
+    if(popout_container.firstChild.hasChildNodes() && popout_state){
         
          //Add which div id active
          popout_container.classList.remove("active-"+activeID);
@@ -183,7 +183,7 @@ function popOut(activeID,call_from_page,transition){
 
     //if the popout container is empty, and we are not currently doing a pop out
     //then add the content to the popout container, and pop it out.
-    else if(!popout_container.hasChildNodes() && !popout_state){
+    else if(!popout_container.firstChild.hasChildNodes() && !popout_state){
         
         //Remove active div from classlist
         popout_container.classList.add("active-"+activeID);
