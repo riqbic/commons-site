@@ -195,7 +195,7 @@ function popOut(activeID,call_from_page,transition){
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
         opacityToggle("0.2");
-        popout_container.appendChild(active_element);
+        //popout_container.appendChild(active_element);
         active_element.style.display = "block";
         
         //the setTimeout just forces this code to run syncronously
@@ -206,6 +206,11 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.top = newsy_container.offsetTop+10+"px";
             popout_container.style.left = newsy_container.offsetLeft+10+"px";
         },10);
+
+        //add the content when animation is done
+        setTimeout(function(){
+            popout_container.appendChild(active_element);
+        },1000);
 
         window.scrollTo(0, 0);
     }
