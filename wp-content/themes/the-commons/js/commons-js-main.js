@@ -111,11 +111,10 @@ function menuHandler(activeID){
     var url = window.location.href.split('?')[0];
     var popout_container = document.getElementById("popout-container");
 
-    if (url!='https://thecommons.boston'){
-        window.location.href='https://thecommons.boston'+activeID;
+    if (url!=='https://thecommons.boston'){
+        window.location.href='https://thecommons.boston/'+activeID;
     }
-
-    if (activeID==""){
+    else if (activeID==""){
         popOut(popout_container.firstChild.id,1,1);
     }
     else if (popout_container.hasChildNodes()){
