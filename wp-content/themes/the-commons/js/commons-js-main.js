@@ -63,11 +63,12 @@ function onPageLoad() {
         grid_container.style.visibility = "hidden";
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
-        popout_container.style.width = newsy_container.offsetWidth-20+"px";
-        popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
-        popout_container.style.height = "auto";
-        popout_container.style.top = newsy_container.offsetTop+10+"px";
-        popout_container.style.left = newsy_container.offsetLeft+10+"px";
+
+        var scaleX = newsy_container.offsetWidth/popout_container.style.width;
+        var scaleY = newsy_container.offsetHeight/popout_container.style.height;
+        var translateX = newsy_container.offsetLeft;
+        var translateY = newsy_container.offsetTop;
+        popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")"
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
@@ -191,17 +192,18 @@ function popOut(activeID,call_from_page,transition){
         resetPopoutSize(activeID);
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
-        opacityToggle("0");
+        opacityToggle("0.2");
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
         
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
-            popout_container.style.width = newsy_container.offsetWidth-20+"px";
-            popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
-            popout_container.style.height = "auto";
-            popout_container.style.top = newsy_container.offsetTop+10+"px";
-            popout_container.style.left = newsy_container.offsetLeft+10+"px";
+            var scaleX = newsy_container.offsetWidth/popout_container.style.width;
+            var scaleY = newsy_container.offsetHeight/popout_container.style.height;
+            var translateX = newsy_container.offsetLeft;
+            var translateY = newsy_container.offsetTop;
+
+            popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
         },10);
 
         window.scrollTo(0, 0);
@@ -219,8 +221,10 @@ function resetPopoutSize(activeID){
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
 
-    popout_container.style.width = grid_container.offsetWidth+"px";
-    popout_container.style.height = grid_container.offsetHeight+"px";
-    popout_container.style.top = grid_container.offsetTop+"px";
-    popout_container.style.left = grid_container.offsetLeft+"px";
+    var scaleX = grid_container.offsetWidth/popout_container.style.width;
+    var scaleY = grid_container.offsetHeight/popout_container.style.height;
+    var translateX = grid_container.offsetLeft;
+    var translateY = grid_container.offsetTop;
+
+    popout_container.style.transform = "matrix("+scaleX+",0,0,"+scaleY+","+translateX+","+translateY+")";
 }
