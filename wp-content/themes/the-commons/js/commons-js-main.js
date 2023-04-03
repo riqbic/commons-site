@@ -91,7 +91,7 @@ function transitionToggle(){
     var popout_spacer = document.getElementById("popout-spacer");
     popout_container.classList.remove("transitions");
     newsy_container.classList.remove("transitions");
-    popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+"px";
+    popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
 }
 
 //Resize the popout container (and a few other things) when the page is resized
@@ -101,9 +101,11 @@ function resize(){
     var about_us_grid_item = document.getElementById("about-us");
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
+    var popout_spacer = document.getElementById("popout-spacer");
     popout_container.style.left = newsy_container.offsetLeft+10+"px";
     popout_container.style.width = newsy_container.offsetWidth-20+"px";
     popout_container.style.top = newsy_container.offsetTop+10+"px";
+    popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
@@ -143,6 +145,7 @@ function popOut(activeID,call_from_page,transition){
     var active_element = document.getElementById(activeID+"-content");
     var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
+    var popout_spacer = document.getElementById("popout-spacer");
 
     //turn on transitions if specified in params
     if(transition){
@@ -206,6 +209,9 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.height = "auto";
             popout_container.style.top = newsy_container.offsetTop+30+"px";
             popout_container.style.left = newsy_container.offsetLeft+50+"px";
+            if(!transitions){
+                popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
+            }
         },10);
         window.scrollTo(0, 0);
     }
