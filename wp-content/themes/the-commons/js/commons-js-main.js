@@ -209,7 +209,7 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.height = "auto";
             popout_container.style.top = newsy_container.offsetTop+30+"px";
             popout_container.style.left = newsy_container.offsetLeft+50+"px";
-            if(!transitions){
+            if(!transition){
                 popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
             }
         },10);
