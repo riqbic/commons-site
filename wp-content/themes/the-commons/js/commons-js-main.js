@@ -120,11 +120,11 @@ function menuHandler(activeID){
     var popout_container = document.getElementById("popout-container");
 
     console.log(url);
-    if (url!=='https://thecommons.boston/'){
+    if (url!=='https://thecommons.boston/' && activeID!==''){
         window.location.href='https://thecommons.boston?pop='+activeID;
-        if (url=='https://thecommons.boston?pop='){
-            window.location.href='https://thecommons.boston/';
-        }
+    }
+    else if (url!=='https://thecommons.boston/' && activeID===''){
+        window.location.href='https://thecommons.boston/';
     }
     else if (activeID=="" && popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
