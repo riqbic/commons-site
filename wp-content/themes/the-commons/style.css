@@ -507,28 +507,28 @@ h4{
     background-color: #f2f3ed;
     overflow: hidden;
     cursor: pointer;
-    border-top: 3px solid #f2f3ed;
-    border-left: 3px solid #f2f3ed;
-    border-right: 1px solid #f2f3ed;
-    border-bottom: 1px solid #f2f3ed;
+    border-top: 1px solid #f2f3ed;
+    border-left: 1px solid #f2f3ed;
+    border-right: 3px solid #f2f3ed;
+    border-bottom: 3px solid #f2f3ed;
     filter: grayscale(1);
     transition: filter .5s;
 }
 
 .grid-item:hover{
-    border-top: 3px solid #252421;
-    border-left: 3px solid #252421;
-    border-right: 1px solid #252421;
-    border-bottom: 1px solid #252421;
+    border-top: 1px solid #252421;
+    border-left: 1px solid #252421;
+    border-right: 3px solid #252421;
+    border-bottom: 3px solid #252421;
     border-radius: 10px;
     filter: grayscale(0);
 }
 
 .grid-item:active{
-    border-top: 1px solid #252421;
-    border-left: 1px solid #252421;
-    border-right: 3px solid #252421;
-    border-bottom: 3px solid #252421 !important;
+    border-top: 3px solid #252421;
+    border-left: 3px solid #252421;
+    border-right: 1px solid #252421;
+    border-bottom: 1px solid #252421 !important;
     border-radius: 10px;
     filter: grayscale(0);
 }
