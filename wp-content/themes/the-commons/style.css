@@ -114,6 +114,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #f2f3ed;
+    height: fit-content;
 }
 
 .title{
@@ -596,7 +597,7 @@ h4{
 
 .popout-container{
     box-sizing: border-box;
-    visibility: visible;
+    display: none;
     position: absolute;
     background-color: #f2f3ed;
     border: 2px solid #252421;
