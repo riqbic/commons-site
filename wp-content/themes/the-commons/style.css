@@ -535,7 +535,7 @@ h4{
 
 .bottom-border{
     padding: 5px 5px 10px 5px;
-    border-bottom: 1px solid #252421 !important;
+    border-bottom: 1px solid #252421;
 }
 
 .grid-content{
