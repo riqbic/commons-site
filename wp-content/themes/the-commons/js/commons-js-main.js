@@ -184,6 +184,7 @@ function popOut(activeID,call_from_page,transition){
             active_element.style.display = "none";
             grid_container.style.visibility = "visible";
             push_state = 1;
+            popout_spacer.style.height = 0+"px";
         },10);
     }
 
