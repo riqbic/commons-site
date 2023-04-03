@@ -90,6 +90,7 @@ function transitionToggle(){
     var popout_container = document.getElementById("popout-container");
     popout_container.classList.remove("transitions");
     newsy_container.classList.remove("transitions");
+    popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+"px";
 }
 
 //Resize the popout container (and a few other things) when the page is resized
@@ -207,9 +208,6 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.top = newsy_container.offsetTop+30+"px";
             popout_container.style.left = newsy_container.offsetLeft+50+"px";
         },10);
-        setTimeout(function(){
-            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+"px";
-        },20);
         window.scrollTo(0, 0);
     }
 }
