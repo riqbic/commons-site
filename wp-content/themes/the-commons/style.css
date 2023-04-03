@@ -217,27 +217,12 @@ h4{
     z-index: 2;
 }
 
-#close-icon{
-    position: absolute;
-    cursor: pointer;
-    top: .7em;
-    right: .7em;
-    z-index: 10;
-}
-
-#close-icon-white{
-    position: absolute;
-    cursor: pointer;
-    top: .7em;
-    right: .7em;
-}
-
 .close {
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     opacity: 1;
     cursor: pointer;
   }
@@ -248,8 +233,8 @@ h4{
     position: absolute;
     left: 15px;
     content: ' ';
-    height: 33px;
-    width: 2px;
+    height: 40px;
+    width: 6px;
     background-color: #252421;
   }
   .close:before {

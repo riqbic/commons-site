@@ -196,20 +196,19 @@ function popOut(activeID,call_from_page,transition){
         resetPopoutSize(activeID);
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
-        opacityToggle("0.2");
+        opacityToggle("0.3");
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
         
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
-            popout_container.style.width = newsy_container.offsetWidth-20+"px";
-            //popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
+            popout_container.style.width = newsy_container.offsetWidth-100+"px";
             popout_container.style.height = "auto";
-            popout_container.style.top = newsy_container.offsetTop+10+"px";
-            popout_container.style.left = newsy_container.offsetLeft+10+"px";
+            popout_container.style.top = newsy_container.offsetTop+30+"px";
+            popout_container.style.left = newsy_container.offsetLeft+50+"px";
         },10);
         setTimeout(function(){
-            popout_spacer.style.height = newsy_container.offsetHeight+popout_container.offsetHeight+"px";
+            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+"px";
         },20);
         window.scrollTo(0, 0);
     }
