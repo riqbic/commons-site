@@ -122,6 +122,9 @@ function menuHandler(activeID){
     console.log(url);
     if (url!=='https://thecommons.boston/'){
         window.location.href='https://thecommons.boston?pop='+activeID;
+        if (url=='https://thecommons.boston?pop='){
+            window.location.href='https://thecommons.boston/';
+        }
     }
     else if (activeID=="" && popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
