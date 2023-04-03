@@ -88,6 +88,7 @@ window.addEventListener('transitionend',transitionToggle);
 function transitionToggle(){
     var newsy_container = document.getElementById("newsy-container");
     var popout_container = document.getElementById("popout-container");
+    var popout_spacer = document.getElementById("popout-spacer");
     popout_container.classList.remove("transitions");
     newsy_container.classList.remove("transitions");
     popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+"px";
@@ -142,7 +143,6 @@ function popOut(activeID,call_from_page,transition){
     var active_element = document.getElementById(activeID+"-content");
     var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
-    var popout_spacer = document.getElementById("popout-spacer");
 
     //turn on transitions if specified in params
     if(transition){
