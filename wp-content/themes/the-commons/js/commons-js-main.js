@@ -56,6 +56,7 @@ function onPageLoad() {
     var active_element = document.getElementById(activeID+"-content");
     var full_content = document.getElementsByClassName(activeID+"-content-full");
     var newsy_container = document.getElementById("newsy-container");
+    var popout_spacer = document.getElementById("popout-spacer");
     //pop out the content in the URL parameter
     if (params.getAll("pop").length !== 0){
         popout_state = 1;
@@ -68,6 +69,9 @@ function onPageLoad() {
         popout_container.style.height = "auto";
         popout_container.style.top = newsy_container.offsetTop+10+"px";
         popout_container.style.left = newsy_container.offsetLeft+10+"px";
+        setTimeout(function(){
+            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
+        },10);
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
@@ -209,10 +213,12 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.height = "auto";
             popout_container.style.top = newsy_container.offsetTop+30+"px";
             popout_container.style.left = newsy_container.offsetLeft+50+"px";
-            if(!transition){
-                popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
-            }
         },10);
+        if(!transition){
+            setTimeout(function(){
+                popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
+            },10);
+        }
         window.scrollTo(0, 0);
     }
 }
