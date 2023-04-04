@@ -245,8 +245,7 @@ h4{
   }
 
 .transitions{
-    transition: all 0.75s ease-out;
-    transition-delay: .25s;
+    transition: width 0.75s ease-out, height 0.75s ease-out, top 0.75s ease-out, left 0.75s ease-out, opacity 0.75s ease-out;
 }
 
 .newsy-header{
