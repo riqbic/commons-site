@@ -98,6 +98,12 @@ Version: 1.14
     .blog-close:before, .blog-close:after{
         background-color: #f2f3ed !important;
     }
+    .popout-container{
+        height: 100% !important;
+        width: 100% !important;
+        top: 52px !important;
+        left: 0px !important;
+    }
 }
 
 @media (min-width: 769px){
@@ -185,10 +191,6 @@ h4{
     background-color: #252421;
 }
 
-.blog-preview > h4{
-    border-radius: 10px 10px 0 0;
-}
-
 .size-blog-thumbnail{
     width: 100%;
     height: auto;
@@ -206,7 +208,6 @@ h4{
 
 .features-thumbnail-container{
     background-color: #252421;
-    border-radius: 0 0 10px 10px;
     padding: 10px;
 }
 
@@ -243,10 +244,6 @@ h4{
   .close:after {
     transform: rotate(-45deg);
   }
-
-.transitions{
-    transition: width 0.75s ease-out, height 0.75s ease-out, top 0.75s ease-out, left 0.75s ease-out, opacity 0.75s ease-out;
-}
 
 .newsy-header{
     position: absolute;
@@ -519,7 +516,6 @@ h4{
     border-left: 1px solid #252421;
     border-right: 3px solid #252421;
     border-bottom: 3px solid #252421;
-    border-radius: 10px;
     filter: grayscale(0);
 }
 
@@ -528,7 +524,6 @@ h4{
     border-left: 3px solid #252421;
     border-right: 1px solid #252421;
     border-bottom: 1px solid #252421 !important;
-    border-radius: 10px;
     filter: grayscale(0);
 }
 
@@ -585,7 +580,6 @@ h4{
     position: absolute;
     background-color: #f2f3ed;
     border: 2px solid #252421;
-    border-radius: 10px;
     z-index: 1;
 }
 

@@ -17,6 +17,7 @@ function handleTabletChange(e){
   //(we are under 768px)
   if (e.matches) {
     var newsy_container = document.getElementById("newsy-container");
+    var popout_container = document.getElementById("popout-container");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
     var features = document.getElementById("features");
     var blog_alt = document.getElementById("blog-alt");
@@ -26,6 +27,7 @@ function handleTabletChange(e){
   //over 768px
   else{
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
+    var popout_container = document.getElementById("popout-container");
     var flex_desktop_sidebar = document.getElementById("flex-desktop-sidebar");
     var features = document.getElementById("features");
     var blog_alt = document.getElementById("blog-alt");
@@ -64,11 +66,7 @@ function onPageLoad() {
         grid_container.style.visibility = "hidden";
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
-        popout_container.style.width = newsy_container.offsetWidth-20+"px";
-        popout_container.style.minHeight = newsy_container.offsetHeight-20+"px";
-        popout_container.style.height = "auto";
-        popout_container.style.top = newsy_container.offsetTop+10+"px";
-        popout_container.style.left = newsy_container.offsetLeft+10+"px";
+        setPopoutSize();
         setTimeout(function(){
             popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
         },10);
@@ -106,10 +104,10 @@ function resize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
     var popout_spacer = document.getElementById("popout-spacer");
-    popout_container.style.left = newsy_container.offsetLeft+10+"px";
-    popout_container.style.width = newsy_container.offsetWidth-20+"px";
-    popout_container.style.top = newsy_container.offsetTop+10+"px";
-    popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
+    setPopoutSize();
+    setTimeout(function(){
+        popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
+    },10);
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
@@ -154,39 +152,29 @@ function popOut(activeID,call_from_page,transition){
     var newsy_container = document.getElementById("newsy-container");
     var popout_spacer = document.getElementById("popout-spacer");
 
-    //turn on transitions if specified in params
-    if(transition){
-        popout_container.classList.add("transitions");
-        newsy_container.classList.add("transitions");
-    }
-
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
     if(popout_container.hasChildNodes() && popout_state){
-        
+
          //Add which div id active
          popout_container.classList.remove("active-"+activeID);
 
         //push the history stack, as long as the call came from the user, and not from a history push
-        if(call_from_page && push_state){
+        if(call_from_page){
             history.pushState(activeID,"The Commons","https://thecommons.boston");
         }
 
         popout_state = 0;
-        push_state = 0;
         var contentID = popout_container.firstChild.id;
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
-        resetPopoutSize(activeID);
         opacityToggle("1");
-        
+
         setTimeout(function(){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
-            grid_container.style.visibility = "visible";
-            push_state = 1;
             popout_spacer.style.height = 0+"px";
         },10);
     }
@@ -194,7 +182,7 @@ function popOut(activeID,call_from_page,transition){
     //if the popout container is empty, and we are not currently doing a pop out
     //then add the content to the popout container, and pop it out.
     else if(!popout_container.hasChildNodes() && !popout_state){
-        
+
         //Remove active div from classlist
         popout_container.classList.add("active-"+activeID);
 
@@ -204,25 +192,17 @@ function popOut(activeID,call_from_page,transition){
         }
 
         popout_state = 1;
-        resetPopoutSize(activeID);
         popout_container.style.display = "block";
-        grid_container.style.visibility = "hidden";
         opacityToggle("0.3");
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
-        
+
+        setPopoutSize();
+
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
-            popout_container.style.width = newsy_container.offsetWidth-100+"px";
-            popout_container.style.height = "auto";
-            popout_container.style.top = newsy_container.offsetTop+30+"px";
-            popout_container.style.left = newsy_container.offsetLeft+50+"px";
+            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
         },10);
-        if(!transition){
-            setTimeout(function(){
-                popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
-            },10);
-        }
         window.scrollTo(0, 0);
     }
 }
@@ -242,4 +222,14 @@ function resetPopoutSize(activeID){
     popout_container.style.height = grid_container.offsetHeight+"px";
     popout_container.style.top = grid_container.offsetTop+"px";
     popout_container.style.left = grid_container.offsetLeft+"px";
+}
+
+function setPopoutSize(){
+    var popout_container = document.getElementById("popout-container");
+    var newsy_container = document.getElementById("newsy-container");
+    popout_container.style.position = "absolute";
+    popout_container.style.width = newsy_container.offsetWidth-100+"px";
+    popout_container.style.height = "70vh";
+    popout_container.style.top = newsy_container.offsetTop+30+"px";
+    popout_container.style.left = newsy_container.offsetLeft+50+"px";
 }
