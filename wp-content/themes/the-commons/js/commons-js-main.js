@@ -224,7 +224,7 @@ function setPopoutSize(){
     var newsy_container = document.getElementById("newsy-container");
     popout_container.style.position = "fixed";
     popout_container.style.width = newsy_container.offsetWidth-100+"px";
-    popout_container.style.height = clamp(window.innerHeight*.7+window.scrollY,window.innerHeight*.7,window.innerHeight*.8);
+    popout_container.style.height = clamp(window.innerHeight*.7+window.scrollY,window.innerHeight*.7,window.innerHeight*.8)+"px";
     popout_container.style.top = clamp(200-window.scrollY,100,200)+"px";
     popout_container.style.left = newsy_container.offsetLeft+50+"px";
 }
