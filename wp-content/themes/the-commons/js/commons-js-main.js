@@ -17,6 +17,7 @@ function handleTabletChange(e){
   //(we are under 768px)
   if (e.matches) {
     var newsy_container = document.getElementById("newsy-container");
+    var popout_container = document.getElementById("popout-container");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
     var features = document.getElementById("features");
     var blog_alt = document.getElementById("blog-alt");
@@ -27,6 +28,7 @@ function handleTabletChange(e){
   //over 768px
   else{
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
+    var popout_container = document.getElementById("popout-container");
     var flex_desktop_sidebar = document.getElementById("flex-desktop-sidebar");
     var features = document.getElementById("features");
     var blog_alt = document.getElementById("blog-alt");
