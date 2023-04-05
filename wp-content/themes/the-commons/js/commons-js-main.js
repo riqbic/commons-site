@@ -154,12 +154,6 @@ function popOut(activeID,call_from_page,transition){
     var newsy_container = document.getElementById("newsy-container");
     var popout_spacer = document.getElementById("popout-spacer");
 
-    //turn on transitions if specified in params
-    if(transition){
-        popout_container.classList.add("transitions");
-        newsy_container.classList.add("transitions");
-    }
-
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
     if(popout_container.hasChildNodes() && popout_state){
@@ -168,17 +162,15 @@ function popOut(activeID,call_from_page,transition){
          popout_container.classList.remove("active-"+activeID);
 
         //push the history stack, as long as the call came from the user, and not from a history push
-        if(call_from_page && push_state){
+        if(call_from_page){
             history.pushState(activeID,"The Commons","https://thecommons.boston");
         }
 
         popout_state = 0;
-        push_state = 0;
         var contentID = popout_container.firstChild.id;
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
-        resetPopoutSize(activeID);
         opacityToggle("1");
         
         setTimeout(function(){
@@ -186,7 +178,6 @@ function popOut(activeID,call_from_page,transition){
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
             grid_container.style.visibility = "visible";
-            push_state = 1;
             popout_spacer.style.height = 0+"px";
         },10);
     }
@@ -204,7 +195,6 @@ function popOut(activeID,call_from_page,transition){
         }
 
         popout_state = 1;
-        resetPopoutSize(activeID);
         popout_container.style.display = "block";
         grid_container.style.visibility = "hidden";
         opacityToggle("0.3");
@@ -212,17 +202,13 @@ function popOut(activeID,call_from_page,transition){
         active_element.style.display = "block";
         
         //the setTimeout just forces this code to run syncronously
+        popout_container.style.width = newsy_container.offsetWidth-100+"px";
+        popout_container.style.height = "70vh";
+        popout_container.style.top = newsy_container.offsetTop+30+"px";
+        popout_container.style.left = newsy_container.offsetLeft+50+"px";
         setTimeout(function(){
-            popout_container.style.width = newsy_container.offsetWidth-100+"px";
-            popout_container.style.height = "auto";
-            popout_container.style.top = newsy_container.offsetTop+30+"px";
-            popout_container.style.left = newsy_container.offsetLeft+50+"px";
+            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
         },10);
-        if(!transition){
-            setTimeout(function(){
-                popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
-            },10);
-        }
         window.scrollTo(0, 0);
     }
 }
