@@ -172,12 +172,12 @@ function popOut(activeID,call_from_page,transition){
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
         opacityToggle("1");
+        newsy_container.style.display = "flex";
 
         setTimeout(function(){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
-            newsy_container.style.display = "flex";
             popout_spacer.style.height = 0+"px";
         },10);
     }
@@ -203,7 +203,7 @@ function popOut(activeID,call_from_page,transition){
         //setting the popout size, and removing the grid if we are on mobile.
         if(popout_container.classList.contains("mobile-popout")){
             console.log("mobile check");
-            newsy_container.style.display = "none";
+            newsy_container.style.display = "none !important";
             popout_spacer.style.display = "none";
             setPopoutSize(1);
         }
