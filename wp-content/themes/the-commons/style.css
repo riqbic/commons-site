@@ -101,7 +101,8 @@ Version: 1.14
     .popout-container{
         height: 100% !important;
         width: 100% !important;
-        position: fixed !important;
+        top: 52px !important;
+        left: 0px !important;
     }
 }
 
