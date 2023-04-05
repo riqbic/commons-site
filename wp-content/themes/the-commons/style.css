@@ -99,7 +99,7 @@ Version: 1.14
         background-color: #f2f3ed !important;
     }
     .popout-container{
-        height: 100% !important;
+        height: calc(100vh - 52px) !important;
         width: 100% !important;
         top: 52px !important;
         left: 0px !important;
