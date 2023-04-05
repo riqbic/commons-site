@@ -1,0 +1,53 @@
+{
+    "key": "group_642d78691f49d",
+    "title": "Theme Settings",
+    "fields": [
+        {
+            "key": "field_642d7869f4711",
+            "label": "Comic Strip Images",
+            "name": "comic_strip_images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Upload the images for your comic here. You can change the field label but if you change the field name you will lose the data you've uploaded and the theme file has to be updated to match it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "commons-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1680703001
+}

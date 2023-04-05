@@ -320,6 +320,9 @@
         </div>
         <div class="grid-item" id="promo-space-2">
             <p>promo-space-2</p>
+            <?php if(function_exists('commons_get_comic')) {
+                echo commons_get_comic(); 
+            } ?>
         </div>
     </div>
 </div>
