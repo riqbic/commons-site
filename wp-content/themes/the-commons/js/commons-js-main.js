@@ -2,6 +2,9 @@
 var popout_state = 0;
 var push_state = 1;
 
+//Localized js variables
+console.log(commons_main);
+
 //Pop state handler
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {
@@ -107,11 +110,13 @@ function menuHandler(activeID){
     var popout_container = document.getElementById("popout-container");
 
     console.log(url);
-    if (url!=='https://thecommons.boston/' && activeID!==''){
-        window.location.href='https://thecommons.boston?pop='+activeID;
+    console.log(commons_main.blog_url);
+
+    if (url !== commons_main.blog_url && activeID!==''){
+        window.location.href=commons_main.blog_url+'?pop='+activeID;
     }
-    else if (url!=='https://thecommons.boston/' && activeID===''){
-        window.location.href='https://thecommons.boston/';
+    else if (url !== commons_main.blog_url && activeID===''){
+        window.location.href=commons_main.blog_url;
     }
     else if (activeID=="" && popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
@@ -150,7 +155,7 @@ function popOut(activeID,call_from_page,transition){
 
         //push the history stack, as long as the call came from the user, and not from a history push
         if(call_from_page){
-            history.pushState(activeID,"The Commons","https://thecommons.boston");
+            history.pushState(activeID,"The Commons",commons_main.blog_url);
         }
 
         popout_state = 0;
