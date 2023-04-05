@@ -200,6 +200,7 @@ function popOut(activeID,call_from_page,transition){
         }
 
         popout_state = 1;
+        popout_container.style.display = "block";
         opacityToggle("0.3");
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
@@ -248,7 +249,7 @@ function setPopoutSize(mobile){
         popout_container.style.height = "100%";
     }
     else{
-        popout_container.style.display = "absolute";
+        popout_container.style.position = "absolute";
         popout_container.style.width = newsy_container.offsetWidth-100+"px";
         popout_container.style.height = "70vh";
         popout_container.style.top = newsy_container.offsetTop+30+"px";
