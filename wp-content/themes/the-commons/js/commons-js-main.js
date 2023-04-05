@@ -194,7 +194,6 @@ function popOut(activeID,call_from_page,transition){
         setTimeout(function(){
             popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
         },10);
-        window.scrollTo(0, 0);
     }
 }
 
@@ -218,9 +217,13 @@ function resetPopoutSize(activeID){
 function setPopoutSize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
-    popout_container.style.position = "absolute";
+    popout_container.style.position = "fixed";
     popout_container.style.width = newsy_container.offsetWidth-100+"px";
     popout_container.style.height = "70vh";
-    popout_container.style.top = newsy_container.offsetTop+30+"px";
+    popout_container.style.top = window.scrollY+200+"px";
     popout_container.style.left = newsy_container.offsetLeft+50+"px";
+}
+
+function clamp(val, min, max) {
+    return val > max ? max : val < min ? min : val;
 }
