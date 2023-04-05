@@ -200,7 +200,6 @@ function popOut(activeID,call_from_page,transition){
         }
 
         popout_state = 1;
-        popout_container.style.display = "block";
         opacityToggle("0.3");
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
@@ -245,6 +244,8 @@ function setPopoutSize(mobile){
     var newsy_container = document.getElementById("newsy-container");
     if(mobile){
         popout_container.style.position = "static";
+        popout_container.style.width = "100%";
+        popout_container.style.height = "100%";
     }
     else{
         popout_container.style.display = "absolute";
