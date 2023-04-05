@@ -22,7 +22,6 @@
         $('#popout-container').on('click','#close-icon,.blog-item',function() {
             $('.more-posts-toggle,.blog-sidebar').removeClass('is-active');
             $('.more-posts-toggle').find('.toggle-text').text('Show More Posts');
-            window.scrollTo(0,0);
         });
         
 
