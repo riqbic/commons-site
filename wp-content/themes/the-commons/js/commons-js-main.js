@@ -85,17 +85,6 @@ function onPageLoad() {
     resize();
 }
 
-//turn off transitions after a transition has finished
-window.addEventListener('transitionend',transitionToggle);
-function transitionToggle(){
-    var newsy_container = document.getElementById("newsy-container");
-    var popout_container = document.getElementById("popout-container");
-    var popout_spacer = document.getElementById("popout-spacer");
-    popout_container.classList.remove("transitions");
-    newsy_container.classList.remove("transitions");
-    popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
-}
-
 //Resize the popout container (and a few other things) when the page is resized
 window.addEventListener('resize',resize);
 function resize(){
@@ -170,6 +159,7 @@ function popOut(activeID,call_from_page,transition){
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
         opacityToggle("1");
+        document.body.style.overflow = "auto";
 
         setTimeout(function(){
             popout_container.style.display = "none";
@@ -196,6 +186,7 @@ function popOut(activeID,call_from_page,transition){
         opacityToggle("0.3");
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
+        document.body.style.overflow = "hidden";
 
         setPopoutSize();
 
