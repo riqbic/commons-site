@@ -23,7 +23,6 @@ function handleTabletChange(e){
     var blog_alt = document.getElementById("blog-alt");
     newsy_container.appendChild(features);
     flex_desktop_grid.appendChild(blog_alt);
-    popout_container.classList.add("mobile-popout");
   }
   //over 768px
   else{
@@ -34,7 +33,6 @@ function handleTabletChange(e){
     var blog_alt = document.getElementById("blog-alt");
     flex_desktop_grid.appendChild(features);
     flex_desktop_sidebar.appendChild(blog_alt);
-    popout_container.classList.remove("mobile-popout");
   }
 }
 
@@ -106,12 +104,7 @@ function resize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
     var popout_spacer = document.getElementById("popout-spacer");
-    if(popout_container.classList.contains("mobile-popout")){
-        setPopoutSize(1);
-    }
-    else{
-        setPopoutSize(0);
-    }
+    setPopoutSize();
     setTimeout(function(){
         popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
     },10);
@@ -177,7 +170,6 @@ function popOut(activeID,call_from_page,transition){
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
         opacityToggle("1");
-        newsy_container.style.display = "flex";
 
         setTimeout(function(){
             popout_container.style.display = "none";
@@ -205,15 +197,7 @@ function popOut(activeID,call_from_page,transition){
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
 
-        //setting the popout size, and removing the grid if we are on mobile.
-        if(popout_container.classList.contains("mobile-popout")){
-            newsy_container.style.display = "none";
-            popout_spacer.style.display = "none";
-            setPopoutSize(1);
-        }
-        else{
-            setPopoutSize(0);
-        }
+        setPopoutSize();
 
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
@@ -240,19 +224,12 @@ function resetPopoutSize(activeID){
     popout_container.style.left = grid_container.offsetLeft+"px";
 }
 
-function setPopoutSize(mobile){
+function setPopoutSize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
-    if(mobile){
-        popout_container.style.position = "static";
-        popout_container.style.width = "100%";
-        popout_container.style.height = "100%";
-    }
-    else{
-        popout_container.style.position = "absolute";
-        popout_container.style.width = newsy_container.offsetWidth-100+"px";
-        popout_container.style.height = "70vh";
-        popout_container.style.top = newsy_container.offsetTop+30+"px";
-        popout_container.style.left = newsy_container.offsetLeft+50+"px";
-    }
+    popout_container.style.position = "absolute";
+    popout_container.style.width = newsy_container.offsetWidth-100+"px";
+    popout_container.style.height = "70vh";
+    popout_container.style.top = newsy_container.offsetTop+30+"px";
+    popout_container.style.left = newsy_container.offsetLeft+50+"px";
 }

@@ -98,6 +98,11 @@ Version: 1.14
     .blog-close:before, .blog-close:after{
         background-color: #f2f3ed !important;
     }
+    .popout-container{
+        height: 100% !important;
+        width: 100% !important;
+        position: fixed !important;
+    }
 }
 
 @media (min-width: 769px){
