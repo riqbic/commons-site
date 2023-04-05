@@ -106,7 +106,12 @@ function resize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
     var popout_spacer = document.getElementById("popout-spacer");
-    setPopoutSize();
+    if(popout_container.classList.contains("mobile-popout")){
+        setPopoutSize(1);
+    }
+    else{
+        setPopoutSize(0);
+    }
     setTimeout(function(){
         popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
     },10);
@@ -202,8 +207,7 @@ function popOut(activeID,call_from_page,transition){
 
         //setting the popout size, and removing the grid if we are on mobile.
         if(popout_container.classList.contains("mobile-popout")){
-            console.log("mobile check");
-            newsy_container.style.display = "none !important";
+            newsy_container.style.display = "none";
             popout_spacer.style.display = "none";
             setPopoutSize(1);
         }
