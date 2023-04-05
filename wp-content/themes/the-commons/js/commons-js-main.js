@@ -181,7 +181,7 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
-            newsy_container.style.display = "block";
+            newsy_container.style.display = "flex";
             popout_spacer.style.height = 0+"px";
         },10);
     }
