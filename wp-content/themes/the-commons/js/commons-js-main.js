@@ -202,7 +202,9 @@ function popOut(activeID,call_from_page,transition){
 
         //setting the popout size, and removing the grid if we are on mobile.
         if(popout_container.classList.contains("mobile-popout")){
+            console.log("mobile check");
             newsy_container.style.display = "none";
+            popout_spacer.style.display = "none";
             setPopoutSize(1);
         }
         else{
