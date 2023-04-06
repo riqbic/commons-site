@@ -107,9 +107,9 @@ function resize(){
 function menuHandler(activeID){
     var url = window.location.href.split('?')[0];
     var popout_container = document.getElementById("popout-container");
+    var menu_toggle = document.getElementById("menu__toggle");
 
-    console.log(url);
-    console.log(commons_main.blog_url);
+    menu_toggle.checked = '';
 
     if (url !== commons_main.blog_url && activeID!==''){
         window.location.href=commons_main.blog_url+'?pop='+activeID;
