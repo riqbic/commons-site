@@ -89,8 +89,11 @@
             //Dont do anything if the user clicks a link that is already loaded
             if(post_id != activePost || loadedPost == 0) {
                 //Add loading style
-                $('.blog-single-content').addClass('loading');
-                $('.blog-single-content > .loader').addClass('loader-active');
+                if(loadedPost==0){
+                    $('.blog-single-content > .loader').addClass('loader-active');
+                } else{
+                    $('.blog-single-content').addClass('loading');
+                }
 
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
@@ -101,8 +104,7 @@
                     history.replaceState('blog', "",'?pop=blog&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-blog-alt')) {
                     history.replaceState('blog-alt', "",'?pop=blog-alt&post_id='+post_id);
-                }
-                else if($('#popout-container').hasClass('active-features')) {
+                } else if($('#popout-container').hasClass('active-features')) {
                     history.replaceState('features', "",'?pop=features&post_id='+post_id);
                 }
                 //get content for post from ajax function in functions.php
