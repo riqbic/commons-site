@@ -89,7 +89,9 @@
             //Dont do anything if the user clicks a link that is already loaded
             if(post_id != activePost || loadedPost == 0) {
                 //Add loading style
-                $('.blog-single-content').addClass('loading');
+                //$('.blog-single-content').addClass('loading');
+                $('.blog-single-content').firstChild.addClass('loader');
+
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
                 //add current class
@@ -114,7 +116,8 @@
                         //load post into container
                         $('#popout-container #blog-ajax-container').html(data);
                         //remove loading class
-                        $('.blog-single-content').removeClass('loading');
+                        //$('.blog-single-content').removeClass('loading');
+                        $('.blog-single-content').firstChild.removeClass('loader');
 
                         //spacer so sticky header stays at the top and doesn't scroll off
                         var newsy_container = document.getElementById("newsy-container");

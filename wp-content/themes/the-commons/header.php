@@ -70,7 +70,7 @@
         </ul>
     </div>
     <a class="account-icon" href="https://thecommons.boston/?page_id=11">
-        <img src="account_icon.png" alt="My Account" style="width:42px;height:42px;">
+        <img src="img/account_icon.png" alt="My Account" style="width:42px;height:42px;">
     </a>
 </div>
 
