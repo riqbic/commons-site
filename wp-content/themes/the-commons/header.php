@@ -32,7 +32,7 @@
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
-        <li class="menu-item" onclick="menuHandler('')">Front Page</li>
+        <li class="menu-item" onclick="menuHandler('')">Home</li>
         <li class="menu-item" onclick="menuHandler('shop')">Shop</li>
         <li class="menu-item" onclick="menuHandler('features')">Video</li>
         <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
@@ -61,7 +61,7 @@
         </label>
 
         <ul class="menu__box">
-            <li class="menu__item" onclick="menuHandler('')">Front Page</li>
+            <li class="menu__item" onclick="menuHandler('')">Home</li>
             <li class="menu__item" onclick="menuHandler('shop')">Shop</li>
             <li class="menu__item" onclick="menuHandler('features')">Video</li>
             <li class="menu__item" onclick="menuHandler('blog')">Articles</li>

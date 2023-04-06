@@ -581,6 +581,7 @@ h4{
 
 .popout-container{
     box-sizing: border-box;
+    box-shadow: 0px 0px 10px grey;
     display: none;
     position: absolute;
     background-color: #f2f3ed;
