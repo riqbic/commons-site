@@ -149,6 +149,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
+                        <div class="loader"></div>
                         
                     </div><!-- close blog content-->
                 </div>
@@ -280,6 +281,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
+                        <div class="loader"></div>
                         
                     </div><!-- close blog content-->
                 </div>
