@@ -90,7 +90,7 @@
             if(post_id != activePost || loadedPost == 0) {
                 //Add loading style
                 //$('.blog-single-content').addClass('loading');
-                $('.blog-single-content').firstElementChild.addClass('loader');
+                $('.blog-single-content > .loader').addClass('loader-active');
 
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
@@ -117,7 +117,7 @@
                         $('#popout-container #blog-ajax-container').html(data);
                         //remove loading class
                         //$('.blog-single-content').removeClass('loading');
-                        $('.blog-single-content').firstElementChild.removeClass('loader');
+                        $('.blog-single-content > .loader').removeClass('loader-active');
 
                         //spacer so sticky header stays at the top and doesn't scroll off
                         var newsy_container = document.getElementById("newsy-container");
