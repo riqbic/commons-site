@@ -32,20 +32,20 @@
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
-        <li class="menu-item" onclick="menuHandler('')">Front Page</li>
-        <li class="menu-item" onclick="menuHandler('shop')">Shop</li>
-        <li class="menu-item" onclick="menuHandler('features')">Video</li>
-        <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
-        <li class="menu-item" onclick="menuHandler('events')">Events</li>
-        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscribe" style="color: crimson;">Subscribe</a></li>
-        <li class="menu-spacer"></li>
-        <li class="account menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
-            <?php if(is_user_logged_in()) {
-            echo 'My Account';
-            } else {
-            echo 'Login/Register';
-            }?>
-        </a></li>
+            <li class="menu-item" onclick="menuHandler('')">Front Page</li>
+            <li class="menu-item" onclick="menuHandler('shop')">Shop</li>
+            <li class="menu-item" onclick="menuHandler('features')">Video</li>
+            <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
+            <li class="menu-item" onclick="menuHandler('events')">Events</li>
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscribe" style="color: crimson;">Subscribe</a></li>
+            <li class="menu-spacer"></li>
+            <li class="account menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
+                <?php if(is_user_logged_in()) {
+                echo 'My Account';
+                } else {
+                echo 'Login/Register';
+                }?>
+            </a></li>
         </ul>
     </div>
 </div>
@@ -61,12 +61,12 @@
         </label>
 
         <ul class="menu__box">
-            <li><a class ="menu__item" href="https://thecommons.boston/">Home</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?pop=shop">Market</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?pop=features">Features</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?pop=blog">Blog</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?pop=events">Events</a></li>
-            <li><a class ="menu__item" href="https://thecommons.boston/?page_id=56">Subscribe</a></li>
+            <li class="menu-item" onclick="menuHandler('')">Front Page</li>
+            <li class="menu-item" onclick="menuHandler('shop')">Shop</li>
+            <li class="menu-item" onclick="menuHandler('features')">Video</li>
+            <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
+            <li class="menu-item" onclick="menuHandler('events')">Events</li>
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscribe" style="color: crimson;">Subscribe</a></li>
         </ul>
     </div>
     <a class="account-icon" href="https://thecommons.boston/?page_id=11">
