@@ -440,7 +440,7 @@ h4{
     transition-duration: .25s;
   }
   .menu__item:hover {
-    background-color: #f2f3ed;
+    text-decoration: underline;
   }
 
 .account-icon{
