@@ -66,7 +66,6 @@ function onPageLoad() {
     if (params.getAll("pop").length !== 0){
         popout_state = 1;
         popout_container.style.display = "block";
-        grid_container.style.visibility = "hidden";
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
         setPopoutSize();
