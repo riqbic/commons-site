@@ -193,7 +193,7 @@ function popOut(activeID,call_from_page,transition){
         document.body.style.overflow = "hidden";
 
         setPopoutSize();
-        scrollTo(100,0);
+        scrollTo(0,100);
 
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
