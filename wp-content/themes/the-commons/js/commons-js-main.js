@@ -193,6 +193,7 @@ function popOut(activeID,call_from_page,transition){
         document.body.style.overflow = "hidden";
 
         setPopoutSize();
+        scrollTo(100,0);
 
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
@@ -223,9 +224,11 @@ function setPopoutSize(){
     var newsy_container = document.getElementById("newsy-container");
     popout_container.style.position = "fixed";
     popout_container.style.width = newsy_container.offsetWidth-100+"px";
-    popout_container.style.height = clamp(window.innerHeight*.7+window.scrollY,window.innerHeight*.7,window.innerHeight*.8)+"px";
-    popout_container.style.top = clamp(200-window.scrollY,100,200)+"px";
+    // popout_container.style.height = clamp(window.innerHeight*.7+window.scrollY,window.innerHeight*.7,window.innerHeight*.8)+"px";
+    // popout_container.style.top = clamp(200-window.scrollY,100,200)+"px";
     popout_container.style.left = newsy_container.offsetLeft+50+"px";
+    popout_container.style.height = "80vh";
+    popout_container.style.top = "100px";
 }
 
 function clamp(val, min, max) {
