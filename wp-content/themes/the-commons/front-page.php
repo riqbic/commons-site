@@ -155,6 +155,11 @@
                 </div>
             </div>
         </div>
+        <div class="grid-item" id="comic-strip">
+            <?php if(function_exists('commons_get_comic')) {
+                echo commons_get_comic(); 
+            } ?>
+        </div>
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
@@ -323,9 +328,6 @@
         </div>
         <div class="grid-item" id="promo-space-2">
             <p>promo-space-2</p>
-            <?php if(function_exists('commons_get_comic')) {
-                echo commons_get_comic(); 
-            } ?>
         </div>
     </div>
 </div>

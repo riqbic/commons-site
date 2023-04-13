@@ -94,17 +94,6 @@ img {
     .grid-item:hover{
         filter: grayscale(0) !important;
     }
-    .grid-item:hover:not(.bottom-border){
-        border-top: none !important;
-        border-left: none !important;
-        border-right: none !important;
-        border-bottom: none !important;
-    }
-    .grid-item:hover.bottom-border{
-        border-top: none !important;
-        border-left: none !important;
-        border-right: none !important;
-    }
     .blog-close:before, .blog-close:after{
         background-color: #f2f3ed !important;
     }
@@ -521,22 +510,6 @@ h4{
     transition: filter .5s;
 }
 
-.grid-item:hover{
-    border-top: 1px solid #252421;
-    border-left: 1px solid #252421;
-    border-right: 3px solid #252421;
-    border-bottom: 3px solid #252421;
-    filter: grayscale(0);
-}
-
-.grid-item:active{
-    border-top: 3px solid #252421;
-    border-left: 3px solid #252421;
-    border-right: 1px solid #252421;
-    border-bottom: 1px solid #252421 !important;
-    filter: grayscale(0);
-}
-
 .bottom-border{
     padding: 5px 5px 10px 5px;
     border-bottom: 1px solid #252421;
@@ -772,6 +745,10 @@ h4{
 }
 
 /** COMMONS COMIC **/
-.commons-comic {
+.comic-strip {
     padding: 0;
+}
+
+.slick-slide img{
+    width: 100%;
 }
