@@ -50,7 +50,6 @@ img {
     h1{
         font-size: 2rem !important;
         width: 100% !important;
-        padding: 0 5% 0 5%;
     }
     h2{
         font-size: 2rem !important;
@@ -559,10 +558,9 @@ h4{
 
 .popout-container{
     box-sizing: border-box;
-    box-shadow: 0px 0px 10px grey;
     display: none;
     position: absolute;
-    background-color: #f2f3ed;
+    background-color: #ffffff;
     border: 2px solid #252421;
     z-index: 1;
     overflow-y: scroll;
@@ -656,13 +654,13 @@ h4{
     animation: spin 2s linear infinite;
     display: block;
     position: absolute;
-    top: 40%;
-    left: 55%;
+    top: 50%;
+    left: 50%;
   }
   
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg) translate(-50%,-50%); }
+    100% { transform: rotate(360deg) translate(-50%,-50%); }
   }
 
 .blog-item{
@@ -745,7 +743,7 @@ h4{
 }
 
 /** COMMONS COMIC **/
-.comic-strip {
+.commons-comic {
     padding: 0;
 }
 

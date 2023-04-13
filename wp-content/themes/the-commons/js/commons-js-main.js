@@ -193,13 +193,12 @@ function popOut(activeID,call_from_page,transition){
         document.body.style.overflow = "hidden";
 
         setPopoutSize();
-        if(window.scrollY < 100){
-            scrollTo(0,100);
-        }
 
         //the setTimeout just forces this code to run syncronously
         setTimeout(function(){
-            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
+            if(window.scrollY < 100){
+                scrollTo(0,100);
+            }
         },10);
     }
 }
