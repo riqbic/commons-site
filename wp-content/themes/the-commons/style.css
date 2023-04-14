@@ -682,6 +682,14 @@ h4{
     font-size: 1rem;
     color: #252421;
 }
+.newsy-centered{
+    text-align: justify;
+    font-family: CenturyOldStyleRegular;
+    font-size: 1rem;
+    width: 70%;
+    margin: auto;
+    color: #252421;
+}
 .newsy-small{
     text-align: justify;
     font-family: CenturyOldStyleRegular;

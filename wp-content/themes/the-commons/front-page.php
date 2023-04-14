@@ -167,14 +167,18 @@
             <p>about us</p>
             </div>
             <div class="grid-content" id="about-us-content">
-                    <img src="close_icon.png" alt="close_icon" id="close-icon" width="40" height="40" onclick="popOut('about-us',1,1)">
+            <span class="close blog-close" onclick="popOut('about-us',1,1)"></span>
                 <div class="about-us-container">
+                    <h3>About Us</h3>
+                    <p class="newsy-centered">Born in Boston, The Commons is a parkour org that invests in North American parkour culture. Through hosting events, uplifting local communities, and providing opportunities for athletes and artists, we are working to put America on the map.</p>
+                    <p class="newsy-centered">Being a community project means that anybody and everybody can contribute to the cause, but here are some of the people that keep the wheels turning:</p>
+
                     <div class="about-us-flexbox">
                         <div class="about-us-image">
                             <img src="placeholder.jpg" alt="placeholder image" width="100%" height="auto">
                         </div>
                         <div class="about-us-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu euismod, scelerisque mi sed, lacinia orci. Sed ultrices ex dolor, in dapibus odio congue et. Donec et turpis purus.</p>
+                            <p class="newsy">Everybody loves David. David Ehrlich is the founder, heart, and soul of The Commons. He preaches radical inclusivity, and has a special gift for bringing people together. As our primary community and event coordinator, David’s job is to create community events, do outreach, and make sure that The Commons provides safe and fun spaces for all.</p>
                         </div>
                         <div class="about-us-fill"></div>
                     </div>
@@ -184,7 +188,7 @@
                             <img src="placeholder.jpg" alt="placeholder image" width="100%" height="auto">
                         </div>
                         <div class="about-us-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu euismod, scelerisque mi sed, lacinia orci. Sed ultrices ex dolor, in dapibus odio congue et. Donec et turpis purus.</p>
+                            <p class="newsy">Joining The Commons soon after it’s inception; Alec is the guy who makes things happen. He’s the creative director by day, web developer by night, park builder by the next day, and event coordinator after that… Alec seems to be everywhere all at once.</p>
                         </div>
                         <div class="about-us-fill"></div>
                     </div>
@@ -194,7 +198,7 @@
                             <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
                         </div>
                         <div class="about-us-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu euismod, scelerisque mi sed, lacinia orci. Sed ultrices ex dolor, in dapibus odio congue et. Donec et turpis purus.</p>
+                            <p class="newsy">We are constantly honored that Noah chooses to work with us and believes in our vision. He is a filmmaker, visionary, and critic. He holds The Commons to a high standard, and always has something insightful to say.</p>
                         </div>
                         <div class="about-us-fill"></div>
                     </div>
@@ -204,7 +208,17 @@
                             <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
                         </div>
                         <div class="about-us-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu euismod, scelerisque mi sed, lacinia orci. Sed ultrices ex dolor, in dapibus odio congue et. Donec et turpis purus.</p>
+                            <p class="newsy">Connor is far and away the most talented mover out of any of us, and is also a genius photographer, videographer, and graphic designer. Connor has a hand in almost every piece of content that The Commons puts out in one way or another.</p>
+                        </div>
+                        <div class="about-us-fill"></div>
+                    </div>
+
+                    <div class="about-us-flexbox">
+                        <div class="about-us-image">
+                            <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
+                        </div>
+                        <div class="about-us-text">
+                            <p class="newsy">Before The Commons, before Instagram, and maybe before you were born, Dylan Polin was putting Boston on the map in the parkour scene. Dylan is a pillar of the North American parkour community, a lifelong friend, a valued advisor, and eager contributor to The Commons.</p>
                         </div>
                         <div class="about-us-fill"></div>
                     </div>
@@ -299,19 +313,19 @@
             <div class="grid-content" id="get-involved-content">
                 <span class="close blog-close" onclick="popOut('get-involved',1,1)"></span>
                 <h3>Come Train!</h3>
-                <p class="newsy">
-                    The best way to get involved is to come out and train! We try to host community sessions every week and mini-jams regularly. Follow our instagram page @thecommons.boston or join the discord to get the when and where.
+                <p class="newsy-centered">
+                    The best way to get involved is to come out and train! We try to host community sessions every week and mini-jams regularly. Follow our instagram page <a href="https://www.instagram.com/thecommons.sessions/">@thecommons.sessions</a> or <a href="https://discord.com/invite/6wzh8Gbqxt">join our Discord</a> to get the when and where.
                 </p>
                 <h3>Volunteer</h3>
-                <p class="newsy">
+                <p class="newsy-centered">
                     As a community based project, we include anybody who wants to help. We always need people to help organize community sessions, scout spots, and film. When it comes to jam time, there are an infinite amount of tasks to do, and our large events couldn’t happen without our amazing volunteer team.
                 </p>
                 <h3>Sponsor</h3>
-                <p class="newsy">
+                <p class="newsy-centered">
                     Any financial contributions are deeply appreciated, and go right back into the parkour community by improving our events, paying our team, or paying artists that display at our events. Our brand has deep connections in the parkour scene, and our content reaches all across the globe. We are mainly looking to partner with local small businesses, but are open to other options.
                 </p>
                 <h3>Work With Us</h3>
-                <p class="newsy">
+                <p class="newsy-centered">
                     The Commons is always looking for new athletes and artists to work with us. Got a project that fits on our site? Send us a line at collab@thecommons.boston or shoot us a DM on socials.
                 </p>
             </div>
