@@ -653,10 +653,10 @@ h4{
     width: 60px;
     height: 60px;
     display: block;
-    position: absolute;
+    position: relative;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin: auto;
+    transform: translate(0,-50%);
   }
 
 .blog-item{
