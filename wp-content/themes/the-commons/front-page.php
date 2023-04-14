@@ -298,8 +298,21 @@
             </div>
             <div class="grid-content" id="get-involved-content">
                 <span class="close blog-close" onclick="popOut('get-involved',1,1)"></span>
+                <h3>Come Train!</h3>
                 <p class="newsy">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
+                    The best way to get involved is to come out and train! We try to host community sessions every week and mini-jams regularly. Follow our instagram page @thecommons.boston or join the discord to get the when and where.
+                </p>
+                <h3>Volunteer</h3>
+                <p class="newsy">
+                    As a community based project, we include anybody who wants to help. We always need people to help organize community sessions, scout spots, and film. When it comes to jam time, there are an infinite amount of tasks to do, and our large events couldn’t happen without our amazing volunteer team.
+                </p>
+                <h3>Sponsor</h3>
+                <p class="newsy">
+                    Any financial contributions are deeply appreciated, and go right back into the parkour community by improving our events, paying our team, or paying artists that display at our events. Our brand has deep connections in the parkour scene, and our content reaches all across the globe. We are mainly looking to partner with local small businesses, but are open to other options.
+                </p>
+                <h3>Work With Us</h3>
+                <p class="newsy">
+                    The Commons is always looking for new athletes and artists to work with us. Got a project that fits on our site? Send us a line at collab@thecommons.boston or shoot us a DM on socials.
                 </p>
             </div>
         </div>
