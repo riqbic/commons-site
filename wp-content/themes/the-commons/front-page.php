@@ -185,7 +185,7 @@
 
                     <div class="about-us-flexbox">
                         <div class="about-us-image">
-                            <img src="placeholder.jpg" alt="placeholder image" width="100%" height="auto">
+                            <img src="wp-content\themes\the-commons\img\alec_portrait.jpg" alt="placeholder image" width="100%" height="auto">
                         </div>
                         <div class="about-us-text">
                             <p class="newsy">Joining The Commons soon after it’s inception; Alec is the guy who makes things happen. He’s the creative director by day, web developer by night, park builder by the next day, and event coordinator after that… Alec seems to be everywhere all at once.</p>
@@ -195,7 +195,7 @@
 
                     <div class="about-us-flexbox">
                         <div class="about-us-image">
-                            <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
+                            <img src="wp-content\themes\the-commons\img\noah_portrait.JPG" alt="placeholder image"  width="100%" height="auto">
                         </div>
                         <div class="about-us-text">
                             <p class="newsy">We are constantly honored that Noah chooses to work with us and believes in our vision. He is a filmmaker, visionary, and critic. He holds The Commons to a high standard, and always has something insightful to say.</p>
