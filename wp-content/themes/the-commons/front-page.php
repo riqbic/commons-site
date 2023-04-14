@@ -72,7 +72,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"></div>
+                        <div class="loader"><img src="/img/loader.gif" alt="loader gif" width="60" height="60"></div>
                         
                     </div><!-- close blog content-->
                 </div>
@@ -149,7 +149,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"></div>
+                        <div class="loader"><img src="/img/loader.gif" alt="loader gif" width="60" height="60"></div>
                         
                     </div><!-- close blog content-->
                 </div>
@@ -286,7 +286,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"></div>
+                        <div class="loader"><img src="/img/loader.gif" alt="loader gif" width="60" height="60"></div>
                         
                     </div><!-- close blog content-->
                 </div>
