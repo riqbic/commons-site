@@ -70,9 +70,8 @@ function onPageLoad() {
         active_element.style.display = "block";
         setPopoutSize();
 
-        if(window.scrollY < 100){
-            scrollTo(0,100);
-        }
+        document.body.style.overflow = "hidden";
+        scrollTo(0,100);
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
