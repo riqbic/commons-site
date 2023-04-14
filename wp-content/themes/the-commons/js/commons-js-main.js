@@ -69,9 +69,10 @@ function onPageLoad() {
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
         setPopoutSize();
-        setTimeout(function(){
-            popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
-        },10);
+
+        if(window.scrollY < 100){
+            scrollTo(0,100);
+        }
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
@@ -194,12 +195,9 @@ function popOut(activeID,call_from_page,transition){
 
         setPopoutSize();
 
-        //the setTimeout just forces this code to run syncronously
-        setTimeout(function(){
-            if(window.scrollY < 100){
-                scrollTo(0,100);
-            }
-        },10);
+        if(window.scrollY < 100){
+            scrollTo(0,100);
+        }
     }
 }
 
