@@ -92,13 +92,9 @@ window.addEventListener('resize',resize);
 function resize(){
     var about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
-    var popout_container = document.getElementById("popout-container");
-    var newsy_container = document.getElementById("newsy-container");
-    var popout_spacer = document.getElementById("popout-spacer");
-    var close_icon = document.getElementById("close-icon");
+
     setPopoutSize();
-    close_icon.style.top = popout_container.offsetTop + 10 +"px";
-    close_icon.style.right = popout_container.offsetLeft + popout_container.offsetWidth - 10 +"px";
+    
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
@@ -144,7 +140,6 @@ function popOut(activeID,call_from_page,transition){
     var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
     var popout_spacer = document.getElementById("popout-spacer");
-    var close_icon = document.getElementById("close-icon");
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
@@ -193,9 +188,6 @@ function popOut(activeID,call_from_page,transition){
         active_element.style.display = "block";
         document.body.style.overflow = "hidden";
 
-        close_icon.style.top = popout_container.offsetTop + 10 +"px";
-        close_icon.style.right = popout_container.offsetLeft + popout_container.offsetWidth - 10 +"px";
-
         setPopoutSize();
 
         if(window.scrollY < 100){
@@ -224,13 +216,15 @@ function resetPopoutSize(activeID){
 function setPopoutSize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
+    var close_icon = document.getElementById("close-icon");
     popout_container.style.position = "fixed";
     popout_container.style.width = newsy_container.offsetWidth-100+"px";
-    // popout_container.style.height = clamp(window.innerHeight*.7+window.scrollY,window.innerHeight*.7,window.innerHeight*.8)+"px";
-    // popout_container.style.top = clamp(200-window.scrollY,100,200)+"px";
     popout_container.style.left = newsy_container.offsetLeft+50+"px";
     popout_container.style.height = "80vh";
     popout_container.style.top = "100px";
+
+    close_icon.style.top = "110px";
+    close_icon.style.right = newsy_container.offsetLeft+50 + newsy_container.offsetWidth-100 +"px";
 }
 
 function clamp(val, min, max) {
