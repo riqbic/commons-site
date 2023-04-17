@@ -32,7 +32,7 @@
                     <?php } ?>
             </div>
             <div class="grid-content" id="blog-content">
-                <span class="close blog-close" onclick="popOut('blog',1,1)"></span>
+                <span class="close blog-close" id="close-icon" onclick="popOut('blog',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
@@ -109,7 +109,7 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="blog-alt-content">
-            <span class="close blog-close" onclick="popOut('blog-alt',1,1)"></span>
+            <span class="close blog-close" id="close-icon" onclick="popOut('blog-alt',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
@@ -167,7 +167,7 @@
             <p>about us</p>
             </div>
             <div class="grid-content" id="about-us-content">
-            <span class="close blog-close" onclick="popOut('about-us',1,1)"></span>
+            <span class="close blog-close" id="close-icon" onclick="popOut('about-us',1,1)"></span>
                 <div class="about-us-container">
                     <h3>About Us</h3>
                     <p class="newsy-centered">Born in Boston, The Commons is a parkour org that invests in North American parkour culture. Through hosting events, uplifting local communities, and providing opportunities for athletes and artists, we are working to put America on the map.</p>
@@ -258,7 +258,7 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="features-content">
-                <span class="close blog-close" onclick="popOut('features',1,1)"></span>
+                <span class="close blog-close" id="close-icon" onclick="popOut('features',1,1)"></span>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
@@ -311,7 +311,7 @@
             <p> get involved </p>
             </div>
             <div class="grid-content" id="get-involved-content">
-                <span class="close blog-close" onclick="popOut('get-involved',1,1)"></span>
+                <span class="close blog-close" id="close-icon" onclick="popOut('get-involved',1,1)"></span>
                 <h3>Come Train!</h3>
                 <p class="newsy-centered">
                     The best way to get involved is to come out and train! We try to host community sessions every week and mini-jams regularly. Follow our instagram page <a href="https://www.instagram.com/thecommons.sessions/">@thecommons.sessions</a> or <a href="https://discord.com/invite/6wzh8Gbqxt">join our Discord</a> to get the when and where.
@@ -335,7 +335,7 @@
             <?php echo do_shortcode('[products limit="4" columns="2" visibility="featured"]'); ?>
             </div>
             <div class="grid-content" id="shop-content">
-            <span class="close blog-close" onclick="popOut('shop',1,1)"></span>
+            <span class="close blog-close" id="close-icon" onclick="popOut('shop',1,1)"></span>
                 <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
             </div>
         </div>
@@ -344,7 +344,7 @@
             <p>events</p>
             </div>
             <div class="grid-content" id="events-content">
-                <span class="close blog-close" onclick="popOut('events',1,1)"></span>
+                <span class="close blog-close" id="close-icon" onclick="popOut('events',1,1)"></span>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
