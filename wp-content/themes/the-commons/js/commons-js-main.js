@@ -94,7 +94,7 @@ function resize(){
     var about_us_grid_item = document.getElementById("about-us");
 
     setPopoutSize();
-    
+
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
     }
@@ -224,7 +224,7 @@ function setPopoutSize(){
     popout_container.style.top = "100px";
 
     close_icon.style.top = "110px";
-    close_icon.style.right = newsy_container.offsetLeft+50 + newsy_container.offsetWidth-100 +"px";
+    close_icon.style.left = newsy_container.offsetLeft+50 + newsy_container.offsetWidth-100 -40 -10+"px";
 }
 
 function clamp(val, min, max) {
