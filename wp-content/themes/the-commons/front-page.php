@@ -359,7 +359,6 @@
     </div>
 </div>
 
-<div class="popout-spacer" id="popout-spacer"></div>
 <!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
 <div class="popout-container" id="popout-container"></div>
 
