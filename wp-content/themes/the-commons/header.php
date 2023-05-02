@@ -8,23 +8,17 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="newsy-header hidden-mobile">
-    <svg width="100%" height="100%">
-        <rect width="100%" height="1" y="50%"
-        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
-        <rect width="1" height="25" x="100%" y="50%"
-        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(-10px,-20px);" />
-    </svg>
+    <div class="header-margin"></div>
+    <p class="header-item-1">
+        <?php echo date("l F j, Y")?>
+    </p>
     <div class="header-item-2">
         <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
             <div class="title">The Commons</div>
         </a>
     </div>
-    <svg width="100%" height="100%">
-        <rect width="100%" height="1" y="50%"
-        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)" />
-        <rect width="1" height="40" x="0" y="50%"
-        style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0);position:relative;transform: translate(40px,-5px);" />
-    </svg>
+    <p class="header-item-1">By the People, For the People.</p>
+    <div class="header-margin"></div>
 </div>
 
 <div class="header-spacer hidden-mobile"></div>
