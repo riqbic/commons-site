@@ -578,6 +578,7 @@ h4{
 }
 .blog-flex-container .blog-sidebar {
     width: 30%;
+    overflow-y: auto;
 }
 .blog-flex-container .blog-sidebar .blog-item.is-active {
     background: #f2f3ed;
@@ -586,6 +587,8 @@ h4{
     width: 70%;
     flex: 1;
     padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #252421;
 }
 @media all and (max-width: 768px) {
     .blog-flex-container.flex-row {
@@ -595,8 +598,6 @@ h4{
     .blog-flex-container .blog-single-content {
         width: 100%;
         box-sizing: border-box;
-        overflow-y: auto;
-        border-left: 1px solid #252421;
     }
     .more-posts-toggle {
         width: 100%;
@@ -639,7 +640,7 @@ h4{
 }
 
 #blog-ajax-container.loading {
-    filter: blur(2px);
+    filter: blur(0px);
 }
 
 .loader-active {
