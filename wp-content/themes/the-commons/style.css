@@ -565,7 +565,6 @@ h4{
     background-color: #ffffff;
     border: 2px solid #252421;
     z-index: 1;
-    overflow-y: scroll;
 }
 
 .blog-flex-container{
@@ -581,7 +580,7 @@ h4{
     width: 30%;
 }
 .blog-flex-container .blog-sidebar .blog-item.is-active {
-    background: #a7a5a4;
+    background: #f2f3ed;
 }
 .blog-flex-container .blog-single-content {
     width: 70%;
@@ -596,6 +595,8 @@ h4{
     .blog-flex-container .blog-single-content {
         width: 100%;
         box-sizing: border-box;
+        overflow-y: auto;
+        border-left: 1px solid #252421;
     }
     .more-posts-toggle {
         width: 100%;
@@ -624,7 +625,7 @@ h4{
     }
     .blog-sidebar {
         max-height: 0; /*using height: 0 to height: auto; doesnt allow the transition animation*/
-        overflow: hidden;
+        overflow-y: auto;
         transition: .2s max-height;
         top: 65px;
         background: #252421;
@@ -653,8 +654,8 @@ h4{
 
 .blog-item{
     cursor: pointer;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-bottom: 10px;
     padding-top: 5px;
     border-bottom: 1px solid #252421;
@@ -662,10 +663,6 @@ h4{
 
 .blog-item:last-child{
     border-bottom: none;
-}
-
-.blog-item:hover{
-    background-color: #c4c2c1;
 }
 
 .newsy{
