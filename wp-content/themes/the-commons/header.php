@@ -9,7 +9,7 @@
 <body <?php body_class(); ?>>
 <div class="newsy-header hidden-mobile">
     <div class="header-margin"></div>
-    <p class="header-item-1">
+    <p class="header-item-1" style="color: #f2f3ed">
         <?php echo date("l F j, Y")?>
     </p>
     <div class="header-item-2">
@@ -17,7 +17,7 @@
             <div class="title">The Commons</div>
         </a>
     </div>
-    <p class="header-item-1">By the People, For the People.</p>
+    <p class="header-item-3" style="color: #f2f3ed">By the People, For the People.</p>
     <div class="header-margin"></div>
 </div>
 
@@ -31,9 +31,8 @@
         <li class="menu-item" onclick="menuHandler('features')">Video</li>
         <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
         <li class="menu-item" onclick="menuHandler('events')">Events</li>
-        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscriptions" style="color: crimson;">Subscribe</a></li>
-        <li class="menu-spacer"></li>
-        <li class="account menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
+        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
+        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
             echo 'My Account';
             } else {
