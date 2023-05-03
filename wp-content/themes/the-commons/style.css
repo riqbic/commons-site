@@ -247,11 +247,16 @@ h4{
     width: 100%;
     height: 100px;
     background-color: #252421;
-    border-bottom: 1px single #252421;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.header-container{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: .5px solid #f2f3ed;
 }
 
 .newsy-header-mobile{
@@ -263,8 +268,7 @@ h4{
 }
 
 .header-item-1{
-    width: 200px;
-    max-width: 400px;
+    max-width: 380px;
     flex: 1;
     justify-self: center;
     display: flex;
@@ -280,17 +284,12 @@ h4{
 }
 
 .header-item-3{
-    width: 200px;
-    max-width: 400px;
+    max-width: 380px;
     flex: 1;
     display: flex;
     justify-content: right;
     padding-right: 20px;
     justify-self: center;
-}
-
-.header-margin{
-    flex: 1;
 }
 
 .header-spacer{
@@ -316,6 +315,7 @@ h4{
     margin: 0 auto;
     display: flex;
     justify-content: center;
+
     align-items: center;
     height: 100%;
   }
@@ -341,7 +341,7 @@ h4{
 
 .menu-item{
     font-family: CenturyOldStyleRegular;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: #f2f3ed;
     cursor: pointer;
@@ -349,6 +349,7 @@ h4{
 
 .menu-item:hover{
     text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 
 .hamburger-menu{
