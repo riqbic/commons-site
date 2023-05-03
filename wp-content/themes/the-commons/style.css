@@ -378,7 +378,7 @@ h4{
   .menu__btn {
     position: fixed;
     top: 0px;
-    left: 20px;
+    right: 20px;
     width: 26px;
     height: 26px;
     padding-top: 26px;
