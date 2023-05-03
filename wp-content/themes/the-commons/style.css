@@ -230,7 +230,7 @@ h4{
   height: 30px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #252421;
+  border-right: 1px solid #252421;
 
 }
 
@@ -246,6 +246,11 @@ h4{
   cursor: pointer;
   margin-left: auto;
   font-family: CenturyOldStyleRegular;
+}
+
+.popout-close:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 
 .newsy-header{
