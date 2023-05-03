@@ -176,10 +176,10 @@ h3{
 }
 
 h4{
-    font-family: Oswald;
+    font-family: CenturyOldStyleRegular;
     font-size: 5rem;
+    font-weight: bold;
     margin: 0px;
-    padding-top: 25px;
     text-align: center;
     max-width: auto;
     color: #f2f3ed !important;
