@@ -58,7 +58,7 @@
             <li class="menu__item" onclick="menuHandler('blog')">Articles</li>
             <li class="menu__item" onclick="menuHandler('events')">Events</li>
             <li class="menu__item"><a class ="menu__item" style="padding: 0px;" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
-            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
+            <li class="menu__item"><a class ="menu__item" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
                 echo 'My Account';
                 } else {

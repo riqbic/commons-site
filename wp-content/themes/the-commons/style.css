@@ -422,9 +422,8 @@ h4{
     display: block;
     padding: 12px 24px;
     color: #f2f3ed;
-    font-family: 'Oswald', sans-serif;
+    font-family: CenturyOldStyleRegular;
     font-size: 20px;
-    font-weight: 600;
     text-decoration: none;
     transition-duration: .25s;
   }
