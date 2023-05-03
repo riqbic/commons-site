@@ -146,10 +146,6 @@ function popOut(activeID,call_from_page,transition){
          //Add which div id active
          popout_container.classList.remove("active-"+activeID);
 
-        //push the history stack, as long as the call came from the user, and not from a history push
-        if(call_from_page){
-            history.pushState(activeID,"The Commons",commons_main.blog_url);
-        }
 
         popout_state = 0;
         var contentID = popout_container.firstChild.id;
@@ -163,6 +159,11 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
+
+            //push the history stack, as long as the call came from the user, and not from a history push
+            if(call_from_page){
+                history.pushState(activeID,"The Commons",commons_main.blog_url);
+            }
         },10);
     }
 
