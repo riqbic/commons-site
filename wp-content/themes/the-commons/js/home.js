@@ -120,12 +120,6 @@
                         //remove loading class
                         $('.blog-single-content').removeClass('loading');
                         $('.blog-single-content > .loader').removeClass('loader-active');
-
-                        //spacer so sticky header stays at the top and doesn't scroll off
-                        var newsy_container = document.getElementById("newsy-container");
-                        var popout_container = document.getElementById("popout-container");
-                        var popout_spacer = document.getElementById("popout-spacer");
-                        popout_spacer.style.height = popout_container.offsetHeight-newsy_container.offsetHeight+20+"px";
                     }
                 });
             } else {

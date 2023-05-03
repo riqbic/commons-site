@@ -61,7 +61,6 @@ function onPageLoad() {
     var active_element = document.getElementById(activeID+"-content");
     var full_content = document.getElementsByClassName(activeID+"-content-full");
     var newsy_container = document.getElementById("newsy-container");
-    var popout_spacer = document.getElementById("popout-spacer");
     //pop out the content in the URL parameter
     if (params.getAll("pop").length !== 0){
         popout_state = 1;
@@ -139,7 +138,6 @@ function popOut(activeID,call_from_page,transition){
     var active_element = document.getElementById(activeID+"-content");
     var preview_element = document.getElementById(activeID+"-preview");
     var newsy_container = document.getElementById("newsy-container");
-    var popout_spacer = document.getElementById("popout-spacer");
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
@@ -165,7 +163,6 @@ function popOut(activeID,call_from_page,transition){
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
-            popout_spacer.style.height = 0+"px";
         },10);
     }
 
