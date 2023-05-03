@@ -139,7 +139,7 @@ body{
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     white-space: nowrap;
-    color: #252421;
+    color: #f2f3ed;
     display: flex;
     align-items: center;
     height: 52px;
@@ -396,7 +396,7 @@ h4{
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #252421;
+    background-color: #f2f3ed;
     transition-duration: .25s;
   }
   .menu__btn > span::before {
@@ -503,10 +503,6 @@ h4{
     cursor: pointer;
     filter: grayscale(1);
     transition: filter .25s;
-}
-
-.grid-item:hover{
-    filter: grayscale(0) !important;
 }
 
 .bottom-border{
