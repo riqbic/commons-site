@@ -158,7 +158,7 @@ function popOut(activeID,call_from_page,transition){
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
-        opacityToggle("1");
+        opacityToggle();
         document.body.style.overflow = "auto";
 
         setTimeout(function(){
@@ -183,7 +183,7 @@ function popOut(activeID,call_from_page,transition){
 
         popout_state = 1;
         popout_container.style.display = "block";
-        opacityToggle("0.3");
+        opacityToggle();
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
         document.body.style.overflow = "hidden";
@@ -196,10 +196,15 @@ function popOut(activeID,call_from_page,transition){
     }
 }
 
-//toggle the opacity of the grid
-function opacityToggle(opacity_level){
-    var grid = document.getElementById("newsy-container");
-    grid.style.opacity = opacity_level;
+//toggle the popout shadow
+function opacityToggle(state){
+    var shadow = document.getElementById("popout-shadow");
+    if(state){
+        shadow.style.display = "block";
+    }
+    else{
+        shadow.style.display = "none";
+    }
 }
 
 //sets the popout container to the size of the grid element it is replacing
