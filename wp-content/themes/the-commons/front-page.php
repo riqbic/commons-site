@@ -33,7 +33,7 @@
             </div>
             <div class="grid-content" id="blog-content">
                 <div class="popout-bar">
-                    <div class="popout-title">Articles | Title</div>
+                    <div class="popout-title">Articles | <?php echo the_title(); ?></div>
                     <div class="popout-close" onclick="popOut('blog',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
