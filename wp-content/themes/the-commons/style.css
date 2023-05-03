@@ -414,7 +414,6 @@ h4{
     padding: 80px 0;
     list-style: none;
     background-color: #252421;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
     z-index: 2;
   }
