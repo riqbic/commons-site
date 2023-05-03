@@ -359,7 +359,7 @@
     </div>
 </div>
 
-<div class="popout-shadow" id="popout-shadow"></div>
+<div class="popout-shadow" id="popout-shadow" onclick="popOut('',1,1)></div>
 
 <!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
 <div class="popout-container" id="popout-container"></div>
