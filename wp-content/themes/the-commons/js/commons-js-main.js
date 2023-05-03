@@ -156,7 +156,7 @@ function popOut(activeID,call_from_page,transition){
         var activeID = contentID.split("-content").join("")
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
-        opacityToggle();
+        opacityToggle(0);
         document.body.style.overflow = "auto";
 
         setTimeout(function(){
@@ -180,7 +180,7 @@ function popOut(activeID,call_from_page,transition){
 
         popout_state = 1;
         popout_container.style.display = "block";
-        opacityToggle();
+        opacityToggle(1);
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
         document.body.style.overflow = "hidden";
