@@ -88,10 +88,6 @@ img {
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
-        filter: grayscale(0) !important;
-    }
-    .grid-item:hover{
-        filter: none !important;
     }
     .blog-close:before, .blog-close:after{
         background-color: #f2f3ed !important;
@@ -403,7 +399,7 @@ h4{
   .menu__btn {
     position: fixed;
     top: 0px;
-    left: 20px;
+    right: 20px;
     width: 26px;
     height: 26px;
     padding-top: 26px;
@@ -438,18 +434,16 @@ h4{
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #f2f3ed;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    background-color: #252421;
     transition-duration: .25s;
     z-index: 2;
   }
   .menu__item {
     display: block;
     padding: 12px 24px;
-    color: #252421;
-    font-family: 'Oswald', sans-serif;
+    color: #f2f3ed;
+    font-family: CenturyOldStyleRegular;
     font-size: 20px;
-    font-weight: 600;
     text-decoration: none;
     transition-duration: .25s;
   }
@@ -457,16 +451,10 @@ h4{
     text-decoration: underline;
   }
 
-.account-icon{
-    position: fixed;
-    right: 10px;
-    top: 5px;
-}
-
 #title-link-mobile{
     display: block;
     width: 150px;
-    margin-left: 75px;
+    margin-left: 20px;
 }
 
 .newsy-container{
@@ -522,8 +510,6 @@ h4{
     background-color: #f2f3ed;
     overflow: hidden;
     cursor: pointer;
-    filter: grayscale(1);
-    transition: filter .25s;
 }
 
 .bottom-border{

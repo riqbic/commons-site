@@ -33,9 +33,9 @@
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
-            echo 'My Account';
-            } else {
-            echo 'Login/Register';
+                echo 'My Account';
+                } else {
+                echo 'Login/Register';
             }?>
         </a></li>
         </ul>
@@ -53,17 +53,20 @@
         </label>
 
         <ul class="menu__box">
-            <li class="menu__item" onclick="menuHandler('')">Home</li>
             <li class="menu__item" onclick="menuHandler('shop')">Shop</li>
             <li class="menu__item" onclick="menuHandler('features')">Video</li>
             <li class="menu__item" onclick="menuHandler('blog')">Articles</li>
             <li class="menu__item" onclick="menuHandler('events')">Events</li>
-            <li class="menu__item"><a class ="menu__item" style="padding: 0px;" href="<?php echo get_bloginfo('url'); ?>/subscriptions" style="color: crimson;">Subscribe</a></li>
+            <li class="menu__item"><a class ="menu__item" style="padding: 0px;" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
+            <li class="menu__item"><a class ="menu__item" href="<?php echo get_bloginfo('url'); ?>/my-account">
+            <?php if(is_user_logged_in()) {
+                echo 'My Account';
+                } else {
+                echo 'Login/Register';
+            }?>
+        </a></li>
         </ul>
     </div>
-    <a class="account-icon" href="https://thecommons.boston/?page_id=11">
-        <img src="img/account_icon.png" alt="My Account" style="width:42px;height:42px;">
-    </a>
 </div>
 
 <div class="header-spacer-mobile hidden-desktop"></div>
