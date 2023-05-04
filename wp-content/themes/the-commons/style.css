@@ -271,7 +271,7 @@ h4{
 
 .newsy-header-mobile{
     position: fixed;
-    width: 100%;
+    width: calc(100% + 1px);
     background-color: black;
     border-bottom: 1px solid black;
     z-index: 2;
@@ -431,7 +431,7 @@ h4{
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
-    top: 52px;
+    top: 104px;
     left: -140%;
     width: 100%;
     height: 100%;
