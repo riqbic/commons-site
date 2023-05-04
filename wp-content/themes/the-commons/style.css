@@ -97,17 +97,17 @@ img {
         overflow-y: auto;
     }
     .blog-flex-container{
-        overflow-y: auto;
-        flex-direction: column;
+        overflow-y: auto !important;
+        flex-direction: column !important;
     }
     .blog-flex-container .blog-sidebar{
-        width: calc(100% - 40px);
-        order: 2;
-        overflow-y: initial;
+        width: calc(100% - 40px) !important;
+        order: 2 !important;
+        overflow-y: initial !important;
     }
     .blog-flex-container .blog-single-content{
-        width: calc(100% - 40px);
-        overflow-y: initial;
+        width: calc(100% - 40px) !important;
+        overflow-y: initial !important;
     }
 }
 
