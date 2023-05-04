@@ -102,7 +102,7 @@ function resize(){
 function menuHandler(activeID){
     var url = window.location.href.split('?')[0];
     var popout_container = document.getElementById("popout-container");
-    var menu_toggle = document.getElementById("menu__toggle");
+    var menu_toggle = document.getElementById("menu-toggle");
 
     menu_toggle.checked = '';
 
