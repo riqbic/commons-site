@@ -47,7 +47,7 @@
         <div class="title-mobile">The Commons</div>
     </a>
     <div class="menu-extras-mobile">
-        <p class="header-item-mobile-1" style="color: #white; display: inline-block;">
+        <p class="header-item-mobile-1" style="color: #white;">
             <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
         </p>
         <p class="header-item-mobile-2" style="color: #white; font-style: italic;">By the People, For the People.</p>
