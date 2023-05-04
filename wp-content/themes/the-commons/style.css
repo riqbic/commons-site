@@ -283,7 +283,6 @@ h4{
     justify-self: center;
     display: flex;
     justify-content: left;
-    padding-left: 20px;
 }
 
 .header-item-2{
@@ -298,7 +297,6 @@ h4{
     flex: 1;
     display: flex;
     justify-content: right;
-    padding-right: 20px;
     justify-self: center;
 }
 
@@ -366,24 +364,24 @@ h4{
     height: 0px;
 }
 
-#menu__toggle {
+#menu-toggle {
     opacity: 0;
   }
-  #menu__toggle:checked + .menu__btn > span {
+  #menu-toggle:checked + .menu-btn > span {
     transform: rotate(45deg);
   }
-  #menu__toggle:checked + .menu__btn > span::before {
+  #menu-toggle:checked + .menu-btn > span::before {
     top: 0;
     transform: rotate(0deg);
   }
-  #menu__toggle:checked + .menu__btn > span::after {
+  #menu-toggle:checked + .menu-btn > span::after {
     top: 0;
     transform: rotate(90deg);
   }
-  #menu__toggle:checked ~ .menu__box {
+  #menu-toggle:checked ~ .menu-box {
     left: 0 !important;
   }
-  .menu__btn {
+  .menu-btn {
     position: fixed;
     top: 0px;
     right: 20px;
@@ -393,9 +391,9 @@ h4{
     cursor: pointer;
     z-index: 3;
   }
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
+  .menu-btn > span,
+  .menu-btn > span::before,
+  .menu-btn > span::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -403,16 +401,18 @@ h4{
     background-color: #f2f3ed;
     transition-duration: .25s;
   }
-  .menu__btn > span::before {
+  .menu-btn > span::before {
     content: '';
     top: -8px;
   }
-  .menu__btn > span::after {
+  .menu-btn > span::after {
     content: '';
     top: 8px;
   }
-  .menu__box {
-    display: block;
+  .menu-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     top: 52px;
     left: -140%;
@@ -425,17 +425,21 @@ h4{
     transition-duration: .25s;
     z-index: 2;
   }
-  .menu__item {
+  .menu-item-mobile {
     display: block;
     padding: 12px 24px;
+    transition-duration: .25s;
+  }
+  .menu-item-mobile:hover {
+    text-decoration: underline;
+  }
+
+  .menu-text-mobile{
     color: #f2f3ed;
     font-family: CenturyOldStyleRegular;
     font-size: 20px;
     text-decoration: none;
-    transition-duration: .25s;
-  }
-  .menu__item:hover {
-    text-decoration: underline;
+    border-bottom: .5px solid #f2f3ed;
   }
 
 #title-link-mobile{
