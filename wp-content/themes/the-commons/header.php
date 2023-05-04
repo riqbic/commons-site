@@ -9,15 +9,15 @@
 <body <?php body_class(); ?>>
 <div class="newsy-header hidden-mobile">
     <div class="header-container">
-        <p class="header-item-1" style="color: #f2f3ed">
-            <?php echo date("l F j, Y")?>
+        <p class="header-item-1" style="color: #white">
+            <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
         </p>
         <div class="header-item-2">
             <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
                 <div class="title">The Commons</div>
             </a>
         </div>
-        <p class="header-item-3" style="color: #f2f3ed; font-style: italic;">By the People, For the People.</p>
+        <p class="header-item-3" style="color: #white; font-style: italic;">By the People, For the People.</p>
     </div>
 </div>
 
@@ -46,6 +46,12 @@
     <a id="title-link-mobile" href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
         <div class="title-mobile">The Commons</div>
     </a>
+    <div class="menu-extras-mobile">
+        <p class="header-item-mobile-1" style="color: #white; display: inline-block;">
+            <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
+        </p>
+        <p class="header-item-mobile-2" style="color: #white; font-style: italic;">By the People, For the People.</p>
+    </div>
     <div class="hamburger-menu" >
         <input id="menu-toggle" type="checkbox" />
         <label class="menu-btn" for="menu-toggle">

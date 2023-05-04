@@ -277,6 +277,14 @@ h4{
     z-index: 2;
 }
 
+.menu-extras-mobile{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top: 1px solid white;
+}
+
 .header-item-1{
     max-width: 380px;
     flex: 1;
@@ -298,6 +306,15 @@ h4{
     display: flex;
     justify-content: right;
     justify-self: center;
+}
+
+.header-item-mobile-1{
+    margin-left: 0px;
+}
+
+.header-item-mobile-2{
+    margin-left: auto;
+    margin-right: 0px;
 }
 
 .header-spacer{
@@ -582,6 +599,7 @@ h4{
 }
 .blog-flex-container .blog-sidebar {
     width: 30%;
+    padding-right: 20px;
     overflow-y: auto;
 }
 .blog-flex-container .blog-sidebar .blog-item.is-active {
