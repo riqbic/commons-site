@@ -188,8 +188,8 @@ function popOut(activeID,call_from_page,transition){
 
         setPopoutSize();
 
-        if(window.scrollY < 100){
-            scrollTo(0,100);
+        if(window.scrollY < 120){
+            scrollTo(0,120);
         }
     }
 }
