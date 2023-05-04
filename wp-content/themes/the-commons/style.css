@@ -622,54 +622,6 @@ h4{
 .blog-flex-container .blog-single-content::-webkit-scrollbar {
     display: none; /*Chrome and Safari*/
   }
-@media all and (max-width: 768px) {
-    .blog-flex-container.flex-row {
-        display: block;
-    }
-    .blog-flex-container .blog-sidebar,
-    .blog-flex-container .blog-single-content {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .more-posts-toggle {
-        width: 100%;
-        background: black;
-        color: white;
-        height: 65px;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-        box-sizing: border-box;
-    }
-    .more-posts-toggle span.chevron {
-        background-color: white;
-        -webkit-mask-image: url(img/chevron-down.svg);
-        mask-image: url(img/chevron-down.svg);
-        width: 25px;
-        height: 25px;
-        display: inline-block;
-        transform: scale(1);
-        transition: .2s transform;
-    }
-    .more-posts-toggle.is-active span.chevron {
-        transform: scale(-1);
-    }
-    .blog-sidebar {
-        max-height: 0; /*using height: 0 to height: auto; doesnt allow the transition animation*/
-        overflow-y: auto;
-        transition: .2s max-height;
-        top: 65px;
-        background: black;
-        z-index: 1;
-    }
-    .blog-sidebar.is-active {
-        max-height: 999px;
-        z-index: 1;
-        box-shadow: 0 5px 10px #616161;
-    }
-}
 
 #blog-ajax-container.loading {
     filter: blur(0px);

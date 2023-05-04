@@ -1,30 +1,5 @@
 (function($) {
 	$(document).ready(function() {
-        //More posts toggle for blog sidebar
-        $('#popout-container').on('click','.more-posts-toggle',function() {
-            var $this = $(this);
-            //Toggle the toggle itself to be active or not
-            $this.toggleClass('is-active');
-            // Toggle the text in the toggle
-            // The toggle text should match what is in the <span class="toggle-text"></span> on front-page.php
-            var text = $this.find('.toggle-text').text();
-            $this.find('.toggle-text').text(text == "Show More Posts" ? "Collapse Posts" : "Show More Posts");
-            //Toggle the sidebar to expand or contract
-            $(this).parent().find('.blog-sidebar').toggleClass('is-active');
-
-            //Scrolls the window to the active blog menu item
-            if(text == "Show More Posts"){
-                var active_blog = document.getElementsByClassName("blog-item is-active")[0];
-                window.scrollTo(0,active_blog.offsetTop);
-            } 
-        });
-        //Reset toggle when close button is clicked
-        $('#popout-container').on('click','#close-icon,.blog-item',function() {
-            $('.more-posts-toggle,.blog-sidebar').removeClass('is-active');
-            $('.more-posts-toggle').find('.toggle-text').text('Show More Posts');
-        });
-        
-
         //bool var to see if we loaded a post automatically yet
         var loadedPost = 0;
         //automatically load a post on page load or pop

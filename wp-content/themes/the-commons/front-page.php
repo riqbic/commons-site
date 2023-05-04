@@ -38,10 +38,6 @@
                     <div class="popout-close" onclick="popOut('blog',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
-                    <div class="hidden-desktop more-posts-toggle">
-                        <span class="chevron"></span>
-                        <span class="toggle-text">Show More Posts</span><!-- this text is toggle in home.js line 8-->
-                    </div>
                     <div class="blog-sidebar">
                         <?php 
                         //Query 3 most recent posts that are published
@@ -115,10 +111,6 @@
             <div class="grid-content" id="blog-alt-content">
             <span class="close blog-close" id="close-icon" onclick="popOut('blog-alt',1,1)"></span>
                 <div class="blog-flex-container flex-row">
-                    <div class="hidden-desktop more-posts-toggle">
-                        <span class="chevron"></span>
-                        <span class="toggle-text">Show More Posts</span><!-- this text is toggle in home.js line 8-->
-                    </div>
                     <div class="blog-sidebar">
                     <?php 
                         //Query 3 most recent posts that are published
@@ -261,10 +253,6 @@
             <div class="grid-content" id="features-content">
                 <span class="close blog-close" id="close-icon" onclick="popOut('features',1,1)"></span>
                 <div class="blog-flex-container flex-row">
-                    <div class="hidden-desktop more-posts-toggle">
-                        <span class="chevron"></span>
-                        <span class="toggle-text">Show More Posts</span><!-- this text is toggle in home.js line 8-->
-                    </div>
                     <div class="blog-sidebar">
                     <?php 
                         //Query 3 most recent posts that are published
