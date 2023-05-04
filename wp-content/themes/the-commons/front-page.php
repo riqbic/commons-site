@@ -32,7 +32,11 @@
                     <?php } ?>
             </div>
             <div class="grid-content" id="blog-content">
-                <span class="close blog-close" id="close-icon" onclick="popOut('blog',1,1)"></span>
+                <div class="popout-bar">
+                    <div class="popout-title">Articles</div>
+                    <div class="post-title"><?php echo the_title(); ?></div>
+                    <div class="popout-close" onclick="popOut('blog',1,1)">Close</div>
+                </div>
                 <div class="blog-flex-container flex-row">
                     <div class="hidden-desktop more-posts-toggle">
                         <span class="chevron"></span>
@@ -242,10 +246,7 @@
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h4>FEATURED</h4>
-                                    <div class="features-thumbnail-container">
-                                        <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
-                                        <h3 class="features-title" style="color: f2f3ed;"><?php the_title(); ?></h3>
-                                    </div>
+                                    <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
                                     <div class="newsy-small"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE

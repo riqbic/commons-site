@@ -9,15 +9,15 @@
 <body <?php body_class(); ?>>
 <div class="newsy-header hidden-mobile">
     <div class="header-container">
-        <p class="header-item-1" style="color: #f2f3ed">
-            <?php echo date("l F j, Y")?>
+        <p class="header-item-1" style="color: white">
+            <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
         </p>
         <div class="header-item-2">
             <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
                 <div class="title">The Commons</div>
             </a>
         </div>
-        <p class="header-item-3" style="color: #f2f3ed; font-style: italic;">By the People, For the People.</p>
+        <p class="header-item-3" style="color: white; font-style: italic;">By the People, For the People.</p>
     </div>
 </div>
 
@@ -46,19 +46,25 @@
     <a id="title-link-mobile" href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
         <div class="title-mobile">The Commons</div>
     </a>
+    <div class="menu-extras-mobile">
+        <p class="header-item-mobile-1" style="color: white; font-size: 12px;">
+            <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
+        </p>
+        <p class="header-item-mobile-2" style="color: white; font-style: italic; font-size: 12px;">By the People, For the People.</p>
+    </div>
     <div class="hamburger-menu" >
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-btn" for="menu-toggle">
         <span></span>
         </label>
 
-        <ul class="menu__box">
-            <li class="menu__item" onclick="menuHandler('shop')">Shop</li>
-            <li class="menu__item" onclick="menuHandler('features')">Video</li>
-            <li class="menu__item" onclick="menuHandler('blog')">Articles</li>
-            <li class="menu__item" onclick="menuHandler('events')">Events</li>
-            <li class="menu__item"><a class ="menu__item" style="padding: 0px;" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
-            <li class="menu__item"><a class ="menu__item" href="<?php echo get_bloginfo('url'); ?>/my-account">
+        <ul class="menu-box">
+            <li class="menu-item-mobile" onclick="menuHandler('shop')"><div class="menu-text-mobile">Shop</div></li>
+            <li class="menu-item-mobile" onclick="menuHandler('features')"><div class="menu-text-mobile">Video</div></li>
+            <li class="menu-item-mobile" onclick="menuHandler('blog')"><div class="menu-text-mobile">Articles</div></li>
+            <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li>
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
                 echo 'My Account';
                 } else {
