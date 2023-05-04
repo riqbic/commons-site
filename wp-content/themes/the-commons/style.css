@@ -602,7 +602,12 @@ h4{
     width: 30%;
     padding-right: 20px;
     overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+.blog-flex-container .blog-sidebar::-webkit-scrollbar {
+    display: none; /*Chrome and Safari*/
+  }
 .blog-flex-container .blog-sidebar .blog-item.is-active {
     background: white;
 }
@@ -612,7 +617,12 @@ h4{
     padding: 20px;
     overflow-y: auto;
     border-left: 1px solid black;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+.blog-flex-container .blog-single-content::-webkit-scrollbar {
+    display: none; /*Chrome and Safari*/
+  }
 @media all and (max-width: 768px) {
     .blog-flex-container.flex-row {
         display: block;
