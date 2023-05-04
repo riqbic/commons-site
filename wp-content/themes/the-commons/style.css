@@ -54,9 +54,6 @@ img {
     h2{
         font-size: 2rem !important;
     }
-    .blog-item > h3{
-        color: white !important;
-    }
     .blog-item{
         border-bottom: 1px solid white !important;
         padding: 0px !important;
@@ -93,11 +90,24 @@ img {
         background-color: white !important;
     }
     .popout-container{
-        height: calc(100vh - 52px) !important;
+        height: calc(100vh - 92px) !important;
         width: 100% !important;
-        top: 52px !important;
+        top: 92px !important;
         left: 0px !important;
         overflow-y: auto;
+    }
+    .blog-flex-container{
+        overflow-y: auto;
+        flex-direction: column;
+    }
+    .blog-flex-container .blog-sidebar{
+        width: calc(100% - 40px);
+        order: 2;
+        overflow-y: initial;
+    }
+    .blog-flex-container .blog-single-content{
+        width: calc(100% - 40px);
+        overflow-y: initial;
     }
 }
 
