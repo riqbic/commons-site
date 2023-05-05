@@ -20,7 +20,7 @@
                             <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
-                                <div class="newsy-small"><?php echo the_excerpt(); ?>
+                                <div class="newsy"><?php echo the_excerpt(); ?>
                                     <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                     READ MORE
                                 </div>
@@ -59,7 +59,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
-                                    <div class="newsy-small hidden-mobile">
+                                    <div class="newsy hidden-mobile">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -96,7 +96,7 @@
                                 ?>
                                 <div class="blog-preview blog-item-2;" data-id="<?php echo get_the_ID(); ?>">
                                 <h3><?php the_title(); ?></h3>
-                                    <div class="newsy-small">
+                                    <div class="newsy">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -132,7 +132,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
-                                    <div class="newsy-small hidden-mobile">
+                                    <div class="newsy hidden-mobile">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -239,7 +239,7 @@
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h4>FEATURED</h4>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
-                                    <div class="newsy-small"><?php echo the_excerpt(); ?>
+                                    <div class="newsy"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
                                     </div>
@@ -275,7 +275,7 @@
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h3><?php the_title(); ?></h3>
                                     <?php if($blogct <= 3) { ?>
-                                        <div class="newsy-small">
+                                        <div class="newsy">
                                             <?php the_excerpt(); ?>
                                             <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                             READ MORE
