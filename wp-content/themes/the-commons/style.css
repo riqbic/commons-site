@@ -229,15 +229,18 @@ h4{
   height: 30px;
   display: flex;
   align-items: center;
-  border-right: 1px solid black;
 
 }
 
 .post-title {
   font-size: 20px;
   margin-right: 10px;
-  margin-left: 10px;
+  padding-left: 10px;
   font-family: CenturyOldStyleRegular;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid black;
 }
 
 .popout-close {
