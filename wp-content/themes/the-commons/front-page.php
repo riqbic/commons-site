@@ -72,7 +72,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="60" height="60"></div>
+                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
                         
                     </div><!-- close blog content-->
                 </div>
@@ -145,7 +145,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="60" height="60"></div>
+                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
                         
                     </div><!-- close blog content-->
                 </div>
@@ -289,7 +289,7 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="60" height="60"></div>
+                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
                         
                     </div><!-- close blog content-->
                 </div>
