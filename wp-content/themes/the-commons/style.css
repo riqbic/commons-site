@@ -94,11 +94,12 @@ img {
         width: 100% !important;
         top: 92px !important;
         left: 0px !important;
-        overflow-y: auto;
+        z-index: 1 !important;
     }
     .blog-flex-container{
         overflow-y: auto !important;
         flex-direction: column !important;
+        align-items: center !important;
     }
     .blog-flex-container .blog-sidebar{
         width: calc(100% - 40px) !important;
