@@ -18,7 +18,7 @@
                             $posts_query->the_post(); 
                             ?>
                             <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                <h3><?php the_title(); ?></h3>
+                                <h4><?php the_title(); ?></h4>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                 <div class="newsy"><?php echo the_excerpt(); ?>
                                     <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -58,7 +58,7 @@
                                 //Incremenent blog item count
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h3><?php the_title(); ?></h3>
+                                    <h4><?php the_title(); ?></h4>
                                     <div class="newsy hidden-mobile">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -95,7 +95,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-2;" data-id="<?php echo get_the_ID(); ?>">
-                                <h3><?php the_title(); ?></h3>
+                                <h4><?php the_title(); ?></h4>
                                     <div class="newsy">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -131,7 +131,7 @@
                                 //Incremenent blog item count
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h3><?php the_title(); ?></h3>
+                                    <h4><?php the_title(); ?></h4>
                                     <div class="newsy hidden-mobile">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -165,7 +165,7 @@
             <div class="grid-content" id="about-us-content">
             <span class="close blog-close" id="close-icon" onclick="popOut('about-us',1,1)"></span>
                 <div class="about-us-container">
-                    <h3>About Us</h3>
+                    <h4>About Us</h4>
                     <p class="newsy-centered">Born in Boston, The Commons is a parkour org that invests in North American parkour culture. Through hosting events, uplifting local communities, and providing opportunities for athletes and artists, we are working to put America on the map.</p>
                     <p class="newsy-centered">Being a community project means that anybody and everybody can contribute to the cause, but here are some of the people that keep the wheels turning:</p>
 
@@ -273,7 +273,7 @@
                                 //Incremenent blog item count
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h3><?php the_title(); ?></h3>
+                                    <h4><?php the_title(); ?></h4>
                                     <?php if($blogct <= 3) { ?>
                                         <div class="newsy">
                                             <?php the_excerpt(); ?>
@@ -301,19 +301,19 @@
             </div>
             <div class="grid-content" id="get-involved-content">
                 <span class="close blog-close" id="close-icon" onclick="popOut('get-involved',1,1)"></span>
-                <h3>Come Train!</h3>
+                <h4>Come Train!</h4>
                 <p class="newsy-centered">
                     The best way to get involved is to come out and train! We try to host community sessions every week and mini-jams regularly. Follow our instagram page <a href="https://www.instagram.com/thecommons.sessions/">@thecommons.sessions</a> or <a href="https://discord.com/invite/6wzh8Gbqxt">join our Discord</a> to get the when and where.
                 </p>
-                <h3>Volunteer</h3>
+                <h4>Volunteer</h4>
                 <p class="newsy-centered">
                     As a community based project, we include anybody who wants to help. We always need people to help organize community sessions, scout spots, and film. When it comes to jam time, there are an infinite amount of tasks to do, and our large events couldn’t happen without our amazing volunteer team.
                 </p>
-                <h3>Sponsor</h3>
+                <h4>Sponsor</h4>
                 <p class="newsy-centered">
                     Any financial contributions are deeply appreciated, and go right back into the parkour community by improving our events, paying our team, or paying artists that display at our events. Our brand has deep connections in the parkour scene, and our content reaches all across the globe. We are mainly looking to partner with local small businesses, but are open to other options.
                 </p>
-                <h3>Work With Us</h3>
+                <h4>Work With Us</h4>
                 <p class="newsy-centered">
                     The Commons is always looking for new athletes and artists to work with us. Got a project that fits on our site? Send us a line at collab@thecommons.boston or shoot us a DM on socials.
                 </p>

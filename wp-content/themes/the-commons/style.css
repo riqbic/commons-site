@@ -49,19 +49,19 @@ img {
     }
     /*title and banner*/
     h1{
-        font-size: 2.074rem;
+        font-size: 2.074rem !important;
     }
     /*banners, features, etc*/
     h2{
-        font-size: 1.728rem;
+        font-size: 1.728rem !important;
     }
     /*titles*/
     h3{
-        font-size: 1.44rem;
+        font-size: 1.44rem !important;
     }
     h4{
         font-family: CenturyOldStyleSmallCapsRegular;
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
     .blog-item{
         border-bottom: 1px solid white !important;
@@ -164,7 +164,7 @@ p{
 
 h1, h2, h3, h4{
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.1;
 }
 
 /*title and banner*/
