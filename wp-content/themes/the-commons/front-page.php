@@ -237,7 +237,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <h4>FEATURED</h4>
+                                    <h1 class="block-header">FEATURED</h1>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->

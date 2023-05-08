@@ -47,12 +47,17 @@ img {
     .hidden-mobile{
         display: none !important;
     }
+    /*title and banner*/
     h1{
-        font-size: 2rem !important;
-        width: 100% !important;
+        font-size: 1.728rem;
     }
+    /*banners, features, etc*/
     h2{
-        font-size: 2rem !important;
+        font-size: 1.44rem;
+    }
+    /*titles*/
+    h3{
+        font-size: 1.2rem;
     }
     .blog-item{
         border-bottom: 1px solid white !important;
@@ -60,10 +65,6 @@ img {
     }
     .blog-item:last-child{
         border-bottom: none !important;
-    }
-    h4{
-        font-size: 3rem !important;
-        padding-top: 10px !important;
     }
     .grid-mobile{
     grid-auto-rows: 1fr !important;
@@ -130,19 +131,17 @@ body{
 }
 
 .title{
-    font-family: Helmswald-Post;
-    font-size: 4rem;
+    font-family: Helmswald-Post !important;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     margin: 0;
     white-space: nowrap;
     text-align: center;
-    color: white;
+    color: white !important;
 }
 
 .title-mobile{
     font-family: Helmswald-Post;
-    font-size: 1.5rem;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     white-space: nowrap;
@@ -154,41 +153,47 @@ body{
 
 p{
     font-family: CenturyOldStyleRegular;
+    font-size: 1rem;
 }
 
+/*title and banner*/
 h1{
     font-family: CenturyOldStyleSmallCapsRegular;
-    font-size: 3rem;
-    margin: 0;
-    max-width: auto;
-    text-align: center;
-    color: black;
-    width: 60%;
-    margin: auto;
+    font-size: 4.236rem;
 }
 
+/*banners, features, etc*/
 h2{
     font-family: CenturyOldStyleSmallCapsRegular;
-    font-size: 2rem;
-    margin: 0px;
-    padding-top: 5px;
-    text-align: center;
-    max-width: auto;
-    color: black !important;
-    height: 35px;
+    font-size: 2.618rem;
 }
 
+/*titles*/
 h3{
     font-family: CenturyOldStyleSmallCapsRegular;
-    font-size: 2rem;
+    font-size: 1.618rem;
     text-align: center;
     color: black;
     margin: 5px;
 }
 
-h4{
-    font-family: CenturyOldStyleRegular;
-    font-size: 5rem;
+.newsy{
+    text-align: justify;
+    color: black;
+}
+.newsy-centered{
+    text-align: justify;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    color: black;
+}
+
+.text-small{
+    font-size: .618rem;
+}
+
+.block-header{
     font-weight: bold;
     margin: 0px;
     text-align: center;
@@ -199,12 +204,13 @@ h4{
 
 .size-blog-thumbnail{
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
 }
 
 .blog-thumbnail-container{
-    width: 200px;
-    margin: auto;
+    width: 100%;
+    height: 200px;
 }
 
 .size-features-thumbnail{
@@ -671,22 +677,6 @@ h4{
 
 .blog-item:last-child{
     border-bottom: none;
-}
-
-.newsy{
-    text-align: justify;
-    font-family: CenturyOldStyleRegular;
-    font-size: 1rem;
-    color: black;
-}
-.newsy-centered{
-    text-align: justify;
-    font-family: CenturyOldStyleRegular;
-    font-size: 1rem;
-    width: 70%;
-    margin: auto;
-    padding: 20px;
-    color: black;
 }
 
 .subpage-container{
