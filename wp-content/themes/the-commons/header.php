@@ -14,7 +14,7 @@
         </p>
         <div class="header-item-2">
             <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
-                <h1 class="title">The Commons</h1>
+                <h2 class="title">The Commons</h2>
             </a>
         </div>
         <p class="header-item-3" style="color: white; font-style: italic;">By the People, For the People.</p>
@@ -44,7 +44,7 @@
 
 <div class="newsy-header-mobile hidden-desktop">
     <a id="title-link-mobile" href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
-        <h1 class="title-mobile">The Commons</h1>
+        <h2 class="title-mobile">The Commons</h2>
     </a>
     <div class="menu-extras-mobile">
         <p class="header-item-mobile-1" style="color: white; font-size: 12px;">
