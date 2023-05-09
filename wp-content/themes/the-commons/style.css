@@ -149,6 +149,7 @@ body{
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     white-space: nowrap;
+    margin: 0 !important;
     color: white;
     display: flex;
     align-items: center;
