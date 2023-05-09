@@ -76,11 +76,11 @@ img {
     grid-template-columns: 1fr 1fr !important; 
     grid-template-rows: repeat(5,minmax(100px,auto)) !important;
     grid-template-areas: 
-    "about-us promo-space-1"
+    "about-us about-us"
     "shop shop"
     "events events"
     "blog-alt blog-alt"
-    "promo-space-2 get-involved" !important; 
+    "get-involved get-involved" !important; 
     }
     .flex-mobile{
         flex-direction: column !important;
@@ -159,12 +159,15 @@ p{
     font-family: CenturyOldStyleRegular;
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 1rem;;
+    margin-bottom: 1rem;
+    color: black;
 }
 
 h1, h2, h3, h4{
+    margin: 3rem 0 1.38rem;
     font-weight: 400;
     line-height: 1.1;
+    color: black;
 }
 
 /*title and banner*/
@@ -183,9 +186,6 @@ h2{
 h3{
     font-family: CenturyOldStyleSmallCapsRegular;
     font-size: 2.618rem;
-    text-align: center;
-    color: black;
-    margin: 5px;
 }
 
 h4{
@@ -526,9 +526,8 @@ h4{
     gap: 10px;
     grid-template-areas:
     "features features"
-    "about-us promo-space-1"
-    "shop get-involved"
-    "shop promo-space-2"
+    "shop shop"
+    "about-us get-involved"
     "events events"; 
 }
 
@@ -538,11 +537,9 @@ h4{
 
 #features { grid-area: features; }
 #about-us { grid-area: about-us; }
-#promo-space-1 { grid-area: promo-space-1; }
 #events { grid-area: events; }
 #shop { grid-area: shop; }
 #get-involved { grid-area: get-involved; }
-#promo-space-2 { grid-area: promo-space-2; }
 #blog-alt { grid-area: blog-alt; }
 
 .subpage-container {

@@ -18,7 +18,7 @@
                             $posts_query->the_post(); 
                             ?>
                             <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                <h4><?php the_title(); ?></h4>
+                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                 <div class="newsy"><?php echo the_excerpt(); ?>
                                     <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -95,7 +95,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-2;" data-id="<?php echo get_the_ID(); ?>">
-                                <h4><?php the_title(); ?></h4>
+                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
                                     <div class="newsy">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
@@ -321,7 +321,7 @@
         </div>
         <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
-            <?php echo do_shortcode('[products limit="4" columns="2" visibility="featured"]'); ?>
+            <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>
             <div class="grid-content" id="shop-content">
             <span class="close blog-close" id="close-icon" onclick="popOut('shop',1,1)"></span>
@@ -338,12 +338,6 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
             </div>
-        </div>
-        <div class="grid-item" id="promo-space-1">
-            <p>promo-space-1</p>
-        </div>
-        <div class="grid-item" id="promo-space-2">
-            <p>promo-space-2</p>
         </div>
     </div>
 </div>
