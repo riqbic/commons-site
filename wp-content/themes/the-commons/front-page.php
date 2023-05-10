@@ -330,7 +330,7 @@
         </div>
         <div class="grid-item" id="events">
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
-            <p>events</p>
+                <img src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
             <div class="grid-content" id="events-content">
                 <span class="close blog-close" id="close-icon" onclick="popOut('events',1,1)"></span>
