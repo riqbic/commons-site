@@ -1,0 +1,30 @@
+{
+    "name": "blog-caption",
+    "title": "Blog Caption",
+    "description": "",
+    "style": "file:./style.css",
+    "script": "",
+    "category": "cultivatewp",
+    "icon": "carrot",
+    "apiVersion": 2,
+    "keywords": [],
+    "acf": {
+        "mode": "preview",
+	"renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}
