@@ -45,6 +45,11 @@ function load_commons_blog_post($paged = NULL) {
     wp_die();
 }
 
+add_action( 'init', 'register_acf_blocks' );
+function register_acf_blocks() {
+    register_block_type( __DIR__ . '/blocks/blog-caption' );
+}
+
 //Remove admin bar for all users
 add_filter('show_admin_bar', '__return_false');
 
