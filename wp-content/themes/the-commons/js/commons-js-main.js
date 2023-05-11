@@ -143,10 +143,6 @@ function popOut(activeID,call_from_page,transition){
     //then "un-popout" the active content
     if(popout_container.hasChildNodes() && popout_state){
 
-         //Add which div id active
-         popout_container.classList.remove("active-"+activeID);
-
-
         popout_state = 0;
         var contentID = popout_container.firstChild.id;
         var activeID = contentID.split("-content").join("")
@@ -156,6 +152,10 @@ function popOut(activeID,call_from_page,transition){
         document.body.style.overflow = "auto";
 
         setTimeout(function(){
+
+            //Add which div id active
+            popout_container.classList.remove("active-"+activeID);
+            
             popout_container.style.display = "none";
             grid_container.appendChild(active_element);
             active_element.style.display = "none";
