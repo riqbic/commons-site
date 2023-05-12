@@ -25,7 +25,7 @@ if ( ! empty( $block['align'] ) ) {
 // Load values and assign defaults.
 $text             = get_field( 'caption' ) ?: 'Your caption here...';
 $label           = get_field( 'caption-label' ) ?: 'Caption Label';
-$image            = get_field( 'figure' ) ?: 295;
+$image_id            = get_field( 'figure' ) ?: 295;
 
 // Build a valid style attribute for background and text colors.
 $styles = array( 'background-color: ' . $background_color, 'color: ' . $text_color );
@@ -35,5 +35,5 @@ $style  = implode( '; ', $styles );
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>" style="<?php echo esc_attr( $style ); ?>">
         <div class="caption-text"><?php echo esc_html( $text ); ?></div>
         <div class="caption-label"><?php echo esc_html( $label ); ?></div>
-        <div class="caption-image"><?php echo esc_html( $image ); ?></div>
+        <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" >
 </div>
