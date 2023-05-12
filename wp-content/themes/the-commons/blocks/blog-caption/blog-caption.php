@@ -27,9 +27,9 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 // Load values and assign defaults.
-$text             = get_field( 'caption' );
+$text             = get_field( 'caption' ) ?: 'Your caption here...';
 $label           = get_field( 'caption-label' ) ?: 'Caption Label';
-$image            = get_field( 'image' ) ?: 295;
+$image            = get_field( 'figure' ) ?: 295;
 
 // Build a valid style attribute for background and text colors.
 $styles = array( 'background-color: ' . $background_color, 'color: ' . $text_color );
@@ -37,7 +37,7 @@ $style  = implode( '; ', $styles );
 
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>" style="<?php echo esc_attr( $style ); ?>">
-        <div class="testimonial-text"><?php echo esc_html( $text ); ?></div>
+        <div class="testimonial-text"><?php echo $text; ?></div>
         <div class="testimonial-author"><?php echo esc_html( $label ); ?></div>
         <div class="testimonial-role"><?php echo esc_html( $image ); ?></div>
 </div>
