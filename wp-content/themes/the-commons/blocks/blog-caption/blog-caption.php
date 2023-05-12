@@ -23,7 +23,7 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 // Load values and assign defaults.
-$text             = get_field( 'Caption' ) ?: 'Your caption here...';
+$text             = get_field( 'caption' ) ?: 'Your caption here...';
 $label           = get_field( 'caption-label' ) ?: 'Caption Label';
 $image            = get_field( 'figure' ) ?: 295;
 
