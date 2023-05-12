@@ -28,8 +28,8 @@ $label           = get_field( 'caption-label' ) ?: 'Caption Label';
 $image_id            = get_field( 'figure' ) ?: 295;
 
 ?>
-<div class="<?php echo esc_attr( $class_name )?>" id="caption-anchor-<?php echo $id?>">
-    <div class="caption-container" id="caption-container-<?php echo $id?>">
+<div class="<?php echo esc_attr( $class_name )?>" id="anchor-<?php echo $id?>">
+    <div class="caption-container" id="<?php echo $id?>">
         <div class="caption-text"><?php echo esc_html( $text ); ?></div>
         <div class="caption-label"><?php echo esc_html( $label ); ?></div>
         <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" width="15%" height="auto">
