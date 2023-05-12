@@ -97,6 +97,9 @@
                         $('#popout-container #blog-ajax-container').html(response.post_content);
                         //Update the title in the popout bar
                         $('#popout-container .post-title').text(response.post_title);
+                        //Scroll to top
+                        $('#popout-container #blog-ajax-container').scrollTop(0);
+
                         //remove loading class
                         $('.blog-single-content').removeClass('loading');
                         $('.blog-single-content > .loader').removeClass('loader-active');
