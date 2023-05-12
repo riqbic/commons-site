@@ -27,13 +27,11 @@ $text             = get_field( 'caption' ) ?: 'Your caption here...';
 $label           = get_field( 'caption-label' ) ?: 'Caption Label';
 $image_id            = get_field( 'figure' ) ?: 295;
 
-// Build a valid style attribute for background and text colors.
-$styles = array( 'background-color: ' . $background_color, 'color: ' . $text_color );
-$style  = implode( '; ', $styles );
-
 ?>
-<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>" style="<?php echo esc_attr( $style ); ?>">
+<div class="<?php echo esc_attr( $class_name )?>" id="caption-anchor-<?php echo $id?>">
+    <div class="caption-container" id="caption-container-<?php echo $id?>">
         <div class="caption-text"><?php echo esc_html( $text ); ?></div>
         <div class="caption-label"><?php echo esc_html( $label ); ?></div>
         <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" width="15%" height="auto">
+    </div>
 </div>
