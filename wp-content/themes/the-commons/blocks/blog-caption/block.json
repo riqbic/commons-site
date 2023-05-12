@@ -10,7 +10,7 @@
     "keywords": [],
     "acf": {
         "mode": "preview",
-	"renderTemplate": "render.php"
+	"renderTemplate": "blog-caption.php"
     },
     "styles": [],
     "supports": {
