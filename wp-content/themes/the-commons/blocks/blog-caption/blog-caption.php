@@ -35,5 +35,5 @@ $style  = implode( '; ', $styles );
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>" style="<?php echo esc_attr( $style ); ?>">
         <div class="caption-text"><?php echo esc_html( $text ); ?></div>
         <div class="caption-label"><?php echo esc_html( $label ); ?></div>
-        <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" >
+        <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" width="15%" height="auto">
 </div>
