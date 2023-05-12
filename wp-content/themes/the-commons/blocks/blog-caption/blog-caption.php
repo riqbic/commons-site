@@ -33,7 +33,7 @@ $style  = implode( '; ', $styles );
 
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>" style="<?php echo esc_attr( $style ); ?>">
-        <div class="testimonial-text"><?php $text; ?></div>
+        <div class="testimonial-text"><?php echo $text; ?></div>
         <div class="testimonial-author"><?php echo esc_html( $label ); ?></div>
         <div class="testimonial-role"><?php echo esc_html( $image ); ?></div>
 </div>
