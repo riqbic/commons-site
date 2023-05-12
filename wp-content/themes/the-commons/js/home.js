@@ -69,6 +69,8 @@
                 } else{
                     $('.blog-single-content').addClass('loading');
                 }
+                //Change title of popout bar to show loading (optional)
+                $('#popout-container .post-title').text('Loading...');
 
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
@@ -90,8 +92,11 @@
                         'action': 'load_commons_blog_post',
                         'post_id': post_id
                     }, success: function( data ) {
+                        var response = JSON.parse(data);
                         //load post into container
-                        $('#popout-container #blog-ajax-container').html(data);
+                        $('#popout-container #blog-ajax-container').html(response.post_content);
+                        //Update the title in the popout bar
+                        $('#popout-container .post-title').text(response.post_title);
                         //remove loading class
                         $('.blog-single-content').removeClass('loading');
                         $('.blog-single-content > .loader').removeClass('loader-active');

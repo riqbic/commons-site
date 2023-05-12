@@ -4,7 +4,7 @@
     "description": "",
     "style": "file:./style.css",
     "script": "",
-    "category": "cultivatewp",
+    "category": "tcb-blocks",
     "icon": "carrot",
     "apiVersion": 2,
     "keywords": [],

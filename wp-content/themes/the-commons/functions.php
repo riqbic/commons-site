@@ -41,7 +41,13 @@ function load_commons_blog_post($paged = NULL) {
     $post_id = $_GET['post_id'];
     $title = get_the_title($post_id);
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-    echo '<h3>'.$title.'</h3><div class="post-content">'.$content.'</div>';
+    $content = '<h3>'.$title.'</h3><div class="post-content">'.$content.'</div>';
+    echo json_encode(
+        array(
+            'post_content'  =>  $content,
+            'post_title'    =>  $title
+        )
+    );
     wp_die();
 }
 
@@ -62,5 +68,21 @@ add_theme_support( 'post-thumbnails' );
 //Add ACF Options page 
 if(function_exists('get_field')) {
     require( get_template_directory() .'/includes/acf.php' );
+}
+
+//Add blocks category to Gutenberg
+//Traditionally, you'd specify a priority like 10,20,30 but Genesis uses PHP_INT_MAX so we're using that
+//If you want to put it below Genesis blocks, just change it to 99 or something
+add_filter( 'block_categories_all','tcb_block_categories',PHP_INT_MAX);
+function tcb_block_categories( $categories ) {
+    //Create a new array for the category. 
+    //We could append to the existing $categories array by entering $categories[] = array... but using array merge will make this the first category in the block selector, ie at the top
+	$tcb_blocks[] = array(
+		'slug'  => 'tcb-blocks',
+		'title' => 'The Commons Boston'
+	);
+    $categories = array_merge($tcb_blocks,$categories);
+
+	return $categories;
 }
 ?>

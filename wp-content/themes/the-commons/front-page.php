@@ -34,7 +34,7 @@
             <div class="grid-content" id="blog-content">
                 <div class="popout-bar">
                     <div class="popout-title">Articles</div>
-                    <div class="post-title hidden-mobile"><?php echo the_title(); ?></div>
+                    <div class="post-title hidden-mobile"></div>
                     <div class="popout-close" onclick="popOut('blog',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
