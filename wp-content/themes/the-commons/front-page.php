@@ -184,61 +184,26 @@
             </div>
             <div class="grid-content" id="about-us-content">
             <span class="close blog-close" id="close-icon" onclick="popOut('about-us',1,1)"></span>
-                <div class="about-us-container">
-                    <h4>About Us</h4>
-                    <p class="newsy-centered">Born in Boston, The Commons is a parkour org that invests in North American parkour culture. Through hosting events, uplifting local communities, and providing opportunities for athletes and artists, we are working to put America on the map.</p>
-                    <p class="newsy-centered">Being a community project means that anybody and everybody can contribute to the cause, but here are some of the people that keep the wheels turning:</p>
-
-                    <div class="about-us-flexbox">
-                        <div class="about-us-image">
-                            <img src="placeholder.jpg" alt="placeholder image" width="100%" height="auto">
+            <?php 
+                $post_args = array(
+                    'post_type'		=> 'any',
+                    'post_status' => 'publish',
+                    'p' => 127,
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                        <div class="newsy"><?php echo the_content(); ?>
                         </div>
-                        <div class="about-us-text">
-                            <p class="newsy">Everybody loves David. David Ehrlich is the founder, heart, and soul of The Commons. He preaches radical inclusivity, and has a special gift for bringing people together. As our primary community and event coordinator, David’s job is to create community events, do outreach, and make sure that The Commons provides safe and fun spaces for all.</p>
-                        </div>
-                        <div class="about-us-fill"></div>
-                    </div>
-
-                    <div class="about-us-flexbox">
-                        <div class="about-us-image">
-                            <img src="wp-content\themes\the-commons\img\alec_portrait.jpg" alt="placeholder image" width="100%" height="auto">
-                        </div>
-                        <div class="about-us-text">
-                            <p class="newsy">Joining The Commons soon after it’s inception; Alec is the guy who makes things happen. He’s the creative director by day, web developer by night, park builder by the next day, and event coordinator after that… Alec seems to be everywhere all at once.</p>
-                        </div>
-                        <div class="about-us-fill"></div>
-                    </div>
-
-                    <div class="about-us-flexbox">
-                        <div class="about-us-image">
-                            <img src="wp-content\themes\the-commons\img\noah_portrait.JPG" alt="placeholder image"  width="100%" height="auto">
-                        </div>
-                        <div class="about-us-text">
-                            <p class="newsy">We are constantly honored that Noah chooses to work with us and believes in our vision. He is a filmmaker, visionary, and critic. He holds The Commons to a high standard, and always has something insightful to say.</p>
-                        </div>
-                        <div class="about-us-fill"></div>
-                    </div>
-
-                    <div class="about-us-flexbox">
-                        <div class="about-us-image">
-                            <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
-                        </div>
-                        <div class="about-us-text">
-                            <p class="newsy">Connor is far and away the most talented mover out of any of us, and is also a genius photographer, videographer, and graphic designer. Connor has a hand in almost every piece of content that The Commons puts out in one way or another.</p>
-                        </div>
-                        <div class="about-us-fill"></div>
-                    </div>
-
-                    <div class="about-us-flexbox">
-                        <div class="about-us-image">
-                            <img src="placeholder.jpg" alt="placeholder image"  width="100%" height="auto">
-                        </div>
-                        <div class="about-us-text">
-                            <p class="newsy">Before The Commons, before Instagram, and maybe before you were born, Dylan Polin was putting Boston on the map in the parkour scene. Dylan is a pillar of the North American parkour community, a lifelong friend, a valued advisor, and eager contributor to The Commons.</p>
-                        </div>
-                        <div class="about-us-fill"></div>
-                    </div>
-                </div>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
+            
             </div>
         </div>
         <div class="grid-item bottom-border" id="features">
