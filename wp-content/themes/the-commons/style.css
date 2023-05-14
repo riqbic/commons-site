@@ -672,11 +672,17 @@ h4{
 }
 
 .about-us-container{
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .get-involved-container{
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .subpage-container{
