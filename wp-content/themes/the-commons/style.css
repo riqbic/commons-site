@@ -565,9 +565,7 @@ h4{
     background-color: white;
     overflow: hidden;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: .5px solid black;
 }
 
 .bottom-border{
@@ -733,8 +731,13 @@ h4{
     overflow-y: auto;
 }
 
-.shop-title{
+.shop-title-container{
     width: 100%;
+    border-bottom: .5px solid black;
+}
+
+.shop-title{
+    width: fit-content;
     margin: auto;
 }
 
