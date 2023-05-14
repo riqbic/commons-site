@@ -126,6 +126,8 @@ img {
     .caption-container{
         position: static !important;
         margin: auto !important;
+        width: 40% !important;
+        transform: none !important;
     }
 }
 
