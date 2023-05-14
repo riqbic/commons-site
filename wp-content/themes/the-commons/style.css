@@ -520,7 +520,7 @@ h4{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     max-width: 1200px;
     overflow: hidden;
 }
@@ -536,12 +536,12 @@ h4{
     grid-auto-rows: minmax(100,auto);
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: repeat(5,minmax(100px,auto));
-    gap: 10px;
+    gap: 20px;
     grid-template-areas:
     "features features"
     "shop shop"
-    "about-us get-involved"
-    "events events"; 
+    "events events"
+    "about-us get-involved"; 
 }
 
 #features{
@@ -565,6 +565,9 @@ h4{
     background-color: white;
     overflow: hidden;
     cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
 }
 
 .bottom-border{
@@ -730,12 +733,9 @@ h4{
     overflow-y: auto;
 }
 
-.get-involved-container{
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 100%;
-    max-height: calc(100% - 50px);
-    overflow-y: auto;
+.shop-title{
+    width: 100%;
+    margin: auto;
 }
 
 .subpage-container{
