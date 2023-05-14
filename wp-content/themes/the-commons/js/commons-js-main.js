@@ -70,8 +70,8 @@ function onPageLoad() {
         opacityToggle(1);
         setPopoutSize();
 
-        document.body.style.overflowY = "hidden !important;";
-        scrollTo(0,100);
+        document.body.style.setProperty('overflow-y', 'hidden', 'important');
+        scrollTo(0,120);
 
         //replace history state to match pop variable
         history.replaceState(activeID,activeID,"?pop="+activeID);
@@ -185,7 +185,7 @@ function popOut(activeID,call_from_page,transition){
         opacityToggle(1);
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
-        document.body.style.overflowY = "hidden !important;";
+        document.body.style.setProperty('overflow-y', 'hidden', 'important');
 
         setPopoutSize();
 

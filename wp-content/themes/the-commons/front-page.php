@@ -160,7 +160,27 @@
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
-            <p>about us</p>
+                <?php 
+                    $post_args = array(
+                        'post_type'		=> 'any',
+                        'post_status' => 'publish',
+                        'p' => 127,
+                    );
+                    $posts_query = new WP_Query( $post_args );
+                    if( $posts_query->have_posts() ) {
+                        while($posts_query->have_posts() ) {
+                            $posts_query->the_post(); 
+                            ?>
+                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <div class="newsy"><?php echo the_excerpt(); ?>
+                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                READ MORE
+                            </div>
+                            <?php 
+                        }
+                    } else { ?>
+                        <p>There are no posts to show right now.</p>
+                <?php } ?>
             </div>
             <div class="grid-content" id="about-us-content">
             <span class="close blog-close" id="close-icon" onclick="popOut('about-us',1,1)"></span>
