@@ -109,7 +109,11 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="blog-alt-content">
-            <span class="close blog-close" id="close-icon" onclick="popOut('blog-alt',1,1)"></span>
+                <div class="popout-bar">
+                    <div class="popout-title">Articles</div>
+                    <div class="post-title hidden-mobile"></div>
+                    <div class="popout-close" onclick="popOut('blog-alt',1,1)">Close</div>
+                </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
                     <?php 
@@ -183,7 +187,10 @@
                 <?php } ?>
             </div>
             <div class="grid-content" id="about-us-content">
-            <span class="close blog-close" id="close-icon" onclick="popOut('about-us',1,1)"></span>
+                <div class="popout-bar">
+                    <div class="popout-title">About Us</div>
+                    <div class="popout-close" onclick="popOut('about-us',1,1)">Close</div>
+                </div>
             <?php 
                 $post_args = array(
                     'post_type'		=> 'any',
@@ -236,7 +243,11 @@
                         <?php } ?>
             </div>
             <div class="grid-content" id="features-content">
-                <span class="close blog-close" id="close-icon" onclick="popOut('features',1,1)"></span>
+                <div class="popout-bar">
+                    <div class="popout-title">Video Features</div>
+                    <div class="post-title hidden-mobile"></div>
+                    <div class="popout-close" onclick="popOut('features',1,1)">Close</div>
+                </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
                     <?php 
@@ -305,7 +316,10 @@
                 <?php } ?>
             </div>
             <div class="grid-content" id="get-involved-content">
-                <span class="close blog-close" id="close-icon" onclick="popOut('get-involved',1,1)"></span>
+            <div class="popout-bar">
+                    <div class="popout-title">Get Involved</div>
+                    <div class="popout-close" onclick="popOut('get-involved',1,1)">Close</div>
+                </div>
                 <?php 
                     $post_args = array(
                         'post_type'		=> 'any',
@@ -330,10 +344,13 @@
         </div>
         <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
-            <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
+                <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>
             <div class="grid-content" id="shop-content">
-            <span class="close blog-close" id="close-icon" onclick="popOut('shop',1,1)"></span>
+                <div class="popout-bar">
+                    <div class="popout-title">Shop</div>
+                    <div class="popout-close" onclick="popOut('shop',1,1)">Close</div>
+                </div>
                 <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
             </div>
         </div>
@@ -342,7 +359,10 @@
                 <img src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
             <div class="grid-content" id="events-content">
-                <span class="close blog-close" id="close-icon" onclick="popOut('events',1,1)"></span>
+             <div class="popout-bar">
+                    <div class="popout-title">Events</div>
+                    <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
+                </div>
                 <p class="newsy">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
                 </p>
