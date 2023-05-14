@@ -67,9 +67,10 @@ function onPageLoad() {
         popout_container.style.display = "block";
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
+        opacityToggle(1);
         setPopoutSize();
 
-        document.body.style.overflow = "hidden";
+        document.body.style.overflowY = "hidden !important;";
         scrollTo(0,100);
 
         //replace history state to match pop variable
@@ -149,7 +150,7 @@ function popOut(activeID,call_from_page,transition){
         var active_element = document.getElementById(contentID);
         var grid_container = document.getElementById(activeID);
         opacityToggle(0);
-        document.body.style.overflow = "auto";
+        document.body.style.overflowY = "auto";
 
         setTimeout(function(){
 
@@ -184,7 +185,7 @@ function popOut(activeID,call_from_page,transition){
         opacityToggle(1);
         popout_container.appendChild(active_element);
         active_element.style.display = "block";
-        document.body.style.overflow = "hidden";
+        document.body.style.overflowY = "hidden !important;";
 
         setPopoutSize();
 
