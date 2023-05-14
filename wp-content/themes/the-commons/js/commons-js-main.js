@@ -2,9 +2,6 @@
 var popout_state = 0;
 var push_state = 1;
 
-//Localized js variables
-console.log(commons_main);
-
 //Pop state handler
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {

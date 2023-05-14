@@ -667,6 +667,35 @@ h4{
     border-bottom: 1px solid black;
 }
 
+.post-content{
+    width: 80%;
+}
+
+.caption-block{
+    height: 0px;
+}
+
+.caption-container{
+    position: relative;
+    width: 20%;
+    right: calc(-20px - 100%);
+    transform: translate(0,-50%);
+}
+
+.caption-text{
+    font-size: .8rem;
+}
+
+.caption-label{
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.caption-image{
+    width: 100%;
+    height: auto;
+}
+
 .blog-item:last-child{
     border-bottom: none;
 }
