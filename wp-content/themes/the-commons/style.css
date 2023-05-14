@@ -721,6 +721,7 @@ h4{
     padding-left: 20px;
     padding-right: 20px;
     height: 100%;
+    max-height: calc(100% - 50px);
     overflow-y: auto;
 }
 
@@ -728,6 +729,15 @@ h4{
     padding-left: 20px;
     padding-right: 20px;
     height: 100%;
+    max-height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+.get-involved-container{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    max-height: calc(100% - 50px);
     overflow-y: auto;
 }
 

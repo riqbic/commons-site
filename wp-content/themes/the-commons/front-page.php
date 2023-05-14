@@ -351,7 +351,9 @@
                     <div class="popout-title">Shop</div>
                     <div class="popout-close" onclick="popOut('shop',1,1)">Close</div>
                 </div>
-                <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
+                <div class="shop-container">
+                    <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
+                </div>
             </div>
         </div>
         <div class="grid-item" id="events">
