@@ -572,36 +572,6 @@ h4{
     overflow: hidden;
 }
 
-.about-us-container {
-	width: 100%;
-    margin: 0 auto;
-}
-
-.about-us-flexbox{
-	display: flex;
-	align-items: center;
-	flex-direction: row;
-    flex-wrap: wrap;
-	margin: 10px;
-}
-
-.about-us-flexbox:nth-child(even){
-	flex-direction: row-reverse;
-}
-
-.about-us-image{
-    width: 100%;
-    max-width: 400px;
-}
-
-.about-us-text{
-	max-width: 400px;
-}
-
-.about-us-fill{
-	flex: 1;
-}
-
 .popout-shadow{
     display: none;
     position: fixed;
@@ -699,6 +669,14 @@ h4{
 
 .blog-item:last-child{
     border-bottom: none;
+}
+
+.about-us-container{
+    padding: 20px;
+}
+
+.get-involved-container{
+    padding: 20px;
 }
 
 .subpage-container{

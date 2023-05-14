@@ -195,15 +195,15 @@
                     while($posts_query->have_posts() ) {
                         $posts_query->the_post(); 
                         ?>
-                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                        <div class="newsy"><?php echo the_content(); ?>
+                        <div class ="about-us-container">
+                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <div class="newsy"><?php echo the_content(); ?></div>
                         </div>
                         <?php 
                     }
                 } else { ?>
                     <p>There are no posts to show right now.</p>
                 <?php } ?>
-            
             </div>
         </div>
         <div class="grid-item bottom-border" id="features">
@@ -282,26 +282,50 @@
         </div>
         <div class="grid-item" id="get-involved">
             <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
-            <p> get involved </p>
+            <?php 
+                $post_args = array(
+                    'post_type'		=> 'any',
+                    'post_status' => 'publish',
+                    'p' => 128,
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                        <div class="newsy"><?php echo the_excerpt(); ?>
+                            <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                            READ MORE
+                        </div>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
             </div>
             <div class="grid-content" id="get-involved-content">
                 <span class="close blog-close" id="close-icon" onclick="popOut('get-involved',1,1)"></span>
-                <h4>Come Train!</h4>
-                <p class="newsy-centered">
-                    The best way to get involved is to come out and train! We try to host community sessions every week and mini-jams regularly. Follow our instagram page <a href="https://www.instagram.com/thecommons.sessions/">@thecommons.sessions</a> or <a href="https://discord.com/invite/6wzh8Gbqxt">join our Discord</a> to get the when and where.
-                </p>
-                <h4>Volunteer</h4>
-                <p class="newsy-centered">
-                    As a community based project, we include anybody who wants to help. We always need people to help organize community sessions, scout spots, and film. When it comes to jam time, there are an infinite amount of tasks to do, and our large events couldn’t happen without our amazing volunteer team.
-                </p>
-                <h4>Sponsor</h4>
-                <p class="newsy-centered">
-                    Any financial contributions are deeply appreciated, and go right back into the parkour community by improving our events, paying our team, or paying artists that display at our events. Our brand has deep connections in the parkour scene, and our content reaches all across the globe. We are mainly looking to partner with local small businesses, but are open to other options.
-                </p>
-                <h4>Work With Us</h4>
-                <p class="newsy-centered">
-                    The Commons is always looking for new athletes and artists to work with us. Got a project that fits on our site? Send us a line at collab@thecommons.boston or shoot us a DM on socials.
-                </p>
+                <?php 
+                    $post_args = array(
+                        'post_type'		=> 'any',
+                        'post_status' => 'publish',
+                        'p' => 128,
+                    );
+                    $posts_query = new WP_Query( $post_args );
+                    if( $posts_query->have_posts() ) {
+                        while($posts_query->have_posts() ) {
+                            $posts_query->the_post(); 
+                            ?>
+                            <div class ="get-involved-container">
+                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                                <div class="newsy"><?php echo the_content(); ?></div>
+                            </div>
+                            <?php 
+                        }
+                    } else { ?>
+                        <p>There are no posts to show right now.</p>
+                <?php } ?>
             </div>
         </div>
         <div class="grid-item" id="shop">
