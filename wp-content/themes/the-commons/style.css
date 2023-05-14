@@ -146,6 +146,7 @@ body{
     padding: 0;
     background-color: white;
     height: fit-content;
+    overflow-x: hidden !important;
 }
 
 .title{
@@ -687,7 +688,7 @@ h4{
 
 .caption-block{
     height: 0px;
-    margin-top: -9px;
+    margin-top: -10px;
     margin-bottom: -10px;
 }
 
