@@ -217,15 +217,11 @@ function resetPopoutSize(activeID){
 function setPopoutSize(){
     var popout_container = document.getElementById("popout-container");
     var newsy_container = document.getElementById("newsy-container");
-    var close_icon = document.getElementById("close-icon");
     popout_container.style.position = "fixed";
     popout_container.style.width = newsy_container.offsetWidth-100+"px";
     popout_container.style.left = newsy_container.offsetLeft+50+"px";
     popout_container.style.height = "80vh";
     popout_container.style.top = "100px";
-
-    close_icon.style.top = "110px";
-    close_icon.style.left = newsy_container.offsetLeft+50 + newsy_container.offsetWidth-100 -40 -10+"px";
 }
 
 function clamp(val, min, max) {

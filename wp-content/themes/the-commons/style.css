@@ -91,9 +91,6 @@ img {
         border-left: none !important;
         border-right: none !important;
     }
-    .blog-close:before, .blog-close:after{
-        background-color: white !important;
-    }
     .popout-container{
         height: calc(100vh - 92px) !important;
         width: 100% !important;
