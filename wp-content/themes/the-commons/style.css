@@ -115,6 +115,16 @@ img {
         width: calc(100% - 40px) !important;
         overflow-y: initial !important;
     }
+    .caption-block{
+        height: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .caption-container{
+        position: static !important;
+        margin: auto !important;
+    }
 }
 
 @media (min-width: 769px){
@@ -673,6 +683,8 @@ h4{
 
 .caption-block{
     height: 0px;
+    margin-top: -9px;
+    margin-bottom: -10px;
 }
 
 .caption-container{
