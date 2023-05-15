@@ -795,11 +795,11 @@ h4{
 }
 
 .woocommerce ul.products li.product{
-    margin: 0 3.8% 0em 0;
+    margin-bottom: 0;
 }
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-    margin: 0 3.8% 0em 0;
+    margin-bottom: 0;
 }
 
 /** COMMONS COMIC **/
