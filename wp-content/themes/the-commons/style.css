@@ -90,6 +90,14 @@ img {
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
+        border-bottom: .5px solid black !important;
+        padding-bottom: 2px !important;
+    }
+    .grid-item:after{
+        content: '';
+        border-top: .5px solid black;
+        display: block;
+        width: 100%;
     }
     .popout-container{
         height: calc(100vh - 92px) !important;
@@ -520,6 +528,7 @@ h4{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    gap: 25px;
     max-width: 1200px;
     overflow: hidden;
 }
@@ -545,6 +554,10 @@ h4{
 
 #features{
     order: -1;
+}
+
+#shop{
+    margin-bottom: 20px;
 }
 
 #features { grid-area: features; }
