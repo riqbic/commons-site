@@ -553,7 +553,7 @@ h4{
     display: grid;
     grid-auto-rows: minmax(100,auto);
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: repeat(5,minmax(100px,auto));
+    grid-template-rows: repeat(5,minmax(0px,auto));
     gap: 20px 25px;
     grid-template-areas:
     "features features"
@@ -571,6 +571,7 @@ h4{
 #about-us { grid-area: about-us; }
 #events { grid-area: events; }
 #shop { grid-area: shop; }
+#shop-title { grid-area: shop-title; }
 #get-involved { grid-area: get-involved; }
 #blog-alt { grid-area: blog-alt; }
 
