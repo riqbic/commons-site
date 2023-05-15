@@ -342,8 +342,10 @@
                 <?php } ?>
             </div>
         </div>
-        <div class="grid-item" id="shop">
+        <div class="grid-item" id="shop-title">
             <div class="shop-title-container"><h3 class="shop-title">Shop</h3></div>
+        </div>
+        <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
                 <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>

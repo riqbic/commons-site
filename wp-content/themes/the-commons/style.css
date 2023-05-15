@@ -80,6 +80,7 @@ img {
     grid-template-rows: repeat(5,minmax(100px,auto)) !important;
     grid-template-areas: 
     "about-us about-us"
+    "shop-title shop-title"
     "shop shop"
     "events events"
     "blog-alt blog-alt"
@@ -93,10 +94,16 @@ img {
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
-        border-bottom: .5px solid black !important;
-        padding-bottom: 2px !important;
+        padding-bottom: 10px !important;
     }
     .grid-item:after{
+        content: '';
+        border-top: .5px solid black;
+        display: block;
+        width: 100%;
+        padding-bottom: 2px;
+    }
+    .grid-item:after:after{
         content: '';
         border-top: .5px solid black;
         display: block;
@@ -547,9 +554,10 @@ h4{
     grid-auto-rows: minmax(100,auto);
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: repeat(5,minmax(100px,auto));
-    gap: 0px 25px;
+    gap: 20px 25px;
     grid-template-areas:
     "features features"
+    "shop-title shop-title"
     "shop shop"
     "events events"
     "about-us get-involved"; 
@@ -557,10 +565,6 @@ h4{
 
 #features{
     order: -1;
-}
-
-#shop{
-    margin-bottom: 20px;
 }
 
 #features { grid-area: features; }
@@ -748,16 +752,12 @@ h4{
 .shop-title-container{
     width: 100%;
     border-bottom: .5px solid black;
-    margin-bottom: 20px;
+    border-top: .5px solid black;
 }
 
 .shop-title{
     width: fit-content;
     margin: auto;
-}
-
-#events{
-    padding-bottom: 20px;
 }
 
 .subpage-container{
@@ -767,14 +767,6 @@ h4{
 }
 .woocommerce-form-login{
     border: none !important;
-}
-
-.woocommerce-form{
-    font-family: Oswald;
-}
-
-.lost_password{
-    font-family: Oswald;
 }
 
 .wc-block-grid{
