@@ -95,19 +95,14 @@ img {
         border-left: none !important;
         border-right: none !important;
         padding-bottom: 10px !important;
+        border-bottom: .5px solid black;
     }
-    .grid-item:after{
+    .grid-item::after{
         content: '';
         border-top: .5px solid black;
         display: block;
         width: 100%;
         padding-bottom: 2px;
-    }
-    .grid-item:after:after{
-        content: '';
-        border-top: .5px solid black;
-        display: block;
-        width: 100%;
     }
     .popout-container{
         height: calc(100vh - 92px) !important;
@@ -752,7 +747,6 @@ h4{
 
 .shop-title-container{
     width: 100%;
-    border-bottom: .5px solid black;
     border-top: .5px solid black;
 }
 
