@@ -747,6 +747,7 @@ h4{
 
 .shop-title-container{
     width: 100%;
+    border-bottom: .5px solid black;
     border-top: .5px solid black;
 }
 
