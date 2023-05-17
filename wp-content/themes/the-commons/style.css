@@ -253,6 +253,8 @@ h4{
 .size-features-thumbnail{
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .popout-bar {

@@ -230,7 +230,7 @@
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h1 class="block-header">FEATURED</h1>
-                                    <?php echo the_post_thumbnail($size = 'features-thumbnail' $style = 'aspect-ratio: 16 / 9; object-fit: cover;'); ?>
+                                    <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
