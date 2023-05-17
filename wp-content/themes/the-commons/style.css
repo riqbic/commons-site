@@ -128,7 +128,7 @@ img {
     .caption-container{
         position: static !important;
         margin: auto !important;
-        width: 40% !important;
+        width: 39% !important;
         transform: none !important;
     }
     .blog-flex-container .blog-sidebar .blog-item.is-active {
@@ -236,6 +236,7 @@ h4{
     max-width: auto;
     color: white !important;
     background-color: black;
+    aspect-ratio: 16 / 1.67;
 }
 
 .size-blog-thumbnail{
@@ -690,6 +691,7 @@ h4{
 
 .post-content{
     width: 70%;
+    text-align: justify;
 }
 
 .caption-block{

@@ -59,7 +59,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
-                                    <div class="newsy hidden-mobile">
+                                    <div class="newsy">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -136,7 +136,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
-                                    <div class="newsy hidden-mobile">
+                                    <div class="newsy">
                                         <?php the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
@@ -230,7 +230,7 @@
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h1 class="block-header">FEATURED</h1>
-                                    <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
+                                    <?php echo the_post_thumbnail($size = 'features-thumbnail' $style = 'aspect-ratio: 16 / 9; object-fit: cover;'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?>
                                         <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
                                         READ MORE
