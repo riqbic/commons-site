@@ -123,6 +123,7 @@
             <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
                 <?php 
                     $post_args = array(
+                        'posts_per_page'	=> 1,
                         'post_type'		=> 'any',
                         'post_status' => 'publish',
                         'p' => 127,
