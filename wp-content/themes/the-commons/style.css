@@ -117,6 +117,12 @@ img {
         width: calc(100% - 40px) !important;
         overflow-y: initial !important;
         border-left: none !important;
+        margin-bottom: 20px;
+        padding-bottom: 3px;
+        border-bottom: .5px solid black;
+    }
+    .blog-flex-container .blog-single-content::after{
+        border-top: .5px solid black;
     }
     .post-content{
         width: 100% !important;
