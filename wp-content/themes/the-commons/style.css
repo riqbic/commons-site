@@ -275,6 +275,7 @@ h4{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
   background-color: white;
   border-bottom: 1px solid black;
   height: 50px;
