@@ -116,7 +116,6 @@ img {
     .blog-flex-container .blog-single-content{
         width: calc(100% - 40px) !important;
         overflow-y: initial !important;
-        overflow-x: hidden;
         border-left: none !important;
     }
     .post-content{
