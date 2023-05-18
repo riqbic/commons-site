@@ -3,9 +3,9 @@
         //bool var to see if we loaded a post automatically yet
         var loadedPost = 0;
         //automatically load a post on page load or pop
-        function loadPost() {
+        function loadPostFromURL() {
             //see if the popout container has a blog post
-            if(($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-blog-alt')) || $('#popout-container').hasClass('active-features')) {
+            if($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-features')) {
                 //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
                 setTimeout(function() {
                     //check if a post has been loaded or not
@@ -16,20 +16,16 @@
                         var activePost = params.get("post_id");
                         if(activePost != null) {
                             //we found a post in the url, load that
-                            $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']').trigger('click');
+                            var $this = $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']');
+                            setActivePopoutPost($this);
                         } else {
                             //no post in url, click the first item in the sidebar
-                            if($('#popout-container').hasClass('active-blog-alt')) {
-                                $('#popout-container .blog-sidebar .blog-item:nth-of-type(2)').trigger('click');
-                            } else {
-                                $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
-                            }
-                            
+                            $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
                         }
                         //set our bool var to true so it doesnt happen again
                         loadedPost = 1;
                     } else {
-                    //do nothing for now  
+                        //do nothing for now  
                     }
                 },50);
             } else {
@@ -37,12 +33,14 @@
                 loadedPost = 0;
             }
         }
+        //check on page load if a post should be loaded
+        loadPostFromURL();
+
         //Mutation observer to watch for changes in popcontainer and load the post if so
         var popoutContainer = new MutationObserver(function() {
-            loadPost();
+            loadPostFromURL();
         });
-
-        //watch popout-container for changes and trigger load post function if so (line 36)
+        //watch said popout-container for changes and trigger load post function if so (var popoutContainer = new MutationObserver(function() .... )
         popoutContainer.observe($("#popout-container")[0], {
             attributes: true
         });
@@ -50,13 +48,29 @@
         //Load post on popstate change
         window.addEventListener('popstate', function() {
             //loadedPost = 0;
-            loadPost();
+            loadPostFromURL();
         });
         
-        //load the blog item into the blog ajax container when clicked
+        //clicking sidebar post in blog-preview or blog-preview-alt
+        $('#blog-preview .blog-preview,#blog-alt-preview .blog-preview').on('click',function() {
+            //Load the popout
+            popOut('blog',1,1);
+            loadedPost = 0;
+            //set the post content to use in the popout
+            var $this = $(this);
+            setActivePopoutPost($this);
+        });
+
+        //load the post in the popout contain when it's sidebar item is clicked
         $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {
             e.stopPropagation();
-            var post_id = $(this).attr('data-id');
+            var $this = $(this);
+            setActivePopoutPost($this);
+        });
+
+        //Set the active post to be displayed in the popout
+        function setActivePopoutPost($this) {
+            var post_id = $this.attr('data-id');
             let current_url = window.location.search;
             let params = new URLSearchParams(current_url);
             var activePost = params.get("post_id");
@@ -71,21 +85,19 @@
                 }
                 //Change title of popout bar to show loading (optional)
                 $('#popout-container .post-title').text('Loading...');
-
+                //Set post loading content
+                $('#popout-container #blog-ajax-container').html('<div class="post-ajax-loader"></div>');
+                
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
                 //add current class
-                $(this).addClass('is-active');
+                $this.addClass('is-active');
                 //Pop history, buggy but kind of working
                 if($('#popout-container').hasClass('active-blog')) {
                     history.replaceState('blog', "",'?pop=blog&post_id='+post_id);
-                } else if($('#popout-container').hasClass('active-blog-alt')) {
-                    history.replaceState('blog-alt', "",'?pop=blog-alt&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-features')) {
                     history.replaceState('features', "",'?pop=features&post_id='+post_id);
                 }
-                //get content for post from ajax function in functions.php
-                var post_id = $(this).attr('data-id');
                 jQuery.ajax({
                     url: home_js.ajax_url,
                     data: {
@@ -105,10 +117,11 @@
                         $('.blog-single-content > .loader').removeClass('loader-active');
                     }
                 });
+
             } else {
                 //user clicked the same post that already is loaded
                 console.log('already here');
             }
-        });
+        }
 	});
 })(jQuery); // Fully reference jQuery after this point.

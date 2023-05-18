@@ -3,7 +3,7 @@
 <div class="newsy-container flex-mobile" id="newsy-container">
     <div class="flex-desktop-sidebar" id="flex-desktop-sidebar">
         <div class="grid-item " id="blog">
-            <div class="grid-preview" id="blog-preview"  onclick="popOut('blog',1,1)">
+            <div class="grid-preview" id="blog-preview">
                 <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
@@ -17,7 +17,7 @@
                         while($posts_query->have_posts() ) {
                             $posts_query->the_post(); 
                             ?>
-                            <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
+                            <div class="blog-preview blog-item-1" data-id="<?php echo get_the_ID(); ?>">
                                 <h3 style="text-align: center;"><?php the_title(); ?></h3>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                 <div class="newsy"><?php echo the_excerpt(); ?>
@@ -31,6 +31,7 @@
                         <p>There are no posts to show right now.</p>
                     <?php } ?>
             </div>
+            <!-- load content for the blog popout-->
             <div class="grid-content" id="blog-content">
                 <div class="popout-bar">
                     <div class="popout-title">Articles</div>
@@ -72,89 +73,45 @@
                         <?php } ?>
                     </div><!-- close sidebar -->
                     <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
-                        
+                        <div class="post-ajax-loader"></div>
                     </div><!-- close blog content-->
                 </div>
             </div>
+            <!-- close content for the blog popout-->
         </div>
-        <div class="grid-item " id="blog-alt">
-            <div class="grid-preview" id="blog-alt-preview"  onclick="popOut('blog-alt',1,1)">
+        <!--alternate method to load the blog content popout-->
+        <div class="grid-item" id="blog-alt">
+            <div class="grid-preview" id="blog-alt-preview">
                 <?php 
-                        //Query 3 most recent posts that are published
-                        $post_args = array(
-                            'posts_per_page'	=> 4,
-                            'post_type'		=> 'post',
-                            'post_status' => 'publish',
-                            'cat' => 21,
-                            'offset' => 1, 
-                        );
-                        $posts_query = new WP_Query( $post_args );
-                        if( $posts_query->have_posts() ) {
-                            while($posts_query->have_posts() ) {
-                                $posts_query->the_post(); 
-                                ?>
-                                <div class="blog-preview blog-item-2;" data-id="<?php echo get_the_ID(); ?>">
-                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                                    <div class="newsy">
-                                        <?php the_excerpt(); ?>
-                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                        READ MORE
-                                    </div>
-                                </div>
-                                <?php 
-                            }
-                        } else { ?>
-                            <p>There are no posts to show right now.</p>
-                        <?php } ?>
-            </div>
-            <div class="grid-content" id="blog-alt-content">
-                <div class="popout-bar">
-                    <div class="popout-title">Articles</div>
-                    <div class="post-title hidden-mobile"></div>
-                    <div class="popout-close" onclick="popOut('blog-alt',1,1)">Close</div>
-                </div>
-                <div class="blog-flex-container flex-row">
-                    <div class="blog-sidebar">
-                    <?php 
-                        //Query 3 most recent posts that are published
-                        $post_args = array(
-                            'posts_per_page'	=> -1,
-                            'post_type'		=> 'post',
-                            'post_status' => 'publish',
-                            'cat' => 21,
-                        );
-                        $posts_query = new WP_Query( $post_args );
-                        $blogct = 0;
-                        if( $posts_query->have_posts() ) {
-                            ++$blogct;
-                            //Declare an iterator for blog-item class
-                            $blog_item_count = 0;
-                            while($posts_query->have_posts() ) {
-                                $posts_query->the_post(); 
-                                //Incremenent blog item count
-                                ++$blog_item_count; ?>
-                                <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                                    <h4><?php the_title(); ?></h4>
-                                    <div class="newsy">
-                                        <?php the_excerpt(); ?>
-                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                        READ MORE
-                                    </div>
-                                </div>
-                                <?php 
-                            }
-                        } else { ?>
-                            <p>There are no posts to show right now.</p>
-                        <?php } ?>
-                    </div><!-- close sidebar -->
-                    <div class="blog-single-content" id="blog-ajax-container">
-                        <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
-                        
-                    </div><!-- close blog content-->
-                </div>
+                //Query 3 most recent posts that are published
+                $post_args = array(
+                    'posts_per_page'	=> 4,
+                    'post_type'		=> 'post',
+                    'post_status' => 'publish',
+                    'cat' => 21,
+                    'offset' => 1, 
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <div class="blog-preview blog-item-2" data-id="<?php echo get_the_ID(); ?>">
+                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <div class="newsy">
+                                <?php the_excerpt(); ?>
+                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
+                                READ MORE
+                            </div>
+                        </div>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
             </div>
         </div>
+        <!-- close alternate method to load the blog content popout-->
         <!-- <div class="grid-item" id="comic-strip">
             <?php if(function_exists('commons_get_comic')) {
                 echo commons_get_comic(); 
@@ -368,26 +325,6 @@
                     <div class="popout-title">Join or Die</div>
                     <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
                 </div>
-                <?php 
-                    $post_args = array(
-                        'post_type'		=> 'any',
-                        'post_status' => 'publish',
-                        'p' => 109,
-                    );
-                    $posts_query = new WP_Query( $post_args );
-                    if( $posts_query->have_posts() ) {
-                        while($posts_query->have_posts() ) {
-                            $posts_query->the_post(); 
-                            ?>
-                            <div class ="get-involved-container">
-                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                                <div class="newsy"><?php echo apply_filters('the_content',get_the_content()); ?></div>
-                            </div>
-                            <?php 
-                        }
-                    } else { ?>
-                        <p>There are no posts to show right now.</p>
-                <?php } ?>
                 <?php echo do_shortcode( '[tc_event id="109"]' );?>
             </div>
         </div>

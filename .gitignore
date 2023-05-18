@@ -129,3 +129,6 @@ wp-content/themes/twentytwentythree/
 wp-content/themes/twentytwentytwo/
 #WF
 wp-content/wflogs
+
+#Mac
+.well-known/
