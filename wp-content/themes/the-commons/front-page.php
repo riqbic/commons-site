@@ -364,13 +364,30 @@
                 <img src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
             <div class="grid-content" id="events-content">
-             <div class="popout-bar">
-                    <div class="popout-title">Events</div>
+                <div class="popout-bar">
+                    <div class="popout-title">Join or Die</div>
                     <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
                 </div>
-                <p class="newsy">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sapiente iusto dolore nihil. Iure ullam eaque temporibus ea expedita impedit atque, vitae velit voluptates tempore odio excepturi labore, modi reiciendis cumque id consectetur consequuntur sunt asperiores itaque. Sunt atque, a incidunt id neque non doloremque veritatis! Nam delectus dolorem pariatur.
-                </p>
+                <?php 
+                $post_args = array(
+                    'post_type'		=> 'any',
+                    'post_status' => 'publish',
+                    'p' => 109,
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <div class ="about-us-container">
+                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <div><?php echo the_content(); ?></div>
+                        </div>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
             </div>
         </div>
     </div>
