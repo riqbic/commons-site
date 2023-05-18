@@ -368,10 +368,10 @@
                     <div class="popout-title">Join or Die</div>
                     <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
                 </div>
-                <?php echo tc_get_event_date( $event_id = '109' ); ?>
+                <!-- <?php /*echo tc_get_event_date( $event_id = '109' ); ?>
                 <?php $event_location = new tc_event_location_element($event_id = '109');
-                echo $event_location->ticket_content( $ticket_instance_id = false, $ticket_type_id = true ) ?>
-                <?php echo do_shortcode( '[tc_event id="109"]' ); ?>
+                echo $event_location->ticket_content( $ticket_instance_id = false, $ticket_type_id = true ) */?> -->
+                <?php echo do_shortcode( '[tc_event id="109"]' );?>
             </div>
         </div>
     </div>
