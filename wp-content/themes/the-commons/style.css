@@ -121,11 +121,14 @@ img {
         padding-bottom: 3px;
         border-bottom: .5px solid black;
     }
-    .blog-flex-container .blog-single-content::after{
-        border-top: .5px solid black;
-    }
     .post-content{
         width: 100% !important;
+    }
+    #blog-content > .blog-flex-container > .blog-single-content > .post-content{
+        border-bottom: 1px solid black;
+    }
+    #blog-alt-content > .blog-flex-container > .blog-single-content > .post-content{
+        border-bottom: 1px solid black;
     }
     #blog-ajax-container > h3{
         width: 100% !important;
