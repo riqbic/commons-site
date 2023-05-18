@@ -368,26 +368,7 @@
                     <div class="popout-title">Join or Die</div>
                     <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
                 </div>
-                <?php 
-                $post_args = array(
-                    'post_type'		=> 'any',
-                    'post_status' => 'publish',
-                    'p' => 109,
-                );
-                $posts_query = new WP_Query( $post_args );
-                if( $posts_query->have_posts() ) {
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        ?>
-                        <div class ="about-us-container">
-                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                            <div><?php echo the_content(); ?></div>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
-                <?php } ?>
+                <?php echo do_shortcode('[tc_event id="109"]'); ?>
             </div>
         </div>
     </div>
