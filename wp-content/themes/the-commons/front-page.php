@@ -381,7 +381,7 @@
                             ?>
                             <div class ="get-involved-container">
                                 <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                                <div class="newsy"><?php echo the_content(); ?></div>
+                                <div class="newsy"><?php echo apply_filters('the_content',get_the_content()); ?></div>
                             </div>
                             <?php 
                         }
