@@ -325,7 +325,7 @@
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
                 <img src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
-            < class="grid-content" id="events-content">
+            <div class="grid-content" id="events-content">
                 <div class="popout-bar">
                     <div class="popout-title">Join or Die</div>
                     <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
