@@ -302,7 +302,7 @@
         </div>
         <div class="grid-item" id="shop-title">
             <div class="shop-title-container">
-                <a href="<?php echo get_bloginfo('url'); ?>/shop">
+                <a href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">
                     <h3 class="shop-title">Shop</h3>
                 </a>
             </div>
@@ -325,12 +325,29 @@
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
                 <img src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
-            <div class="grid-content" id="events-content">
+            < class="grid-content" id="events-content">
                 <div class="popout-bar">
                     <div class="popout-title">Join or Die</div>
                     <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
                 </div>
-                <?php echo do_shortcode( '[tc_event id="109"]' );?>
+                <?php 
+                $post_args = array(
+                    'post_type'		=> 'any',
+                    'post_status' => 'publish',
+                    'p' => 109,
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                        <?php echo the_content(); ?>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
             </div>
         </div>
     </div>
