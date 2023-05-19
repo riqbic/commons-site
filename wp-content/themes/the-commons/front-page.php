@@ -341,8 +341,10 @@
                     while($posts_query->have_posts() ) {
                         $posts_query->the_post(); 
                         ?>
-                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                        <?php echo the_content(); ?>
+                        <div class="event-container">
+                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <?php echo the_content(); ?>
+                        </div>
                         <?php 
                     }
                 } else { ?>
