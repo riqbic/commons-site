@@ -26,11 +26,11 @@
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
-        <li class="menu-item" onclick="menuHandler('shop')">Shop</li>
+        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
         <li class="menu-item" onclick="menuHandler('features')">Video</li>
         <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
         <li class="menu-item" onclick="menuHandler('events')">Join or Die</li>
-        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
+        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
                 echo 'My Account';
@@ -59,11 +59,11 @@
         </label>
 
         <ul class="menu-box">
-            <li class="menu-item-mobile" onclick="menuHandler('shop')"><div class="menu-text-mobile">Shop</div></li>
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
             <li class="menu-item-mobile" onclick="menuHandler('features')"><div class="menu-text-mobile">Video</div></li>
             <li class="menu-item-mobile" onclick="menuHandler('blog')"><div class="menu-text-mobile">Articles</div></li>
             <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Join or Die</div></li>
-            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/subscriptions">Subscribe</a></li>
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
                 echo 'My Account';

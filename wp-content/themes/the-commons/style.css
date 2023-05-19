@@ -829,10 +829,6 @@ h4{
     display: none;
 }
 
-#shop-preview > div > ul > li > a{
-    pointer-events: none;
-}
-
 .woocommerce ul.products li.product{
     margin-bottom: 0;
 }

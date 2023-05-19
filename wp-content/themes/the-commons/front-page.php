@@ -301,10 +301,14 @@
             </div>
         </div>
         <div class="grid-item" id="shop-title">
-            <div class="shop-title-container"><h3 class="shop-title">Shop</h3></div>
+            <div class="shop-title-container">
+                <a href="<?php echo get_bloginfo('url'); ?>/shop">
+                    <h3 class="shop-title">Shop</h3>
+                </a>
+            </div>
         </div>
         <div class="grid-item" id="shop">
-            <div class="grid-preview" id="shop-preview"  onclick="popOut('shop',1,1)">
+            <div class="grid-preview" id="shop-preview">
                 <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>
             <div class="grid-content" id="shop-content">
