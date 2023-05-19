@@ -558,9 +558,9 @@ h4{
 .flex-desktop-grid{
     flex: 3;
     display: grid;
-    grid-auto-rows: minmax(100,auto);
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: repeat(5,minmax(0px,auto));
+    grid-auto-rows: minmax(0px,auto);
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
     gap: 20px 25px;
     grid-template-areas:
     "features features"
