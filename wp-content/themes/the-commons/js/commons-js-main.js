@@ -89,7 +89,7 @@ function onPageLoad() {
             alt_blogs[i].style.display = 'none;';
         }
         else{
-            elt.style.display = 'block;';
+            alt_blogs[i].style.display = 'block;';
         }
     }
     //don't remember why this is here but it's important (?)
