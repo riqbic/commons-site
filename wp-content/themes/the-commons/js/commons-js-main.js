@@ -112,6 +112,8 @@ function resize(){
     //hides sidebar blog posts that are below the grid
     let alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
+        console.log(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight);
+        console.log(flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight)
         if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight){
             alt_blogs[i].style.display = 'none;';
         }
