@@ -82,8 +82,9 @@ function onPageLoad() {
     }
 
     //hides sidebar blog posts that are below the grid
-    let alt_blogs = document.getElementsByClassName('blog-item-2');
-    for(var elt in alt_blogs){
+    const alt_blogs = document.getElementsByClassName('blog-item-2');
+    for(var i = 0; i < alt_blogs.length; i ++){
+        elt = alot_blogs[i];
         if(elt.offsetTop+elt.offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
             elt.style.display = 'none;';
         }
@@ -98,7 +99,7 @@ function onPageLoad() {
 //Resize the popout container (and a few other things) when the page is resized
 window.addEventListener('resize',resize);
 function resize(){
-    var about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
+    const about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
     var newsy_container = document.getElementById("newsy-container");
 
@@ -109,8 +110,9 @@ function resize(){
     }
 
     //hides sidebar blog posts that are below the grid
-    let alt_blogs = document.getElementsByClassName('blog-item-2');
-    for(var elt in alt_blogs){
+    const alt_blogs = document.getElementsByClassName('blog-item-2');
+    for(var i = 0; i < alt_blogs.length; i ++){
+        elt = alot_blogs[i];
         if(elt.offsetTop+elt.offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
             elt.style.display = 'none;';
         }
