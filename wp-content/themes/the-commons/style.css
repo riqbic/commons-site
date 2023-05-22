@@ -73,9 +73,6 @@ img {
     .newsy-container{
         gap: 0 !important;
     }
-    .flex-desktop-sidebar::before{
-        background: none !important;
-    }
     .grid-mobile{
     grid-auto-rows: 1fr !important;
     grid-auto-rows: minmax(0px,auto);
@@ -566,16 +563,6 @@ h4{
     min-width: 215px;
     overflow: hidden;
 }
-.flex-desktop-sidebar::before{
-    content:'';
-    width:100%;
-    height:100%;    
-    position:absolute;
-    left:0;
-    top:0;
-    background:linear-gradient(transparent 100px, white);
-}
-
 .flex-desktop-grid{
     flex: 3;
     display: grid;
