@@ -147,6 +147,15 @@ img {
     .blog-flex-container .blog-sidebar .blog-item.is-active {
         display: none !important;
     }
+    .blog-flex-container .blog-sidebar{
+        padding-bottom: 80px;
+    }
+    #blog-alt-preview:nth-child(n+1){
+        display: none !important;
+    }
+    .post-ajax-loader{
+        transform: none !important;
+    }
 }
 
 @media (min-width: 769px){
