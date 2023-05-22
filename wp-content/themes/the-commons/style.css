@@ -86,6 +86,7 @@ img {
     }
     .flex-desktop-sidebar{
         mask-image: none !important;
+        -webkit-mask-image: none !important;
     }
     .flex-mobile{
         flex-direction: column !important;
@@ -565,6 +566,7 @@ h4{
     min-width: 215px;
     overflow: hidden;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 .flex-desktop-grid{
     flex: 3;
