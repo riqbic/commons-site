@@ -81,18 +81,6 @@ function onPageLoad() {
         //Add which div id active
         popout_container.classList.add("active-"+activeID);
     }
-
-    //hides sidebar blog posts that are below the grid
-    let alt_blogs = document.getElementsByClassName('blog-item-2');
-    for(var i = 0; i < alt_blogs.length; i ++){
-        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight){
-            alt_blogs[i].style.display = 'none;';
-        }
-        else{
-            alt_blogs[i].style.display = 'block;';
-        }
-    }
-    //don't remember why this is here but it's important (?)
     resize();
 }
 
@@ -115,6 +103,7 @@ function resize(){
         console.log(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight);
         console.log(flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight)
         if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight){
+            console.log('check');
             alt_blogs[i].style.display = 'none;';
         }
         else{
