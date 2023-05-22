@@ -88,8 +88,12 @@ window.addEventListener('resize',resize);
 function resize(){
     const about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
+    var flex_desktop_sidebar = document.getElementById("flex-desktop-sidebar");
+    var flex_desktop_grid = document.getElementById("flex-desktop-grid");
 
     setPopoutSize();
+
+    flex_desktop_sidebar.style.height = flex_desktop_grid.offsetHeight;
 
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
