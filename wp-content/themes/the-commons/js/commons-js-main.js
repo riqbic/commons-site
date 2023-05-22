@@ -93,7 +93,7 @@ function resize(){
 
     setPopoutSize();
 
-    flex_desktop_sidebar.style.maxHeight = flex_desktop_grid.offsetHeight;
+    flex_desktop_sidebar.style.maxHeight = flex_desktop_grid.offsetHeight+"px";
 
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
