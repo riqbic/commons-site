@@ -84,7 +84,7 @@ function onPageLoad() {
     //hides sidebar blog posts that are below the grid
     const alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
-        elt = alot_blogs[i];
+        elt = alt_blogs[i];
         if(elt.offsetTop+elt.offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
             elt.style.display = 'none;';
         }
@@ -112,7 +112,7 @@ function resize(){
     //hides sidebar blog posts that are below the grid
     const alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
-        elt = alot_blogs[i];
+        elt = alt_blogs[i];
         if(elt.offsetTop+elt.offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
             elt.style.display = 'none;';
         }
