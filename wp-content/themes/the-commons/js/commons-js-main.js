@@ -84,12 +84,11 @@ function onPageLoad() {
     //hides sidebar blog posts that are below the grid
     var alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
-        elt = alt_blogs[i];
-        if(elt.offsetTop+elt.offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
-            elt.style.display = 'none;';
+        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
+            alt_blogs[i].style.display = 'none;';
         }
         else{
-            elt.style.display = 'block;';
+            alt_blogs[i].style.display = 'block;';
         }
     }
     //don't remember why this is here but it's important (?)
@@ -112,12 +111,11 @@ function resize(){
     //hides sidebar blog posts that are below the grid
     var alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
-        elt = alt_blogs[i];
-        if(elt.offsetTop+elt.offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
-            elt.style.display = 'none;';
+        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
+            alt_blogs[i].style.display = 'none;';
         }
         else{
-            elt.style.display = 'block;';
+            alt_blogs[i].style.display = 'block;';
         }
     }
 }
