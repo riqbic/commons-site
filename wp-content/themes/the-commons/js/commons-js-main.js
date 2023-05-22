@@ -58,6 +58,7 @@ function onPageLoad() {
     var active_element = document.getElementById(activeID+"-content");
     var full_content = document.getElementsByClassName(activeID+"-content-full");
     var newsy_container = document.getElementById("newsy-container");
+    var flex_desktop_grid = document.getElementById("flex-desktop-grid");
     //pop out the content in the URL parameter
     if (params.getAll("pop").length !== 0){
         popout_state = 1;
@@ -82,13 +83,13 @@ function onPageLoad() {
     }
 
     //hides sidebar blog posts that are below the grid
-    var alt_blogs = document.getElementsByClassName('blog-item-2');
+    let alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
-        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
+        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight){
             alt_blogs[i].style.display = 'none;';
         }
         else{
-            alt_blogs[i].style.display = 'block;';
+            elt.style.display = 'block;';
         }
     }
     //don't remember why this is here but it's important (?)
@@ -100,7 +101,7 @@ window.addEventListener('resize',resize);
 function resize(){
     const about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
-    var newsy_container = document.getElementById("newsy-container");
+    var flex_desktop_grid = document.getElementById("flex-desktop-grid");
 
     setPopoutSize();
 
@@ -109,9 +110,9 @@ function resize(){
     }
 
     //hides sidebar blog posts that are below the grid
-    var alt_blogs = document.getElementsByClassName('blog-item-2');
+    let alt_blogs = document.getElementsByClassName('blog-item-2');
     for(var i = 0; i < alt_blogs.length; i ++){
-        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > newsy_container.offsetTop+newsy_container.offsetHeight){
+        if(alt_blogs[i].offsetTop+alt_blogs[i].offsetHeight > flex_desktop_grid.offsetTop+flex_desktop_grid.offsetHeight){
             alt_blogs[i].style.display = 'none;';
         }
         else{
