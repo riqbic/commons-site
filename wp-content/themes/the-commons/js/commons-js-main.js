@@ -88,12 +88,13 @@ window.addEventListener('resize',resize);
 function resize(){
     const about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
-    var flex_desktop_sidebar = document.getElementById("flex-desktop-sidebar");
+    var sidebar_blog = document.getElementById("blog-preview");
+    var sidebar_blog_alt = document.getElementById("blog-alt-preview");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
 
     setPopoutSize();
 
-    flex_desktop_sidebar.style.maxHeight = flex_desktop_grid.offsetHeight+"px";
+    sidebar_blog_alt.style.maxHeight = flex_desktop_grid.offsetHeight-sidebar_blog.offsetHeight-20+"px";
 
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";

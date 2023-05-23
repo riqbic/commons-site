@@ -564,7 +564,7 @@ h4{
 .flex-desktop-sidebar{
     flex: 1;
     min-width: 215px;
-    overflow: hidden;
+    position: relative;
 }
 .flex-desktop-grid{
     flex: 3;
@@ -650,13 +650,14 @@ h4{
 .posts-archive-button{
     padding: 10px;
     border: 1px solid black;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     bottom: 1em;
     left: 50%;
-    transform: translateX(-50%,0);
+    transform: translateX(-50%);
     z-index: 1;
 }
 
@@ -677,7 +678,6 @@ h4{
 .blog-flex-container .blog-sidebar {
     width: 25%;
     overflow-y: auto;
-    position: relative;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
