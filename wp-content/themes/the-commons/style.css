@@ -84,7 +84,7 @@ img {
     "blog-alt blog-alt"
     "get-involved get-involved" !important; 
     }
-    .flex-desktop-sidebar{
+    #blog-alt{
         mask-image: none !important;
         -webkit-mask-image: none !important;
     }
@@ -565,8 +565,6 @@ h4{
     flex: 1;
     min-width: 215px;
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 .flex-desktop-grid{
     flex: 3;
@@ -581,6 +579,12 @@ h4{
     "shop shop"
     "events events"
     "about-us get-involved"; 
+}
+
+#blog-alt{
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 
 #features{
@@ -644,9 +648,6 @@ h4{
 }
 
 .posts-archive-button{
-    width: fit-content;
-    margin: auto;
-    height: auto;
     padding: 10px;
     border: 1px solid black;
     display: flex;
@@ -654,10 +655,14 @@ h4{
     justify-content: center;
     position: absolute;
     bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%,0);
+    z-index: 1;
 }
 
 .posts-archive-text{
     font-family: CenturyOldStyleRegular;
+    margin: 0px;
 }
 
 .blog-flex-container{
@@ -672,6 +677,7 @@ h4{
 .blog-flex-container .blog-sidebar {
     width: 25%;
     overflow-y: auto;
+    position: relative;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
