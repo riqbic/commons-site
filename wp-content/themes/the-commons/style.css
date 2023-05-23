@@ -643,6 +643,23 @@ h4{
     z-index: 2;
 }
 
+.posts-archive-button{
+    width: fit-content;
+    margin: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1em;
+}
+
+.posts-archive-text{
+    font-family: CenturyOldStyleRegular;
+}
+
 .blog-flex-container{
     display: flex;
     flex-direction: column;

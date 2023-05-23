@@ -117,6 +117,9 @@
                 echo commons_get_comic(); 
             } ?>
         </div> -->
+        <div class="posts-archive-button hidden-mobile">
+            <p class="posts-archive-text">posts archive</p>
+        </div>
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
