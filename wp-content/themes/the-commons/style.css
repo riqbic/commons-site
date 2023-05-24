@@ -63,6 +63,9 @@ img {
         font-family: CenturyOldStyleSmallCapsRegular;
         font-size: 1.2rem !important;
     }
+    h5{
+        font-size: 1.1rem !important;
+    }
     .blog-item{
         border-bottom: 1px solid white !important;
         padding: 0px !important;
@@ -145,9 +148,6 @@ img {
         margin: auto !important;
         width: 39% !important;
         transform: none !important;
-    }
-    .blog-flex-container .blog-sidebar .blog-item.is-active {
-        display: none !important;
     }
     .blog-flex-container .blog-sidebar{
         padding-bottom: 120px;
@@ -236,6 +236,11 @@ h3{
 h4{
     font-family: CenturyOldStyleSmallCapsRegular;
     font-size: 1.618rem;
+}
+
+h5{
+    font-family: CenturyOldStyleRegular;
+    font-size: 1.25rem;
 }
 
 .newsy{
@@ -664,6 +669,8 @@ h4{
 .posts-archive-text{
     font-family: CenturyOldStyleRegular;
     margin: 0px;
+    color: black;
+    white-space: nowrap;
 }
 
 .blog-flex-container{
@@ -686,14 +693,6 @@ h4{
 }
 /** ACTIVE POPOUT SIDEBAR LAYOUT **/
 .blog-flex-container .blog-sidebar .blog-item.is-active {
-    background: #000;
-    /*display: none;*/
-}
-.blog-flex-container .blog-sidebar .blog-item.is-active h4 {
-    color: #fff;
-    margin: 0;
-}
-.blog-flex-container .blog-sidebar .blog-item.is-active .newsy {
     display: none;
 }
 .blog-flex-container .blog-single-content {
@@ -776,13 +775,14 @@ h4{
 }
 
 .caption-text{
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 .caption-label{
-    font-size: .8rem;
-    font-style: italic;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: CenturyOldRegularItalic;
+    margin-top: 3px;
+    margin-bottom: 12px;
     line-height: .4rem;
 }
 
