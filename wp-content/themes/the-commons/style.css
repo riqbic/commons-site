@@ -60,7 +60,6 @@ img {
         font-size: 1.44rem !important;
     }
     h4{
-        font-family: CenturyOldStyleSmallCapsRegular;
         font-size: 1.2rem !important;
     }
     h5{
@@ -234,7 +233,7 @@ h3{
 }
 
 h4{
-    font-family: CenturyOldStyleSmallCapsRegular;
+    font-family: CenturyOldStyleRegular;
     font-size: 1.618rem;
 }
 
