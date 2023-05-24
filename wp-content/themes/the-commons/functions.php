@@ -49,7 +49,7 @@ function load_commons_blog_post($paged = NULL) {
         array(
             'post_content'  =>  $content,
             'post_title'    =>  $title,
-            'post_author'   =>  $author,
+            'post_author'   =>  $author_name,
             'post_date'     =>  $date
         )
     );
