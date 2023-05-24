@@ -40,10 +40,11 @@ add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {
     $post_id = $_GET['post_id'];
     $title = get_the_title($post_id);
-    $author = get_the_author($post_id);
-    $date = get_the_date($post_id);
+    $author_id = get_post_field( 'post_author', $post_id );
+    $author_name = get_the_author_meta( 'display_name', $author_id );
+    $date = get_the_date("l F j, Y", $post_id);
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-    $content = '<h3>'.$title.'</h3>''<div class="post-author">'.$author'</div>''<div class="post-date">'.$date'</div>''<div class="post-content">'.$content.'</div>';
+    $content = '<h3>'.$title.'</h3>''<div class="post-author">'.$author_name'</div>''<div class="post-date">'.$date'</div>''<div class="post-content">'.$content.'</div>';
     echo json_encode(
         array(
             'post_content'  =>  $content,
