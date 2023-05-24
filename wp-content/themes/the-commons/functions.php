@@ -40,12 +40,16 @@ add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {
     $post_id = $_GET['post_id'];
     $title = get_the_title($post_id);
+    $author = get_the_author($post_id);
+    $date = get_the_date($post_id);
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-    $content = '<h3>'.$title.'</h3><div class="post-content">'.$content.'</div>';
+    $content = '<h3>'.$title.'</h3>''<div class="post-author">'.$author'</div>''<div class="post-date">'.$date'</div>''<div class="post-content">'.$content.'</div>';
     echo json_encode(
         array(
             'post_content'  =>  $content,
-            'post_title'    =>  $title
+            'post_title'    =>  $title,
+            'post_author'   =>  $author,
+            'post_date'     =>  $date
         )
     );
     wp_die();
