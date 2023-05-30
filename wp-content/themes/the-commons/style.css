@@ -357,6 +357,10 @@ h5{
     line-height: 1rem;
 }
 
+#blog-ajax-container > div > p:nth-child(1){
+    margin-top: 50px;
+}
+
 .blog-container{
     width: 70%;
 }
