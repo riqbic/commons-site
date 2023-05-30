@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-    <div class="newsy-container flex-mobile" id="newsy-container">
-        <div class="flex-desktop-sidebar" id="flex-desktop-sidebar">
+    <div class="blog-flex-container flex-row">
+        <div class="blog-sidebar">
             <?php get_sidebar(); ?>
         </div>
-        <div class="content-single">
+        <div class="blog-single-content">
             <?php get_template_part('template-parts/content-single'); ?>
         </div>
     </div>
