@@ -784,6 +784,10 @@ h5{
     text-align: justify;
 }
 
+.post-content-archive{
+    width: 70%;
+}
+
 #blog-content > .blog-flex-container > .blog-single-content > .post-content{
     width: 70%;
 }
