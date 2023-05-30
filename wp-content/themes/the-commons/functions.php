@@ -86,10 +86,8 @@ function get_latest_post_link(){
         'post_status'     => 'publish' );
     $sorted_posts = get_posts( $args );
     $permalink = get_permalink($sorted_posts[0]->ID);
-    $title = $sorted_posts[0]->post_title;
     $post = $placeholder;
-    $latest_link_html = 'Latest Link: <a href="'.$permalink.'">'.$title.'</a>';
-    return $latest_link_html;
+    return $permalink;
 }
 
 //Add blocks category to Gutenberg
