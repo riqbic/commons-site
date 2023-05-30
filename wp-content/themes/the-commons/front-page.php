@@ -118,7 +118,7 @@
             } ?>
         </div> -->
         <div class="posts-archive-button hidden-mobile">
-            <a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/articles-archive">Articles Archive</a>
+            <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">Articles Archive</a>
         </div>
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">

@@ -75,6 +75,23 @@ if(function_exists('get_field')) {
     require( get_template_directory() .'/includes/acf.php' );
 }
 
+function get_latest_post_link(){
+    global $post;
+    $placeholder = $post;
+    $args = array(
+        'numberposts'     => 1,
+        'offset'          => 0,
+        'orderby'         => 'post_date',
+        'order'           => 'DESC',
+        'post_status'     => 'publish' );
+    $sorted_posts = get_posts( $args );
+    $permalink = get_permalink($sorted_posts[0]->ID);
+    $title = $sorted_posts[0]->post_title;
+    $post = $placeholder;
+    $latest_link_html = 'Latest Link: <a href="'.$permalink.'">'.$title.'</a>';
+    return $latest_link_html;
+}
+
 //Add blocks category to Gutenberg
 //Traditionally, you'd specify a priority like 10,20,30 but Genesis uses PHP_INT_MAX so we're using that
 //If you want to put it below Genesis blocks, just change it to 99 or something
