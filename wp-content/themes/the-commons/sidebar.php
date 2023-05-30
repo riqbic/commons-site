@@ -14,7 +14,7 @@ if( $posts_query->have_posts() ) {
     while($posts_query->have_posts() ) {
         $posts_query->the_post(); 
         ?>
-        <div class="blog-preview sidebar-item <?php if(get_the_ID() == $current_post_id) echo 'current-sidebar-item'; ?>">
+        <div class="blog-item <?php if(get_the_ID() == $current_post_id) echo 'is-active'; ?>">
             <a class="hide-underline" href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                 <h4><?php the_title(); ?></h4>
             </a>

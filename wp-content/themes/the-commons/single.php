@@ -3,7 +3,7 @@
         <div class="blog-sidebar">
             <?php get_sidebar(); ?>
         </div>
-        <div class="blog-single-content">
+        <div class="blog-single-content" style="border-left: none !important;">
             <?php get_template_part('template-parts/content-single'); ?>
         </div>
     </div>

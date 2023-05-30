@@ -707,6 +707,7 @@ h5{
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 1200px;
     max-height: calc(100% - 50px);
 }
 .blog-flex-container.flex-row {
