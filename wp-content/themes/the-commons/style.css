@@ -54,6 +54,10 @@ img {
     color: #fff;
     margin: 0;
 }
+.sidebar-item.current-sidebar-item h4 {
+    color: #fff;
+    margin: 0;
+}
 .sidebar-item.current-sidebar-item .blog-thumbnail-container,
 .sidebar-item.current-sidebar-item .newsy{
     display: none;
@@ -171,6 +175,10 @@ img {
     }
     .post-ajax-loader{
         transform: none !important;
+    }
+    .blog-container{
+        width: 100px;
+        margin: 20px;
     }
 }
 
@@ -353,7 +361,7 @@ h5{
     width: 70%;
 }
 
-.sidebar-item > a{
+.hide-underline{
     text-decoration: none;
 }
 

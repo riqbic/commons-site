@@ -15,11 +15,11 @@ if( $posts_query->have_posts() ) {
         $posts_query->the_post(); 
         ?>
         <div class="blog-preview sidebar-item <?php if(get_the_ID() == $current_post_id) echo 'current-sidebar-item'; ?>">
-            <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+            <a class="hide-underline" href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                 <h4><?php the_title(); ?></h4>
             </a>
             <div class="newsy">
-                <a href="<?php echo get_permalink(); ?> ">
+                <a class="hide-underline" href="<?php echo get_permalink(); ?> ">
                     <?php echo the_excerpt(); ?>
                 </a>
             </div>

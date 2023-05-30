@@ -1,11 +1,11 @@
 <?php /* Template Name: Posts Archive */ ?>
 <?php get_header(); ?>
 
-<div class="newsy-container flex-mobile" id="newsy-container">
-    <div class="flex-desktop-sidebar" id="flex-desktop-sidebar">
+<div class="blog-flex-container flex-row">
+    <div class="blog-sidebar">
         <?php get_sidebar(); ?>
     </div>
-    <div class="content-single">
+    <div class="blog-single-content">
         <?php //Query first post that is published
         $post_args = array(
             'posts_per_page'	=> 1,
@@ -25,10 +25,5 @@
         wp_reset_postdata(); ?>
     </div>
 </div>
-
-<div class="popout-shadow" id="popout-shadow" onclick="popOut('',1,1)"></div>
-
-<!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
-<div class="popout-container" id="popout-container"></div>
 
 <?php get_footer(); ?>
