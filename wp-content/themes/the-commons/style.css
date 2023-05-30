@@ -349,6 +349,14 @@ h5{
     line-height: 1rem;
 }
 
+.blog-container{
+    width: 70%;
+}
+
+.sidebar-item > a{
+    text-decoration: none;
+}
+
 .newsy-header{
     position: absolute;
     width: 100%;

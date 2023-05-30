@@ -16,16 +16,12 @@ if( $posts_query->have_posts() ) {
         ?>
         <div class="blog-preview sidebar-item <?php if(get_the_ID() == $current_post_id) echo 'current-sidebar-item'; ?>">
             <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                <h4><?php the_title(); ?></h4>
             </a>
-            <div class="blog-thumbnail-container">
-                <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                    <?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?>
-                </a>
-            </div>
             <div class="newsy">
-                <?php echo the_excerpt(); ?>
-                <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>
+                <a href="<?php echo get_permalink(); ?> ">
+                    <?php echo the_excerpt(); ?>
+                </a>
             </div>
         </div>
         <?php 
