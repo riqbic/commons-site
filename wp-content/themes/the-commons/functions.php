@@ -35,6 +35,11 @@ function commons_theme_assets() {
     wp_register_style( 'slick-css', get_template_directory_uri().'/includes/slick/slick.css', array(), '1.8.1' );
 }
 
+/**
+ * Remove related products output
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
 add_action( 'wp_ajax_nopriv_load_commons_blog_post', 'load_commons_blog_post' );
 add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {
