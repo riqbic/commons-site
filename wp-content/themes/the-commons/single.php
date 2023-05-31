@@ -17,7 +17,17 @@
             </div>
         <?php } ?>
         <div class="blog-single-content <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } ?>">
-            <?php get_template_part('template-parts/content-single'); ?>
+            <?php 
+            if ( is_singular( 'product' ) ) {
+
+				while ( have_posts() ) :
+					the_post();
+					wc_get_template_part( 'content', 'single-product' );
+				endwhile;
+	
+			} else {
+                get_template_part('template-parts/content-single');  
+            } ?>
         </div>
     </div>
 <?php get_footer(); ?>
