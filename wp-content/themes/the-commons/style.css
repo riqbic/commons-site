@@ -734,11 +734,14 @@ h5{
 .blog-flex-container .blog-single-content {
     width: 70%;
     flex: 1;
-    padding: 20px;
+    padding: 20px 20px 20px 0;
     overflow-y: auto;
-    border-left: 1px solid black;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+.blog-flex-container .blog-single-content.has-sidebar {
+    border-left: 1px solid black;
+    padding-left: 20px;
 }
 #blog-ajax-container > h3{
     width: 70%;
