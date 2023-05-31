@@ -6,7 +6,13 @@ $current_post_id = $post->ID;
 $post_type = get_post_type($current_post_id);
 //Query all posts that are published
 if ( is_singular( 'product' ) ) {
-    $terms = wp_get_post_terms( get_the_id(), 'product_tag' );
+    $terms = wp_get_post_terms( $current_post_id, 'product_tag' );
+    $term_array = array();
+    if( count($terms) > 0 ){
+        foreach($terms as $term){
+            $term_array[] = $term->term_id;  
+        }
+    }
     $post_args = array(
         'posts_per_page'	=> -1,
         'post_type'		=> $post_type,
@@ -15,7 +21,7 @@ if ( is_singular( 'product' ) ) {
             array (
                 'taxonomy' => 'product_tag',
                 'field' => 'slug',
-                'terms' => $terms,
+                'terms' => $term_array,
             )
         ),
     );
