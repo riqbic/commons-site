@@ -3,10 +3,11 @@
 global $post;
 $current_post_id = $post->ID;
 $category = wp_get_post_categories($current_post_id);
+$post_type = get_post_type($current_post_id);
 //Query all posts that are published
 $post_args = array(
     'posts_per_page'	=> -1,
-    'post_type'		=> 'post',
+    'post_type'		=> $post_type,
     'post_status' => 'publish',
     'category__in' => $category,
 );
