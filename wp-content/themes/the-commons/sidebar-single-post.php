@@ -20,8 +20,9 @@ if ( is_singular( 'product' ) ) {
         'tax_query' => array(
             array (
                 'taxonomy' => 'product_tag',
-                'field' => 'slug',
+                'field' => 'ID',
                 'terms' => $term_array,
+                'operator' => 'IN',
             )
         ),
     );
