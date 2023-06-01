@@ -200,8 +200,9 @@ body{
     overflow-x: hidden !important;
 }
 
-.title{
+.post-title{
     font-family: Helmswald-Post !important;
+    font-size: 6.854rem;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     margin: 0;
@@ -210,7 +211,7 @@ body{
     color: white !important;
 }
 
-.title-mobile{
+.site-title-mobile{
     font-family: Helmswald-Post;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
@@ -237,10 +238,10 @@ h1, h2, h3, h4{
     color: black;
 }
 
-/*title and banner*/
+/*title and banner 6.854rem*/
 h1{
     font-family: CenturyOldStyleSmallCapsRegular;
-    font-size: 6.854rem;
+    font-size: 2.618rem;
 }
 
 /*banners, features, etc*/
@@ -284,6 +285,7 @@ h5{
 .block-header{
     margin: 0px;
     color: white !important;
+    font-size: 6.854rem !important;
     background-color: black;
     aspect-ratio: 16 / 1.67;
     display: flex;
@@ -730,14 +732,15 @@ h5{
 .blog-flex-container .blog-single-content {
     width: 70%;
     flex: 1;
-    padding: 20px 20px 20px 0;
+    padding: 0px 20px 20px 20;
+    border-left: 1px solid black;
     overflow-y: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
 .blog-flex-container .blog-single-content.has-sidebar {
-    border-left: 1px solid black;
-    padding-left: 20px;
+    border-left: none;
+    padding: 0px 20px 20px 20;
 }
 #blog-ajax-container > h3{
     width: 70%;
