@@ -744,8 +744,12 @@ h5{
     padding: 0px 20px 20px 20px;
 }
 .blog-flex-container .blog-single-content.single-view {
+    width: 100%;
     border-left: none;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0px 20px 0px;
+}
+.blog-flex-container .blog-single-content.single-view > .post-content{
+    width: 100%;
 }
 #blog-ajax-container > h3{
     width: 70%;
