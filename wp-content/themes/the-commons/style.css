@@ -711,6 +711,7 @@ h5{
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    height: calc(100% - 50px);
     max-height: calc(100% - 50px);
 }
 .blog-flex-container.flex-row {
@@ -732,7 +733,7 @@ h5{
 .blog-flex-container .blog-single-content {
     width: 70%;
     flex: 1;
-    padding: 0px 20px 20px 20;
+    padding: 0px 20px 20px 20px;
     border-left: 1px solid black;
     overflow-y: auto;
     -ms-overflow-style: none;  /* IE and Edge */
