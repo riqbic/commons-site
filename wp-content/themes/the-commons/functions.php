@@ -51,7 +51,7 @@ function load_commons_blog_post($paged = NULL) {
     $author_name = get_the_author_meta( 'display_name', $author_id );
     $date = get_the_date("l F j, Y", $post_id);
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-    if( 31, $post_id ){
+    if( in_category(31, $post_id) ){
         $content = '<h3>'.$title.'</h3>'.'<div class="post-author">'.$author_name.'</div>'.'<div class="post-date">'.$date.'</div>'.'<div class="post-content">'.$content.'</div>';
     }
     else{
