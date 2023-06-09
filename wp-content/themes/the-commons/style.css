@@ -296,6 +296,7 @@ h5{
     font-family: CenturyOldStyleRegular !important;
     margin: 0px;
     padding: 0px;
+    line-height: .75;
     max-height: 100%;
     color: white !important;
     font-size: 4rem;
