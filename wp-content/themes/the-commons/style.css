@@ -831,10 +831,15 @@ h5{
 
 .caption-label{
     font-size: 1rem;
-    font-family: CenturyOldRegularItalic;
+    font-family: CenturyOldRegularItalic !important;
     margin-top: 3px;
     margin-bottom: 12px;
     line-height: .4rem;
+}
+
+.read-more{
+    font-size: 1rem;
+    font-family: CenturyOldRegularItalic !important;
 }
 
 .caption-image{
