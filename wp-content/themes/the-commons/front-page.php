@@ -20,10 +20,8 @@
                             <div class="blog-preview blog-item-1" data-id="<?php echo get_the_ID(); ?>">
                                 <h3 style="text-align: center;"><?php the_title(); ?></h3>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
-                                <div class="newsy"><?php echo the_excerpt(); ?>
-                                    <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                    READ MORE
-                                </div>
+                                <div class="newsy"><?php echo the_excerpt(); ?></div>
+                                <div class="text-small">open</div>
                             </div>
                             <?php 
                         }
@@ -60,11 +58,8 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
-                                    <div class="newsy">
-                                        <?php the_excerpt(); ?>
-                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                        READ MORE
-                                    </div>
+                                    <div class="newsy"><?php the_excerpt(); ?></div>
+                                    <div class="text-small">open</div>
                                 </div>
                                 <?php 
                             }
@@ -97,12 +92,9 @@
                         $posts_query->the_post(); 
                         ?>
                         <div class="blog-preview blog-item-2" data-id="<?php echo get_the_ID(); ?>">
-                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                            <div class="newsy">
-                                <?php the_excerpt(); ?>
-                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                READ MORE
-                            </div>
+                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <div class="newsy"><?php the_excerpt(); ?></div>
+                            <div class="text-small">open</div>
                         </div>
                         <?php 
                     }
@@ -137,10 +129,8 @@
                             $posts_query->the_post(); 
                             ?>
                             <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                            <div class="newsy"><?php echo the_excerpt(); ?>
-                                <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                READ MORE
-                            </div>
+                            <div class="newsy"><?php echo the_excerpt(); ?></div>
+                            <div class="text-small">open</div>
                             <?php 
                         }
                     } else { ?>
@@ -192,10 +182,8 @@
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <h1 class="block-header">FEATURED</h1>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
-                                    <div class="newsy"><?php echo the_excerpt(); ?>
-                                        <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                        READ MORE
-                                    </div>
+                                    <div class="newsy"><?php echo the_excerpt(); ?></div>
+                                    <div class="text-small">open</div>
                                 </div>
                                 <?php
                             }
@@ -232,11 +220,8 @@
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                     <?php if($blogct <= 3) { ?>
-                                        <div class="newsy">
-                                            <?php the_excerpt(); ?>
-                                            <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                                            READ MORE
-                                        </div>
+                                        <div class="newsy"><?php the_excerpt(); ?></div>
+                                        <div class="text-small">open</div>
                                     <?php } ?>
                                 </div>
                                 <?php 
@@ -266,10 +251,8 @@
                         $posts_query->the_post(); 
                         ?>
                         <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                        <div class="newsy"><?php echo the_excerpt(); ?>
-                            <!--<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">Read More</a>-->
-                            READ MORE
-                        </div>
+                        <div class="newsy"><?php echo the_excerpt(); ?></div>
+                        <div class="text-small">open</div>
                         <?php 
                     }
                 } else { ?>
