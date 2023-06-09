@@ -293,10 +293,12 @@ h5{
 }
 
 .block-header-text{
+    font-family: CenturyOldStyleRegular !important;
     margin: 0px;
     padding: 0px;
+    max-height: 100%;
     color: white !important;
-    font-size: 4.236rem;
+    font-size: 4rem;
     background-color: black;
 }
 
