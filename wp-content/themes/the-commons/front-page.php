@@ -180,7 +180,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <h1 class="block-header">FEATURED</h1>
+                                    <div class="block-header"><h1 class="block-header-text">FEATURED</h1></div>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?></div>
                                     <div class="read-more">+ open +</div>

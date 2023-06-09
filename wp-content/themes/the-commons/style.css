@@ -284,13 +284,20 @@ h5{
 
 .block-header{
     margin: 0px;
-    color: white !important;
-    font-size: 6.854rem;
+    padding: 0px;
     background-color: black;
     aspect-ratio: 16 / 1.67;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.block-header-text{
+    margin: 0px;
+    padding: 0px;
+    color: white !important;
+    font-size: 6.854rem;
+    background-color: black;
 }
 
 .size-blog-thumbnail{
