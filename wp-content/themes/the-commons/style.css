@@ -138,6 +138,7 @@ img {
     }
     .blog-flex-container .blog-single-content{
         width: calc(100% - 40px) !important;
+        min-height: 100%;
         overflow-y: initial !important;
         border-left: none !important;
         margin-bottom: 20px;
@@ -172,9 +173,6 @@ img {
     }
     #blog-alt-preview > .blog-item-2:nth-child(n + 2){
         display: none !important;
-    }
-    .post-ajax-loader{
-        transform: none !important;
     }
     .blog-container{
         width: 100px;
