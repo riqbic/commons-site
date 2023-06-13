@@ -289,7 +289,7 @@
         <div class="grid-item" id="shop-title">
             <div class="shop-title-container">
                 <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">
-                    <h3>Shop</h3>
+                    <h3 class="shop-title">Shop</h3>
                 </a>
             </div>
         </div>
