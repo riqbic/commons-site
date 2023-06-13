@@ -310,40 +310,6 @@
         <div class="grid-item" id="events">
             <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
                 <div class="jod-art-wrapper">
-                    <code class="jod-art-background-code">
-                    body {<br>
-                        background-color: #ffffff;<br>
-                    }<br>
-                    .jod-art-wrapper {<br>
-                        background-color: #ffffff;<br>
-                        font-family: monospace; /*this is gonna be the new monospace font*/<br>
-                        font-size: 1rem;<br>
-                        width: 600px;<br>
-                        height: 600px;<br>
-                        transition: transform 1s;<br>
-                    }<br>
-                    .jod-art-single-line {<br>
-                        color: #000000;<br>
-                        position: absolute;<br>
-                        left: 1ch;<br>
-                        white-space: nowrap;<br>
-                    }<br>
-                    .jod-art-container-1{<br>
-                        transform: translate(0px, 0px);<br>
-                        position: relative;<br>
-                        width: 100%;<br>
-                        height: 100%;<br>
-                    }<br>
-                    .jod-art-wrapper:hover .jod-art-container-1{<br>
-                        transform: translate(0px, 0px);<br>
-                    }<br>
-                    .jod-art-container-2{<br>
-                        position: relative;<br>
-                        transform: translate(-40px, -95%);<br>
-                        width: 100%;<br>
-                        height: 100%;<br>
-                    }<br>
-                    </code>
                     <div class="jod-art-container-1">
                         <div style="top: 1.8ex;" class="jod-art-single-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                         <div style="top: 3.6ex;" class="jod-art-single-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
