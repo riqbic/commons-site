@@ -180,7 +180,7 @@ img {
         margin: 20px;
     }
     .shop-title-container{
-        height: 30px;
+        height: 30px !important;
     }
 }
 
