@@ -901,6 +901,55 @@ h5{
     padding: 0 20px 0 20px;
 }
 
+.jod-art-wrapper {
+    background-color: #ffffff;
+    font-family: monospace; /*this is gonna be the new monospace font*/
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.jod-art-single-line {
+    color: #000000;
+    position: absolute;
+    left: 1ch;
+    white-space: nowrap;
+}
+.jod-art-container-1{
+    transform: translate(0px, -50%);
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.jod-art-wrapper:hover > .jod-art-container-1{
+    transform: translate(0px, -50%);
+}
+.jod-art-container-2{
+    position: relative;
+    transform: translate(-40px, -145%);
+    width: 100%;
+    height: 100%;
+}
+.jod-art-wrapper:hover > .jod-art-container-2{
+    transform: translate(0px, -150%);
+}
+.jod-art-container-3{
+    position: relative;
+    transform: translate(85px, -260%);
+    width: 100%;
+    height: 100%;
+}
+.jod-art-wrapper:hover > .jod-art-container-3{
+    transform: translate(0px, -250%);
+}
+.jod-art-background-code{
+    position: relative;
+    visibility: hidden;
+}
+.jod-art-wrapper:hover > .jod-art-background-code{
+    visibility: hidden;
+}
+
 .subpage-container{
     margin: 10px auto;
     max-width: 1200px;
