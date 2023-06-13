@@ -144,8 +144,8 @@ img {
         padding-bottom: 3px;
         border-bottom: .5px solid black;
     }
-    .blog-single-content .loading{
-        min-height: 100%;
+    #blog-ajax-container .loading{
+        min-height: 100vh;
     }
     .post-content{
         width: 100% !important;
