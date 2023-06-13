@@ -915,31 +915,31 @@ h5{
     white-space: nowrap;
 }
 .jod-art-container-1{
-    transform: translate(0px, -100%);
+    transform: translate(0px, 0%);
     position: relative;
     width: 100%;
     height: 100%;
 }
 .jod-art-wrapper:hover > .jod-art-container-1{
-    transform: translate(0px, -100%);
+    transform: translate(0px, 0%);
 }
 .jod-art-container-2{
     position: relative;
-    transform: translate(-40px, -205%);
+    transform: translate(-40px, -105%);
     width: 100%;
     height: 100%;
 }
 .jod-art-wrapper:hover > .jod-art-container-2{
-    transform: translate(0px, -200%);
+    transform: translate(0px, -100%);
 }
 .jod-art-container-3{
     position: relative;
-    transform: translate(85px, -3100%);
+    transform: translate(85px, -210%);
     width: 100%;
     height: 100%;
 }
 .jod-art-wrapper:hover > .jod-art-container-3{
-    transform: translate(0px, -300%);
+    transform: translate(0px, -200%);
 }
 
 .subpage-container{
