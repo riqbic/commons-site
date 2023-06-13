@@ -20,9 +20,7 @@ function handleTabletChange(e){
     var popout_container = document.getElementById("popout-container");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
     var features = document.getElementById("features");
-    var blog_alt = document.getElementById("blog-alt");
     newsy_container.appendChild(features);
-    flex_desktop_grid.appendChild(blog_alt);
   }
   //over 768px
   else{
@@ -30,9 +28,7 @@ function handleTabletChange(e){
     var popout_container = document.getElementById("popout-container");
     var flex_desktop_sidebar = document.getElementById("flex-desktop-sidebar");
     var features = document.getElementById("features");
-    var blog_alt = document.getElementById("blog-alt");
     flex_desktop_grid.appendChild(features);
-    flex_desktop_sidebar.appendChild(blog_alt);
   }
 }
 

@@ -98,12 +98,11 @@ img {
     grid-auto-rows: minmax(0px,auto) !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-areas: 
-    "about-us about-us"
     "shop-title shop-title"
     "shop shop"
-    "events events"
-    "blog-alt blog-alt"
-    "get-involved get-involved" !important; 
+    "about-us about-us"
+    "get-involved get-involved" 
+    "events events" !important; 
     }
     #blog-alt{
         mask-image: none !important;
@@ -882,11 +881,15 @@ h5{
     width: 100%;
     border-bottom: .5px solid black;
     border-top: .5px solid black;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 .shop-title{
     width: fit-content;
     margin: auto;
+    line-height: .75;
 }
 
 .shop-container{
