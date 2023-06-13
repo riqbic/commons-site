@@ -179,6 +179,9 @@ img {
         width: 100px;
         margin: 20px;
     }
+    .shop-title-container{
+        height: 30px;
+    }
 }
 
 @media (min-width: 769px){
@@ -879,6 +882,7 @@ h5{
 
 .shop-title-container{
     width: 100%;
+    height: 50px;
     border-bottom: .5px solid black;
     border-top: .5px solid black;
     display: flex;
