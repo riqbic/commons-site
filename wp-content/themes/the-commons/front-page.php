@@ -288,9 +288,9 @@
         </div>
         <div class="grid-item" id="shop-title">
             <div class="shop-title-container">
-                <a href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">
-                    <h3 class="shop-title">Shop</h3>
-                </a>
+                <h3 class="shop-title">
+                    <a href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">Shop</a>
+                </h3>
             </div>
         </div>
         <div class="grid-item" id="shop">
