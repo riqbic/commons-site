@@ -143,9 +143,6 @@ img {
         padding-bottom: 3px;
         border-bottom: .5px solid black;
     }
-    #blog-ajax-container .loading{
-        min-height: 100vh;
-    }
     .post-content{
         width: 100% !important;
     }
@@ -772,6 +769,7 @@ h5{
 
 #blog-ajax-container.loading {
     filter: blur(0px);
+    min-height: 100vh;
 }
 
 .loader-active {
