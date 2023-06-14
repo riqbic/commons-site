@@ -769,7 +769,7 @@ h5{
 
 #blog-ajax-container.loading {
     filter: blur(0px);
-    min-height: 100vh;
+    min-height: calc(100vh - 144px);
 }
 
 .loader-active {
