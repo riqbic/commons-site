@@ -80,9 +80,9 @@
                 //Add loading style
                 if(loadedPost==0){
                     $('.blog-single-content > .loader').addClass('loader-active');
-                } else{
-                    $('.blog-single-content').addClass('loading');
                 }
+                $('.blog-single-content').addClass('loading');
+
                 //Change title of popout bar to show loading (optional)
                 $('#popout-container .post-title').text('Loading...');
                 //Set post loading content
