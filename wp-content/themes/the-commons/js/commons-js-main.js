@@ -14,13 +14,13 @@ const jod_art = document.getElementById("events");
 jod_art_join.addEventListener(
     "mouseover",
     (event) => {
-      // highlight the mouseover target
-      event.target.style.display = "block";
-      event.target.style.transform = "translate("+Math.random()*jod_art.offsetHeight-jod_art_join.offsetHeight+"px, "+Math.random()*jod_art_join.offsetWidth-jod_art_join.offsetWidth+"px";
+      // random position of JOIN header every mouseover
+      jod_art_join.style.display = "block";
+      jod_art_join.style.transform = "translate("+Math.random()*jod_art.offsetHeight-jod_art_join.offsetHeight+"px, "+Math.random()*jod_art_join.offsetWidth-jod_art_join.offsetWidth+"px";
   
-      // reset the color after a short delay
+      // reset display property after a delay
       setTimeout(() => {
-        event.target.style.display = "none";
+        jod_art_join.style.display = "none";
       }, 500);
     },
     false
