@@ -11,7 +11,7 @@ function onPopState(ev) {
 
 const jod_art_join = document.getElementById("jod-art-join");
 const jod_art = document.getElementById("events");
-jod_art_join.addEventListener(
+jod_art.addEventListener(
     "mouseover",
     (event) => {
       // random position of JOIN header every mouseover
