@@ -120,7 +120,6 @@ function tcb_block_categories( $categories ) {
 	return $categories;
 }
 
-//https://alec.local/checkout/order-received/302/?key=wc_order_OBd2lj1lnbY8w
 /**
  * Filter the default woocommerce memberships message
  */
