@@ -80,9 +80,9 @@
                 //Add loading style
                 if(loadedPost==0){
                     $('.blog-single-content > .loader').addClass('loader-active');
-                } else{
-                    $('.blog-single-content').addClass('loading');
                 }
+                $('.blog-single-content').addClass('loading');
+
                 //Change title of popout bar to show loading (optional)
                 $('#popout-container .post-title').text('Loading...');
                 //Set post loading content
@@ -108,7 +108,7 @@
                         //load post into container
                         $('#popout-container #blog-ajax-container').html(response.post_content);
                         //Update the title in the popout bar
-                        $('#popout-container .post-title').text(response.post_title);
+                        $('#popout-container .post-title').html(response.post_title);
                         //Scroll to top
                         $('#popout-container #blog-ajax-container').scrollTop(0);
 

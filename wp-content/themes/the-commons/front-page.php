@@ -180,7 +180,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <div class="block-header"><h1 class="block-header-text">FEATURED</h1></div>
+                                    <div class="block-header"><h1 class="block-header-text"><?php the_title(); ?></h1></div>
                                     <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?></div>
                                     <div class="read-more">+ open +</div>
@@ -437,6 +437,7 @@
                         <div style="top: 72ex;" class="jod-art-single-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     </div>
                 </div>
+                <h3 class="jod-art-join hidden-mobile" id="jod-art-join">JOIN</h3>
                 <img class="hidden-desktop" src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
             <div class="grid-content" id="events-content">
