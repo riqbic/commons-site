@@ -17,7 +17,7 @@ jod_art.addEventListener(
       // random position of JOIN header every mouseover
       jod_art_join.style.display = "block";
       jod_art_join.style.transform = "translate("+Math.random()*jod_art.offsetHeight-jod_art_join.offsetHeight+"px, "+Math.random()*jod_art_join.offsetWidth-jod_art_join.offsetWidth+"px)";
-  
+        console.log(Math.random()*jod_art.offsetHeight-jod_art_join.offsetHeight);
       // reset display property after a delay
       setTimeout(() => {
         jod_art_join.style.display = "none";
