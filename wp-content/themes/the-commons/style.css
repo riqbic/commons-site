@@ -949,6 +949,10 @@ h5{
 .jod-art-wrapper:hover > .jod-art-container-3{
     transform: translate(0px, -200%);
 }
+.jod-art-join{
+    display: none;
+    position: absolute;
+}
 
 .subpage-container{
     margin: 10px auto;

@@ -9,6 +9,23 @@ function onPopState(ev) {
    popOut(activeID,0,1);
 }
 
+const jod_art_join = document.getElementById("jod-art-join");
+const jod_art = document.getElementById("events");
+jod_art_join.addEventListener(
+    "mouseover",
+    (event) => {
+      // highlight the mouseover target
+      event.target.style.display = "block";
+      event.target.style.transform = "translate("+Math.random()*jod_art.offsetHeight-jod_art_join.offsetHeight+"px, "+Math.random()*jod_art_join.offsetWidth-jod_art_join.offsetWidth+"px";
+  
+      // reset the color after a short delay
+      setTimeout(() => {
+        event.target.style.display = "none";
+      }, 500);
+    },
+    false
+  );
+
 // Create a condition that targets viewports below 768px wide
 const mediaQuery = window.matchMedia('(max-width: 768px)');
 
