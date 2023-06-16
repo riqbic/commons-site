@@ -119,4 +119,48 @@ function tcb_block_categories( $categories ) {
 
 	return $categories;
 }
+
+/**
+ * Filter the default woocommerce memberships message
+ */
+function cb_memberships_thank_you_override(){
+	//Change the message
+    /*$thank_you_message = "My custom thank you message here." ;
+	return $thank_you_message;*/
+    //Stop the message entirely
+    return false;
+}
+add_filter( 'woocommerce_memberships_thank_you_message', 'cb_memberships_thank_you_override' );
+
+/**
+ * Add extra links defined in the products
+ */
+add_filter('woocommerce_thankyou_order_received_text','cb_thank_you_product_links',10,2);
+function cb_thank_you_product_links( $thank_you_message, $order ) {
+    //If you want to change the message entirely, uncomment the next line...
+    //$thank_you_message = 'Thanks for purchasing!';
+
+    //Make sure acf is active
+    if(function_exists('get_field')) {
+        // Get and Loop Over Order Items
+        foreach ( $order->get_items() as $item_id => $item ) {
+            $product_id = $item->get_product_id();
+            if(have_rows('checkout_links',$product_id)) {
+                $thank_you_message .= ' Your purchase gives you access to ';
+                while(have_rows('checkout_links',$product_id)) {
+                    the_row();
+                    $link_id = get_sub_field('link');
+                    //Open to single post
+                    $thank_you_message .= '<a href="'.get_permalink( $link_id ).'" title="'.get_the_title($link_id).'">'.get_the_title($link_id).'</a>';
+                    //Open to popup 
+                    //$thank_you_message .= '<a href="'.get_bloginfo('url').'?pop=features&post_id='.$link_id.'" title="'.get_the_title($link_id).'">'.get_the_title($link_id).'</a>';
+                    $thank_you_message .= ', ';
+                }
+                $thank_you_message = substr($thank_you_message, 0, -2);
+                $thank_you_message .= '.';
+            }
+        }
+    }
+    return $thank_you_message;
+}
 ?>
