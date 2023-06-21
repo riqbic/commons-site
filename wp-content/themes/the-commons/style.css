@@ -180,6 +180,9 @@ img {
         height: 30px !important;
         margin-top: 50px;
     }
+    .subpage-container{
+        padding: 10px !important;
+    }
 }
 
 @media (min-width: 769px){
@@ -803,8 +806,8 @@ h5{
 }
 .blog-item{
     cursor: pointer;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 10px;
     padding-top: 5px;
     border-bottom: 1px solid black;

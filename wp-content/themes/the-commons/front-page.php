@@ -38,7 +38,7 @@
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
-                        <h4 class="italic">Up Next</h4>
+                        <h4 class="italic" style="padding: 10px;">Up Next</h4>
                         <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
@@ -200,7 +200,7 @@
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
-                    <h4 class="italic">Up Next</h4>
+                    <h4 class="italic" style="padding: 10px;">Up Next</h4>
                     <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
