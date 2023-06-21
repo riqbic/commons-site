@@ -178,6 +178,7 @@ img {
     }
     .shop-title-container{
         height: 30px !important;
+        margin-top: 50px;
     }
 }
 
@@ -952,6 +953,9 @@ h5{
 .jod-art-join{
     display: none;
     position: absolute;
+}
+.jod-art-mobile{
+    margin-top: 30px;
 }
 
 .subpage-container{

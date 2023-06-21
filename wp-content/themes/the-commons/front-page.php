@@ -38,6 +38,7 @@
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
+                        Up Next:
                         <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
@@ -438,7 +439,7 @@
                     </div>
                 </div>
                 <h3 class="jod-art-join hidden-mobile" id="jod-art-join">JOIN</h3>
-                <img class="hidden-desktop" src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
+                <img class="hidden-desktop jod-art-mobile" src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
             <div class="grid-content" id="events-content">
                 <div class="popout-bar">
