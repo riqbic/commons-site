@@ -238,6 +238,10 @@ h1, h2, h3, h4{
     color: black;
 }
 
+.italic{
+    font-family: CenturyOldStyleRegularItalic;
+}
+
 /*title and banner 6.854rem*/
 h1{
     font-family: CenturyOldStyleSmallCapsRegular;
