@@ -1,3 +1,13 @@
+/*
+Theme Name: The Commons
+Author: Alec Reduker
+Author URI: http://reduker.wordpress.com
+Description: Theme for The Commons Parkour brand
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Version: 1.2
+*/
+
 //global variables
 var popout_state = 0;
 var push_state = 1;
