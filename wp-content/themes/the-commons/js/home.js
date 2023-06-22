@@ -111,6 +111,9 @@
                         $('#popout-container .post-title').html(response.post_title);
                         //Scroll to top
                         $('#popout-container #blog-ajax-container').scrollTop(0);
+                        if(window.innerWidth<768){
+                            window.scrollTop(0);
+                        }
 
                         //remove loading class
                         $('.blog-single-content').removeClass('loading');
