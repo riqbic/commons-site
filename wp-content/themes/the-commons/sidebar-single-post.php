@@ -32,7 +32,7 @@ if ( is_singular( 'product' ) ) {
         'posts_per_page'	=> -1,
         'post_type'		=> $post_type,
         'post_status' => 'publish',
-        'category__in' => $category,
+        'category__in' => '31',
     );
 }
 $posts_query = new WP_Query( $post_args );
