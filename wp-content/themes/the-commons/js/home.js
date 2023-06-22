@@ -112,7 +112,7 @@
                         //Scroll to top
                         $('#popout-container #blog-ajax-container').scrollTop(0);
                         if(window.innerWidth<768){
-                            window.scrollTo(0,0);
+                            $('#popout-container .blog-flex-container').scrollTop(0);
                         }
 
                         //remove loading class
