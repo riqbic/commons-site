@@ -97,7 +97,7 @@ function get_latest_post_link(){
         'offset'          => 0,
         'orderby'         => 'post_date',
         'order'           => 'DESC',
-        'post_status'     => 'publish'
+        'post_status'     => 'publish',
         'cat'             => 31  );
     $sorted_posts = get_posts( $args );
     $permalink = get_permalink($sorted_posts[0]->ID);
