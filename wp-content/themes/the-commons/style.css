@@ -966,13 +966,11 @@ h5{
     display: none;
     position: absolute;
 }
-.jod-art-mobile{
-    margin-top: 30px;
-    border:1px solid black;
-}
-
 .jod-mobile-title{
     text-align: center;
+}
+#events-preview{
+    border-top: 1px solid black;
 }
 
 .subpage-container{
