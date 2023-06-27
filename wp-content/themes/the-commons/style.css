@@ -394,6 +394,11 @@ h5{
     text-decoration: none;
 }
 
+.youtube-video-embed {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
 .newsy-header{
     position: absolute;
     width: 100%;
