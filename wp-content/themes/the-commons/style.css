@@ -973,6 +973,23 @@ h5{
     border-top: 1px solid black;
 }
 
+.tcb-footer{
+    background: black;
+    height: 100px;
+}
+
+.socials-container{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-link{
+    color: white;
+}
+
 .subpage-container{
     margin: 10px auto;
     max-width: 1200px;
