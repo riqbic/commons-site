@@ -189,6 +189,9 @@ img {
     .subpage-container{
         padding: 10px !important;
     }
+    #events-preview{
+        border-top: 1px solid black;
+    }
 }
 
 @media (min-width: 769px){
@@ -968,9 +971,6 @@ h5{
 }
 .jod-mobile-title{
     text-align: center;
-}
-#events-preview{
-    border-top: 1px solid black;
 }
 
 .tcb-footer{
