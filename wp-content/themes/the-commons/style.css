@@ -40,6 +40,8 @@ Version: 1.2
 
 img {
     max-width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
     height: auto;
 }
 /** Single Content **/
@@ -179,6 +181,9 @@ img {
     .shop-title-container{
         height: 30px !important;
         margin-top: 50px;
+    }
+    #shop{
+        border-bottom: 1px solid black;
     }
     .subpage-container{
         padding: 10px !important;
@@ -963,6 +968,11 @@ h5{
 }
 .jod-art-mobile{
     margin-top: 30px;
+    border:1px solid black;
+}
+
+.jod-mobile-title{
+    text-align: center;
 }
 
 .subpage-container{

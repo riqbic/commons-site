@@ -440,6 +440,7 @@
                     </div>
                 </div>
                 <h3 class="jod-art-join hidden-mobile" id="jod-art-join">JOIN</h3>
+                <h3 class="hidden-desktop jod-mobile-title">Join or Die</h3>
                 <img class="hidden-desktop jod-art-mobile" src="wp-content\themes\the-commons\img\JOD_poster_frontpage.png" width="100%" height="auto">
             </div>
             <div class="grid-content" id="events-content">
