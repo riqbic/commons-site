@@ -1039,6 +1039,10 @@ h5{
     margin-bottom: 0;
 }
 
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger{
+    z-index: 1 !important;
+}
+
 /** COMMONS COMIC **/
 .commons-comic {
     padding: 0;
