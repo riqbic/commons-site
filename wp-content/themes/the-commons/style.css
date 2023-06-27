@@ -975,19 +975,17 @@ h5{
 
 .tcb-footer{
     background: black;
-    height: 100px;
+    height: 52px;
 }
 
 .socials-container{
     max-width: 1000px;
+    height: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 50px;
     align-items: center;
-}
-
-.social-link{
-    color: white;
 }
 
 .subpage-container{
