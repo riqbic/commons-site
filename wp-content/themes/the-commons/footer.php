@@ -1,4 +1,5 @@
 <?php wp_footer(); ?>
+</div>
 <div class="tcb-footer">
     <div class="socials-container">
         <p style="font-family: CenturyOldStyleRegular; font-size: 1.2rem; color: white;">links:</p>

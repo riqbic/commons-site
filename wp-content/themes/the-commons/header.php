@@ -7,6 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div class="tcb-content">
 <div class="newsy-header hidden-mobile">
     <div class="header-container">
         <p class="header-item-1" style="color: white">

@@ -980,6 +980,10 @@ h5{
     text-align: center;
 }
 
+.tcb-content{
+    min-height: calc(100vh - 52px);
+}
+
 .tcb-footer{
     background: black;
     height: 52px;
