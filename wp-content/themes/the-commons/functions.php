@@ -164,4 +164,62 @@ function cb_thank_you_product_links( $thank_you_message, $order ) {
     }
     return $thank_you_message;
 }
+
+//auto complete virtual and downloadable orders
+add_action('woocommerce_thankyou', 'wpd_autocomplete_virtual_orders', 10, 1 );
+function wpd_autocomplete_virtual_orders( $order_id ) {
+  
+    if( ! $order_id ) return;
+  
+    // Get order
+    $order = wc_get_order( $order_id );
+  
+    // get order items = each product in the order
+    $items = $order->get_items();
+  
+    // Set variable
+    $only_virtual = true;
+  
+    foreach ( $items as $item ) {
+          
+        // Get product object
+        if ( isset($item['variation_id']) && ! empty($item['variation_id']) ) {
+ 
+            $product = wc_get_product( $item['variation_id'] );
+ 
+        } else {
+ 
+            $product = wc_get_product( $item['product_id'] );
+ 
+        }
+ 
+        // Safety check
+        if ( ! is_object($product) ) {
+ 
+            return false;
+ 
+        }
+                 
+        // Is virtual
+        $is_virtual = $product->is_virtual();
+  
+        // Is_downloadable
+        $is_downloadable = $product->is_downloadable();
+  
+        if ( ! $is_virtual && ! $is_downloadable  ) {
+  
+            $only_virtual = false;
+  
+        }
+  
+    }
+  
+    // true
+    if ( $only_virtual ) {
+  
+        $order->update_status( 'completed' );
+  
+    }
+ 
+}
 ?>
