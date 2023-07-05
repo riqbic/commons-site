@@ -893,12 +893,22 @@ h5{
     overflow-y: auto;
 }
 
+.about-us-content-wrapper{
+    max-width: 500px;
+    margin: auto;
+}
+
 .get-involved-container{
     padding-left: 20px;
     padding-right: 20px;
     height: 100%;
     max-height: calc(100% - 50px);
     overflow-y: auto;
+}
+
+.get-involved-content-wrapper{
+    max-width: 500px;
+    margin: auto;
 }
 
 .shop-title-container{
