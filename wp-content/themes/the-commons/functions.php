@@ -147,7 +147,7 @@ function cb_thank_you_product_links( $thank_you_message, $order ) {
         foreach ( $order->get_items() as $item_id => $item ) {
             $product_id = $item->get_product_id();
             if(have_rows('checkout_links',$product_id)) {
-                $thank_you_message .= '<p class="thank-you-message-text"Your purchase gives you access to ';
+                $thank_you_message .= '<p class="thank-you-message-text">Your purchase gives you access to ';
                 while(have_rows('checkout_links',$product_id)) {
                     the_row();
                     $link = get_sub_field('link');
