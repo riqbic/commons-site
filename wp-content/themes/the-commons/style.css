@@ -1009,6 +1009,11 @@ h5{
     align-items: center;
 }
 
+.watch-now-button{
+    margin: auto;
+    margin-bottom: 50px;
+}
+
 .subpage-container{
     margin: 10px auto;
     max-width: 1200px;
