@@ -1024,6 +1024,10 @@ h5{
     max-width: 500px;
 }
 
+.woocommerce-thankyou-order-received {
+    text-align: center;
+}
+
 .subpage-container{
     margin: 10px auto;
     max-width: 1200px;
