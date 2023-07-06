@@ -147,7 +147,7 @@ function cb_thank_you_product_links( $thank_you_message, $order ) {
         foreach ( $order->get_items() as $item_id => $item ) {
             $product_id = $item->get_product_id();
             if(have_rows('checkout_links',$product_id)) {
-                $thank_you_message .= ' Your purchase gives you access to ';
+                $thank_you_message .= '<p class="thank-you-message-text"Your purchase gives you access to ';
                 while(have_rows('checkout_links',$product_id)) {
                     the_row();
                     $link = get_sub_field('link');
@@ -159,7 +159,7 @@ function cb_thank_you_product_links( $thank_you_message, $order ) {
                     $thank_you_message .= ', ';
                 }
                 $thank_you_message = substr($thank_you_message, 0, -2);
-                $thank_you_message .= '.';
+                $thank_you_message .= '.</p>';
                 $thank_you_message .= '</br><button class="watch-now-button"><a href="https://thecommons.boston/?pop=features" title="Watch Now">Watch Now</a></button>';
             }
         }
