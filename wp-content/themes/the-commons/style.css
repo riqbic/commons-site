@@ -1011,14 +1011,15 @@ h5{
 
 .watch-now-button{
     margin: auto;
-    width: 200px;
-    height: 100px;
+    font-size: 2rem;
+    font-family: 'CenturyOldStyleRegular';
     margin-top: 50px;
     margin-bottom: 50px;
     display: block;
 }
 
 .thank-you-message-text{
+    margin: auto;
     text-align: center;
     max-width: 500px;
 }
