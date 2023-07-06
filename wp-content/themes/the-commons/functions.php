@@ -150,9 +150,10 @@ function cb_thank_you_product_links( $thank_you_message, $order ) {
                 $thank_you_message .= ' Your purchase gives you access to ';
                 while(have_rows('checkout_links',$product_id)) {
                     the_row();
-                    $link_id = get_sub_field('link');
+                    $link = get_sub_field('link');
+                    $title = get_sub_field('title');
                     //Open to single post
-                    $thank_you_message .= '<a href="'.get_permalink( $link_id ).'" title="'.get_the_title($link_id).'">'.get_the_title($link_id).'</a>';
+                    $thank_you_message .= '<a href="'.$link.'" title="'.$title.'">'.$title.'</a>';
                     //Open to popup 
                     //$thank_you_message .= '<a href="'.get_bloginfo('url').'?pop=features&post_id='.$link_id.'" title="'.get_the_title($link_id).'">'.get_the_title($link_id).'</a>';
                     $thank_you_message .= ', ';

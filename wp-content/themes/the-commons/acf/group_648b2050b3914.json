@@ -25,11 +25,11 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_648b209b3f189",
+                    "key": "field_64a702e233614",
                     "label": "Link",
                     "name": "link",
                     "aria-label": "",
-                    "type": "post_object",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -38,13 +38,32 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
-                    "post_status": "",
-                    "taxonomy": "",
-                    "return_format": "id",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 1,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_648b20503f188"
+                },
+                {
+                    "key": "field_64a70374f52a8",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_648b20503f188"
                 }
             ]
@@ -68,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686840955
+    "modified": 1688667023
 }
