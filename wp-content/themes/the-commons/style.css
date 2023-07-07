@@ -17,7 +17,7 @@ Version: 1.21
   }
   @font-face {
     font-family: "CenturyOldStyleSmallCapsRegular";
-    src: url('fonts/webFonts/CenturyOldStyleSmallCapsRegular/font.woff2') format('woff2'), url('fonts/webFonts/CenturyOldStyleSmallCapsRegular/font.woff') format('woff');
+    src: url('fonts\CenturyOldStySC-Reg.otf') format('otf');
   }
   @font-face {
     font-family: "CenturyOldStyleRegularItalic";
