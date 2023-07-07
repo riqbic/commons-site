@@ -9,7 +9,7 @@ Version: 1.21
 */
 @font-face {
     font-family: "CenturyOldStyleRegular";
-    src: url('fonts/webFonts/CenturyOldStyleRegular/font.woff') format('woff');
+    src: url('fonts\CenturyOldSty-Reg.otf') format('otf');
   }
   @font-face {
     font-family: "CenturyOldStyleDiscapsRegular";
