@@ -9,7 +9,7 @@ Version: 1.24
 */
 @font-face {
     font-family: CenturyOldStyleRegular;
-    src: url('fonts\CenturyOldStyReg.otf') format("opentype");
+    src: url('fonts/CenturyOldStyReg.otf') format("opentype");
   }
   @font-face {
     font-family: "CenturyOldStyleDiscapsRegular";
@@ -17,7 +17,7 @@ Version: 1.24
   }
   @font-face {
     font-family: CenturyOldStyleSmallCapsRegular;
-    src: url('fonts\CenturyOldStySCReg.otf') format("opentype");
+    src: url('fonts/CenturyOldStySCReg.otf') format("opentype");
   }
   @font-face {
     font-family: "CenturyOldStyleRegularItalic";
