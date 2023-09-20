@@ -5,7 +5,7 @@ Author URI: http://reduker.wordpress.com
 Description: Theme for The Commons Parkour brand
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.26
+Version: 1.27
 */
 @font-face {
     font-family: CenturyOldStyleRegular;
@@ -187,6 +187,9 @@ img {
     }
     #events-preview{
         border-top: 1px solid black;
+    }
+    .articles-video{
+        width: 100% !important;
     }
 }
 
