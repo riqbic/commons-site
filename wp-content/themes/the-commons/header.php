@@ -39,7 +39,7 @@
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
         <li class="menu-item" onclick="menuHandler('features')">Video</li>
         <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
-        <li class="menu-item" onclick="menuHandler('events')">Join or Die</li>
+        <!-- <li class="menu-item" onclick="menuHandler('events')">Events</li> -->
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
