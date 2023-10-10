@@ -54,7 +54,7 @@ function load_commons_blog_post($paged = NULL) {
 
     //only display author and date for articles
     if( in_category(31, $post_id) ){
-        $content = '<h3>'.$title.'</h3>'.'<div class="post-author">'.$author_name.'</div>'.'<div class="post-date">'.$date.'</div>'.'<div class="post-content">'.$content.'</div>';
+        $content = '<h3>'.$title.'</h3>'.'<div class="post-content">'.$content.'</div>'.'<div class="post-author">'.$author_name.'</div>'.'<div class="post-date">'.$date.'</div>';
     }
     else{
         $content = '<h3>'.$title.'</h3>'.'</div>'.'<div class="post-content">'.$content.'</div>';
