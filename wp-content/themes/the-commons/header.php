@@ -72,7 +72,7 @@
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
             <li class="menu-item-mobile" onclick="menuHandler('features')"><div class="menu-text-mobile">Video</div></li>
             <li class="menu-item-mobile" onclick="menuHandler('blog')"><div class="menu-text-mobile">Articles</div></li>
-            <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Join or Die</div></li>
+            <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
