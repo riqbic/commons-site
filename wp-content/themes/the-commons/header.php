@@ -37,8 +37,8 @@
     <div class="menu-container">
         <ul class="menu">
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
-        <li class="menu-item" onclick="menuHandler('features')">Video</li>
-        <li class="menu-item" onclick="menuHandler('blog')">Articles</li>
+        <li class="menu-item" onclick="menuHandler('features')">Features</li>
+        <li class="menu-item" onclick="menuHandler('blog')">Media</li>
         <!-- <li class="menu-item" onclick="menuHandler('events')">Events</li> -->
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
@@ -70,8 +70,8 @@
 
         <ul class="menu-box">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
-            <li class="menu-item-mobile" onclick="menuHandler('features')"><div class="menu-text-mobile">Video</div></li>
-            <li class="menu-item-mobile" onclick="menuHandler('blog')"><div class="menu-text-mobile">Articles</div></li>
+            <li class="menu-item-mobile" onclick="menuHandler('features')"><div class="menu-text-mobile">Features</div></li>
+            <li class="menu-item-mobile" onclick="menuHandler('blog')"><div class="menu-text-mobile">Media</div></li>
             <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/my-account">

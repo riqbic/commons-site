@@ -32,7 +32,7 @@
             <!-- load content for the blog popout-->
             <div class="grid-content" id="blog-content">
                 <div class="popout-bar">
-                    <div class="popout-title">Articles</div>
+                    <div class="popout-title">Media</div>
                     <div class="post-title hidden-mobile"></div>
                     <div class="popout-close" onclick="popOut('blog',1,1)">Close</div>
                 </div>
@@ -111,7 +111,7 @@
             } ?>
         </div> -->
         <div class="posts-archive-button hidden-mobile">
-            <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">Articles Archive</a>
+            <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">Media Archive</a>
         </div>
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
@@ -194,7 +194,7 @@
             </div>
             <div class="grid-content" id="features-content">
                 <div class="popout-bar">
-                    <div class="popout-title">Video Features</div>
+                    <div class="popout-title">Features</div>
                     <div class="post-title hidden-mobile"></div>
                     <div class="popout-close" onclick="popOut('features',1,1)">Close</div>
                 </div>
