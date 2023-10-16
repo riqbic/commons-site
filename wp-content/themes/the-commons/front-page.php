@@ -221,7 +221,7 @@
                                 ++$blogct; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
-                                    <?php if($blogct <= 3) { ?>
+                                    <?php if($blogct <= 999) { ?> <!-- Change this number to make fewer excerpts show up -->
                                         <div class="newsy"><?php the_excerpt(); ?></div>
                                         <div class="read-more">+ open +</div>
                                     <?php } ?>
