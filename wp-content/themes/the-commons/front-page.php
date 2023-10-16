@@ -212,13 +212,13 @@
                         $posts_query = new WP_Query( $post_args );
                         $blogct = 0;
                         if( $posts_query->have_posts() ) {
-                            ++$blogct;
                             //Declare an iterator for blog-item class
                             $blog_item_count = 0;
                             while($posts_query->have_posts() ) {
                                 $posts_query->the_post(); 
                                 //Incremenent blog item count
-                                ++$blog_item_count; ?>
+                                ++$blog_item_count; 
+                                ++$blogct; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                     <?php if($blogct <= 1) { ?>
