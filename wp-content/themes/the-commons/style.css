@@ -1006,6 +1006,7 @@ h5{
 
 .woocommerce-MyAccount-content{
     padding: 0 20px !important;
+    box-sizing: border-box;
 }
 
 #shop-preview > div > ul > li > .add_to_cart_button{
