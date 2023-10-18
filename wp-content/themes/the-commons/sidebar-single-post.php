@@ -41,14 +41,9 @@ if( $posts_query->have_posts() ) {
         $posts_query->the_post(); 
         ?>
         <div class="blog-item <?php if(get_the_ID() == $current_post_id) echo 'is-active'; ?>">
-            <a class="hide-underline" href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                <h4><?php the_title(); ?></h4>
+            <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+                <p style="color:blue;"><?php the_title(); ?></p>
             </a>
-            <div class="newsy">
-                <a class="hide-underline" href="<?php echo get_permalink(); ?> ">
-                    <?php echo the_excerpt(); ?>
-                </a>
-            </div>
         </div>
         <?php 
     }
