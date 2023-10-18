@@ -40,7 +40,7 @@ if( $posts_query->have_posts() ) {
     while($posts_query->have_posts() ) {
         $posts_query->the_post(); 
         ?>
-        <div class="blog-item <?php if(get_the_ID() == $current_post_id) echo 'is-active'; ?>">
+        <div class="blog-item <?php if(get_the_ID() == $current_post_id) echo 'is-active'; ?> " style="padding: 0px 5px 5px 0px; border:none;">
             <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                 <p style="color:blue;"><?php the_title(); ?></p>
             </a>
