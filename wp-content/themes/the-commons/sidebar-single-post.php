@@ -42,6 +42,7 @@ if( $posts_query->have_posts() ) {
         $posts_query->the_post();
         ++$blogct;
         ?>
+        <!-- The PHP below just says "add a margin to the first blog-item unless it's hidden, then add it to the second" -->
             <div class="blog-item <?php if(get_the_ID() == $current_post_id){ --$blogct; echo 'is-active';} ?> " style="padding: 0px 5px 5px 0px; border:none;<?php if($blogct == 1) echo "margin-top:20px;"?>">
             <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                 <p style="color:blue; margin:0;"><?php the_title(); ?></p>
