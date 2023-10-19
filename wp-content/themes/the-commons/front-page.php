@@ -181,7 +181,7 @@
                             'posts_per_page'	=> -1,
                             'post_type'		=> 'post',
                             'post_status' => 'publish',
-                            'cat' => 28,
+                            'category__in' => array(28,31)
                         );
                         $posts_query = new WP_Query( $post_args );
                         $blogct = 0;
