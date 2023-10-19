@@ -54,7 +54,8 @@
 				
 	
 			} else {
-                get_template_part('template-parts/content-single');  
+                get_template_part('template-parts/content-single'); 
+                comments_template('',true); 
             } ?>
         </div>
     </div>
