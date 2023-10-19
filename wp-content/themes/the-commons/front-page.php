@@ -80,9 +80,11 @@
                 echo commons_get_comic(); 
             } ?>
         </div> -->
-        <div class="posts-archive-button hidden-mobile">
+
+        <!-- <div class="posts-archive-button hidden-mobile">
             <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">Media Archive</a>
-        </div>
+        </div> -->
+        
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
