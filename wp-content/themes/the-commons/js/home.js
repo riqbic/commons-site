@@ -26,11 +26,11 @@ Version: 1.21
                         var activePost = params.get("post_id");
                         if(activePost != null) {
                             //we found a post in the url, load that
-                            var $this = $('#popout-container .popout-sidebar .blog-item[data-id='+activePost+']');
+                            var $this = $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']');
                             setActivePopoutPost($this);
                         } else {
                             //no post in url, click the first item in the sidebar
-                            $('#popout-container .popout-sidebar .blog-item:first-of-type').trigger('click');
+                            $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
                         }
                         //set our bool var to true so it doesnt happen again
                         loadedPost = 1;
@@ -61,8 +61,8 @@ Version: 1.21
             loadPostFromURL();
         });
         
-        //clicking sidebar post in post-preview or post-preview-alt
-        $('#post-preview .post-preview,#articles-preview .post-preview').on('click',function() {
+        //clicking sidebar post in blog-preview or blog-preview-alt
+        $('#blog-preview .blog-preview,#articles-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('blog',1,1);
             loadedPost = 0;
@@ -72,7 +72,7 @@ Version: 1.21
         });
 
         //load the post in the popout contain when it's sidebar item is clicked
-        $('#popout-container').on('click','.popout-sidebar .blog-item',function(e) {
+        $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {
             e.stopPropagation();
             var $this = $(this);
             setActivePopoutPost($this);
@@ -89,14 +89,14 @@ Version: 1.21
             if(post_id != activePost || loadedPost == 0) {
                 //Add loading style
                 if(loadedPost==0){
-                    $('.post-single-content > .loader').addClass('loader-active');
+                    $('.blog-single-content > .loader').addClass('loader-active');
                 }
-                $('.post-single-content').addClass('loading');
+                $('.blog-single-content').addClass('loading');
 
                 //Change title of popout bar to show loading (optional)
                 $('#popout-container .post-title').text('Loading...');
                 //Set post loading content
-                $('#popout-container #post-ajax-container').html('<div class="post-ajax-loader"></div>');
+                $('#popout-container #blog-ajax-container').html('<div class="post-ajax-loader"></div>');
                 
                 //remove other is-active
                 $('.blog-item.is-active').removeClass('is-active');
@@ -116,18 +116,18 @@ Version: 1.21
                     }, success: function( data ) {
                         var response = JSON.parse(data);
                         //load post into container
-                        $('#popout-container #post-ajax-container').html(response.post_content);
+                        $('#popout-container #blog-ajax-container').html(response.post_content);
                         //Update the title in the popout bar
                         $('#popout-container .post-title').html(response.post_title);
                         //Scroll to top
-                        $('#popout-container #post-ajax-container').scrollTop(0);
+                        $('#popout-container #blog-ajax-container').scrollTop(0);
                         if(window.innerWidth<768){
-                            $('#popout-container .popout-flex-container').scrollTop(0);
+                            $('#popout-container .blog-flex-container').scrollTop(0);
                         }
 
                         //remove loading class
-                        $('.post-single-content').removeClass('loading');
-                        $('.post-single-content > .loader').removeClass('loader-active');
+                        $('.blog-single-content').removeClass('loading');
+                        $('.blog-single-content > .loader').removeClass('loader-active');
                     }
                 });
 
