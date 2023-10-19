@@ -59,6 +59,8 @@ function load_commons_blog_post($paged = NULL) {
     else{
         $content = '<h3>'.$title.'</h3>'.'</div>'.'<div class="post-content">'.$content.'</div>';
     }
+    $content .= comments_template('',true);
+
     echo json_encode(
         array(
             'post_content'  =>  $content,
