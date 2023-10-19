@@ -7,7 +7,7 @@
                 <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
-                        'posts_per_page'	=> 1,
+                        'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
                         'cat' => 31,
@@ -320,7 +320,6 @@
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
                     'cat' => 34,
-                    'offset' => 1,
                 );
                 $posts_query = new WP_Query( $post_args );
                 if( $posts_query->have_posts() ) {
