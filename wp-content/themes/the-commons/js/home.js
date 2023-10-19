@@ -62,7 +62,7 @@ Version: 1.21
         });
         
         //clicking sidebar post in blog-preview or blog-preview-alt
-        $('#blog-preview .blog-preview,#blog-alt-preview .blog-preview').on('click',function() {
+        $('#blog-preview .blog-preview,#articles-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('blog',1,1);
             loadedPost = 0;

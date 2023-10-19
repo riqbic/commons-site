@@ -75,36 +75,6 @@
             </div>
             <!-- close content for the blog popout-->
         </div>
-        <!--alternate method to load the blog content popout-->
-        <div class="grid-item" id="blog-alt">
-            <div class="grid-preview" id="blog-alt-preview">
-                <?php 
-                //Query 3 most recent posts that are published
-                $post_args = array(
-                    'posts_per_page'	=> 4,
-                    'post_type'		=> 'post',
-                    'post_status' => 'publish',
-                    'cat' => 31,
-                    'offset' => 1, 
-                );
-                $posts_query = new WP_Query( $post_args );
-                if( $posts_query->have_posts() ) {
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        ?>
-                        <div class="blog-preview blog-item-2" data-id="<?php echo get_the_ID(); ?>">
-                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                            <div class="newsy"><?php the_excerpt(); ?></div>
-                            <div class="read-more">+ open +</div>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
-                <?php } ?>
-            </div>
-        </div>
-        <!-- close alternate method to load the blog content popout-->
         <!-- <div class="grid-item" id="comic-strip">
             <?php if(function_exists('commons_get_comic')) {
                 echo commons_get_comic(); 
@@ -340,6 +310,36 @@
                 <?php } ?>
             </div>
         </div>
+        <!--alternate method to load the blog content popout-->
+        <div class="grid-item" id="articles">
+            <div class="grid-preview" id="articles-preview">
+                <?php 
+                //Query 3 most recent posts that are published
+                $post_args = array(
+                    'posts_per_page'	=> 3,
+                    'post_type'		=> 'post',
+                    'post_status' => 'publish',
+                    'cat' => 34,
+                    'offset' => 1, 
+                );
+                $posts_query = new WP_Query( $post_args );
+                if( $posts_query->have_posts() ) {
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        ?>
+                        <div class="blog-preview blog-item-2" data-id="<?php echo get_the_ID(); ?>">
+                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <div class="newsy"><?php the_excerpt(); ?></div>
+                            <div class="read-more">+ open +</div>
+                        </div>
+                        <?php 
+                    }
+                } else { ?>
+                    <p>There are no posts to show right now.</p>
+                <?php } ?>
+            </div>
+        </div>
+        <!-- close alternate method to load the blog content popout-->
     </div>
 </div>
 

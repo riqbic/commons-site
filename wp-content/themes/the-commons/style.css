@@ -101,7 +101,7 @@ img {
     "get-involved get-involved" !important
     /* "events events" !important;  */
     }
-    #blog-alt{
+    #articles{
         mask-image: none !important;
         -webkit-mask-image: none !important;
     }
@@ -146,7 +146,7 @@ img {
     #blog-content > .blog-flex-container > .blog-single-content > .post-content{
         border-bottom: 1px solid black;
     }
-    #blog-alt-content > .blog-flex-container > .blog-single-content > .post-content{
+    #articles-content > .blog-flex-container > .blog-single-content > .post-content{
         border-bottom: 1px solid black;
     }
     #blog-ajax-container > h3{
@@ -166,7 +166,7 @@ img {
     .blog-flex-container .blog-sidebar{
         padding-bottom: 120px;
     }
-    #blog-alt-preview > .blog-item-2:nth-child(n + 2){
+    #articles-preview > .blog-item-2:nth-child(n + 2){
         display: none !important;
     }
     .blog-container{
@@ -339,6 +339,7 @@ h5{
 .youtube-video {
     aspect-ratio: 16 / 9;
     width: 100%;
+    height: auto;
   }
 
 .popout-bar {
@@ -649,11 +650,11 @@ h5{
     "features features"
     "shop-title shop-title"
     "shop shop"
-    /* "events events" */
-    "about-us get-involved"; 
+    "articles about-us"
+    "articles get-involved"; 
 }
 
-#blog-alt{
+#articles{
     overflow: hidden;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
@@ -669,7 +670,7 @@ h5{
 #shop { grid-area: shop; }
 #shop-title { grid-area: shop-title; }
 #get-involved { grid-area: get-involved; }
-#blog-alt { grid-area: blog-alt; }
+#articles { grid-area: articles; }
 
 .subpage-container {
     margin: auto;
@@ -843,7 +844,7 @@ h5{
     width: 70%;
 }
 
-#blog-alt-content > .blog-flex-container > .blog-single-content > .post-content{
+#articles-content > .blog-flex-container > .blog-single-content > .post-content{
     width: 70%;
 }
 
