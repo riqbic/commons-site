@@ -42,11 +42,11 @@
             }
         }
         if($show_sidebar != 'hide-sidebar') { ?>
-            <div class="blog-sidebar">
+            <div class="popout-sidebar">
                 <?php get_sidebar('single-post'); ?>
             </div>
         <?php } ?>
-        <div class="blog-single-content <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } else{ echo 'single-view' ; } ?>">
+        <div class="post-single-content <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } else{ echo 'single-view' ; } ?>">
             <?php 
             if ( is_singular( 'product' ) ) {
 

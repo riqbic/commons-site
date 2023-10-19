@@ -1,17 +1,17 @@
 <?php /* Template Name: Posts Archive */ ?>
 <?php get_header(); ?>
 
-<div class="blog-flex-container flex-row">
+<div class="popout-flex-container flex-row">
     <?php $show_sidebar = 'hide-sidebar';
     if(function_exists('get_field')) {
         $show_sidebar = get_field('sidebar_display');
     }
     if($show_sidebar != 'hide-sidebar') { ?>
-        <div class="blog-sidebar">
+        <div class="popout-sidebar">
             <?php get_sidebar('post-archive'); ?>
         </div>
     <?php } ?>
-    <div class="blog-single-content <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } ?>">
+    <div class="post-single-content <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } ?>">
         <?php //Query first post that is published
         $posts_per_page = -1;
         $category = array();
