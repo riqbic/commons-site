@@ -13,11 +13,13 @@
                         'cat' => 31,
                     );
                     $posts_query = new WP_Query( $post_args );
+                    $blogct = 0;
                     if( $posts_query->have_posts() ) {
                         while($posts_query->have_posts() ) {
+                            ++$blogct;
                             $posts_query->the_post(); 
                             ?>
-                            <div class="blog-preview blog-item-1" data-id="<?php echo get_the_ID(); ?>">
+                            <div class="blog-preview blog-item-1 <?php if(blogct >= 2) echo "hidden-mobile"?>" data-id="<?php echo get_the_ID(); ?>">
                                 <h3 style="text-align: center;"><?php the_title(); ?></h3>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                 <div class="newsy"><?php echo the_excerpt(); ?></div>
@@ -84,7 +86,7 @@
         <!-- <div class="posts-archive-button hidden-mobile">
             <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">Media Archive</a>
         </div> -->
-        
+
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
