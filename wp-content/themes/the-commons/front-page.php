@@ -320,7 +320,7 @@
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
                     'cat' => 34,
-                    'offset' => 1, 
+                    'offset' => 1,
                 );
                 $posts_query = new WP_Query( $post_args );
                 if( $posts_query->have_posts() ) {

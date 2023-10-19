@@ -114,7 +114,7 @@ function resize(){
     var articles = document.getElementById("articles-preview");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
 
-    setPopoutSize();
+    setPopoutSize(); 
 
     articles.style.maxHeight = flex_desktop_grid.offsetHeight-sidebar_blog.offsetHeight+"px";
 

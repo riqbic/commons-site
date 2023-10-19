@@ -66,7 +66,7 @@ Version: 1.21
             //Load the popout
             popOut('blog',1,1);
             loadedPost = 0;
-            //set the post content to use in the popout
+            //set the post content to use in the popout 
             var $this = $(this);
             setActivePopoutPost($this);
         });
