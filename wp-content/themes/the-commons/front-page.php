@@ -140,7 +140,7 @@
             </div>
         </div>
         <div class="grid-item " id="paid-videos">
-            <div class="grid-preview" id="paid-videos-preview"  onclick="popOut('paid-videos',1,1)">
+            <div class="grid-preview" id="paid-videos-preview">
                 <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(

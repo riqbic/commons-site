@@ -15,7 +15,7 @@ Version: 1.21
         //automatically load a post on page load or pop
         function loadPostFromURL() {
             //see if the popout container has a blog post
-            if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos')) {
+            if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos') || $('#popout-container').hasClass('active-articles')) {
                 //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
                 setTimeout(function() {
                     //check if a post has been loaded or not
@@ -61,10 +61,20 @@ Version: 1.21
             loadPostFromURL();
         });
         
-        //clicking sidebar post in unpaid-videos-preview or blog-preview-alt
-        $('#unpaid-videos-preview .unpaid-videos-preview,#articles-preview .unpaid-videos-preview').on('click',function() {
+        //clicking paid or unpaid previews
+        $('#unpaid-videos-preview .unpaid-videos-preview,#paid-videos-preview .paid-videos-preview').on('click',function() {
             //Load the popout
-            popOut('unpaid-videos',1,1);
+            popOut('paid-videos',1,1);
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setActivePopoutPost($this);
+        });
+
+         //clicking articles
+         $('#articles-preview .articles-preview').on('click',function() {
+            //Load the popout
+            popOut('articles',1,1);
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -107,6 +117,8 @@ Version: 1.21
                     history.replaceState('unpaid-videos', "",'?pop=videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-paid-videos')) {
                     history.replaceState('paid-videos', "",'?pop=videos&post_id='+post_id);
+                } else if($('#popout-container').hasClass('articles')) {
+                    history.replaceState('articles-videos', "",'?pop=articles&post_id='+post_id);
                 }
                 jQuery.ajax({
                     url: home_js.ajax_url,
