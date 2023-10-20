@@ -15,7 +15,7 @@ Version: 1.21
         //automatically load a post on page load or pop
         function loadPostFromURL() {
             //see if the popout container has a blog post
-            if($('#popout-container').hasClass('active-blog') || $('#popout-container').hasClass('active-features')) {
+            if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-features')) {
                 //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
                 setTimeout(function() {
                     //check if a post has been loaded or not
@@ -61,10 +61,10 @@ Version: 1.21
             loadPostFromURL();
         });
         
-        //clicking sidebar post in blog-preview or blog-preview-alt
-        $('#blog-preview .blog-preview,#articles-preview .blog-preview').on('click',function() {
+        //clicking sidebar post in unpaid-videos-preview or blog-preview-alt
+        $('#unpaid-videos-preview .unpaid-videos-preview,#articles-preview .unpaid-videos-preview').on('click',function() {
             //Load the popout
-            popOut('blog',1,1);
+            popOut('unpaid-videos',1,1);
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -103,8 +103,8 @@ Version: 1.21
                 //add current class
                 $this.addClass('is-active');
                 //Pop history, buggy but kind of working
-                if($('#popout-container').hasClass('active-blog')) {
-                    history.replaceState('blog', "",'?pop=blog&post_id='+post_id);
+                if($('#popout-container').hasClass('active-unpaid-videos')) {
+                    history.replaceState('unpaid-videos', "",'?pop=videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-features')) {
                     history.replaceState('features', "",'?pop=features&post_id='+post_id);
                 }

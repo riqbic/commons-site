@@ -2,8 +2,8 @@
 
 <div class="newsy-container flex-mobile" id="newsy-container">
     <div class="flex-desktop-sidebar" id="flex-desktop-sidebar">
-        <div class="grid-item " id="blog">
-            <div class="grid-preview" id="blog-preview">
+        <div class="grid-item " id="unpaid-videos">
+            <div class="grid-preview" id="unpaid-videos-preview">
                 <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
@@ -32,11 +32,11 @@
                     <?php } ?>
             </div>
             <!-- load content for the blog popout-->
-            <div class="grid-content" id="blog-content">
+            <div class="grid-content" id="unpaid-videos-content">
                 <div class="popout-bar">
                     <div class="popout-title">Media</div>
                     <div class="post-title hidden-mobile"></div>
-                    <div class="popout-close" onclick="popOut('blog',1,1)">Close</div>
+                    <div class="popout-close" onclick="popOut('unpaid-videos',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
@@ -47,7 +47,7 @@
                             'posts_per_page'	=> -1,
                             'post_type'		=> 'post',
                             'post_status' => 'publish',
-                            'cat' => 31,
+                            'category__in' => array(28,31)
                         );
                         $posts_query = new WP_Query( $post_args );
                         $blogct = 0;

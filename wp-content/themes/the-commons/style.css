@@ -654,7 +654,7 @@ h5{
     "articles get-involved"; 
 }
 
-#blog{
+#unpaid-videos{
     overflow: hidden;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
@@ -840,7 +840,7 @@ h5{
     width: 70%;
 }
 
-#blog-content > .blog-flex-container > .blog-single-content > .post-content{
+#unpaid-videos-content > .blog-flex-container > .blog-single-content > .post-content{
     width: 70%;
 }
 
