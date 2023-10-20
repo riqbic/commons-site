@@ -109,8 +109,8 @@ function onPageLoad() {
 window.addEventListener('resize',resize);
 function resize(){
     const about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
-    var about_us_grid_item = document.getElementById("about-us");
-    var get_involved_grid_item = document.getElementById("get-involved");
+    var about_us_grid_item = document.getElementById("about-us-preview");
+    var get_involved_grid_item = document.getElementById("get-involved-preview");
     var sidebar_blog = document.getElementById("unpaid-videos-preview");
     var articles = document.getElementById("articles-preview");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
