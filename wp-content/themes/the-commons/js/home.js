@@ -61,10 +61,20 @@ Version: 1.21
             loadPostFromURL();
         });
         
-        //clicking paid or unpaid previews
-        $('#unpaid-videos-preview .blog-preview,#paid-videos-preview .blog-preview').on('click',function() {
+        //clicking paid previews
+        $('#paid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('paid-videos',1,1);
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setActivePopoutPost($this);
+        });
+
+          //clicking unpaid previews
+          $('#unpaid-videos-preview .blog-preview').on('click',function() {
+            //Load the popout
+            popOut('unpaid-videos',1,1);
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -114,9 +124,9 @@ Version: 1.21
                 $this.addClass('is-active');
                 //Pop history, buggy but kind of working
                 if($('#popout-container').hasClass('active-unpaid-videos')) {
-                    history.replaceState('unpaid-videos', "",'?pop=videos&post_id='+post_id);
+                    history.replaceState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-paid-videos')) {
-                    history.replaceState('paid-videos', "",'?pop=videos&post_id='+post_id);
+                    history.replaceState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('articles')) {
                     history.replaceState('articles-videos', "",'?pop=articles&post_id='+post_id);
                 }
