@@ -110,13 +110,14 @@ window.addEventListener('resize',resize);
 function resize(){
     const about_us_flex_item = document.getElementsByClassName("about-us-flex-item");
     var about_us_grid_item = document.getElementById("about-us");
+    var get_involved_grid_item = document.getElementById("get-involved");
     var sidebar_blog = document.getElementById("unpaid-videos-preview");
     var articles = document.getElementById("articles-preview");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
 
     setPopoutSize(); 
 
-    articles.style.maxHeight = flex_desktop_grid.offsetHeight-sidebar_blog.offsetHeight+"px";
+    articles.style.maxHeight = about_us_grid_item.offsetHeight+get_involved_grid_item.offsetHeight+20+"px";
 
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
