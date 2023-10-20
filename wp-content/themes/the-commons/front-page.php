@@ -34,7 +34,7 @@
             <!-- load content for the blog popout-->
             <div class="grid-content" id="unpaid-videos-content">
                 <div class="popout-bar">
-                    <div class="popout-title">Media</div>
+                    <div class="popout-title">Videos</div>
                     <div class="post-title hidden-mobile"></div>
                     <div class="popout-close" onclick="popOut('unpaid-videos',1,1)">Close</div>
                 </div>
@@ -168,7 +168,7 @@
             </div>
             <div class="grid-content" id="paid-videos-content">
                 <div class="popout-bar">
-                    <div class="popout-title">Features</div>
+                    <div class="popout-title">Videos</div>
                     <div class="post-title hidden-mobile"></div>
                     <div class="popout-close" onclick="popOut('paid-videos',1,1)">Close</div>
                 </div>
