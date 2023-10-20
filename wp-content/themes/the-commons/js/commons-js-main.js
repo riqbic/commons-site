@@ -45,16 +45,16 @@ function handleTabletChange(e){
     var newsy_container = document.getElementById("newsy-container");
     var popout_container = document.getElementById("popout-container");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
-    var features = document.getElementById("features");
-    newsy_container.appendChild(features);
+    var paid_videos = document.getElementById("paid-videos");
+    newsy_container.appendChild(paid_videos);
   }
   //over 768px
   else{
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
     var popout_container = document.getElementById("popout-container");
     var flex_desktop_sidebar = document.getElementById("flex-desktop-sidebar");
-    var features = document.getElementById("features");
-    flex_desktop_grid.appendChild(features);
+    var paid_videos = document.getElementById("paid-videos");
+    flex_desktop_grid.appendChild(paid_videos);
   }
 }
 

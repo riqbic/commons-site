@@ -329,7 +329,7 @@ h5{
     height: 200px;
 }
 
-.size-features-thumbnail{
+.size-paid-videos-thumbnail{
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
@@ -647,7 +647,7 @@ h5{
     height: fit-content;
     gap: 20px 25px;
     grid-template-areas:
-    "features features"
+    "paid-videos paid-videos"
     "shop-title shop-title"
     "shop shop"
     "articles about-us"
@@ -660,11 +660,11 @@ h5{
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 
-#features{
+#paid-videos{
     order: -1;
 }
 
-#features { grid-area: features; }
+#paid-videos { grid-area: paid-videos; }
 #about-us { grid-area: about-us; }
 /* #events { grid-area: events; } */
 #shop { grid-area: shop; }

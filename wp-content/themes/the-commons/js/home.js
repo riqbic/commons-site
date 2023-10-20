@@ -15,7 +15,7 @@ Version: 1.21
         //automatically load a post on page load or pop
         function loadPostFromURL() {
             //see if the popout container has a blog post
-            if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-features')) {
+            if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos')) {
                 //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
                 setTimeout(function() {
                     //check if a post has been loaded or not
@@ -105,8 +105,8 @@ Version: 1.21
                 //Pop history, buggy but kind of working
                 if($('#popout-container').hasClass('active-unpaid-videos')) {
                     history.replaceState('unpaid-videos', "",'?pop=videos&post_id='+post_id);
-                } else if($('#popout-container').hasClass('active-features')) {
-                    history.replaceState('features', "",'?pop=features&post_id='+post_id);
+                } else if($('#popout-container').hasClass('active-paid-videos')) {
+                    history.replaceState('paid-videos', "",'?pop=videos&post_id='+post_id);
                 }
                 jQuery.ajax({
                     url: home_js.ajax_url,

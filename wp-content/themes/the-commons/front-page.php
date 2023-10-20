@@ -139,8 +139,8 @@
                 <?php } ?>
             </div>
         </div>
-        <div class="grid-item " id="features">
-            <div class="grid-preview" id="features-preview"  onclick="popOut('features',1,1)">
+        <div class="grid-item " id="paid-videos">
+            <div class="grid-preview" id="paid-videos-preview"  onclick="popOut('paid-videos',1,1)">
                 <?php 
                         //Query 3 most recent posts that are published
                         $post_args = array(
@@ -156,7 +156,7 @@
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
                                     <div class="block-header"><h1 class="block-header-text"><?php the_title(); ?></h1></div>
-                                    <?php echo the_post_thumbnail($size = 'features-thumbnail'); ?>
+                                    <?php echo the_post_thumbnail($size = 'paid-videos-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?></div>
                                     <div class="read-more">+ open +</div>
                                 </div>
@@ -166,11 +166,11 @@
                             <p>There are no posts to show right now.</p>
                         <?php } ?>
             </div>
-            <div class="grid-content" id="features-content">
+            <div class="grid-content" id="paid-videos-content">
                 <div class="popout-bar">
                     <div class="popout-title">Features</div>
                     <div class="post-title hidden-mobile"></div>
-                    <div class="popout-close" onclick="popOut('features',1,1)">Close</div>
+                    <div class="popout-close" onclick="popOut('paid-videos',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar">
