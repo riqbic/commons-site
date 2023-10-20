@@ -69,6 +69,7 @@ Version: 1.21
             //set the post content to use in the popout 
             var $this = $(this);
             setActivePopoutPost($this);
+            console.log("chk");
         });
 
          //clicking articles
