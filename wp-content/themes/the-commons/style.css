@@ -844,6 +844,10 @@ h5{
     width: 70%;
 }
 
+#paid-videos-content > .blog-flex-container > .blog-single-content > .post-content{
+    width: 70%;
+}
+
 #articles-content > .blog-flex-container > .blog-single-content > .post-content{
     width: 70%;
 }
