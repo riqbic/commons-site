@@ -50,17 +50,45 @@ function load_commons_blog_post($paged = NULL) {
     $author_id = get_post_field( 'post_author', $post_id );
     $author_name = get_the_author_meta( 'display_name', $author_id );
     $date = get_the_date("l F j, Y", $post_id);
-    $content = apply_filters('the_content', get_post_field('post_content', $post_id));
+    $the_content = apply_filters('the_content', get_post_field('post_content', $post_id));
 
     //only display author and date for articles
-    if( in_category(31, $post_id) ){
+    /*if( in_category(31, $post_id) ){
         $content = '<h3>'.$title.'</h3>'.'<div class="post-content">'.$content.'</div>'.'<div class="post-author italic">'.$author_name.'</div>'.'<div class="post-date italic">'.$date.'</div>';
     }
     else{
         $content = '<h3>'.$title.'</h3>'.'</div>'.'<div class="post-content">'.$content.'</div>';
-    }
-    $content .= comments_template('',true);
-
+    }*/
+    
+    //Start capturing output using output buffer. The comments template doesn't have a get_X equivalent so we output it and capture the output instead
+    ob_start();
+    $post_args = array(
+        'p'	=> $post_id,
+        'post_type'	=> 'post',
+        'post_status' => 'publish',
+    );
+    $posts_query = new WP_Query( $post_args );
+    if( $posts_query->have_posts() ) {
+        while($posts_query->have_posts() ) {
+            $posts_query->the_post(); 
+            echo '<h3>'.$title.'</h3>';
+            echo '<div class="post-content">'.$the_content.'</div>';
+            if( in_category(31, $post_id) ){
+                echo '<div class="post-author italic">'.$author_name.'</div>';
+                echo '<div class="post-date italic">'.$date.'</div>';
+            }
+            //Require comments, which can only be used on single and page tpl, https://stackoverflow.com/questions/4299093/wordpress-comments-template-not-working-on-ajax-call
+            global $withcomments;
+            $withcomments = true; 
+            echo comments_template('',true);
+        }
+    } 
+    //Reset query
+    wp_reset_query();
+  
+    //Capture buffered content
+    $content = ob_get_clean();
+    
     echo json_encode(
         array(
             'post_content'  =>  $content,
