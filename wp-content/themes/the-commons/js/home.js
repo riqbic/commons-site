@@ -62,7 +62,7 @@ Version: 1.21
         });
         
         //clicking paid or unpaid previews
-        $('#unpaid-videos-preview .unpaid-videos-preview,#paid-videos-preview .paid-videos-preview').on('click',function() {
+        $('#unpaid-videos-preview .blog-preview,#paid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('paid-videos',1,1);
             loadedPost = 0;
@@ -73,7 +73,7 @@ Version: 1.21
         });
 
          //clicking articles
-         $('#articles-preview .articles-preview').on('click',function() {
+         $('#articles-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('articles',1,1);
             loadedPost = 0;
