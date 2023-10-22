@@ -118,7 +118,7 @@ function resize(){
     setPopoutSize(); 
 
     articles.style.maxHeight = about_us_grid_item.offsetHeight+get_involved_grid_item.offsetHeight+20+"px";
-    sidebar_blog.style.maxHeight = flex_desktop_grid.offsetHeight;
+    sidebar_blog.style.maxHeight = flex_desktop_grid.offsetHeight+"px";
 
     for (var i = 0; i < about_us_flex_item.length; i ++) {
         about_us_flex_item[i].style.width = about_us_grid_item.offsetWidth+"px";
