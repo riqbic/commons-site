@@ -98,8 +98,8 @@ img {
     "shop-title shop-title"
     "shop shop"
     "about-us about-us"
-    "get-involved get-involved" !important
-    /* "events events" !important;  */
+    "get-involved get-involved"
+    "articles articles" !important
     }
     #blog{
         mask-image: none !important;

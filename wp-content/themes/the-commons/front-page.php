@@ -326,11 +326,13 @@
                     'cat' => 34,
                 );
                 $posts_query = new WP_Query( $post_args );
+                $blogct = 0;
                 if( $posts_query->have_posts() ) {
                     while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
+                        $posts_query->the_post();
+                        ++$blogct;
                         ?>
-                        <div class="blog-preview blog-item-2" data-id="<?php echo get_the_ID(); ?>">
+                        <div class="blog-preview blog-item-2 <?php if($blogct >= 2) echo "hidden-mobile";?>" data-id="<?php echo get_the_ID(); ?>">
                             <h3 style="text-align: center;"><?php the_title(); ?></h3>
                             <div class="newsy"><?php the_excerpt(); ?></div>
                             <div class="read-more">+ open +</div>
