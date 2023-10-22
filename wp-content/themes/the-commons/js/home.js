@@ -127,7 +127,7 @@ Version: 1.21
                     history.replaceState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-paid-videos')) {
                     history.replaceState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
-                } else if($('#popout-container').hasClass('articles')) {
+                } else if($('#popout-container').hasClass('active-articles')) {
                     history.replaceState('articles-videos', "",'?pop=articles&post_id='+post_id);
                 }
                 jQuery.ajax({

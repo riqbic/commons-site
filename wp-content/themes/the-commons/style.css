@@ -346,6 +346,16 @@ h5{
     height: auto;
   }
 
+.restriction-message-link{
+    border: solid blue;
+    padding: 5px;
+    border-width: 1px 3px 3px 1px;
+}
+
+.restriction-message-link:active{
+    border-width: 3px 1px 1px 3px;
+}
+
 .popout-bar {
   display: flex;
   justify-content: space-between;
