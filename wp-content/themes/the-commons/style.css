@@ -101,7 +101,7 @@ img {
     "get-involved get-involved"
     "articles articles" !important
     }
-    #blog{
+    #unpaid-video #articles{
         mask-image: none !important;
         -webkit-mask-image: none !important;
     }
@@ -654,7 +654,7 @@ h5{
     "articles get-involved"; 
 }
 
-#unpaid-videos{
+#unpaid-videos #articles{
     overflow: hidden;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
