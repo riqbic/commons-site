@@ -101,7 +101,11 @@ img {
     "get-involved get-involved"
     "articles articles" !important
     }
-    #unpaid-video #articles{
+    #unpaid-video{
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+    #articles{
         mask-image: none !important;
         -webkit-mask-image: none !important;
     }
@@ -654,7 +658,12 @@ h5{
     "articles get-involved"; 
 }
 
-#unpaid-videos #articles{
+#unpaid-videos{
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+#articles{
     overflow: hidden;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
