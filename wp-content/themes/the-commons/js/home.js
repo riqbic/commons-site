@@ -8,6 +8,31 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Version: 1.21
 */
 
+/*
+ * Let's begin with validation functions
+ */
+jQuery.extend(jQuery.fn, {
+	/*
+	 * check if field value lenth more than 3 symbols ( for name and comment ) 
+	 */
+	validate: function () {
+		if (jQuery(this).val().length < 3) {jQuery(this).addClass('error');return false} else {jQuery(this).removeClass('error');return true}
+	},
+	/*
+	 * check if email is correct
+	 * add to your CSS the styles of .error field, for example border-color:red;
+	 */
+	validateEmail: function () {
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
+		    emailToValidate = jQuery(this).val();
+		if (!emailReg.test( emailToValidate ) || emailToValidate == "") {
+			jQuery(this).addClass('error');return false
+		} else {
+			jQuery(this).removeClass('error');return true
+		}
+	},
+});
+
 (function($) {
 	$(document).ready(function() {
         //bool var to see if we loaded a post automatically yet
@@ -139,6 +164,15 @@ Version: 1.21
                         var response = JSON.parse(data);
                         //load post into container
                         $('#popout-container #blog-ajax-container').html(response.post_content);
+                        //replace login link for comments
+                        if($('#popout-container #blog-ajax-container .must-log-in a').length) {
+                            //https://alec.local/wp-login.php?redirect_to=https%3A%2F%2Falec.local%2Fpaid-film%2Ftether%2F
+                            $('#popout-container #blog-ajax-container .must-log-in a').attr('href',home_js.blog_url+'wp-login.php?redirect_to='+encodeURIComponent(window.location.href));
+                        }
+                        if($('#popout-container #blog-ajax-container .must-log-in a').length) {
+                            //https://alec.local/wp-login.php?redirect_to=https%3A%2F%2Falec.local%2Fpaid-film%2Ftether%2F
+                            $('#popout-container #blog-ajax-container .must-log-in a').attr('href',home_js.blog_url+'wp-login.php?redirect_to='+encodeURIComponent(window.location.href));
+                        }
                         //Update the title in the popout bar
                         $('#popout-container .post-title').html(response.post_title);
                         //Scroll to top
@@ -158,5 +192,80 @@ Version: 1.21
                 console.log('already here');
             }
         }
+
+        /** Ajax commenting, adapted from https://rudrastyh.com/wordpress/ajax-comments.html */
+        $( document ).on('submit','.popout-container #commentform',function(){
+            // define some vars
+            var button = $('.popout-container #submit'), // submit button
+                respond = $('.popout-container #respond'), // comment form container
+                commentlist = $('.popout-container .comment-list'), // comment list container
+                cancelreplylink = $('.popout-container #cancel-comment-reply-link');
+                
+            // validate comment in any case
+            $( '#comment' ).validate();
+            
+            // if comment form isn't in process, submit it
+            if ( !button.hasClass( 'loadingform' ) && !$( '#comment' ).hasClass( 'error' ) ){
+                
+                // ajax request
+                $.ajax({
+                    type : 'POST',
+                    url : home_js.ajax_url, // admin-ajax.php URL
+                    data: $(this).serialize() + '&action=commons_ajaxcomments', // send form data + action parameter
+                    beforeSend: function(xhr){
+                        // what to do just after the form has been submitted
+                        button.addClass('loadingform').val('Loading...');
+                    },
+                    error: function (request, status, error) {
+                        if( status == 500 ){
+                            alert( 'Error while adding comment' );
+                        } else if( status == 'timeout' ){
+                            alert('Error: Server doesn\'t respond.');
+                        } else {
+                            // process WordPress errors
+                            var wpErrorHtml = request.responseText.split("<p>"),
+                                wpErrorStr = wpErrorHtml[1].split("</p>");
+                                
+                            alert( wpErrorStr[0] );
+                        }
+                    },
+                    success: function ( addedCommentHTML ) {
+                    
+                        // if this post already has comments
+                        if( commentlist.length > 0 ){
+                        
+                            // if in reply to another comment
+                            if( respond.parent().hasClass( 'comment' ) ){
+                            
+                                // if the other replies exist
+                                if( respond.parent().children( '.children' ).length ){	
+                                    respond.parent().children( '.children' ).append( addedCommentHTML );
+                                } else {
+                                    // if no replies, add <ol class="children">
+                                    addedCommentHTML = '<ol class="children">' + addedCommentHTML + '</ol>';
+                                    respond.parent().append( addedCommentHTML );
+                                }
+                                // close respond form
+                                cancelreplylink.trigger("click");
+                            } else {
+                                // simple comment
+                                commentlist.append( addedCommentHTML );
+                            }
+                        }else{
+                            // if no comments yet
+                            addedCommentHTML = '<ol class="comment-list">' + addedCommentHTML + '</ol>';
+                            respond.before( $(addedCommentHTML) );
+                        }
+                        // clear textarea field
+                        $('.popout-container #comment').val('');
+                    },
+                    complete: function(){
+                        // what to do after a comment has been added
+                        button.removeClass( 'loadingform' ).val( 'Post Comment' );
+                    }
+                });
+            }
+            return false;
+        });
 	});
 })(jQuery); // Fully reference jQuery after this point.
