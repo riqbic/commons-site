@@ -116,8 +116,19 @@ jQuery.extend(jQuery.fn, {
             setActivePopoutPost($this);
         });
 
-        //clicking menu items
-        $('#videos-menu-item .blog-item' || '#videos-menu-item-mobile .blog-item').on('click',function() {
+        //clicking video menu items
+        $('#videos-menu-item .blog-item').on('click',function() {
+            //Load the popout
+            popOut('paid-videos',1,1);
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setActivePopoutPost($this);
+        });
+         //clicking mobile video menu items
+         $('#videos-menu-item-mobile .blog-item').on('click',function() {
+            var menu_toggle = document.getElementById("menu-toggle");
+            menu_toggle.checked = '';
             //Load the popout
             popOut('paid-videos',1,1);
             loadedPost = 0;
