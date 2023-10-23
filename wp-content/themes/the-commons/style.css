@@ -82,7 +82,8 @@ img {
         font-size: 1.1rem !important;
     }
     .blog-item{
-        border-bottom: 1px solid white !important;
+        border: none !important;
+        list-style: none;
         padding: 0px !important;
     }
     .blog-item:last-child{
@@ -542,6 +543,7 @@ h5{
     height: 50px;
     left: 0px;
     display: none;
+    padding: 25px 0px !important;
 }
 .menu li ul li{
     color: grey;
@@ -654,7 +656,9 @@ h5{
     .menu-item-mobile.has-children.is-active ul {
         position: relative;
         display: flex;
+        height: 100%;
         flex-direction: column;
+        justify-content: space-around;
     }
     .menu-item-mobile.has-children.is-active ul li {
         color: #fff;
