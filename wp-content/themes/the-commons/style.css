@@ -670,13 +670,13 @@ h5{
 
 #unpaid-videos{
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
-    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
 }
 #articles{
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
-    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
 }
 
 #paid-videos{
