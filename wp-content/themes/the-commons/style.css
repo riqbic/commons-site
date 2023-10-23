@@ -545,12 +545,15 @@ h5{
 }
 .menu li ul li{
     color: grey;
+    list-style: none;
+    text-wrap: nowrap;
 }
 .menu li:hover ul {
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 .menu li ul li:hover{
     color: white;
