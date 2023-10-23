@@ -136,10 +136,6 @@ jQuery.extend(jQuery.fn, {
                 popOut(popout_container.firstChild.id,1,1);
                 setTimeout(function(){
                     popOut('paid-videos',1,1);
-                    loadedPost = 0;
-                    //set the post content to use in the popout 
-                    var $this = $(this);
-                    setActivePopoutPost($this);
                 },50);
             }
             else{
@@ -149,6 +145,10 @@ jQuery.extend(jQuery.fn, {
                 var $this = $(this);
                 setActivePopoutPost($this);
             }
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setActivePopoutPost($this);
         });
 
         //load the post in the popout contain when it's sidebar item is clicked
