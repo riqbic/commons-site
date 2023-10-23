@@ -140,7 +140,7 @@ jQuery.extend(jQuery.fn, {
                     //set the post content to use in the popout 
                     var $this = $(this);
                     setActivePopoutPost($this);
-                },1000);
+                },50);
             }
             else{
                 popOut('paid-videos',1,1);
