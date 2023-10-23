@@ -38,7 +38,6 @@
         <ul class="menu">
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
         <li class="menu-item" onclick="menuHandler('articles')">Articles</li>
-        <!-- <li class="menu-item has-children" id="videos-menu-item" onclick="menuHandler('paid-videos')">Videos -->
         <li class="menu-item has-children" id="videos-menu-item">Videos
             <ul>
             <?php 
@@ -99,7 +98,7 @@
         <ul class="menu-box">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
             <li class="menu-item-mobile" onclick="menuHandler('articles')"><div class="menu-text-mobile">Articles</div></li>
-            <li class="menu-item-mobile has-children"><div class="menu-text-mobile">Videos</div> <!--onclick="menuHandler('paid-videos')"-->
+            <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Videos</div>
             <ul>
             <?php 
             $post_args = array(

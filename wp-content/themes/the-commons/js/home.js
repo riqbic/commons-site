@@ -117,7 +117,7 @@ jQuery.extend(jQuery.fn, {
         });
 
         //clicking menu items
-        $('#videos-menu-item .blog-item').on('click',function() {
+        $('#videos-menu-item .blog-item','#videos-menu-item-mobile .blog-item').on('click',function() {
             //Load the popout
             popOut('paid-videos',1,1);
             loadedPost = 0;
