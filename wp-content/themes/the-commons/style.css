@@ -670,13 +670,13 @@ h5{
 
 #unpaid-videos{
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
 }
 #articles{
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
 }
 
 #paid-videos{
@@ -741,8 +741,6 @@ h5{
 
 .posts-archive-button{
     padding: 10px;
-    border: 1px solid black;
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
