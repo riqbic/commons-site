@@ -38,7 +38,7 @@
         <ul class="menu">
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
         <li class="menu-item" onclick="menuHandler('articles')">Articles</li>
-        <li class="menu-item has-children" onclick="menuHandler('paid-videos')">Videos
+        <li class="menu-item has-children" id="videos-menu-item" onclick="menuHandler('paid-videos')">Videos
             <ul>
             <?php 
             $post_args = array(

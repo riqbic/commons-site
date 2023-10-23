@@ -96,8 +96,8 @@ jQuery.extend(jQuery.fn, {
             setActivePopoutPost($this);
         });
 
-          //clicking unpaid previews
-          $('#unpaid-videos-preview .blog-preview').on('click',function() {
+        //clicking unpaid previews
+        $('#unpaid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('unpaid-videos',1,1);
             loadedPost = 0;
@@ -106,10 +106,20 @@ jQuery.extend(jQuery.fn, {
             setActivePopoutPost($this);
         });
 
-         //clicking articles
-         $('#articles-preview .blog-preview').on('click',function() {
+        //clicking articles
+        $('#articles-preview .blog-preview').on('click',function() {
             //Load the popout
             popOut('articles',1,1);
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setActivePopoutPost($this);
+        });
+
+        //clicking menu items
+        $('#videos-menu-item .blog-item').on('click',function() {
+            //Load the popout
+            popOut('paid-videos',1,1);
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
