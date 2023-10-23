@@ -129,8 +129,18 @@ jQuery.extend(jQuery.fn, {
          $('#videos-menu-item-mobile .blog-item').on('click',function() {
             var menu_toggle = document.getElementById("menu-toggle");
             menu_toggle.checked = '';
-            //Load the popout
-            popOut('paid-videos',1,1);
+            
+            var popout_container = document.getElementById("popout-container");
+            //if popout container is already populated, clear it out first, then open new item
+            if (popout_container.hasChildNodes()){
+                popOut(popout_container.firstChild.id,1,1);
+                setTimeout(function(){
+                    popOut('paid-videos',1,1);
+                },1000);
+            }
+            else{
+                popOut('paid-videos',1,1);
+            }
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
