@@ -387,9 +387,9 @@
                         <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
                         
                     </div><!-- close blog content-->
-                    <div class="posts-archive-button hidden-mobile">
-                        <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a>
-                    </div>
+                </div>
+                <div class="posts-archive-button hidden-mobile">
+                    <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a>
                 </div>
             </div>
         </div>
