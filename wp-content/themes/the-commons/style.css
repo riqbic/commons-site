@@ -537,11 +537,23 @@ h5{
 }
 .menu li ul {
     background: #000;
-    position: absolute;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    left: 0px;
     display: none;
 }
+.menu li ul li{
+    color: grey;
+}
 .menu li:hover ul {
-    display: block;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu li ul li:hover{
+    color: white;
 }
 .menu-item{
     font-family: CenturyOldStyleRegular;
