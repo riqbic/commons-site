@@ -38,7 +38,34 @@
         <ul class="menu">
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
         <li class="menu-item" onclick="menuHandler('articles')">Articles</li>
-        <li class="menu-item" onclick="menuHandler('paid-videos')">Videos</li>
+        <li class="menu-item has-children" onclick="menuHandler('paid-videos')">Videos
+            <ul>
+            <?php 
+            $post_args = array(
+                'posts_per_page'	=> 10,
+                'post_type'		=> 'post',
+                'post_status' => 'publish',
+                'category__in' => array(28,31)
+            );
+            $posts_query = new WP_Query( $post_args );
+            $blogct = 0;
+            if( $posts_query->have_posts() ) {
+                ++$blogct;
+                //Declare an iterator for blog-item class
+                $blog_item_count = 0;
+                while($posts_query->have_posts() ) {
+                    $posts_query->the_post(); 
+                    //Incremenent blog item count
+                    ++$blog_item_count; ?>
+                    <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
+                        <?php the_title(); ?>
+                    </li>
+                    <?php 
+                }
+            } ?>
+            </ul>
+        </li>
+        
         <!-- <li class="menu-item" onclick="menuHandler('events')">Events</li> -->
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
@@ -71,7 +98,33 @@
         <ul class="menu-box">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
             <li class="menu-item-mobile" onclick="menuHandler('articles')"><div class="menu-text-mobile">Articles</div></li>
-            <li class="menu-item-mobile" onclick="menuHandler('paid-videos')"><div class="menu-text-mobile">Videos</div></li>
+            <li class="menu-item-mobile has-children"><div class="menu-text-mobile">Videos</div> <!--onclick="menuHandler('paid-videos')"-->
+            <ul>
+            <?php 
+            $post_args = array(
+                'posts_per_page'	=> 10,
+                'post_type'		=> 'post',
+                'post_status' => 'publish',
+                'category__in' => array(28,31)
+            );
+            $posts_query = new WP_Query( $post_args );
+            $blogct = 0;
+            if( $posts_query->have_posts() ) {
+                ++$blogct;
+                //Declare an iterator for blog-item class
+                $blog_item_count = 0;
+                while($posts_query->have_posts() ) {
+                    $posts_query->the_post(); 
+                    //Incremenent blog item count
+                    ++$blog_item_count; ?>
+                    <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
+                        <?php the_title(); ?>
+                    </li>
+                    <?php 
+                }
+            } ?>
+            </ul>
+            </li>
             <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/my-account">

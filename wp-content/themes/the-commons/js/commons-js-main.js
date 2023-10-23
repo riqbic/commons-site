@@ -64,7 +64,6 @@ mediaQuery.addEventListener("change",handleTabletChange);
 // Initial check
 handleTabletChange(mediaQuery);
 
-
 //On page load, opens the pop out given by the URL paramater "pop", operates similarly to the popout funciton
 window.addEventListener('load',onPageLoad);
 function onPageLoad() {
@@ -254,4 +253,13 @@ function setPopoutSize(){
 
 function clamp(val, min, max) {
     return val > max ? max : val < min ? min : val;
+}
+
+//Mobile dropdown
+var menuItems = document.getElementsByClassName("has-children");
+var toggleActive = function() {
+    this.classList.toggle("is-active");
+};
+for (var i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener('click', toggleActive, false);
 }

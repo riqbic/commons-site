@@ -530,12 +530,19 @@ h5{
   
 .menu li {
     margin-right: 20px;
+    position: relative;
 }
-
 .menu li:first-child {
     margin-left: 20px;
 }
-
+.menu li ul {
+    background: #000;
+    position: absolute;
+    display: none;
+}
+.menu li:hover ul {
+    display: block;
+}
 .menu-item{
     font-family: CenturyOldStyleRegular;
     font-size: 1.2rem;
@@ -622,7 +629,21 @@ h5{
   .menu-item-mobile:hover {
     text-decoration: underline;
   }
-
+  
+    .menu-item-mobile.has-children.is-active {
+        flex: 1;
+    }
+    .menu-item-mobile.has-children ul {
+        display: none;
+    }
+    .menu-item-mobile.has-children.is-active ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-item-mobile.has-children.is-active ul li {
+        color: #fff;
+    }
   .menu-text-mobile{
     display: block;
     color: white;
