@@ -388,9 +388,9 @@
                         
                     </div><!-- close blog content-->
                 </div>
-            </div>
-            <div class="posts-archive-button hidden-mobile">
-                <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a>
+                <div class="posts-archive-button hidden-mobile">
+                    <a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a>
+                </div>
             </div>
         </div>
     </div>
