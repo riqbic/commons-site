@@ -63,6 +63,7 @@
                 }
             } ?>
             </ul>
+            <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
         </li>
         <li class="menu-item has-children" id="videos-menu-item">Videos
             <ul>
@@ -150,6 +151,7 @@
                     }
                 } ?>
                 </ul>
+                <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
             </li>
             <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Videos</div>
                 <ul>
@@ -177,6 +179,7 @@
                     }
                 } ?>
                 </ul>
+                <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
             </li>
             <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
