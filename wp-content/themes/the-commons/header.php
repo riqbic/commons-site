@@ -89,6 +89,7 @@
                     <?php 
                 }
             } ?>
+            <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
             </ul>
         </li>
         
