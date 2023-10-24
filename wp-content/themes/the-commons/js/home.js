@@ -134,7 +134,7 @@ jQuery.extend(jQuery.fn, {
             setActivePopoutPost($this);
         });
 
-        //clicking video menu items
+        //clicking article menu items
         $('#articles-menu-item .blog-item').on('click',function() {
             //Load the popout
             popOut('articles',1,1);
@@ -143,7 +143,7 @@ jQuery.extend(jQuery.fn, {
             var $this = $(this);
             setActivePopoutPost($this);
         });
-         //clicking mobile video menu items
+         //clicking mobile article menu items
          $('#articles-menu-item-mobile .blog-item').on('click',function() {
             var menu_toggle = document.getElementById("menu-toggle");
             menu_toggle.checked = '';
