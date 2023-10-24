@@ -62,7 +62,7 @@ jQuery.extend(jQuery.fn, {
                     } else {
                         //do nothing for now  
                     }
-                },50);
+                },200);
             } else {
                 //reset it so we load the post automatically the next time blog is clicked
                 loadedPost = 0;
@@ -136,7 +136,7 @@ jQuery.extend(jQuery.fn, {
                 popOut(popout_container.firstChild.id,1,1);
                 setTimeout(function(){
                     popOut('paid-videos',1,1);
-                },20);
+                },50);
             }
             else{
                 popOut('paid-videos',1,1);
