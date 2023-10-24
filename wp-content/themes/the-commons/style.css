@@ -655,6 +655,7 @@ h5{
     }
     .menu-item-mobile.has-children.is-active ul {
         position: relative;
+        list-style: none;
         display: flex;
         height: 100%;
         flex-direction: column;

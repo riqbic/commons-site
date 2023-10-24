@@ -119,7 +119,7 @@ jQuery.extend(jQuery.fn, {
         //clicking video menu items
         $('#videos-menu-item .blog-item').on('click',function() {
             //Load the popout
-            popOut('paid-videos',1,1);
+            menuHandler('paid-videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -127,28 +127,11 @@ jQuery.extend(jQuery.fn, {
         });
          //clicking mobile video menu items
          $('#videos-menu-item-mobile .blog-item').on('click',function() {
-            var menu_toggle = document.getElementById("menu-toggle");
-            menu_toggle.checked = '';
-            
-            //if popout container is already populated, clear it out first, then open new item
-            var popout_container = document.getElementById("popout-container");
-            if (popout_container.hasChildNodes()){
-                popOut(popout_container.firstChild.id,0,1);
-                setTimeout(function(){
-                    popOut('paid-videos',1,1);
-                    loadedPost = 0;
-                    //set the post content to use in the popout 
-                    var $this = $(this);
-                    setActivePopoutPost($this);
-                },50);
-            }
-            else{
-                popOut('paid-videos',1,1);
-                loadedPost = 0;
-                //set the post content to use in the popout 
-                var $this = $(this);
-                setActivePopoutPost($this);
-            }
+            menuHandler('paid-videos');
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setActivePopoutPost($this);
         });
 
         //clicking video menu items
