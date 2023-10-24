@@ -779,24 +779,8 @@ h5{
     z-index: 2;
 }
 
-.posts-archive-button{
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 1em;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
 .posts-archive-text{
-    font-family: CenturyOldStyleRegularItalic;
-    text-decoration: none !important;
-    margin: 0px;
-    color: black;
-    white-space: nowrap;
+    color: white;
 }
 
 .blog-flex-container{
