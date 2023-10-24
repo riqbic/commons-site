@@ -136,7 +136,7 @@ jQuery.extend(jQuery.fn, {
                 popOut(popout_container.firstChild.id,1,1);
                 setTimeout(function(){
                     popOut('paid-videos',1,1);
-                },50);
+                },20);
             }
             else{
                 popOut('paid-videos',1,1);
