@@ -261,7 +261,7 @@ function wpd_autocomplete_virtual_orders( $order_id ) {
 /** Change comments heading */
 add_filter( 'comment_form_defaults', 'commons_comment_form_title_reply' );
 function commons_comment_form_title_reply( $defaults ) {  
-    $defaults['title_reply'] = __( 'Leave a note:' );  
+    $defaults['title_reply'] = __( 'Leave a note for the author' );  
     return $defaults;
 }
 

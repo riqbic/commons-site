@@ -149,7 +149,8 @@
                         </li>
                         <?php 
                     }
-                } ?>
+                } 
+                wp_reset_query(); ?>
                 <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
                 </ul>
             </li>
@@ -177,7 +178,8 @@
                         </li>
                         <?php 
                     }
-                } ?>
+                } 
+                wp_reset_query(); ?>
                 <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
                 </ul>
             </li>

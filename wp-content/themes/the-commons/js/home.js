@@ -124,7 +124,7 @@ jQuery.extend(jQuery.fn, {
             //set the post content to use in the popout 
             var $this = $(this);
             setActivePopoutPost($this);
-            console.log()
+            
         });
          //clicking mobile video menu items
          $('#videos-menu-item-mobile .blog-item').on('click',function() {
