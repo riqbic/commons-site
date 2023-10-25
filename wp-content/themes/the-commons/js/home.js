@@ -148,6 +148,7 @@ jQuery.extend(jQuery.fn, {
         }
 
         $(document).on('click','.force-close-popout',function() {
+            history.pushState('close', "",home_js.blog_url);
             $('#popout-container').css('display','none');
             $('#popout-shadow').css('display','none');
         });
