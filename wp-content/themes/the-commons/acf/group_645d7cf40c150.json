@@ -3,9 +3,9 @@
     "title": "TCB Blog Captions",
     "fields": [
         {
-            "key": "field_645d7cf5cb7b0",
-            "label": "Caption",
-            "name": "caption",
+            "key": "field_645d83a771595",
+            "label": "Caption Label",
+            "name": "caption-label",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -48,9 +48,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_645d83a771595",
-            "label": "Caption Label",
-            "name": "caption-label",
+            "key": "field_645d7cf5cb7b0",
+            "label": "Caption",
+            "name": "caption",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -86,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683854371
+    "modified": 1684095030
 }
