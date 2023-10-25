@@ -61,6 +61,7 @@
                                 ++$blog_item_count; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
+                                    <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                     <div class="newsy"><?php the_excerpt(); ?></div>
                                     <div class="read-more">+ open +</div>
                                 </div>
@@ -191,6 +192,7 @@
                                 ++$blogct; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
+                                    <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                     <?php if($blogct <= 999) { ?> <!-- Change this number to make fewer excerpts show up -->
                                         <div class="newsy"><?php the_excerpt(); ?></div>
                                         <div class="read-more">+ open +</div>
@@ -368,6 +370,7 @@
                                 ++$blogct; ?>
                                 <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
                                     <h4><?php the_title(); ?></h4>
+                                    <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                     <?php if($blogct <= 999) { ?> <!-- Change this number to make fewer excerpts show up -->
                                         <div class="newsy"><?php the_excerpt(); ?></div>
                                         <div class="read-more">+ open +</div>
