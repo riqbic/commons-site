@@ -158,6 +158,59 @@ jQuery.extend(jQuery.fn, {
             $('#popout-shadow').css('display','none');
         }
 
+        //clicking video menu items
+        /*$('#videos-menu-item .blog-item').on('click',function() {
+            //Load the popout
+            menuHandler('paid-videos');
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setCurrentPostInActivePopup($this);
+        });
+         //clicking mobile video menu items
+         $('#videos-menu-item-mobile .blog-item').on('click',function(e) {
+            menuHandler('paid-videos');
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setCurrentPostInActivePopup($this);
+        });*/
+
+        //clicking article menu items
+        /*$('#articles-menu-item .blog-item').on('click',function() {
+            //Load the popout
+            popOut('articles',1,1);
+            loadedPost = 0;
+            //set the post content to use in the popout 
+            var $this = $(this);
+            setCurrentPostInActivePopup($this);
+        });
+         //clicking mobile article menu items
+         $('#articles-menu-item-mobile .blog-item').on('click',function() {
+            var menu_toggle = document.getElementById("menu-toggle");
+            menu_toggle.checked = '';
+            
+            //if popout container is already populated, clear it out first, then open new item
+            var popout_container = document.getElementById("popout-container");
+            if (popout_container.hasChildNodes()){
+                popOut(popout_container.firstChild.id,0,1);
+                setTimeout(function(){
+                    popOut('articles',1,1);
+                    loadedPost = 0;
+                    //set the post content to use in the popout 
+                    var $this = $(this);
+                    setCurrentPostInActivePopup($this);
+                },50);
+            }
+            else{
+                popOut('articles',1,1);
+                loadedPost = 0;
+                //set the post content to use in the popout 
+                var $this = $(this);
+                setCurrentPostInActivePopup($this);
+            }
+        });*/
+
         //load the post in the popout contain when it's sidebar item is clicked
         $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {
             e.stopPropagation();
