@@ -39,7 +39,7 @@
                     <div class="popout-close" onclick="popOut('unpaid-videos',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
-                    <div class="blog-sidebar">
+                    <div class="blog-sidebar hidden-mobile">
                         <h4 class="italic" style="padding: 10px;">Up Next</h4>
                         <?php 
                         //Query 3 most recent posts that are published
@@ -170,7 +170,7 @@
                     <div class="popout-close" onclick="popOut('paid-videos',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
-                    <div class="blog-sidebar">
+                    <div class="blog-sidebar hidden-mobile">
                     <h4 class="italic" style="padding: 10px;">Up Next</h4>
                     <?php 
                         //Query 3 most recent posts that are published
@@ -348,7 +348,7 @@
                     <div class="popout-close" onclick="popOut('articles',1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
-                    <div class="blog-sidebar">
+                    <div class="blog-sidebar hidden-mobile">
                     <h4 class="italic" style="padding: 10px;">Up Next</h4>
                     <?php 
                         //Query 3 most recent posts that are published
