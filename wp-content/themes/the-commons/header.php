@@ -24,7 +24,7 @@
         </p>
         <div class="header-item-2">
             <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
-                <h1 class="site-title">The Commons</h1>
+                <h1 class="site-title">The Commonssss</h1>
             </a>
         </div>
         <p class="header-item-3" style="color: white; font-style: italic;">By the People, For the People.</p>
