@@ -67,6 +67,7 @@ jQuery.extend(jQuery.fn, {
                 }
             } else {
                 loadedPost = 0;
+                closePopout();
             }
         }
         //check on page load if a post should be loaded
@@ -148,10 +149,14 @@ jQuery.extend(jQuery.fn, {
         }
 
         $(document).on('click','.force-close-popout',function() {
+            closePopout();
+        });
+
+        function closePopout() {
             history.pushState('close', "",home_js.blog_url);
             $('#popout-container').css('display','none');
             $('#popout-shadow').css('display','none');
-        });
+        }
 
         //clicking video menu items
         /*$('#videos-menu-item .blog-item').on('click',function() {
