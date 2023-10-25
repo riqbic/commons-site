@@ -172,7 +172,7 @@ function menuHandler(activeID){
 
 
 //popOut(the ID of the grid item being popped out, did the function call come from the page? 0 or 1, should the transition play? 0 or 1)
-function popOut(activeID,call_from_page,transition,forceClose = 0){
+function popOut(activeID,call_from_page,transition){
     //declarations
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
@@ -182,29 +182,7 @@ function popOut(activeID,call_from_page,transition,forceClose = 0){
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
-    if(forceClose) {
-        popout_state = 0;
-        var contentID = popout_container.firstChild.id;
-        var activeID = contentID.split("-content").join("")
-        var active_element = document.getElementById(contentID);
-        var grid_container = document.getElementById(activeID);
-        opacityToggle(0);
-        document.body.style.overflowY = "auto";
-
-        setTimeout(function(){
-            //Add which div id active
-            popout_container.classList.remove("active-"+activeID);
-            
-            popout_container.style.display = "none";
-            grid_container.appendChild(active_element);
-            active_element.style.display = "none";
-
-            //push the history stack, as long as the call came from the user, and not from a history push
-            if(call_from_page){
-                history.pushState(activeID,"The Commons",commons_main.blog_url);
-            }
-        },10);
-    } else if(popout_container.hasChildNodes() && popout_state){
+    if(popout_container.hasChildNodes() && popout_state){
 
         popout_state = 0;
         var contentID = popout_container.firstChild.id;

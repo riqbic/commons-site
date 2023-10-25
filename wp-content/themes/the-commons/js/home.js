@@ -1,14 +1,4 @@
 /*
-Theme Name: The Commons
-Author: Alec Reduker
-Author URI: http://reduker.wordpress.com
-Description: Theme for The Commons Parkour brand
-License: GNU General Public License version 3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.21
-*/
-
-/*
  * Let's begin with validation functions
  */
 jQuery.extend(jQuery.fn, {
@@ -39,20 +29,32 @@ jQuery.extend(jQuery.fn, {
         var loadedPost = 0;
         //automatically load a post on page load or pop
         function loadPostFromURL() {
-            //see if the popout container has a blog post
-            if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos') || $('#popout-container').hasClass('active-articles')) {
+            var current_url = window.location.search;
+            var params = new URLSearchParams(current_url);
+            var activePost = params.get("post_id");
+            if(activePost != null) {
+                console.log('yuuu');
+                //see if the popout container has a blog post
+                if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos') || $('#popout-container').hasClass('active-articles')) {
+                    //all good here
+                } else {
+                    // we need to oent he popup
+                    var category = params.get("pop");
+                    if(category !== null) {
+                        setActivePopup(category);
+                    }
+                }
                 //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
                 setTimeout(function() {
                     //check if a post has been loaded or not
                     if(loadedPost == 0) {
                         //Check if a post id is set in the url
-                        let current_url = window.location.search;
-                        let params = new URLSearchParams(current_url);
-                        var activePost = params.get("post_id");
+                        
+                        console.log(activePost);
                         if(activePost != null) {
                             //we found a post in the url, load that
                             var $this = $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']');
-                            setActivePopoutPost($this);
+                            setCurrentPostInActivePopup($this);
                         } else {
                             //no post in url, click the first item in the sidebar
                             $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
@@ -65,26 +67,26 @@ jQuery.extend(jQuery.fn, {
                     }
                 },200);
             } else {
-                //reset it so we load the post automatically the next time blog is clicked
                 loadedPost = 0;
             }
         }
         //check on page load if a post should be loaded
         loadPostFromURL();
 
-        //Mutation observer to watch for changes in popcontainer and load the post if so
-        var popoutContainer = new MutationObserver(function() {
+        //Mutation observer to watch for changes in popcontainer and load the post if so. This was breaking urls
+        /*var popoutContainer = new MutationObserver(function() {
             loadPostFromURL();
         });
+
         //watch said popout-container for changes and trigger load post function if so (var popoutContainer = new MutationObserver(function() .... )
         popoutContainer.observe($("#popout-container")[0], {
             attributes: true
         });
+        */
         
         //Load post on popstate change
         window.addEventListener('popstate', function() {
             loadedPost = 0;
-            console.log('pop');
             loadPostFromURL();
         });
         
@@ -95,7 +97,7 @@ jQuery.extend(jQuery.fn, {
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });
 
         //clicking unpaid previews
@@ -105,7 +107,7 @@ jQuery.extend(jQuery.fn, {
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });
 
         //clicking articles
@@ -115,7 +117,7 @@ jQuery.extend(jQuery.fn, {
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });
 
         //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
@@ -123,24 +125,33 @@ jQuery.extend(jQuery.fn, {
             e.preventDefault();
             //close menu
             $('#menu-toggle').prop('checked',false);
-            //get link and set it in the url
-            var link = $(this).attr('href');
-            history.pushState(link,'',link);
             //get category
             var category = $(this).attr('data-category');
+            //get link and set it in the url
+            var link = $(this).attr('href');
+            history.pushState(category,"",link);
             setActivePopup(category);
-            //set variable to force new post queue
-            loadedPost = 0;
-            //trigger post update
             loadPostFromURL();
         });
 
         function setActivePopup(category) {
-            console.log(category);
-            var html = $('#'+category+'-content').html();
+            loadedPost = 0;
+            var html = $('#preview-content #'+category+'-html').html();
+            setPopoutSize();
+            opacityToggle(1);
+            if(window.scrollY < 120){
+                scrollTo(0,120);
+            }
+            $('#popout-shadow').css('display','block');
             $('#popout-container').html(html).removeClass('active-articles').removeClass('active-paid-videos').removeClass('active-unpaid-videos').addClass('active-'+category).css('display','block');
             $('#popout-container .grid-content').css('display','block');
         }
+
+        $(document).on('click','.force-close-popout',function() {
+            $('#popout-container').css('display','none');
+            $('#popout-shadow').css('display','none');
+        });
+
         //clicking video menu items
         /*$('#videos-menu-item .blog-item').on('click',function() {
             //Load the popout
@@ -148,7 +159,7 @@ jQuery.extend(jQuery.fn, {
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });
          //clicking mobile video menu items
          $('#videos-menu-item-mobile .blog-item').on('click',function(e) {
@@ -156,7 +167,7 @@ jQuery.extend(jQuery.fn, {
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });*/
 
         //clicking article menu items
@@ -166,7 +177,7 @@ jQuery.extend(jQuery.fn, {
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });
          //clicking mobile article menu items
          $('#articles-menu-item-mobile .blog-item').on('click',function() {
@@ -182,7 +193,7 @@ jQuery.extend(jQuery.fn, {
                     loadedPost = 0;
                     //set the post content to use in the popout 
                     var $this = $(this);
-                    setActivePopoutPost($this);
+                    setCurrentPostInActivePopup($this);
                 },50);
             }
             else{
@@ -190,7 +201,7 @@ jQuery.extend(jQuery.fn, {
                 loadedPost = 0;
                 //set the post content to use in the popout 
                 var $this = $(this);
-                setActivePopoutPost($this);
+                setCurrentPostInActivePopup($this);
             }
         });*/
 
@@ -198,11 +209,11 @@ jQuery.extend(jQuery.fn, {
         $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {
             e.stopPropagation();
             var $this = $(this);
-            setActivePopoutPost($this);
+            setCurrentPostInActivePopup($this);
         });
 
         //Set the active post to be displayed in the popout
-        function setActivePopoutPost($this) {
+        function setCurrentPostInActivePopup($this) {
             var post_id = $this.attr('data-id');
             //console.log('loading '+post_id);
             let current_url = window.location.search;
@@ -228,11 +239,11 @@ jQuery.extend(jQuery.fn, {
                 $this.addClass('is-active');
                 //Pop history, buggy but kind of working
                 if($('#popout-container').hasClass('active-unpaid-videos')) {
-                    history.replaceState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
+                    history.pushState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-paid-videos')) {
-                    history.replaceState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
+                    history.pushState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
                 } else if($('#popout-container').hasClass('active-articles')) {
-                    history.replaceState('articles-videos', "",'?pop=articles&post_id='+post_id);
+                    history.pushState('articles-videos', "",'?pop=articles&post_id='+post_id);
                 }
                 jQuery.ajax({
                     url: home_js.ajax_url,
