@@ -87,13 +87,16 @@ jQuery.extend(jQuery.fn, {
         });
         
         //clicking paid previews
-        $('#paid-videos-preview .blog-preview').on('click',function() {
+        $('#paid-videos-preview .blog-preview a').on('click',function(e) {
             //Load the popout
-            popOut('paid-videos',1,1);
+            /*popOut('paid-videos',1,1);
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
-            setActivePopoutPost($this);
+            setActivePopoutPost($this);*/
+            e.preventDefault();
+            var url = $(this).attr('href');
+            history.pushState(url,"The Commons",commons_main.blog_url);
         });
 
         //clicking unpaid previews
@@ -124,6 +127,7 @@ jQuery.extend(jQuery.fn, {
             //set the post content to use in the popout 
             var $this = $(this);
             setActivePopoutPost($this);
+            
         });
          //clicking mobile video menu items
          $('#videos-menu-item-mobile .blog-item').on('click',function() {
@@ -179,6 +183,7 @@ jQuery.extend(jQuery.fn, {
         //Set the active post to be displayed in the popout
         function setActivePopoutPost($this) {
             var post_id = $this.attr('data-id');
+            console.log(post_id);
             let current_url = window.location.search;
             let params = new URLSearchParams(current_url);
             var activePost = params.get("post_id");

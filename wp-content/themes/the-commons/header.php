@@ -145,7 +145,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <?php the_title(); ?>
+                            <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=1522"><?php the_title(); ?>
                         </li>
                         <?php 
                     }
