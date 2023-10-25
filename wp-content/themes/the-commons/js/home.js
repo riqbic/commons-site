@@ -29,7 +29,7 @@ jQuery.extend(jQuery.fn, {
         var loadedPost = 0;
         //automatically load a post on page load or pop
         function loadPostFromURL() {
-            console.log(window.history.state);
+            //console.log(window.history.state);
             var current_url = window.location.search;
             var params = new URLSearchParams(current_url);
             var activePost = params.get("post_id");
@@ -93,7 +93,7 @@ jQuery.extend(jQuery.fn, {
         //clicking paid previews
         $('#paid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
-            popOut('paid-videos',1,1);
+            setActivePopup('paid-videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -103,7 +103,7 @@ jQuery.extend(jQuery.fn, {
         //clicking unpaid previews
         $('#unpaid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
-            popOut('unpaid-videos',1,1);
+            setActivePopup('unpaid-videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -113,7 +113,7 @@ jQuery.extend(jQuery.fn, {
         //clicking articles
         $('#articles-preview .blog-preview').on('click',function() {
             //Load the popout
-            popOut('articles',1,1);
+            setActivePopup('articles');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -286,6 +286,11 @@ jQuery.extend(jQuery.fn, {
             }
         }
 
+        $('.opens-popup').on('click',function() {
+            var div = $(this).attr('data-popup');
+            setActivePopup(div);
+        });
+        
         /** Ajax commenting, adapted from https://rudrastyh.com/wordpress/ajax-comments.html */
         $( document ).on('submit','.popout-container #commentform',function(){
             // define some vars

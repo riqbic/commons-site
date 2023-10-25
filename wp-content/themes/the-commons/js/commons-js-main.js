@@ -74,7 +74,7 @@ mediaQuery.addEventListener("change",handleTabletChange);
 handleTabletChange(mediaQuery);
 
 //On page load, opens the pop out given by the URL paramater "pop", operates similarly to the popout funciton
-window.addEventListener('load',onPageLoad);
+//window.addEventListener('load',onPageLoad);
 function onPageLoad() {
     //read URL param
     let url = window.location.search;

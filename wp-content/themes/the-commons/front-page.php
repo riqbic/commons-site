@@ -41,7 +41,7 @@
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
         <div class="grid-item" id="about-us">
-            <div class="grid-preview" id="about-us-preview"  onclick="popOut('about-us',1,1)">
+            <div class="grid-preview opens-popup" id="about-us-preview" data-popup="about-us">
                 <?php 
                     $post_args = array(
                         'posts_per_page'	=> 1,
@@ -61,32 +61,6 @@
                         }
                     } else { ?>
                         <p>There are no posts to show right now.</p>
-                <?php } ?>
-            </div>
-            <div class="grid-content" id="about-us-content">
-                <div class="popout-bar">
-                    <div class="popout-title">About Us</div>
-                    <div class="popout-close" onclick="popOut('about-us',1,1)">Close</div>
-                </div>
-            <?php 
-                $post_args = array(
-                    'post_type'		=> 'any',
-                    'post_status' => 'publish',
-                    'p' => 127,
-                );
-                $posts_query = new WP_Query( $post_args );
-                if( $posts_query->have_posts() ) {
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        ?>
-                        <div class ="about-us-container">
-                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                            <div class="newsy about-us-content-wrapper"><?php echo the_content(); ?></div>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
                 <?php } ?>
             </div>
         </div>
@@ -119,7 +93,7 @@
             </div>
         </div>
         <div class="grid-item" id="get-involved">
-            <div class="grid-preview" id="get-involved-preview"  onclick="popOut('get-involved',1,1)">
+            <div class="grid-preview opens-popup" id="get-involved-preview" data-popup="get-involved">
             <?php 
                 $post_args = array(
                     'post_type'		=> 'any',
@@ -140,36 +114,10 @@
                     <p>There are no posts to show right now.</p>
                 <?php } ?>
             </div>
-            <div class="grid-content" id="get-involved-content">
-            <div class="popout-bar">
-                    <div class="popout-title">Get Involved</div>
-                    <div class="popout-close" onclick="popOut('get-involved',1,1)">Close</div>
-                </div>
-                <?php 
-                    $post_args = array(
-                        'post_type'		=> 'any',
-                        'post_status' => 'publish',
-                        'p' => 128,
-                    );
-                    $posts_query = new WP_Query( $post_args );
-                    if( $posts_query->have_posts() ) {
-                        while($posts_query->have_posts() ) {
-                            $posts_query->the_post(); 
-                            ?>
-                            <div class ="get-involved-container">
-                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                                <div class="newsy get-involved-content-wrapper"><?php echo the_content(); ?></div>
-                            </div>
-                            <?php 
-                        }
-                    } else { ?>
-                        <p>There are no posts to show right now.</p>
-                <?php } ?>
-            </div>
         </div>
         <div class="grid-item" id="shop-title">
             <div class="shop-title-container">
-                <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">
+                <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;"> <!--  data-popup="shop" -->
                     <h3 class="shop-title">Shop</h3>
                 </a>
             </div>
@@ -178,45 +126,10 @@
             <div class="grid-preview" id="shop-preview">
                 <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>
-            <div class="grid-content" id="shop-content">
-                <div class="popout-bar">
-                    <div class="popout-title">Shop</div>
-                    <div class="popout-close" onclick="popOut('shop',1,1)">Close</div>
-                </div>
-                <div class="shop-container">
-                    <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
-                </div>
-            </div>
         </div>
         <div class="grid-item" id="events">
-            <div class="grid-preview" id="events-preview"  onclick="popOut('events',1,1)">
+            <div class="grid-preview opens-popup" id="events-preview" data-popup="events">
                 <!-- Events -->
-            </div>
-            <div class="grid-content" id="events-content">
-                <div class="popout-bar">
-                    <div class="popout-title">Events</div>
-                    <div class="popout-close" onclick="popOut('events',1,1)">Close</div>
-                </div>
-                <?php 
-                $post_args = array(
-                    'post_type'		=> 'any',
-                    'post_status' => 'publish',
-                    'p' => 109,
-                );
-                $posts_query = new WP_Query( $post_args );
-                if( $posts_query->have_posts() ) {
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        ?>
-                        <div class="event-container">
-                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
-                            <?php echo the_content(); ?>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
-                <?php } ?>
             </div>
         </div>
         <!--alternate method to load the blog content popout-->
@@ -252,7 +165,7 @@
     </div>
 </div>
 
-<div class="popout-shadow" id="popout-shadow" onclick="popOut('',1,1,1)"></div>
+<div class="popout-shadow force-close-popout" id="popout-shadow"></div>
 
 <!-- the div below (popout-container) must be left COMPLETELY empty!!!-->
 <div class="popout-container" id="popout-container"></div>
@@ -260,6 +173,101 @@
 
 <!-- data needed for popups -->
 <div id="preview-content" style="display: none;">
+
+    <div class="grid-content" id="shop-html">
+        <div class="popout-bar">
+            <div class="popout-title">Shop</div>
+            <div class="popout-close" onclick="popOut('shop',1,1)">Close</div>
+        </div>
+        <div class="shop-container">
+            <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
+        </div>
+    </div>
+
+    <div class="grid-content" id="events-html">
+        <div class="popout-bar">
+            <div class="popout-title">Events</div>
+            <div class="popout-close force-close-popout">Close</div>
+        </div>
+        <?php 
+        $post_args = array(
+            'post_type'		=> 'any',
+            'post_status' => 'publish',
+            'p' => 109,
+        );
+        $posts_query = new WP_Query( $post_args );
+        if( $posts_query->have_posts() ) {
+            while($posts_query->have_posts() ) {
+                $posts_query->the_post(); 
+                ?>
+                <div class="event-container">
+                    <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                    <?php echo the_content(); ?>
+                </div>
+                <?php 
+            }
+        } else { ?>
+            <p>There are no posts to show right now.</p>
+        <?php } 
+        wp_reset_query(); ?>
+    </div>
+
+    <div class="grid-content" id="get-involved-html">
+        <div class="popout-bar">
+            <div class="popout-title">Get Involved</div>
+            <div class="popout-close force-close-popout">Close</div>
+        </div>
+        <?php 
+            $post_args = array(
+                'post_type'		=> 'any',
+                'post_status' => 'publish',
+                'p' => 128,
+            );
+            $posts_query = new WP_Query( $post_args );
+            if( $posts_query->have_posts() ) {
+                while($posts_query->have_posts() ) {
+                    $posts_query->the_post(); 
+                    ?>
+                    <div class ="get-involved-container">
+                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                        <div class="newsy get-involved-content-wrapper"><?php echo the_content(); ?></div>
+                    </div>
+                    <?php 
+                }
+            } else { ?>
+                <p>There are no posts to show right now.</p>
+        <?php }
+        wp_reset_query(); ?>
+    </div>
+
+    <div class="grid-content" id="about-us-html">
+        <div class="popout-bar">
+            <div class="popout-title">About Us</div>
+            <div class="popout-close force-close-popout">Close</div>
+        </div>
+        <?php 
+        $post_args = array(
+            'post_type'		=> 'any',
+            'post_status' => 'publish',
+            'p' => 127,
+        );
+        $posts_query = new WP_Query( $post_args );
+        if( $posts_query->have_posts() ) {
+            while($posts_query->have_posts() ) {
+                $posts_query->the_post(); 
+                ?>
+                <div class ="about-us-container">
+                    <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                    <div class="newsy about-us-content-wrapper"><?php echo the_content(); ?></div>
+                </div>
+                <?php 
+            }
+        } else { ?>
+            <p>There are no posts to show right now.</p>
+        <?php }
+        wp_reset_query(); ?>
+    </div>
+    
     <div class="grid-content" id="articles-html">
         <div class="popout-bar">
             <div class="popout-title">Articles</div>
@@ -299,7 +307,8 @@
                     }
                 } else { ?>
                     <p>There are no posts to show right now.</p>
-                <?php } ?>
+                <?php }
+                wp_reset_query(); ?>
             </div><!-- close sidebar -->
             <div class="blog-single-content" id="blog-ajax-container">
                 <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
@@ -346,7 +355,8 @@
                     }
                 } else { ?>
                     <p>There are no posts to show right now.</p>
-                <?php } ?>
+                <?php } 
+                wp_reset_query(); ?>
             </div><!-- close sidebar -->
             <div class="blog-single-content" id="blog-ajax-container">
                 <div class="post-ajax-loader"></div>
@@ -393,7 +403,8 @@
                     }
                 } else { ?>
                     <p>There are no posts to show right now.</p>
-                <?php } ?>
+                <?php } 
+                wp_reset_query(); ?>
             </div><!-- close sidebar -->
             <div class="blog-single-content" id="blog-ajax-container">
                 <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
