@@ -132,15 +132,15 @@ function menuHandler(activeID){
     menu_toggle.checked = '';
     console.log('menuHandler');
 
-    if (url !== commons_main.blog_url && activeID!==''){
+    if (url !== commons_main.blog_url && activeID !== ''){
         window.location.href=commons_main.blog_url+'?pop='+activeID;
         console.log('1');
     }
-    else if (url !== commons_main.blog_url && activeID===''){
+    else if (url !== commons_main.blog_url && activeID === ''){
         window.location.href=commons_main.blog_url;
         console.log('2');
     }
-    else if (activeID=="" && popout_container.hasChildNodes()){
+    else if (activeID == "" && popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
         console.log('3');
     }
@@ -152,6 +152,7 @@ function menuHandler(activeID){
         console.log('5');
         popOut(popout_container.firstChild.id,1,1);
         setTimeout(function(){
+            console.log('55555');
             popOut(activeID,1,1);
         },1000);
     }
