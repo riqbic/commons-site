@@ -29,43 +29,42 @@ jQuery.extend(jQuery.fn, {
         var loadedPost = 0;
         //automatically load a post on page load or pop
         function loadPostFromURL() {
+            console.log(window.history.state);
             var current_url = window.location.search;
             var params = new URLSearchParams(current_url);
             var activePost = params.get("post_id");
             if(activePost != null) {
-                console.log('yuuu');
                 //see if the popout container has a blog post
-                if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos') || $('#popout-container').hasClass('active-articles')) {
+                /*if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos') || $('#popout-container').hasClass('active-articles')) {
                     //all good here
-                } else {
+                } else {*/
                     // we need to oent he popup
-                    var category = params.get("pop");
-                    if(category !== null) {
-                        setActivePopup(category);
-                    }
-                }
-                //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
-                setTimeout(function() {
-                    //check if a post has been loaded or not
-                    if(loadedPost == 0) {
-                        //Check if a post id is set in the url
-                        
-                        console.log(activePost);
-                        if(activePost != null) {
-                            //we found a post in the url, load that
-                            var $this = $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']');
-                            setCurrentPostInActivePopup($this);
+                    
+               // }
+                //Set active popup
+                var category = params.get("pop");
+                if(category !== null) {
+                    setActivePopup(category);
+                    //Same issue you were having, content firing too quickly. Just added a settimeout as a temp fix
+                    //setTimeout(function() {
+                        //check if a post has been loaded or not
+                        if(loadedPost == 0) {
+                            if(activePost != null) {
+                                //we found a post in the url, load that
+                                var $this = $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']');
+                                setCurrentPostInActivePopup($this,false);
+                            } else {
+                                //no post in url, click the first item in the sidebar
+                                $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
+                            }
+                            //set our bool var to true so it doesnt happen again
+                            loadedPost = 1;
                         } else {
-                            //no post in url, click the first item in the sidebar
-                            $('#popout-container .blog-sidebar .blog-item:first-of-type').trigger('click');
+                            //console.log('no loaded post');
+                            //do nothing for now  
                         }
-                        //set our bool var to true so it doesnt happen again
-                        loadedPost = 1;
-                    } else {
-                        //console.log('no loaded post');
-                        //do nothing for now  
-                    }
-                },200);
+                   // },200);
+                }
             } else {
                 loadedPost = 0;
             }
@@ -86,6 +85,7 @@ jQuery.extend(jQuery.fn, {
         
         //Load post on popstate change
         window.addEventListener('popstate', function() {
+            console.log(window.history.state);
             loadedPost = 0;
             loadPostFromURL();
         });
@@ -213,7 +213,7 @@ jQuery.extend(jQuery.fn, {
         });
 
         //Set the active post to be displayed in the popout
-        function setCurrentPostInActivePopup($this) {
+        function setCurrentPostInActivePopup($this, updatePopstate = true) {
             var post_id = $this.attr('data-id');
             //console.log('loading '+post_id);
             let current_url = window.location.search;
@@ -238,12 +238,14 @@ jQuery.extend(jQuery.fn, {
                 //add current class
                 $this.addClass('is-active');
                 //Pop history, buggy but kind of working
-                if($('#popout-container').hasClass('active-unpaid-videos')) {
-                    history.pushState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
-                } else if($('#popout-container').hasClass('active-paid-videos')) {
-                    history.pushState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
-                } else if($('#popout-container').hasClass('active-articles')) {
-                    history.pushState('articles-videos', "",'?pop=articles&post_id='+post_id);
+                if(updatePopstate) {
+                    if($('#popout-container').hasClass('active-unpaid-videos')) {
+                        history.pushState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
+                    } else if($('#popout-container').hasClass('active-paid-videos')) {
+                        history.pushState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
+                    } else if($('#popout-container').hasClass('active-articles')) {
+                        history.pushState('articles-videos', "",'?pop=articles&post_id='+post_id);
+                    }
                 }
                 jQuery.ajax({
                     url: home_js.ajax_url,
@@ -280,7 +282,7 @@ jQuery.extend(jQuery.fn, {
 
             } else {
                 //user clicked the same post that already is loaded
-                console.log('already here');
+                //console.log('already here');
             }
         }
 
