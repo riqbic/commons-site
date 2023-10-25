@@ -8,6 +8,15 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Version: 1.21
 */
 
+/* mobile menu event listeners, added to top because it wasn't firign lower - guessing there is a bug in your code somewhere... */
+var menuItems = document.getElementsByClassName("has-children");
+var toggleActive = function() {
+    this.classList.toggle("is-active");
+};
+for (var i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener('click', toggleActive, false);
+}
+
 //global variables
 var popout_state = 0;
 var push_state = 1;
@@ -16,7 +25,7 @@ var push_state = 1;
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {
    activeID = ev.state;
-   popOut(activeID,0,1);
+   //popOut(activeID,0,1);
 }
 
 const jod_art_join = document.getElementById("jod-art-join");
@@ -116,7 +125,7 @@ function resize(){
 
     setPopoutSize(); 
 
-    articles.style.maxHeight = about_us_grid_item.offsetHeight+get_involved_grid_item.offsetHeight+40+"px";
+    articles.style.maxHeight = about_us_grid_item.offsetHeight+get_involved_grid_item.offsetHeight+20+"px";
     sidebar_blog.style.maxHeight = flex_desktop_grid.offsetHeight+"px";
 
     for (var i = 0; i < about_us_flex_item.length; i ++) {
@@ -132,15 +141,15 @@ function menuHandler(activeID){
     menu_toggle.checked = '';
     console.log('menuHandler');
 
-    if (url !== commons_main.blog_url && activeID !== ''){
+    if (url !== commons_main.blog_url && activeID!==''){
         window.location.href=commons_main.blog_url+'?pop='+activeID;
         console.log('1');
     }
-    else if (url !== commons_main.blog_url && activeID === ''){
+    else if (url !== commons_main.blog_url && activeID===''){
         window.location.href=commons_main.blog_url;
         console.log('2');
     }
-    else if (activeID == "" && popout_container.hasChildNodes()){
+    else if (activeID=="" && popout_container.hasChildNodes()){
         popOut(popout_container.firstChild.id,1,1);
         console.log('3');
     }
@@ -152,7 +161,6 @@ function menuHandler(activeID){
         console.log('5');
         popOut(popout_container.firstChild.id,1,1);
         setTimeout(function(){
-            console.log('55555');
             popOut(activeID,1,1);
         },1000);
     }
@@ -164,7 +172,7 @@ function menuHandler(activeID){
 
 
 //popOut(the ID of the grid item being popped out, did the function call come from the page? 0 or 1, should the transition play? 0 or 1)
-function popOut(activeID,call_from_page,transition){
+function popOut(activeID,call_from_page,transition,forceClose = 0){
     //declarations
     var popout_container = document.getElementById("popout-container");
     var grid_container = document.getElementById(activeID);
@@ -174,7 +182,29 @@ function popOut(activeID,call_from_page,transition){
 
     //if the popout container is populated, and we are not already doing a popout
     //then "un-popout" the active content
-    if(popout_container.hasChildNodes() && popout_state){
+    if(forceClose) {
+        popout_state = 0;
+        var contentID = popout_container.firstChild.id;
+        var activeID = contentID.split("-content").join("")
+        var active_element = document.getElementById(contentID);
+        var grid_container = document.getElementById(activeID);
+        opacityToggle(0);
+        document.body.style.overflowY = "auto";
+
+        setTimeout(function(){
+            //Add which div id active
+            popout_container.classList.remove("active-"+activeID);
+            
+            popout_container.style.display = "none";
+            grid_container.appendChild(active_element);
+            active_element.style.display = "none";
+
+            //push the history stack, as long as the call came from the user, and not from a history push
+            if(call_from_page){
+                history.pushState(activeID,"The Commons",commons_main.blog_url);
+            }
+        },10);
+    } else if(popout_container.hasChildNodes() && popout_state){
 
         popout_state = 0;
         var contentID = popout_container.firstChild.id;
@@ -185,7 +215,6 @@ function popOut(activeID,call_from_page,transition){
         document.body.style.overflowY = "auto";
 
         setTimeout(function(){
-
             //Add which div id active
             popout_container.classList.remove("active-"+activeID);
             
@@ -261,13 +290,4 @@ function setPopoutSize(){
 
 function clamp(val, min, max) {
     return val > max ? max : val < min ? min : val;
-}
-
-//Mobile dropdown
-var menuItems = document.getElementsByClassName("has-children");
-var toggleActive = function() {
-    this.classList.toggle("is-active");
-};
-for (var i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener('click', toggleActive, false);
 }

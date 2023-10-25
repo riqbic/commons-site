@@ -60,6 +60,7 @@ jQuery.extend(jQuery.fn, {
                         //set our bool var to true so it doesnt happen again
                         loadedPost = 1;
                     } else {
+                        //console.log('no loaded post');
                         //do nothing for now  
                     }
                 },200);
@@ -82,7 +83,8 @@ jQuery.extend(jQuery.fn, {
         
         //Load post on popstate change
         window.addEventListener('popstate', function() {
-            //loadedPost = 0;
+            loadedPost = 0;
+            console.log('pop');
             loadPostFromURL();
         });
         
@@ -116,27 +118,49 @@ jQuery.extend(jQuery.fn, {
             setActivePopoutPost($this);
         });
 
+        //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
+        $('.has-children a').on('click',function(e) {
+            e.preventDefault();
+            //close menu
+            $('#menu-toggle').prop('checked',false);
+            //get link and set it in the url
+            var link = $(this).attr('href');
+            history.pushState(link,'',link);
+            //get category
+            var category = $(this).attr('data-category');
+            setActivePopup(category);
+            //set variable to force new post queue
+            loadedPost = 0;
+            //trigger post update
+            loadPostFromURL();
+        });
+
+        function setActivePopup(category) {
+            console.log(category);
+            var html = $('#'+category+'-content').html();
+            $('#popout-container').html(html).removeClass('active-articles').removeClass('active-paid-videos').removeClass('active-unpaid-videos').addClass('active-'+category).css('display','block');
+            $('#popout-container .grid-content').css('display','block');
+        }
         //clicking video menu items
-        $('#videos-menu-item .blog-item').on('click',function() {
+        /*$('#videos-menu-item .blog-item').on('click',function() {
             //Load the popout
             menuHandler('paid-videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
             setActivePopoutPost($this);
-            
         });
          //clicking mobile video menu items
-         $('#videos-menu-item-mobile .blog-item').on('click',function() {
+         $('#videos-menu-item-mobile .blog-item').on('click',function(e) {
             menuHandler('paid-videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
             setActivePopoutPost($this);
-        });
+        });*/
 
         //clicking article menu items
-        $('#articles-menu-item .blog-item').on('click',function() {
+        /*$('#articles-menu-item .blog-item').on('click',function() {
             //Load the popout
             popOut('articles',1,1);
             loadedPost = 0;
@@ -168,7 +192,7 @@ jQuery.extend(jQuery.fn, {
                 var $this = $(this);
                 setActivePopoutPost($this);
             }
-        });
+        });*/
 
         //load the post in the popout contain when it's sidebar item is clicked
         $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {
@@ -180,6 +204,7 @@ jQuery.extend(jQuery.fn, {
         //Set the active post to be displayed in the popout
         function setActivePopoutPost($this) {
             var post_id = $this.attr('data-id');
+            //console.log('loading '+post_id);
             let current_url = window.location.search;
             let params = new URLSearchParams(current_url);
             var activePost = params.get("post_id");
@@ -215,6 +240,7 @@ jQuery.extend(jQuery.fn, {
                         'action': 'load_commons_blog_post',
                         'post_id': post_id
                     }, success: function( data ) {
+                        //console.log('popout done');
                         var response = JSON.parse(data);
                         //load post into container
                         $('#popout-container #blog-ajax-container').html(response.post_content);

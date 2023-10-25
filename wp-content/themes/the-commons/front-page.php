@@ -36,7 +36,7 @@
                 <div class="popout-bar">
                     <div class="popout-title">Videos</div>
                     <div class="post-title hidden-mobile"></div>
-                    <div class="popout-close" onclick="popOut('unpaid-videos',1,1)">Close</div>
+                    <div class="popout-close" onclick="popOut('unpaid-videos',1,1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar hidden-mobile">
@@ -167,7 +167,7 @@
                 <div class="popout-bar">
                     <div class="popout-title">Videos</div>
                     <div class="post-title hidden-mobile"></div>
-                    <div class="popout-close" onclick="popOut('paid-videos',1,1)">Close</div>
+                    <div class="popout-close" onclick="popOut('paid-videos',1,1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar hidden-mobile">
@@ -345,7 +345,7 @@
                 <div class="popout-bar">
                     <div class="popout-title">Articles</div>
                     <div class="post-title hidden-mobile"></div>
-                    <div class="popout-close" onclick="popOut('articles',1,1)">Close</div>
+                    <div class="popout-close" onclick="popOut('articles',1,1,1)">Close</div>
                 </div>
                 <div class="blog-flex-container flex-row">
                     <div class="blog-sidebar hidden-mobile">

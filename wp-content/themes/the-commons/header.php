@@ -57,11 +57,12 @@
                     //Incremenent blog item count
                     ++$blog_item_count; ?>
                     <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <?php the_title(); ?>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" data-category="articles"><?php the_title(); ?></a>
                     </li>
                     <?php 
                 }
-            } ?>
+            } 
+            wp_reset_query(); ?>
             <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
             </ul>
         </li>
@@ -85,11 +86,12 @@
                     //Incremenent blog item count
                     ++$blog_item_count; ?>
                     <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <?php the_title(); ?>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" data-category="paid-videos"><?php the_title(); ?></a>
                     </li>
                     <?php 
                 }
-            } ?>
+            } 
+            wp_reset_query(); ?>
             <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
             </ul>
         </li>
@@ -145,7 +147,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=1522"><?php the_title(); ?>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" data-category="articles"><?php the_title(); ?></a>
                         </li>
                         <?php 
                     }
@@ -174,7 +176,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <?php the_title(); ?>
+                            <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" data-category="paid-videos"><?php the_title(); ?></a>
                         </li>
                         <?php 
                     }
