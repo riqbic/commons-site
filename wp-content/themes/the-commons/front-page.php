@@ -174,16 +174,6 @@
 <!-- data needed for popups -->
 <div id="preview-content" style="display: none;">
 
-    <div class="grid-content" id="shop-html">
-        <div class="popout-bar">
-            <div class="popout-title">Shop</div>
-            <div class="popout-close" onclick="popOut('shop',1,1)">Close</div>
-        </div>
-        <div class="shop-container">
-            <?php echo do_shortcode('[products limit="8" columns="4" category="subscriptions" cat_operator="NOT IN"]'); ?>
-        </div>
-    </div>
-
     <div class="grid-content" id="events-html">
         <div class="popout-bar">
             <div class="popout-title">Events</div>

@@ -5,7 +5,7 @@ Author URI: http://reduker.wordpress.com
 Description: Theme for The Commons Parkour brand
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.30
+Version: 1.31
 */
 @font-face {
     font-family: CenturyOldStyleRegular;
@@ -543,21 +543,32 @@ h5{
     height: auto;
     left: 0px;
     display: none;
-    padding: 25px 0px !important;
+    padding: 25px 10px !important;
 }
 .menu li ul li{
-    color: grey;
     list-style: none;
+    margin: 0 !important;
+}
+.menu li ul li a{
+    color: grey;
+    text-decoration: none;
+    text-wrap: nowrap;
+}
+.menu-mobile li ul li{
+    list-style: none;
+}
+.menu-mobile li ul li a{
+    color: white;
+    text-decoration: none;
     text-wrap: nowrap;
 }
 .menu li:hover ul {
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-around;
 }
-.menu li ul li:hover{
+.menu li ul li a:hover{
     color: white;
 }
 .menu-item{
@@ -591,7 +602,7 @@ h5{
     top: 0;
     transform: rotate(90deg);
   }
-  #menu-toggle:checked ~ .menu-box {
+  #menu-toggle:checked ~ .menu-mobile {
     left: 0 !important;
   }
   .menu-btn {
@@ -622,7 +633,7 @@ h5{
     content: '';
     top: 8px;
   }
-  .menu-box {
+  .menu-mobile {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -656,10 +667,11 @@ h5{
     .menu-item-mobile.has-children.is-active ul {
         position: relative;
         list-style: none;
-        display: flex;
+        display: grid;
+        align-items: center;
         height: 100%;
-        flex-direction: column;
-        justify-content: space-around;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+        padding: 20px;
     }
     .menu-item-mobile.has-children.is-active ul li {
         color: #fff;
@@ -783,6 +795,7 @@ h5{
 .posts-archive-text{
     color: white;
     text-decoration: none;
+    padding: 10px !important;
 }
 
 .blog-flex-container{
@@ -1080,6 +1093,42 @@ h5{
     list-style: none;
     width: fit-content;
     display: block;
+}
+
+.comment{
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#comments{
+    background: black;
+    font-size: 1.728rem;
+    color: white;
+    width: 100% !important;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.comment-reply-title{
+    background: black;
+    font-size: 1.728rem;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.avatar{
+    display: none;
+}
+
+.comment-author{
+    font-size: 1.25rem;
+}
+
+textarea{
+    display: block !important;
 }
 
 /** COMMONS COMIC **/

@@ -41,7 +41,7 @@
             <ul>
             <?php 
             $post_args = array(
-                'posts_per_page'	=> 10,
+                'posts_per_page'	=> 9,
                 'post_type'		=> 'post',
                 'post_status' => 'publish',
                 'category__in' => array(34)
@@ -57,7 +57,7 @@
                     //Incremenent blog item count
                     ++$blog_item_count; ?>
                     <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" data-category="articles"><?php the_title(); ?></a>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="articles"><?php the_title(); ?></a>
                     </li>
                     <?php 
                 }
@@ -70,7 +70,7 @@
             <ul>
             <?php 
             $post_args = array(
-                'posts_per_page'	=> 10,
+                'posts_per_page'	=> 9,
                 'post_type'		=> 'post',
                 'post_status' => 'publish',
                 'category__in' => array(28,31)
@@ -86,7 +86,7 @@
                     //Incremenent blog item count
                     ++$blog_item_count; ?>
                     <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" data-category="paid-videos"><?php the_title(); ?></a>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
                     </li>
                     <?php 
                 }
@@ -95,8 +95,6 @@
             <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
             </ul>
         </li>
-        
-        <!-- <li class="menu-item" onclick="menuHandler('events')">Events</li> -->
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
         <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
@@ -125,13 +123,13 @@
         <span></span>
         </label>
 
-        <ul class="menu-box">
+        <ul class="menu-mobile">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
             <li class="menu-item-mobile has-children" id="articles-menu-item-mobile"><div class="menu-text-mobile">Articles</div>
                 <ul>
                 <?php 
                 $post_args = array(
-                    'posts_per_page'	=> 10,
+                    'posts_per_page'	=> 9,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
                     'category__in' => array(34)
@@ -147,7 +145,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" data-category="articles"><?php the_title(); ?></a>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="articles"><?php the_title(); ?></a>
                         </li>
                         <?php 
                     }
@@ -160,7 +158,7 @@
                 <ul>
                 <?php 
                 $post_args = array(
-                    'posts_per_page'	=> 10,
+                    'posts_per_page'	=> 9,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
                     'category__in' => array(28,31)
@@ -176,7 +174,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" data-category="paid-videos"><?php the_title(); ?></a>
+                            <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
                         </li>
                         <?php 
                     }

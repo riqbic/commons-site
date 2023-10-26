@@ -1,13 +1,3 @@
-/*
-Theme Name: The Commons
-Author: Alec Reduker
-Author URI: http://reduker.wordpress.com
-Description: Theme for The Commons Parkour brand
-License: GNU General Public License version 3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.21
-*/
-
 /* mobile menu event listeners, added to top because it wasn't firign lower - guessing there is a bug in your code somewhere... */
 var menuItems = document.getElementsByClassName("has-children");
 var toggleActive = function() {
@@ -25,24 +15,7 @@ var push_state = 1;
 window.addEventListener('popstate', onPopState);
 function onPopState(ev) {
    activeID = ev.state;
-   //popOut(activeID,0,1);
 }
-
-const jod_art_join = document.getElementById("jod-art-join");
-const jod_art = document.getElementById("events");
-jod_art.addEventListener(
-    "mouseover",
-    (event) => {
-      // random position of JOIN header every mouseover
-      jod_art_join.style.display = "block";
-      jod_art_join.style.transform = "translate(" + (Math.random()*jod_art.offsetWidth-jod_art_join.offsetWidth) + "px, " + (Math.random()*jod_art.offsetHeight*-1) + "px)";
-      // reset display property after a delay
-      setTimeout(() => {
-        jod_art_join.style.display = "none";
-      }, 500);
-    },
-    false
-  );
 
 // Create a condition that targets viewports below 768px wide
 const mediaQuery = window.matchMedia('(max-width: 768px)');

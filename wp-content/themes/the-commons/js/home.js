@@ -34,13 +34,7 @@ jQuery.extend(jQuery.fn, {
             var params = new URLSearchParams(current_url);
             var activePost = params.get("post_id");
             if(activePost != null) {
-                //see if the popout container has a blog post
-                /*if($('#popout-container').hasClass('active-unpaid-videos') || $('#popout-container').hasClass('active-paid-videos') || $('#popout-container').hasClass('active-articles')) {
-                    //all good here
-                } else {*/
-                    // we need to oent he popup
-                    
-               // }
+
                 //Set active popup
                 var category = params.get("pop");
                 if(category !== null) {
@@ -121,11 +115,15 @@ jQuery.extend(jQuery.fn, {
             setCurrentPostInActivePopup($this);
         });
 
-        //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
-        $('.has-children a').on('click',function(e) {
-            e.preventDefault();
+        //Close menu when clicking link in menu
+        $('.has-children .blog-item a').on('click',function() {
             //close menu
             $('#menu-toggle').prop('checked',false);
+        });
+
+        //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
+        $('.load-from-url').on('click',function(e) {
+            e.preventDefault();
             //get category
             var category = $(this).attr('data-category');
             //get link and set it in the url
@@ -157,59 +155,6 @@ jQuery.extend(jQuery.fn, {
             $('#popout-container').css('display','none');
             $('#popout-shadow').css('display','none');
         }
-
-        //clicking video menu items
-        /*$('#videos-menu-item .blog-item').on('click',function() {
-            //Load the popout
-            menuHandler('paid-videos');
-            loadedPost = 0;
-            //set the post content to use in the popout 
-            var $this = $(this);
-            setCurrentPostInActivePopup($this);
-        });
-         //clicking mobile video menu items
-         $('#videos-menu-item-mobile .blog-item').on('click',function(e) {
-            menuHandler('paid-videos');
-            loadedPost = 0;
-            //set the post content to use in the popout 
-            var $this = $(this);
-            setCurrentPostInActivePopup($this);
-        });*/
-
-        //clicking article menu items
-        /*$('#articles-menu-item .blog-item').on('click',function() {
-            //Load the popout
-            popOut('articles',1,1);
-            loadedPost = 0;
-            //set the post content to use in the popout 
-            var $this = $(this);
-            setCurrentPostInActivePopup($this);
-        });
-         //clicking mobile article menu items
-         $('#articles-menu-item-mobile .blog-item').on('click',function() {
-            var menu_toggle = document.getElementById("menu-toggle");
-            menu_toggle.checked = '';
-            
-            //if popout container is already populated, clear it out first, then open new item
-            var popout_container = document.getElementById("popout-container");
-            if (popout_container.hasChildNodes()){
-                popOut(popout_container.firstChild.id,0,1);
-                setTimeout(function(){
-                    popOut('articles',1,1);
-                    loadedPost = 0;
-                    //set the post content to use in the popout 
-                    var $this = $(this);
-                    setCurrentPostInActivePopup($this);
-                },50);
-            }
-            else{
-                popOut('articles',1,1);
-                loadedPost = 0;
-                //set the post content to use in the popout 
-                var $this = $(this);
-                setCurrentPostInActivePopup($this);
-            }
-        });*/
 
         //load the post in the popout contain when it's sidebar item is clicked
         $('#popout-container').on('click','.blog-sidebar .blog-item',function(e) {

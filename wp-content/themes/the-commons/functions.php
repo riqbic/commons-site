@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
-    $version = '1.28'; //For cache busting css/js
+    $version = '1.29'; //For cache busting css/js
     //Theme CSS
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, $version, 'all' );
     //Theme JS
@@ -261,7 +261,7 @@ function wpd_autocomplete_virtual_orders( $order_id ) {
 /** Change comments heading */
 add_filter( 'comment_form_defaults', 'commons_comment_form_title_reply' );
 function commons_comment_form_title_reply( $defaults ) {  
-    $defaults['title_reply'] = __( 'Leave a note for the author' );  
+    $defaults['title_reply'] = __( 'Leave a note!' );  
     return $defaults;
 }
 
