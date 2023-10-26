@@ -133,3 +133,5 @@ wp-content/wflogs
 wp-content/.logs/
 #Mac
 .well-known/
+
+core
