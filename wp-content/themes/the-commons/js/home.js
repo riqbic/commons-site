@@ -77,7 +77,7 @@ jQuery.extend(jQuery.fn, {
         //clicking paid previews
         $('#paid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
-            setActivePopup('paid-videos');
+            setActivePopup('videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -87,7 +87,7 @@ jQuery.extend(jQuery.fn, {
         //clicking unpaid previews
         $('#unpaid-videos-preview .blog-preview').on('click',function() {
             //Load the popout
-            setActivePopup('unpaid-videos');
+            setActivePopup('videos');
             loadedPost = 0;
             //set the post content to use in the popout 
             var $this = $(this);
@@ -132,7 +132,7 @@ jQuery.extend(jQuery.fn, {
                 scrollTo(0,120);
             }
             $('#popout-shadow').css('display','block');
-            $('#popout-container').html(html).removeClass('active-articles').removeClass('active-paid-videos').removeClass('active-unpaid-videos').addClass('active-'+category).css('display','block');
+            $('#popout-container').html(html).removeClass('active-articles').removeClass('active-videos').addClass('active-'+category).css('display','block');
             $('#popout-container .grid-content').css('display','block');
         }
 
@@ -180,10 +180,8 @@ jQuery.extend(jQuery.fn, {
                 $this.addClass('is-active');
                 //Pop history, buggy but kind of working
                 if(updatePopstate) {
-                    if($('#popout-container').hasClass('active-unpaid-videos')) {
-                        history.pushState('unpaid-videos', "",'?pop=unpaid-videos&post_id='+post_id);
-                    } else if($('#popout-container').hasClass('active-paid-videos')) {
-                        history.pushState('paid-videos', "",'?pop=paid-videos&post_id='+post_id);
+                    if($('#popout-container').hasClass('active-videos')) {
+                        history.pushState('videos', "",'?pop=videos&post_id='+post_id);
                     } else if($('#popout-container').hasClass('active-articles')) {
                         history.pushState('articles-videos', "",'?pop=articles&post_id='+post_id);
                     }

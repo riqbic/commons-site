@@ -49,7 +49,6 @@ handleTabletChange(mediaQuery);
 //On page load, resize
 window.addEventListener('load',onPageLoad);
 function onPageLoad() {
-    loadPostFromURL()
     resize();
 }
 

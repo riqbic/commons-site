@@ -308,7 +308,7 @@
     </div>
 
     <!-- load content for the blog popout-->
-    <div class="grid-content" id="unpaid-videos-html">
+    <div class="grid-content" id="videos-html">
         <div class="popout-bar">
             <div class="popout-title">Videos</div>
             <div class="post-title hidden-mobile"></div>
@@ -353,54 +353,6 @@
             </div><!-- close blog content-->
         </div>
     </div>
-
-    <div class="grid-content" id="paid-videos-html">
-        <div class="popout-bar">
-            <div class="popout-title">Videos</div>
-            <div class="post-title hidden-mobile"></div>
-            <div class="popout-close force-close-popout">Close</div>
-        </div>
-        <div class="blog-flex-container flex-row">
-            <div class="blog-sidebar hidden-mobile">
-            <h4 class="italic" style="padding: 10px;">Up Next</h4>
-            <?php 
-                //Query 3 most recent posts that are published
-                $post_args = array(
-                    'posts_per_page'	=> -1,
-                    'post_type'		=> 'post',
-                    'post_status' => 'publish',
-                    'category__in' => array(28,31)
-                );
-                $posts_query = new WP_Query( $post_args );
-                $blogct = 0;
-                if( $posts_query->have_posts() ) {
-                    //Declare an iterator for blog-item class
-                    $blog_item_count = 0;
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        //Incremenent blog item count
-                        ++$blog_item_count; 
-                        ++$blogct; ?>
-                        <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <h4><?php the_title(); ?></h4>
-                            <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
-                            <?php if($blogct <= 999) { ?> <!-- Change this number to make fewer excerpts show up -->
-                                <div class="newsy"><?php the_excerpt(); ?></div>
-                                <div class="read-more">+ open +</div>
-                            <?php } ?>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
-                <?php } 
-                wp_reset_query(); ?>
-            </div><!-- close sidebar -->
-            <div class="blog-single-content" id="blog-ajax-container">
-                <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
-                
-            </div><!-- close blog content-->
-        </div>
-    </div>
+    
 </div>
 <?php get_footer(); ?>
