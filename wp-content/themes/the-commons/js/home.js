@@ -66,17 +66,6 @@ jQuery.extend(jQuery.fn, {
         }
         //check on page load if a post should be loaded
         loadPostFromURL();
-
-        //Mutation observer to watch for changes in popcontainer and load the post if so. This was breaking urls
-        /*var popoutContainer = new MutationObserver(function() {
-            loadPostFromURL();
-        });
-
-        //watch said popout-container for changes and trigger load post function if so (var popoutContainer = new MutationObserver(function() .... )
-        popoutContainer.observe($("#popout-container")[0], {
-            attributes: true
-        });
-        */
         
         //Load post on popstate change
         window.addEventListener('popstate', function() {
