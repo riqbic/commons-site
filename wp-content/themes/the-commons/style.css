@@ -997,8 +997,7 @@ h5{
 }
 
 .noscroll{
-    position: fixed !important;
-    overflow-y: scroll !important;
+    overflow-y: hidden !important;
 }
 
 .tcb-content{
