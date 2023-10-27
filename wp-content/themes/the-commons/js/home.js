@@ -123,13 +123,19 @@ jQuery.extend(jQuery.fn, {
             loadPostFromURL();
         });
 
+        var top = 0;
         function setActivePopup(category) {
             loadedPost = 0;
+            top = window.scrollY;
             var html = $('#preview-content #'+category+'-html').html();
             setPopoutSize();
             opacityToggle(1);
-            if(window.scrollY < 120){
-                scrollTo(0,120);
+            if(top < 120 && window.innerWidth > 768){
+                window.scrollTo({top: 120, left: 0, behavior: "smooth",});
+                top = 120;
+            }
+            else if(window.innerWidth > 768){
+                $('body').addClass('noscroll').css('top',-top);
             }
             $('#popout-shadow').css('display','block');
             $('#popout-container').html(html).removeClass('active-articles').removeClass('active-videos').addClass('active-'+category).css('display','block');
@@ -144,6 +150,12 @@ jQuery.extend(jQuery.fn, {
             history.pushState('close', "",home_js.blog_url);
             $('#popout-container').css('display','none');
             $('#popout-shadow').css('display','none');
+            $('body').removeClass('noscroll');
+            window.scrollTo({
+                top: top,
+                left: 0,
+                behavior: "auto",
+              });
         }
 
         //load the post in the popout contain when it's sidebar item is clicked
