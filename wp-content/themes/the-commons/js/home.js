@@ -116,9 +116,16 @@ jQuery.extend(jQuery.fn, {
             e.preventDefault();
             //get category
             var category = $(this).attr('data-category');
-            if(category == 'paid-videos' || category == 'unpaid-videos'){category = 'videos'}
+            console.log(category);
             //get link and set it in the url
             var link = $(this).attr('href');
+            console.log(link);
+            link = link.replace('paid-videos','videos');
+            link = link.replace('unpaid-videos','videos');
+            if(category == 'paid-videos' || category == 'unpaid-videos'){
+                category = 'videos';
+            }
+            console.log(link);
             history.pushState(category,"",link);
             setActivePopup(category);
             loadPostFromURL();
