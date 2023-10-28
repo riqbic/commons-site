@@ -559,7 +559,7 @@ h5{
 }
 .menu-mobile li ul li a{
     color: white;
-    text-decoration: none;
+    text-decoration: none !important;
     text-wrap: nowrap;
 }
 .menu li:hover ul {
