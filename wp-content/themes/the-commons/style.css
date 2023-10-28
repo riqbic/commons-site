@@ -551,7 +551,7 @@ h5{
 }
 .menu li ul li a{
     color: grey;
-    text-decoration: none;
+    text-decoration: none !important;
     text-wrap: nowrap;
 }
 .menu-mobile li ul li{
@@ -794,8 +794,8 @@ h5{
 
 .posts-archive-text{
     color: white;
-    text-decoration: none;
-    padding: 10px !important;
+    text-decoration: none !important;
+    padding: 0px !important;
 }
 
 .blog-flex-container{
