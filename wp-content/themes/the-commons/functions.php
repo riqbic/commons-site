@@ -171,35 +171,33 @@ add_filter( 'woocommerce_memberships_thank_you_message', 'cb_memberships_thank_y
  */
 
  //FIVERR HERE
-add_filter('woocommerce_thankyou_order_received_text','cb_thank_you_product_links',10,2);
-function cb_thank_you_product_links( $thank_you_message, $order ) {
-    //If you want to change the message entirely, uncomment the next line...
-    //$thank_you_message = 'Thanks for purchasing!';
+add_action('woocommerce_thankyou', 'custom_thankyou_page', 5);
+function custom_thankyou_page($order_id) {
+    // Get the order object
+    $order = wc_get_order($order_id);
 
-    //Make sure acf is active
-    if(function_exists('get_field')) {
-        // Get and Loop Over Order Items
-        foreach ( $order->get_items() as $item_id => $item ) {
-            $product_id = $item->get_product_id();
-            if(have_rows('checkout_links',$product_id)) {
-                $thank_you_message .= '<p class="thank-you-message-text">Your purchase gives you access to ';
-                while(have_rows('checkout_links',$product_id)) {
-                    the_row();
-                    $link = get_sub_field('link');
-                    $title = get_sub_field('title');
-                    //Open to single post
-                    $thank_you_message .= '<a href="'.$link.'" title="'.$title.'">'.$title.'</a>';
-                    //Open to popup 
-                    //$thank_you_message .= '<a href="'.get_bloginfo('url').'?pop=features&post_id='.$link_id.'" title="'.get_the_title($link_id).'">'.get_the_title($link_id).'</a>';
-                    $thank_you_message .= ', ';
-                }
-                $thank_you_message = substr($thank_you_message, 0, -2);
-                $thank_you_message .= '.</p>';
-                $thank_you_message .= '</br><button class="watch-now-button"><a href="https://thecommons.boston/?pop=videos&post_id=1667" title="Watch Now">Watch Now</a></button>';
+    // Initialize an empty array to store product links
+    $product_links = array();
+
+    // Loop through order items
+    foreach ($order->get_items() as $item_id => $item) {
+        $product_id = $item->get_product_id();
+        $checkout_links = get_field('checkout_links', $product_id);
+
+        if ($checkout_links) {
+            foreach ($checkout_links as $link) {
+                $title = esc_html($link['title']);
+                $link_url = esc_url($link['link']);
+                $product_links[] = '<a href="' . $link_url . '" title="' . $title . '">' . $title . '</a>';
             }
         }
     }
-    return $thank_you_message;
+
+    // Output the HTML for product links and the "Watch Now" button
+    if (!empty($product_links)) {
+        echo '<p class="thank-you-message-text">Your purchase gives you access to ' . implode(', ', $product_links) . '.</p>';
+        echo '<button class="watch-now-button"><a href="https://thecommons.boston/?pop=videos&post_id=1667" title="Watch Now">Watch Now</a></button>';
+    }
 }
 
 //auto complete virtual and downloadable orders
