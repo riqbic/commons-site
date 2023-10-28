@@ -169,6 +169,8 @@ add_filter( 'woocommerce_memberships_thank_you_message', 'cb_memberships_thank_y
 /**
  * Add extra links defined in the products
  */
+
+ //FIVERR HERE
 add_filter('woocommerce_thankyou_order_received_text','cb_thank_you_product_links',10,2);
 function cb_thank_you_product_links( $thank_you_message, $order ) {
     //If you want to change the message entirely, uncomment the next line...
