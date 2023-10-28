@@ -1,26 +1,26 @@
 /* mobile menu event listeners, added to top because it wasn't firign lower - guessing there is a bug in your code somewhere... */
 var menuItems = document.getElementsByClassName("has-children");
-// var toggleActive = function() {
-//     this.classList.toggle("is-active");
-// };
-// for (var i = 0; i < menuItems.length; i++) {
-//     menuItems[i].addEventListener('click', toggleActive, false);
-// }
+var toggleActive = function() {
+    this.classList.toggle("is-active");
+};
+for (var i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener('click', toggleActive, false);
+}
 
-for (let i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener('click', function() {
-      if (this.classList.contains('is-active')) {
-        this.classList.remove('is-active');
-      } else {
-        this.classList.add('is-active');
-        for (let j = 0; j < menuItems.length; j++) {
-          if (j !== i && menuItems[j].classList.contains('is-active')) {
-            menuItems[j].classList.remove('is-active');
-          }
-        }
-      }
-    });
-  }
+// for (let i = 0; i < menuItems.length; i++) {
+//     menuItems[i].addEventListener('click', function() {
+//       if (this.classList.contains('is-active')) {
+//         this.classList.remove('is-active');
+//       } else {
+//         this.classList.add('is-active');
+//         for (let j = 0; j < menuItems.length; j++) {
+//           if (j !== i && menuItems[j].classList.contains('is-active')) {
+//             menuItems[j].classList.remove('is-active');
+//           }
+//         }
+//       }
+//     });
+//   }
 
 //global variables
 var popout_state = 0;

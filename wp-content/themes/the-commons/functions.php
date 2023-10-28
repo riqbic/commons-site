@@ -193,7 +193,7 @@ function cb_thank_you_product_links( $thank_you_message, $order ) {
                 }
                 $thank_you_message = substr($thank_you_message, 0, -2);
                 $thank_you_message .= '.</p>';
-                $thank_you_message .= '</br><button class="watch-now-button"><a href="https://thecommons.boston/?pop=features" title="Watch Now">Watch Now</a></button>';
+                $thank_you_message .= '</br><button class="watch-now-button"><a href="https://thecommons.boston/?pop=videos&post_id=1667" title="Watch Now">Watch Now</a></button>';
             }
         }
     }
