@@ -116,6 +116,7 @@ jQuery.extend(jQuery.fn, {
             e.preventDefault();
             //get category
             var category = $(this).attr('data-category');
+            if(category == 'paid-videos' || category == 'unpaid-videos'){category = 'videos'}
             //get link and set it in the url
             var link = $(this).attr('href');
             history.pushState(category,"",link);
