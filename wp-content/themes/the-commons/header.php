@@ -86,7 +86,7 @@
                     //Incremenent blog item count
                     ++$blog_item_count; ?>
                     <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
+                        <a href="<?php echo get_bloginfo('url'); ?>?pop=videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
                     </li>
                     <?php 
                 }
@@ -174,7 +174,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <a href="<?php echo get_bloginfo('url'); ?>?pop=paid-videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
+                            <a href="<?php echo get_bloginfo('url'); ?>?pop=videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
                         </li>
                         <?php 
                     }
