@@ -165,7 +165,7 @@ img {
     .caption-container{
         position: static !important;
         margin: auto !important;
-        width: 39% !important;
+        width: 80% !important;
         transform: none !important;
     }
     .blog-flex-container .blog-sidebar{
