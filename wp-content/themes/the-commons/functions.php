@@ -189,7 +189,7 @@ function custom_thankyou_page($order_id) {
                 $title = esc_html($link['title']);
                 $link_url = esc_url($link['link']);
                 $product_links[] = '<a href="' . $link_url . '" title="' . $title . '">' . $title . '</a>';
-                $product_urls[] = $link_url
+                $product_urls[] = $link_url;
             }
         }
     }
