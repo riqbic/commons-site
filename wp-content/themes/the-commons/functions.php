@@ -196,7 +196,7 @@ function custom_thankyou_page($order_id) {
     // Output the HTML for product links and the "Watch Now" button
     if (!empty($product_links)) {
         echo '<p class="thank-you-message-text">Your purchase gives you access to ' . implode(', ', $product_links) . '.</p>';
-        echo '<button class="watch-now-button"><a href="https://thecommons.boston/?pop=videos&post_id=1667" title="Watch Now">Watch Now</a></button>';
+        echo '<button class="watch-now-button"><a href="' . $product_links[0] . '" title="Watch Now">Watch Now</a></button>';
     }
 }
 
