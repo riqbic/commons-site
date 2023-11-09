@@ -189,6 +189,7 @@ function custom_thankyou_page($order_id) {
                 $title = esc_html($link['title']);
                 $link_url = esc_url($link['link']);
                 $product_links[] = '<a href="' . $link_url . '" title="' . $title . '">' . $title . '</a>';
+                $product_urls[] = $link_url
             }
         }
     }
@@ -196,7 +197,7 @@ function custom_thankyou_page($order_id) {
     // Output the HTML for product links and the "Watch Now" button
     if (!empty($product_links)) {
         echo '<p class="thank-you-message-text">Your purchase gives you access to ' . implode(', ', $product_links) . '.</p>';
-        echo '<button class="watch-now-button"><a href="' . $product_links[0] . '" title="Watch Now">Watch Now</a></button>';
+        echo '<button class="watch-now-button"><a href="' . $product_urls[0] . '" title="Watch Now">Watch Now</a></button>';
     }
 }
 
