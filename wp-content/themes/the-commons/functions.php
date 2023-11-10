@@ -371,6 +371,6 @@ function add_open_graph_tags() {
     echo '<meta property="og:title" content="The Commons" />' . "\n";
     echo '<meta property="og:description" content="By the People, for the People." />' . "\n";
     echo '<meta property="og:image" content="https://thecommons.boston/wp-content/uploads/2023/06/JOD_group_pallets-scaled-e1686195668487.jpg" />' . "\n";
-add_action('wp_head', 'add_open_graph_tags');
 }
+add_action('wp_head', 'add_open_graph_tags');
 ?>
