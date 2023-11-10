@@ -348,4 +348,22 @@ function commons_comment_form_logged_in($args_logged_in) {
     $args_logged_in .= ' <a href="'.wp_logout_url().'">Log out?</a>';
     return $args_logged_in;
 }
+
+//facebook feature image set
+
+function add_open_graph_tags() {
+    echo '<meta property="og:title" content="' . get_the_title() . '" />' . "\n";
+    echo '<meta property="og:description" content="' . get_the_excerpt() . '" />' . "\n";
+
+    // Check if a featured image is set, otherwise, use the default image
+    if (has_post_thumbnail()) {
+        $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+        echo '<meta property="og:image" content="' . esc_url($thumbnail[0]) . '" />' . "\n";
+    } else {
+        // Use your default image URL
+        echo '<meta property="og:image" content="https://thecommons.boston/wp-content/uploads/2023/06/JOD_group_pallets-scaled-e1686195668487.jpg" />' . "\n";
+    }
+}
+
+add_action('wp_head', 'add_open_graph_tags');
 ?>
