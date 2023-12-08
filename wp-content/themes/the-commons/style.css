@@ -200,7 +200,7 @@ img {
         padding: 0 !important;
     }
     .youtube-wide{
-        width: 100%;
+        width: 100% !important;
     }
 }
 
