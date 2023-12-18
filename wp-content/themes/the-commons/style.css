@@ -577,6 +577,7 @@ h5{
     grid-template-columns: auto auto auto auto auto;
     align-items: center;
     justify-content: space-between;
+    gap: 20px 20px;
 }
 .menu li ul li a:hover{
     color: white;
