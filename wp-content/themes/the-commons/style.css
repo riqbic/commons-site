@@ -33,6 +33,11 @@ Version: 1.38
     src: url('fonts/HelmswaldPost.otf') format("opentype");
 }
 
+@font-face {
+    font-family: KarnakProCondBlack;
+    src: url('fonts/KarnakPro-CondensedBlack.otf') format("opentype");
+}
+
 img {
     max-width: 100%;
     border: 1px solid black;
@@ -262,7 +267,7 @@ h1, h2, h3, h4{
 
 /*title and banner 6.854rem*/
 h1{
-    font-family: CenturyOldStyleSmallCapsRegular;
+    font-family: KarnakProCondBlack;
     font-size: 2.618rem;
 }
 
