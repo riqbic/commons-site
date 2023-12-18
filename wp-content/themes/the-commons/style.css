@@ -317,7 +317,6 @@ h5{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 7px;
 }
 
 .block-header-text{
@@ -326,7 +325,7 @@ h5{
     line-height: .75;
     max-height: 100%;
     color: white !important;
-    font-size: 4rem;
+    font-size: 5rem;
     background-color: black;
 }
 
@@ -564,7 +563,6 @@ h5{
 .menu li ul li a{
     color: grey;
     text-decoration: none !important;
-    text-wrap: nowrap;
 }
 .menu-mobile li ul li{
     list-style: none;
