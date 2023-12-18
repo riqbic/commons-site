@@ -25,12 +25,12 @@ if ( ! empty( $block['align'] ) ) {
 // Load values and assign defaults.
 $text             = get_field( 'caption' ) ?: '';
 $label           = get_field( 'caption-label' ) ?: '';
-$image_id            = get_field( 'figure' ) ?: 295;
+$image_id            = get_field( 'figure' ) ?: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="; //inserts a blank 26 byte gif if no image specified
 
 ?>
 <div class="<?php echo esc_attr( $class_name )?>" id="anchor-<?php echo $id?>">
     <div class="caption-container" id="<?php echo $id?>">
-        <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" width="15%" height="auto">
+        <img class="caption-image" src="<?php echo esc_html( $image_id ); ?>" width="15%" height="auto">?>
         <div class="caption-label"><?php echo esc_html( $label ); ?></div>
         <div class="caption-text"><?php echo esc_html( $text ); ?></div>
     </div>
