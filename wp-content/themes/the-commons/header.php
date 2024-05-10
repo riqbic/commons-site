@@ -36,73 +36,89 @@
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
-        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
-        <li class="menu-item has-children" id="articles-menu-item">Articles
-            <ul>
-            <?php 
-            $post_args = array(
-                'posts_per_page'	=> 9,
-                'post_type'		=> 'post',
-                'post_status' => 'publish',
-                'category__in' => array(34)
-            );
-            $posts_query = new WP_Query( $post_args );
-            $blogct = 0;
-            if( $posts_query->have_posts() ) {
-                ++$blogct;
-                //Declare an iterator for blog-item class
-                $blog_item_count = 0;
-                while($posts_query->have_posts() ) {
-                    $posts_query->the_post(); 
-                    //Incremenent blog item count
-                    ++$blog_item_count; ?>
-                    <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="articles"><?php the_title(); ?></a>
-                    </li>
-                    <?php 
-                }
-            } 
-            wp_reset_query(); ?>
-            <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
-            </ul>
-        </li>
-        <li class="menu-item has-children" id="videos-menu-item">Videos
-            <ul>
-            <?php 
-            $post_args = array(
-                'posts_per_page'	=> 9,
-                'post_type'		=> 'post',
-                'post_status' => 'publish',
-                'category__in' => array(28,31)
-            );
-            $posts_query = new WP_Query( $post_args );
-            $blogct = 0;
-            if( $posts_query->have_posts() ) {
-                ++$blogct;
-                //Declare an iterator for blog-item class
-                $blog_item_count = 0;
-                while($posts_query->have_posts() ) {
-                    $posts_query->the_post(); 
-                    //Incremenent blog item count
-                    ++$blog_item_count; ?>
-                    <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                        <a href="<?php echo get_bloginfo('url'); ?>?pop=videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
-                    </li>
-                    <?php 
-                }
-            } 
-            wp_reset_query(); ?>
-            <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
-            </ul>
-        </li>
-        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
-        <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/my-account">
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <li class="menu-item has-children" id="articles-menu-item">Articles
+                <ul>
+                <?php 
+                $post_args = array(
+                    'posts_per_page'	=> 9,
+                    'post_type'		=> 'post',
+                    'post_status' => 'publish',
+                    'category__in' => array(34)
+                );
+                $posts_query = new WP_Query( $post_args );
+                $blogct = 0;
+                if( $posts_query->have_posts() ) {
+                    ++$blogct;
+                    //Declare an iterator for blog-item class
+                    $blog_item_count = 0;
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        //Incremenent blog item count
+                        ++$blog_item_count; ?>
+                        <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
+                            <a href="<?php echo get_bloginfo('url'); ?>?pop=articles&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="articles"><?php the_title(); ?></a>
+                        </li>
+                        <?php 
+                    }
+                } 
+                wp_reset_query(); ?>
+                <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
+                </ul>
+            </li>
+            <li class="menu-item has-children" id="videos-menu-item">Videos
+                <ul>
+                <?php 
+                $post_args = array(
+                    'posts_per_page'	=> 9,
+                    'post_type'		=> 'post',
+                    'post_status' => 'publish',
+                    'category__in' => array(28,31)
+                );
+                $posts_query = new WP_Query( $post_args );
+                $blogct = 0;
+                if( $posts_query->have_posts() ) {
+                    ++$blogct;
+                    //Declare an iterator for blog-item class
+                    $blog_item_count = 0;
+                    while($posts_query->have_posts() ) {
+                        $posts_query->the_post(); 
+                        //Incremenent blog item count
+                        ++$blog_item_count; ?>
+                        <li class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
+                            <a href="<?php echo get_bloginfo('url'); ?>?pop=videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
+                        </li>
+                        <?php 
+                    }
+                } 
+                wp_reset_query(); ?>
+                <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <?php if(is_user_logged_in()) {
-                echo 'My Account';
+                echo '<li class="menu-item has children">My Account
+                        <ul>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/orders/">Orders</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/edit-address/">Address</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/payment-methods/">Payment Methods</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/edit-account/">Account Details</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="',wp_logout_url(get_permalink()),'">Logout</a>
+                            </li>
+                        </ul>
+                    </li>';
                 } else {
-                echo 'Login/Register';
+                echo '<li class="menu-item"><a class ="menu-item" href="',get_bloginfo('url'),'/my-account">Login/Register</a></li>';
             }?>
-        </a></li>
         </ul>
     </div>
 </div>
@@ -185,11 +201,28 @@
             </li>
             <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
-            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/my-account">
             <?php if(is_user_logged_in()) {
-                echo 'My Account';
+                echo '<li class="menu-item-mobile has-children"><div class="menu-text-mobile">My Account</div>
+                        <ul>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/orders/">Orders</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/edit-address/">Address</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/payment-methods/">Payment Methods</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="https://thecommons.boston/my-account/edit-account/">Account Details</a>
+                            </li>
+                            <li class="blog-item">
+                                <a href="',wp_logout_url(get_permalink()),'">Logout</a>
+                            </li>
+                        </ul>
+                    </li>';
                 } else {
-                echo 'Login/Register';
+                echo '<li class="menu-item-mobile"><a class="menu-text-mobile" href="',get_bloginfo('url'),'/my-account">Login/Register</a></li>';
             }?>
         </a></li>
         </ul>
