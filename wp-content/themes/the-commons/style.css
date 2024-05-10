@@ -5,7 +5,7 @@ Author URI: http://reduker.wordpress.com
 Description: Theme for The Commons Parkour brand
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.39
+Version: 1.40
 */
 @font-face {
     font-family: CenturyOldStyleRegular;
@@ -572,12 +572,21 @@ h5{
     text-decoration: none !important;
     text-wrap: nowrap;
 }
-.menu li:hover ul {
+.menu li:hover > ul {
+    width: 100vw; /* make it 100% of the viewport width (vw) */
+    margin-left: calc((100% - 100vw) / 2);  /* then remove the gap to the left of the container with this equation */
+    display: block;
+    background: #000000;
+}
+.menu li:hover > ul div {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     align-items: center;
     justify-content: space-between;
     gap: 20px 20px;
+    position: relative;
+    width: 1240px;
+    margin: 0 auto;
 }
 .menu li ul li a:hover{
     color: white;

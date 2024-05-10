@@ -373,4 +373,49 @@ function add_open_graph_tags() {
     echo '<meta property="og:image" content="https://thecommons.boston/wp-content/uploads/2023/06/JOD_group_pallets-scaled-e1686195668487.jpg" />' . "\n";
 }
 add_action('wp_head', 'add_open_graph_tags');
+
+add_action( 'init', 'wk_custom_endpoint' );
+function wk_custom_endpoint() {
+    add_rewrite_endpoint( 'my-videos', EP_ROOT | EP_PAGES );
+}
+
+add_action( "woocommerce_account_my-videos_endpoint", 'my_courses_tab_content');
+function my_courses_tab_content() {
+    $user = wp_get_current_user();
+    $user_id = $user->ID;
+    $customer_orders = wc_get_orders(
+        array(
+            'type'        => 'shop_order',
+            'limit'       => - 1,
+            'customer_id' => $user_id,
+            'status'      => 'completed',
+        )
+    );
+    if(empty($customer_orders)) {
+        echo 'You have not purchased any videos.';
+    } else {
+        echo '<ul>';
+        foreach($customer_orders as $order) {
+            foreach ( $order->get_items() as $item_id => $item ) {$product_id = $item->get_product_id();
+                $checkout_links = get_field('checkout_links', $product_id);
+        
+                if ($checkout_links) {
+                    foreach ($checkout_links as $link) {
+                        $title = esc_html($link['title']);
+                        $link_url = esc_url($link['link']);
+                        echo '<li><a href="' . $link_url . '" title="' . $title . '">' . $title . '</a></li>';
+                    }
+                }
+            }
+        }
+        echo '</ul>';
+    }
+}
+
+
+add_filter( 'woocommerce_account_menu_items', 'wk_new_menu_items' );
+function wk_new_menu_items( $items ) {
+    $items[ 'my-videos' ] = __( 'My Videos', 'webkul' );
+    return $items;
+}
 ?>

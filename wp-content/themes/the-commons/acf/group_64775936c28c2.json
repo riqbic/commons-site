@@ -3,6 +3,31 @@
     "title": "Category Options",
     "fields": [
         {
+            "key": "field_663e307d9effe",
+            "label": "Category Displays",
+            "name": "category_displays",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "content": "Content",
+                "links": "Links"
+            },
+            "default_value": "content",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_64775936e9442",
             "label": "Sidebar Display",
             "name": "sidebar_display",
@@ -46,5 +71,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685543318
+    "modified": 1715351713
 }
