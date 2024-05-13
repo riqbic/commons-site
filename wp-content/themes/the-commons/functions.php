@@ -395,15 +395,19 @@ function my_courses_tab_content() {
         echo 'You have not purchased any videos.';
     } else {
         echo '<ul>';
+        $purchased_products = array();
         foreach($customer_orders as $order) {
-            foreach ( $order->get_items() as $item_id => $item ) {$product_id = $item->get_product_id();
-                $checkout_links = get_field('checkout_links', $product_id);
-        
-                if ($checkout_links) {
-                    foreach ($checkout_links as $link) {
-                        $title = esc_html($link['title']);
-                        $link_url = esc_url($link['link']);
-                        echo '<li><a href="' . $link_url . '" title="' . $title . '">' . $title . '</a></li>';
+            foreach ( $order->get_items() as $item_id => $item ) {
+                $product_id = $item->get_product_id();
+                if(!in_array($product_id,$purchased_products)) {
+                    $purchased_products[] = $product_id;
+                    $checkout_links = get_field('checkout_links', $product_id);
+                    if ($checkout_links) {
+                        foreach ($checkout_links as $link) {
+                            $title = esc_html($link['title']);
+                            $link_url = esc_url($link['link']);
+                            echo '<li><a href="' . $link_url . '" title="' . $title . '">' . $title . '</a></li>';
+                        }
                     }
                 }
             }
