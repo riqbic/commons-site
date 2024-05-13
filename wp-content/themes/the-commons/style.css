@@ -558,6 +558,7 @@ h5{
 }
 .menu li ul li{
     list-style: none;
+    text-align: center;
     margin: 0 !important;
 }
 .menu li ul li a{
@@ -580,12 +581,12 @@ h5{
 }
 .menu li:hover > ul div {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fill, 186px);
     align-items: center;
     justify-content: space-between;
     gap: 20px 20px;
     position: relative;
-    width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .menu li ul li a:hover{

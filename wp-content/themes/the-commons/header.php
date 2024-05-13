@@ -176,7 +176,7 @@
                     }
                 } 
                 wp_reset_query(); ?>
-                <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
+                <li><a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/articles/">+ archive +</a></li>
                 </ul>
             </li>
             <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Videos</div>
@@ -205,7 +205,7 @@
                     }
                 } 
                 wp_reset_query(); ?>
-                <li><a class="posts-archive-text" href="<?php echo get_latest_post_link(); ?>">+ archive +</a></li>
+                <li><a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/videos/">+ archive +</a></li>
                 </ul>
             </li>
             <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
@@ -214,16 +214,19 @@
                 echo '<li class="menu-item-mobile has-children"><div class="menu-text-mobile">My Account</div>
                         <ul>
                             <li class="blog-item">
-                                <a href="https://thecommons.boston/my-account/orders/">Orders</a>
+                                <a href="'.get_bloginfo('url').'/my-account/my-videos/">My Videos</a>
+                            </li>  
+                            <li class="blog-item">
+                                <a href="'.get_bloginfo('url').'/my-account/orders/">Orders</a>
                             </li>
                             <li class="blog-item">
-                                <a href="https://thecommons.boston/my-account/edit-address/">Address</a>
+                                <a href="'.get_bloginfo('url').'/my-account/edit-address/">Address</a>
                             </li>
                             <li class="blog-item">
-                                <a href="https://thecommons.boston/my-account/payment-methods/">Payment Methods</a>
+                                <a href="'.get_bloginfo('url').'/my-account/payment-methods/">Payment Methods</a>
                             </li>
                             <li class="blog-item">
-                                <a href="https://thecommons.boston/my-account/edit-account/">Account Details</a>
+                                <a href="'.get_bloginfo('url').'/my-account/edit-account/">Account Details</a>
                             </li>
                             <li class="blog-item">
                                 <a href="',wp_logout_url(get_permalink()),'">Logout</a>
