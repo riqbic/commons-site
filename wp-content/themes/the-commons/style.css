@@ -662,9 +662,9 @@ h5{
     top: 91px;
     left: -140%;
     width: 100%;
-    height: calc(100% - 91px);
+    height: calc(100% + 100px); /*this is because of weird ios viewport height changing*/
     margin: 0;
-    padding: 80px 0;
+    padding: 80px 0px 271px 0px;/*see above*/
     list-style: none;
     background-color: black;
     transition-duration: .25s;
