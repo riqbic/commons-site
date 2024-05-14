@@ -104,12 +104,12 @@ jQuery.extend(jQuery.fn, {
             setCurrentPostInActivePopup($this);
         });
 
-        //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
-        $('.has-children .blog-item a').on('click',function(e) {
-            e.preventDefault();
-            //close menu
-            $('#menu-toggle').prop('checked',false);
-        });
+    //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
+    $('.has-children .pop-item a').on('click',function(e) {
+        e.preventDefault();
+        //close menu
+        $('#menu-toggle').prop('checked',false);
+    });
 
         //Load the ponst instead of using the link on sub items in nav (desktop and mobile)
         $('.load-from-url').on('click',function(e) {
