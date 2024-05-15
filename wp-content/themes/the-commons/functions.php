@@ -408,7 +408,7 @@ function my_courses_tab_content() {
                             $title = esc_html($link['title']);
                             $link_url = esc_url($link['link']);
                             echo '<li><a href="' . $link_url . '" title="' . $title . '">' . $title . '</a></li>';
-                            echo '<img src="' . $image[0] . 'data-id="' . $loop->post->ID . '">';
+                            echo '<img src="' . $image[0] . '">';
                         }
                     }
                 }
