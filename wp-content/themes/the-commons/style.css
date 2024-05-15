@@ -148,7 +148,6 @@ img {
         border-left: none !important;
         margin-bottom: 20px;
         padding-bottom: 150px !important;
-        border-bottom: 3px double black;
     }
     .post-content{
         width: 100% !important;
@@ -244,6 +243,10 @@ body{
     display: flex;
     align-items: center;
     height: 52px;
+}
+
+a:visited{
+    color: #0000EE;
 }
 
 p{
@@ -916,6 +919,10 @@ h5{
 
 .post-content-archive{
     width: 70%;
+}
+
+.archive-link{
+    padding: 5px 0px 5px 0px;
 }
 
 .blog-flex-container > .blog-single-content > .post-content{
