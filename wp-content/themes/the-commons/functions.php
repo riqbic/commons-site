@@ -407,8 +407,7 @@ function my_courses_tab_content() {
                         foreach ($checkout_links as $link) {
                             $title = esc_html($link['title']);
                             $link_url = esc_url($link['link']);
-                            echo '<li><a href="' . $link_url . '" title="' . $title . '">' . $title . '</a></li>';
-                            echo '<img src="' . $image[0] . '">';
+                            echo '<li><a href="' . $link_url . '" title="' . $title . '">' . '<img src="' . $image[0] . '">' . '</a></li>';
                         }
                     }
                 }
