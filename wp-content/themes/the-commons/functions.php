@@ -394,7 +394,7 @@ function my_courses_tab_content() {
     if(empty($customer_orders)) {
         echo 'You have not purchased any videos.';
     } else {
-        echo '<ul>';
+        echo '<ul class="my-videos-list">';
         $purchased_products = array();
         foreach($customer_orders as $order) {
             foreach ( $order->get_items() as $item_id => $item ) {
@@ -407,7 +407,7 @@ function my_courses_tab_content() {
                         foreach ($checkout_links as $link) {
                             $title = esc_html($link['title']);
                             $link_url = esc_url($link['link']);
-                            echo '<li><a href="' . $link_url . '" title="' . $title . '">' . '<img src="' . $image[0] . '">' . '</a></li>';
+                            echo '<li class="my-videos-item"><a href="' . $link_url . '" title="' . $title . '">' . '<img src="' . $image[0] . '">' . '</a></li>';
                         }
                     }
                 }

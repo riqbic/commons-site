@@ -1093,6 +1093,10 @@ h5{
     box-sizing: border-box;
 }
 
+.woocommerce-account .woocommerce-MyAccount-navigation{
+    display: none;
+}
+
 #shop-preview > div > ul > li > .add_to_cart_button{
     display: none;
 }
@@ -1172,4 +1176,14 @@ cite .fn{
 
 .slick-slide img{
     width: 100%;
+}
+
+.my-videos-item{
+    padding: 20px;
+}
+
+.my-videos-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
