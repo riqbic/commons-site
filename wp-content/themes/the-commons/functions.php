@@ -402,11 +402,13 @@ function my_courses_tab_content() {
                 if(!in_array($product_id,$purchased_products)) {
                     $purchased_products[] = $product_id;
                     $checkout_links = get_field('checkout_links', $product_id);
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product_id ), 'single-post-thumbnail' );
                     if ($checkout_links) {
                         foreach ($checkout_links as $link) {
                             $title = esc_html($link['title']);
                             $link_url = esc_url($link['link']);
                             echo '<li><a href="' . $link_url . '" title="' . $title . '">' . $title . '</a></li>';
+                            echo '<img src="' . $image[0] . 'data-id="' . $loop->post->ID . '">';
                         }
                     }
                 }
