@@ -34,8 +34,8 @@
             while($posts_query->have_posts() ) {
                 $posts_query->the_post();
                 if($category_displays == 'links') {
-                    echo '<div class="archive-link">';
-                        echo '<a href="'.get_bloginfo('url').'?pop='.$cat_slug.'&post_id='.get_the_ID().'" title="'.get_the_title().'">';
+                    echo '<div class="archive-item">';
+                        echo '<a class="archive-link" href="'.get_bloginfo('url').'?pop='.$cat_slug.'&post_id='.get_the_ID().'" title="'.get_the_title().'">';
                             echo get_the_title();
                         echo '</a>';
                     echo '</div>';

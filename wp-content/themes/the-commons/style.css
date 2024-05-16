@@ -245,10 +245,6 @@ body{
     height: 52px;
 }
 
-a:visited{
-    color: #0000EE;
-}
-
 p{
     font-family: CenturyOldStyleRegular;
     font-size: 1rem;
@@ -921,9 +917,14 @@ h5{
     width: 70%;
 }
 
-.archive-link{
+.archive-item{
     padding: 5px 0px 5px 0px;
 }
+
+.archive-link:visited{
+    color: #0000EE;
+}
+
 
 .blog-flex-container > .blog-single-content > .post-content{
     width: 70%;
