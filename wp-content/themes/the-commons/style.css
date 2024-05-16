@@ -1099,6 +1099,8 @@ h5{
 .woocommerce-MyAccount-content{
     padding: 0 20px !important;
     box-sizing: border-box;
+    width: fit-content;
+    margin: auto;
 }
 
 .woocommerce-account .woocommerce-MyAccount-navigation{
@@ -1188,10 +1190,16 @@ cite .fn{
 
 .my-videos-item{
     padding: 20px;
+    flex-basis: 25vw;
+    max-width: 500px;
+    min-width: 300px;
 }
 
 .my-videos-list{
     list-style: none;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
     padding: 0;
+    justify-content: center;
 }
