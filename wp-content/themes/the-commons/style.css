@@ -1208,3 +1208,9 @@ cite .fn{
 .no-border{
     border: none !important;
 }
+
+.cart-button-custom-style{
+    border: solid blue;
+    padding: 5px;
+    border-width: 1px 3px 3px 1px;
+}
