@@ -16,7 +16,7 @@
             <?php get_sidebar('post-archive'); ?>
         </div>
     <?php } ?>
-    <div class="blog-single-content <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } ?>">
+    <div class="blog-single-content no-border <?php if($show_sidebar != 'hide-sidebar') { echo 'has-sidebar'; } ?>">
         <?php //Query first post that is published
         if($category_displays == 'links') {
             $posts_per_page = -1;
