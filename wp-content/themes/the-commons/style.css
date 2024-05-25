@@ -1209,8 +1209,25 @@ cite .fn{
     border: none !important;
 }
 
-.cart-button-custom-style{
+.cart-button-custom-style > button{
     border: solid blue;
     padding: 5px;
     border-width: 1px 3px 3px 1px;
+}
+
+.cart-button-custom-style > button:hover{
+    border: solid blue;
+    padding: 5px;
+    border-width: 3px 1px 1px 3px;
+    cursor: pointer;
+}
+
+.cart-button-custom-style > .quantity{
+    display: none;
+}
+
+.cart-button-custom-style{
+    display: flex;
+    height: 40px;
+    gap: 20px;
 }
