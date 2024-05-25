@@ -1231,3 +1231,7 @@ cite .fn{
     height: 40px;
     gap: 20px;
 }
+
+#nyp-1{
+    height: -webkit-fill-available;
+}
