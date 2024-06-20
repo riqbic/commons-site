@@ -129,7 +129,27 @@
         </div>
         <div class="grid-item" id="events">
             <div class="grid-preview opens-popup" id="events-preview" data-popup="events">
-                <!-- Events -->
+            <?php 
+        $post_args = array(
+            'post_type'		=> 'any',
+            'post_status' => 'publish',
+            'p' => 109,
+        );
+        $posts_query = new WP_Query( $post_args );
+        if( $posts_query->have_posts() ) {
+            while($posts_query->have_posts() ) {
+                $posts_query->the_post(); 
+                ?>
+                <div class="event-container">
+                    <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                    <?php echo the_excerpt(); ?>
+                </div>
+                <?php 
+            }
+        } else { ?>
+            <p>There are no posts to show right now.</p>
+        <?php } 
+        wp_reset_query(); ?>
             </div>
         </div>
         <!--alternate method to load the blog content popout-->
