@@ -102,6 +102,7 @@ img {
     grid-template-columns: 1fr 1fr !important;
     grid-template-areas: 
     "shop-title shop-title"
+    "events events"
     "shop shop"
     "about-us about-us"
     "get-involved get-involved"
@@ -735,6 +736,7 @@ h5{
     gap: 20px 25px;
     grid-template-areas:
     "paid-videos paid-videos"
+    "events events"
     "shop-title shop-title"
     "shop shop"
     "articles about-us"
@@ -758,7 +760,7 @@ h5{
 
 #paid-videos { grid-area: paid-videos; }
 #about-us { grid-area: about-us; }
-/* #events { grid-area: events; } */
+#events { grid-area: events; }
 #shop { grid-area: shop; }
 #shop-title { grid-area: shop-title; }
 #get-involved { grid-area: get-involved; }
