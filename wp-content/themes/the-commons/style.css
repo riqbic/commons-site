@@ -102,8 +102,8 @@ img {
     grid-template-columns: 1fr 1fr !important;
     grid-template-areas: 
     "shop-title shop-title"
-    "events events"
     "shop shop"
+    "events events"
     "about-us about-us"
     "get-involved get-involved"
     "articles articles" !important
