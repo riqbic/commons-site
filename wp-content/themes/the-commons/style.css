@@ -861,7 +861,7 @@ h5{
 .blog-flex-container .blog-single-content.single-view {
     width: 100%;
     border-left: none;
-    padding: 20px 0px 20px 0px;
+    padding: 20px;
 }
 .blog-flex-container .blog-single-content.single-view > .post-content{
     width: 100%;
@@ -1242,6 +1242,10 @@ cite .fn{
     display: flex;
 }
 
+.woocommerce div.product form.cart.variations_form{
+    display: block;
+}
+
 .input-text.qty.text{
     min-height: calc(100% - 4px);
     margin: 0;
@@ -1251,4 +1255,8 @@ cite .fn{
 .single_add_to_cart_button.button.alt{
     width: 100%;
     font-family: 'CenturyOldStyleRegular';
+}
+
+.woocommerce-variation-add-to-cart.variations_button{
+    display: flex;
 }
