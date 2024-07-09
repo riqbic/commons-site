@@ -1242,13 +1242,13 @@ cite .fn{
     display: flex;
 }
 
-.input-text .qty .text{
+.input-text.qty.text{
     min-height: calc(100% - 4px);
     margin: 0;
     padding: 0;
 }
 
-.single_add_to_cart_button .button .alt{
+.single_add_to_cart_button.button.alt{
     width: 100%;
     font-family: 'CenturyOldStyleRegular';
 }
