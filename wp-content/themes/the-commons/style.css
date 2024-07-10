@@ -1123,7 +1123,7 @@ h5{
 }
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger{
@@ -1259,4 +1259,13 @@ cite .fn{
 
 .woocommerce-variation-add-to-cart.variations_button{
     display: flex;
+}
+
+.variations > tbody > tr{
+    display: flex;
+    gap: 20px;
+}
+
+.woocommerce{
+    margin: 0px 20px
 }
