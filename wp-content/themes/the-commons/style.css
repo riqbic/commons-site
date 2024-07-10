@@ -850,7 +850,7 @@ h5{
 }
 .blog-flex-container .blog-single-content.has-sidebar {
     border-left: none;
-    padding: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
 }
 .blog-flex-container .blog-single-content.single-view {
     width: 100%;
