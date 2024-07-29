@@ -141,7 +141,8 @@
                 $posts_query->the_post(); 
                 ?>
                 <div class="event-container">
-                    <h3><?php echo the_title(); ?></h3>
+                    <!-- <h3 style="text-align: center;"><?php echo the_title(); ?></h3> -->
+                    <img src="https://thecommons.boston/wp-content/uploads/2024/07/JOD_logo.png" width="250px">
                     <?php echo the_excerpt(); ?>
                 </div>
                 <?php 
