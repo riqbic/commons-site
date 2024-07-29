@@ -100,10 +100,10 @@ img {
     .grid-mobile{
     grid-auto-rows: minmax(0px,auto) !important;
     grid-template-columns: 1fr 1fr !important;
-    grid-template-areas: 
+    grid-template-areas:
+    "events events" 
     "shop-title shop-title"
     "shop shop"
-    "events events"
     "about-us about-us"
     "get-involved get-involved"
     "articles articles" !important
