@@ -234,6 +234,8 @@ jQuery.extend(jQuery.fn, {
 
         $('.opens-popup').on('click',function() {
             var div = $(this).attr('data-popup');
+            var url = '?pop='+div+'&post_id=1';
+            history.pushState(div,"",url);
             setActivePopup(div);
         });
         
