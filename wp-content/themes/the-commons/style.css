@@ -1018,11 +1018,16 @@ h5{
 .event-container{
     height: calc(100% - 50px);
     overflow-y: auto;
-    padding: 0 20px 0 20px;
+    padding: 10px 20px 0 20px;
+    border: 1px solid;
 }
 
 .event-container h3:first-child{
     display: none !important;
+}
+
+.event-container img{
+    border: none;
 }
 
 .noscroll{
