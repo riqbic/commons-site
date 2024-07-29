@@ -141,7 +141,7 @@
                 $posts_query->the_post(); 
                 ?>
                 <div class="event-container">
-                <img src="img\JOD_logo.png" alt="Join or Die" width="250px">
+                    <h3><?php echo the_title(); ?></h3>
                     <?php echo the_excerpt(); ?>
                 </div>
                 <?php 

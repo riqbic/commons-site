@@ -37,6 +37,7 @@
     <div class="menu-container">
         <ul class="menu">
             <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 6</a></li>
             <li class="menu-item has-children" id="articles-menu-item">Articles
                 <ul>
                     <div>
@@ -150,6 +151,7 @@
 
         <ul class="menu-mobile">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 6</a></li>
             <li class="menu-item-mobile has-children" id="articles-menu-item-mobile"><div class="menu-text-mobile">Articles</div>
                 <ul>
                 <?php 
