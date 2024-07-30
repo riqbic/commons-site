@@ -142,7 +142,8 @@
                 ?>
                 <div class="event-container">
                     <img src="https://thecommons.boston/wp-content/uploads/2024/07/JOD_logo.png" style="display:block; border:none; margin:auto;" width="250px">
-                    <?php echo the_excerpt(); ?>
+                    <p>Join or Die returns for a glorious sixth iteration. Spot mod, street comps, live music, community bazaar, film screening, workshops, discussion circles. JOD is the premiere USA parkour event, and this one is bigger than ever.
+                    </p>
                 </div>
                 <?php 
             }
