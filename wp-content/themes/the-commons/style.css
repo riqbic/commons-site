@@ -101,7 +101,6 @@ img {
     grid-auto-rows: minmax(0px,auto) !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-areas:
-    "events events" 
     "shop-title shop-title"
     "shop shop"
     "about-us about-us"
@@ -736,7 +735,6 @@ h5{
     gap: 20px 25px;
     grid-template-areas:
     "paid-videos paid-videos"
-    "events events"
     "shop-title shop-title"
     "shop shop"
     "articles about-us"

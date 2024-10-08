@@ -30,13 +30,13 @@
                     } else { ?>
                         <p>There are no posts to show right now.</p>
                     <?php } ?>
+                </div>
             </div>
-        </div>
-        <!-- <div class="grid-item" id="comic-strip">
-            <?php if(function_exists('commons_get_comic')) {
-                echo commons_get_comic(); 
-            } ?>
-        </div> -->
+            <!-- <div class="grid-item" id="comic-strip">
+                <?php if(function_exists('commons_get_comic')) {
+                    echo commons_get_comic(); 
+                } ?>
+            </div> -->
 
     </div>
     <div class="flex-desktop-grid grid-mobile" id="flex-desktop-grid">
@@ -130,27 +130,27 @@
         <div class="grid-item" id="events">
             <div class="grid-preview opens-popup" id="events-preview" data-popup="events">
             <?php 
-        $post_args = array(
+            $post_args = array(
             'post_type'		=> 'any',
             'post_status' => 'publish',
             'p' => 3828,
-        );
-        $posts_query = new WP_Query( $post_args );
-        if( $posts_query->have_posts() ) {
-            while($posts_query->have_posts() ) {
-                $posts_query->the_post(); 
-                ?>
-                <div class="event-container">
-                    <img src="https://thecommons.boston/wp-content/uploads/2024/07/JOD_logo.png" style="display:block; border:none; margin:auto;" width="250px">
-                    <p>Join or Die returns for a glorious sixth iteration. Spot mod, street comps, live music, community bazaar, film screening, workshops, discussion circles. JOD is the premiere USA parkour event, and this one is bigger than ever.
-                    </p>
-                </div>
-                <?php 
-            }
-        } else { ?>
-            <p>There are no posts to show right now.</p>
-        <?php } 
-        wp_reset_query(); ?>
+            );
+            $posts_query = new WP_Query( $post_args );
+            if( $posts_query->have_posts() ) {
+                while($posts_query->have_posts() ) {
+                    $posts_query->the_post(); 
+                    ?>
+                    <div class="event-container">
+                        <img src="https://thecommons.boston/wp-content/uploads/2024/07/JOD_logo.png" style="display:block; border:none; margin:auto;" width="250px">
+                        <p>Join or Die returns for a glorious sixth iteration. Spot mod, street comps, live music, community bazaar, film screening, workshops, discussion circles. JOD is the premiere USA parkour event, and this one is bigger than ever.
+                        </p>
+                    </div>
+                    <?php 
+                }
+            } else { ?>
+                <p>There are no posts to show right now.</p>
+            <?php } 
+            wp_reset_query(); ?>
             </div>
         </div>
         <!--alternate method to load the blog content popout-->
