@@ -1112,7 +1112,7 @@ h5{
     display: none;
 }
 
-#shop-preview > div > ul > li > button{
+#shop-preview > div > ul > li > .button{
     display: none;
 }
 
