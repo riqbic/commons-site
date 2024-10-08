@@ -127,7 +127,7 @@
                 <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>
         </div>
-        <div class="grid-item" id="events">
+        <!-- <div class="grid-item" id="events">
             <div class="grid-preview opens-popup" id="events-preview" data-popup="events">
             <?php 
             $post_args = array(
@@ -152,7 +152,7 @@
             <?php } 
             wp_reset_query(); ?>
             </div>
-        </div>
+        </div> -->
         <!--alternate method to load the blog content popout-->
         <div class="grid-item" id="articles">
             <div class="grid-preview" id="articles-preview">
@@ -195,7 +195,7 @@
 <!-- data needed for popups -->
 <div id="preview-content" style="display: none;">
 
-    <div class="grid-content" id="events-html">
+    <!-- <div class="grid-content" id="events-html">
         <div class="popout-bar">
             <div class="popout-title">Events</div>
             <div class="popout-close force-close-popout">Close</div>
@@ -221,7 +221,7 @@
             <p>There are no posts to show right now.</p>
         <?php } 
         wp_reset_query(); ?>
-    </div>
+    </div> -->
 
     <div class="grid-content" id="get-involved-html">
         <div class="popout-bar">
