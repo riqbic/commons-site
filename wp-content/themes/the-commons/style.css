@@ -229,6 +229,7 @@ body{
     background-color: white;
     height: fit-content;
     overflow-x: hidden !important;
+    font-family: CenturyOldStyleRegular;
 }
 
 .site-title{
