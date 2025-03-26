@@ -1504,3 +1504,15 @@ cite .fn{
     float: none!important;
     margin-bottom: 15px;
   }
+
+  .woocommerce-checkout .payment_box {
+    background: transparent!important;
+    padding: 0!important;
+  }
+  .woocommerce-checkout .payment_box:before {
+    display: none!important;
+  }
+  .woocommerce-checkout .payment_box fieldset {
+    padding: 0!important;
+    border: none!important;
+  }
