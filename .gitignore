@@ -122,6 +122,7 @@ node_modules/
 .sass-cache/
 wp-content/ai1wm-backups/
 wp-content/mu-plugins/
+wp-content/mu-plugins.bk/
 wp-content/themes/genesis-block-theme/
 wp-content/themes/index.php
 wp-content/themes/twentytwentyone/
