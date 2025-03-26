@@ -423,4 +423,25 @@ function wk_new_menu_items( $items ) {
     $items[ 'my-videos' ] = __( 'My Videos', 'webkul' );
     return $items;
 }
+
+add_action('woocommerce_before_cart', 'common_open_grid');
+add_action('woocommerce_checkout_before_customer_details','common_open_grid', 10);
+function common_open_grid() {
+    echo '<div class="common-2-col-grid">';
+}
+
+add_action('woocommerce_checkout_before_customer_details','common_open_group_div', 11);
+add_action('woocommerce_checkout_before_order_review_heading','common_open_group_div', 11);
+add_action('woocommerce_checkout_before_order_review_heading','common_open_group_div', 11);
+function common_open_group_div() {
+    echo '<div>';
+}
+
+add_action('woocommerce_after_cart', 'common_close_grid');
+add_action('woocommerce_after_checkout_form','common_close_grid');
+add_action('woocommerce_checkout_after_customer_details','common_close_grid', 30);
+add_action('woocommerce_checkout_after_order_review','common_close_grid');
+function common_close_grid() {
+    echo '</div>';
+}
 ?>

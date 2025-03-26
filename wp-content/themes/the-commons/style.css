@@ -5,7 +5,7 @@ Author URI: http://reduker.wordpress.com
 Description: Theme for The Commons Parkour brand
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version: 1.47
+Version: 1.48
 */
 @font-face {
     font-family: CenturyOldStyleRegular;
@@ -43,6 +43,15 @@ img {
     border: 1px solid black;
     box-sizing: border-box;
     height: auto;
+}
+.subpage-container a,
+.popout-container a {
+    color: #ff0000;
+    font-weight: bold;
+}
+.subpage-container a:hover,
+.popout-container a:hover {
+    color: rgba(0,0,0,.7);
 }
 /** Single Content **/
 .content-single {
@@ -356,15 +365,23 @@ h5{
     height: auto;
   }
 
-.restriction-message-link{
-    border: solid blue;
+.restriction-message-link {
+    border: solid #000;
     padding: 5px;
-    border-width: 1px 3px 3px 1px;
+    border-width: 1px;
+    box-shadow: 3px 3px #000;
+    margin-right: 5px;
+    color: #000;
+    transition: .2s box-shadow;
+    text-decoration: none;
 }
-
-.restriction-message-link:active{
+.restriction-message-link:hover {
+    background: rgba(0,0,0,.2);
+    box-shadow: 6px 6px #000;
+}
+/*.restriction-message-link:active{
     border-width: 3px 1px 1px 3px;
-}
+}*/
 
 .popout-bar {
   display: flex;
@@ -1267,3 +1284,217 @@ cite .fn{
     display: flex;
     gap: 20px;
 }
+
+.wp-block-woocommerce-memberships-member-content .wc-memberships-restriction-message {
+    border: none;
+    padding-left: 0;
+    background: transparent;
+    color: #000;
+    font-size: 1.05;
+}
+.wp-block-woocommerce-memberships-member-content .wc-memberships-restriction-message:before {
+    display: none;
+}
+
+.subpage-container .woocommerce-message,
+.subpage-container .woocommerce-info,
+.subpage-container .woocommerce-error {
+    border: 1px solid #000!important;
+    background: transparent;
+    color: #000;
+}
+.subpage-container .woocommerce-message:before,
+.subpage-container .woocommerce-error:before {
+    color: #000!important;
+}
+.subpage-container .woocommerce-info {
+    padding-left: 1rem!important;
+    border-left-width: 6px!important;
+}
+.woocommerce form.checkout_coupon {
+    border: 1px solid #000!important;
+    border-radius: 0!important;
+    margin-top: 1rem!important;
+}
+.woocommerce form.checkout_coupon p {
+    float: none!important;
+    width: 70%;
+}
+.woocommerce form.checkout_coupon p:first-of-type {
+    margin-top: 0;
+}
+.woocommerce form.checkout_coupon p input {
+    width: 100%;
+    font-size: 1.4rem;
+    border-radius: 0!important;
+    border-color: #000!important;
+}
+
+.subpage-container .woocommerce-info:before {
+    display: none!important;
+}
+.subpage-container .woocommerce-info a {
+    color: #000!important;
+}
+
+.tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button,
+.woocommerce form .single_add_to_cart_button {
+    border-radius: 0!important;
+    border: 1px solid #000;
+    background-color: #fff!important;
+    color: #000!important;
+    font-family: CenturyOldStyleRegular;
+    line-height: inherit;
+    box-shadow: 3px 3px #000;
+    transition: .2s box-shadow;
+}
+.tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button:hover,
+.woocommerce form .single_add_to_cart_button:hover {
+    color: #000!important;
+    background: rgba(0,0,0,.2)!important;
+    box-shadow: 6px 6px #000;
+}
+.actions .coupon {
+    display: flex;
+}
+.actions .coupon input {
+    width: auto !important;
+    flex: 1;
+    border-color: #000!important;
+}
+.woocommerce-input-wrapper input,
+.woocommerce-input-wrapper textarea {
+    border-radius: 0!important;
+}
+.woocommerce table.shop_table {
+    border-collapse: collapse!important;
+}
+.woocommerce table.shop_table,
+.woocommerce table.shop_table tr,
+.woocommerce table.shop_table td,
+.woocommerce table.shop_table th {
+    border-radius: 0!important;
+    border-color: #000!important;
+}
+@media (min-width: 768px) {
+    .woocommerce-cart .subpage-container .common-2-col-grid,
+    .woocommerce-checkout .subpage-container .common-2-col-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+}
+}
+.cart-collaterals .cart_totals h2 {
+    display: none!important;
+}
+.cart-collaterals .cart_totals {
+    width: 100%!important;
+    float: none;
+}
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) ul.products li.product .price,
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price,
+.woocommerce div.product p.stock,
+.woocommerce div.product .reset_variations {
+    color: #000!important;
+}
+.woocommerce ul.products li.product .button {
+    margin-top: 0!important;
+    margin-bottom: 1rem!important;
+}
+.woocommerce form select {
+    max-width: 100%;
+    min-width: 75%;
+    border: 1px solid #000;
+    display: inline-block;
+    margin-right: 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 3em;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hldnJvbi1kb3duIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=) no-repeat;
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-size: auto;
+    background-size: 16px;
+    -webkit-background-size: 16px;
+    background-position: calc(100% - 12px) 50%;
+    -webkit-background-position: calc(100% - 12px) 50%;
+    padding: 10px;
+  }
+  .woocommerce-variation-add-to-cart.variations_button {
+    gap: 6px;
+  }
+  .woocommerce div.product form.cart div.quantity {
+    min-height: 100%;
+  }
+  .input-text.qty.text {
+    border-color: #000;
+    border-radius: 0!important;
+    border: 1px solid #000;
+    height: calc(100% - 3px);
+  }
+  .variations > tbody > tr {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+  }
+  /*.woocommerce div.product form.cart .variations {
+    width: auto;
+    margin-bottom: 0!important;
+  }
+  .variations_form {
+    display: flex !important;
+    align-items: end;
+  }
+  single_add_to_cart_button {
+    flex: 1;
+  }*/
+  .woocommerce h3 {
+    font-family: KarnakProCondBlack;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  #customer_details.col2-set .col-1,
+  #customer_details.col2-set .col-2 {
+    float: none!important;
+    width: 100%!important;
+  }
+  .woocommerce-checkout #payment {
+    background: transparent;
+  border-radius: 0;
+  border: 1px solid #000;
+  margin-bottom: 1.5rem;
+  }
+  .checkout.woocommerce-checkout {
+    margin-bottom: 4rem;
+  }
+  .woocommerce-cart .subpage-container {
+    margin-top: 1.5rem;
+  }
+  #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
+    border-color: #000!important;
+  }
+  #add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img {
+    width: 59px!important;
+  }
+  .woocommerce-cart .woocommerce-cart-form__contents {
+    border: none!important;
+  }
+  .woocommerce-cart .woocommerce-cart-form__contents tr {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+  .woocommerce-cart .woocommerce-cart-form__contents tbody tr:last-of-type {
+    border: none!important;
+  }
+  .woocommerce-cart .woocommerce-cart-form__contents .actions {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left!important;
+    padding-top: 23px!important;
+  }
+  .woocommerce-cart .woocommerce-cart-form__contents .actions .coupon {
+    float: none!important;
+    margin-bottom: 15px;
+  }
