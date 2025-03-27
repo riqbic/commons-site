@@ -1567,3 +1567,13 @@ cite .fn{
     padding: 0!important;
     border: none!important;
   }
+  #customer_login form.register {
+    border-color: #000!important;
+    border-radius: 0!important;
+  }
+  #customer_login form.login input,#customer_login  form.register input {
+    border-radius: 0!important;
+  }
+  #customer_login form.woocommerce-form-login {
+    padding-left: 0!important;
+  }
