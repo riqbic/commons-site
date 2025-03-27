@@ -1,3 +1,22 @@
+//menu image change
+(function($) {
+  $(document).on('mouseenter','.has-hover-thumbnail', function() {
+    var $this = $(this);
+    var image = $(this).attr('data-image');
+    if(image != '') {
+      console.log(image);
+      $this.parent().find('.image-placeholder').html('<img src="'+image+'" />');
+    } else {
+      $this.parent().find('.image-placeholder').html('');
+    }
+  });
+  $(document).on('mouseleave','.has-hover-thumbnail', function() {
+    var $this = $(this);
+    $this.parent().find('.image-placeholder').html('');
+    
+  });
+})(jQuery); // Fully reference jQuery after this point.
+
 /* mobile menu event listeners, added to top because it wasn't firign lower - guessing there is a bug in your code somewhere... */
 var menuItems = document.getElementsByClassName("has-children");
 // var toggleActive = function() {
@@ -106,21 +125,3 @@ function setPopoutSize(){
 function clamp(val, min, max) {
     return val > max ? max : val < min ? min : val;
 }
-
-(function($) {
-  $(document).on('mouseenter','.has-hover-thumbnail', function() {
-    var $this = $(this);
-    var image = $(this).attr('data-image');
-    if(image != '') {
-      console.log(image);
-      $this.parent().find('.image-placeholder').html('<img src="'+image+'" />');
-    } else {
-      $this.parent().find('.image-placeholder').html('');
-    }
-  });
-  $(document).on('mouseleave','.has-hover-thumbnail', function() {
-    var $this = $(this);
-    $this.parent().find('.image-placeholder').html('');
-    
-  });
-})(jQuery); // Fully reference jQuery after this point.

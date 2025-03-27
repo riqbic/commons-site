@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
-    $version = '1.60'; //For cache busting css/js
+    $version = '1.61'; //For cache busting css/js
     //Theme CSS
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, $version, 'all' );
     //Theme JS

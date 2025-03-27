@@ -835,7 +835,7 @@ a.restriction-message-link:hover {
     position: absolute;
     background-color: white;
     border: 1px solid black;
-    z-index: 99;
+    z-index: 2;
 }
 
 .blog-flex-container{
@@ -1629,4 +1629,8 @@ cite .fn{
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .wc-proceed-to-checkout {
+    position: relative;
+    z-index: 2;
   }
