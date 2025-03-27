@@ -31,18 +31,21 @@
         );
         $posts_query = new WP_Query( $post_args );
         if( $posts_query->have_posts() ) {
-            while($posts_query->have_posts() ) {
-                $posts_query->the_post();
-                if($category_displays == 'links') {
-                    echo '<div class="archive-item">';
-                        echo '<a class="archive-link" href="'.get_bloginfo('url').'?pop='.$cat_slug.'&post_id='.get_the_ID().'" title="'.get_the_title().'">';
-                            echo get_the_title();
-                        echo '</a>';
-                    echo '</div>';
-                } else {
-                    get_template_part('template-parts/content-single');
+            echo '<div class="archive-grid">';
+                while($posts_query->have_posts() ) {
+                    $posts_query->the_post();
+                    if($category_displays == 'links') {
+                        echo '<div class="archive-item">';
+                            echo '<a class="archive-link" href="'.get_bloginfo('url').'?pop='.$cat_slug.'&post_id='.get_the_ID().'" title="'.get_the_title().'">';
+                                echo '<div class="image">'.get_the_post_thumbnail(get_the_id(), 'medium' ).'</div>';
+                                echo '<h2 class="title">'.get_the_title().'</h2>';
+                            echo '</a>';
+                        echo '</div>';
+                    } else {
+                        get_template_part('template-parts/content-single');
+                    }
                 }
-            }
+            echo '</div>';
         } else { ?>
             <p>There are no posts to show right now.</p>
         <?php } 

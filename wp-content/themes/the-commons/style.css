@@ -871,6 +871,7 @@ a.restriction-message-link:hover {
     overflow-y: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    position: relative;
 }
 .blog-flex-container .blog-single-content.has-sidebar {
     border-left: none;
@@ -1576,4 +1577,36 @@ cite .fn{
   }
   #customer_login form.woocommerce-form-login {
     padding-left: 0!important;
+  }
+  .archive-grid {
+    margin: 20px -20px;
+    width: calc(100% + 40px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  @media (max-width: 1240px) {
+    .archive-grid {
+        margin: 20px auto;
+        width: 100%;
+    }
+  }
+  .archive-grid a {
+    text-decoration: none;
+  }
+  .archive-grid a:hover h2 {
+    color: #ff0000;
+  }
+  .archive-grid h2 {
+    font-size: 1.3em!important;
+    margin: 0;
+  }
+  .archive-grid .image {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .archive-grid .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
