@@ -447,4 +447,12 @@ add_action('woocommerce_checkout_after_order_review','common_close_grid');
 function common_close_grid() {
     echo '</div>';
 }
+
+//add_filter('comment_form_defaults','common_login_url');
+function common_login_url($default) {
+    $default['must_log_in'] = '<p class="must-log-in">You must be <a href="'.get_bloginfo('url').'/my-account/">logged in</a> to post a comment.</p>';
+    
+    echo '<pre>'.print_r($default,true).'</pre>';
+    return $default;
+}
 ?>
