@@ -1221,6 +1221,15 @@ textarea{
     display: block !important;
 }
 
+#commentform .form-submit .submit {
+    font-size: 1.1em;
+    padding: 10px;
+}
+.comment-form-comment textarea {
+    border: 1px solid #000!important;
+    border-radius: 0!important;
+}
+
 cite .fn{
     font-style: normal;
 }
@@ -1380,7 +1389,8 @@ cite .fn{
 
 .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button,
 .woocommerce form .single_add_to_cart_button,
-.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a,
+#commentform .form-submit .submit {
     border-radius: 0!important;
     border: 1px solid #000;
     background-color: #fff!important;
@@ -1390,10 +1400,12 @@ cite .fn{
     box-shadow: 3px 3px #000;
     transition: .2s box-shadow;
 }
+
 .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button:hover,
 .woocommerce form .single_add_to_cart_button:hover,
 .woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
-.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a,
+#commentform .form-submit .submit:hover {
     color: #000!important;
     background: rgba(0,0,0,.2)!important;
     box-shadow: 6px 6px #000;
