@@ -446,7 +446,7 @@ a.restriction-message-link:hover {
   }
 
 .newsy-header{
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 120px;
     background-color: black;
@@ -530,7 +530,6 @@ a.restriction-message-link:hover {
 .header-menu{
     position: sticky;
     width: 100%;
-    height: 52px;
     top: 0px;
     background-color: black;
     z-index: 4;
@@ -541,10 +540,9 @@ a.restriction-message-link:hover {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-
     align-items: center;
     height: 100%;
-  }
+}
   
 .menu {
     width: 100%;
@@ -554,60 +552,68 @@ a.restriction-message-link:hover {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    transform: translate(0,3px);
+    margin-top: -.5px;
 }
   
 .menu li {
-    margin-right: 20px;
     position: relative;
 }
+.menu > li > a {
+    padding: 15px 20px;
+    display: block;
+}
 .menu li:first-child {
-    margin-left: 20px;
+    
 }
 .menu li ul {
     background: #000;
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    width: 300px;
     height: auto;
     left: 0px;
     display: none;
-    padding: 25px 10px !important;
+    padding: 10px 10px 0 !important;
+    margin-left: -1px;
 }
-.menu li ul li{
-    list-style: none;
-    text-align: center;
-    margin: 0 !important;
+.menu li ul.has-image-placeholder {
+    width: 430px;
+    min-height: 165px;
 }
-.menu li ul li a{
-    color: grey;
-    text-decoration: none !important;
-}
-.menu-mobile li ul li{
-    list-style: none;
-}
-.menu-mobile li ul li a{
-    color: white;
-    text-decoration: none !important;
-    text-wrap: nowrap;
+.menu li.sub-right ul {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: -1px;
 }
 .menu li:hover > ul {
-    width: 100vw; /* make it 100% of the viewport width (vw) */
-    margin-left: calc((100% - 100vw) / 2);  /* then remove the gap to the left of the container with this equation */
     display: block;
-    background: #000000;
+    background: #fff;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    list-style: none;
 }
-.menu li:hover > ul div {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 186px);
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px 20px;
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+.menu li ul.has-image-placeholder li {
+    max-width: calc(100% - 160px);
 }
-.menu li ul li a:hover{
-    color: white;
+.menu li ul li.image-placeholder {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 145px;
+    height: 145px;
+}
+.menu li ul li.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.menu li:hover > ul li a {
+    color: #000;
+    text-decoration: none;
+}
+.menu li:hover > ul li a:hover {
+    text-decoration: underline;
 }
 .menu-item{
     font-family: CenturyOldStyleRegular;
@@ -617,11 +623,19 @@ a.restriction-message-link:hover {
     cursor: pointer;
 }
 
-.menu-item:hover{
+.menu-item:hover > a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+    background: #fff;
+    color: #000;
 }
-
+@media (max-width: 767px) {
+    .menu-mobile li ul li a {
+        color: white;
+        text-decoration: none !important;
+        text-wrap: nowrap;
+    }
+}
 .hamburger-menu{
     height: 0px;
 }
@@ -824,12 +838,6 @@ a.restriction-message-link:hover {
     z-index: 2;
 }
 
-.posts-archive-text{
-    color: white;
-    text-decoration: none !important;
-    padding: 0px !important;
-}
-
 .blog-flex-container{
     display: flex;
     flex-direction: column;
@@ -912,15 +920,14 @@ a.restriction-message-link:hover {
     background-repeat: no-repeat;
     background-size: contain;
 }
-.blog-item{
+ul .blog-item {
     cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 5px;
-    border-bottom: 1px solid black;
+    padding: 5px 5px 5px 0;
+    margin-top: 5px;
 }
-
+.menu > li > ul .blog-item:last-of-type {
+    border-bottom: none!important;
+}
 .post-content{
     text-align: justify;
 }
@@ -1121,15 +1128,26 @@ a.restriction-message-link:hover {
 .woocommerce-MyAccount-content{
     padding: 0 20px !important;
     box-sizing: border-box;
-    width: 100% !important;
-    float: none !important;
     margin: auto;
 }
 
-.woocommerce-account .woocommerce-MyAccount-navigation{
-    display: none;
+.woocommerce-account .woocommerce-MyAccount-navigation ul{
+    list-style: none;
+    margin: 0 20px 0 0;
+    padding: 0;
 }
-
+@media (max-width: 767px) {
+    .woocommerce-account .woocommerce-MyAccount-navigation {
+        display: none!important;
+    }
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul li {
+    margin-bottom: 10px;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+    padding: 10px;
+    display: block;
+}
 #shop-preview > div > ul > li > .button{
     display: none;
 }
@@ -1304,6 +1322,14 @@ cite .fn{
     background: transparent;
     color: #000;
 }
+@media (max-width: 767px) {
+    .subpage-container .woocommerce-message a,
+    .subpage-container .woocommerce-info a,
+    .subpage-container .woocommerce-error a {
+        float: none!important;
+        margin-top: 10px!important;
+    }
+}
 .subpage-container .woocommerce-message:before,
 .subpage-container .woocommerce-error:before {
     color: #000!important;
@@ -1344,7 +1370,8 @@ cite .fn{
 }
 
 .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button,
-.woocommerce form .single_add_to_cart_button {
+.woocommerce form .single_add_to_cart_button,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
     border-radius: 0!important;
     border: 1px solid #000;
     background-color: #fff!important;
@@ -1355,7 +1382,9 @@ cite .fn{
     transition: .2s box-shadow;
 }
 .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button:hover, .tcb-content .subpage-container .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button:hover,
-.woocommerce form .single_add_to_cart_button:hover {
+.woocommerce form .single_add_to_cart_button:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
     color: #000!important;
     background: rgba(0,0,0,.2)!important;
     box-shadow: 6px 6px #000;
@@ -1456,10 +1485,31 @@ cite .fn{
   single_add_to_cart_button {
     flex: 1;
   }*/
-  .woocommerce h3 {
+  .woocommerce h3,
+  .woocommerce h2 {
     font-family: KarnakProCondBlack;
     font-size: 1.8rem;
     letter-spacing: 1px;
+  }
+  .woocommerce-account .addresses .title .edit {
+    float: none;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  .woocommerce-MyAccount-content input {
+    border-radius: 0px!important;
+    border-color: #000!important;
+  }
+  .account_display_name_description {
+    display: inline-block;
+    margin-top: 7px;
+  }
+  .woocommerce-MyAccount-content fieldset {
+    border-color: #000;
+    box-shadow: none;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 18px;
   }
   #customer_details.col2-set .col-1,
   #customer_details.col2-set .col-2 {

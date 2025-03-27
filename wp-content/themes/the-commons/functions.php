@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
-    $version = '1.55'; //For cache busting css/js
+    $version = '1.56'; //For cache busting css/js
     //Theme CSS
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, $version, 'all' );
     //Theme JS
@@ -420,7 +420,10 @@ function my_courses_tab_content() {
 
 add_filter( 'woocommerce_account_menu_items', 'wk_new_menu_items' );
 function wk_new_menu_items( $items ) {
-    $items[ 'my-videos' ] = __( 'My Videos', 'webkul' );
+    unset($items['dashboard']);
+    $new_item = array('my-videos' => 'My Videos');
+    $items = array_merge($new_item, $items);
+    //$items[ 'my-videos' ] = __( 'My Videos', 'webkul' );
     return $items;
 }
 
