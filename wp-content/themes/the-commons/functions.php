@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
-    $version = '1.61'; //For cache busting css/js
+    $version = '1.63'; //For cache busting css/js
     //Theme CSS
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, $version, 'all' );
     //Theme JS
@@ -450,9 +450,36 @@ function common_close_grid() {
 
 //add_filter('comment_form_defaults','common_login_url');
 function common_login_url($default) {
-    $default['must_log_in'] = '<p class="must-log-in">You must be <a href="'.get_bloginfo('url').'/my-account/">logged in</a> to post a comment.</p>';
+    $default['must_log_in'] = '<p class="must-log-in">You must be <a href="'.get_bloginfo('url').'/my-account/">NOT logged in</a> to post a comment.</p>';
     
     echo '<pre>'.print_r($default,true).'</pre>';
     return $default;
+}
+
+
+add_action( 'woocommerce_login_form', 'redirect_user_to_checkout' );
+function redirect_user_to_checkout() {
+    if( isset($_GET['redirect_to']) ) {
+        $redirect = sanitize_url($_GET['redirect_to']);
+        if(!is_account_page()) { ?>
+                <input type="hidden" name="redirect-user" value="<?php echo $redirect; ?>"><?php
+            }
+        }
+    }
+
+
+
+function custom_woocommerce_login_redirect_to_checkout_page( $redirect, $user ) {
+    if( isset( $_POST['redirect-user'] ) ) {
+        $redirect = esc_url( $_POST['redirect-user'] );
+    }
+    return $redirect;
+}
+add_filter( 'woocommerce_login_redirect', 'custom_woocommerce_login_redirect_to_checkout_page', 10, 2 );
+add_action('wp_logout','auto_redirect_after_logout');
+
+function auto_redirect_after_logout(){
+  wp_safe_redirect( home_url().'/my-account/' );
+  exit;
 }
 ?>

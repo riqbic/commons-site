@@ -206,11 +206,11 @@ jQuery.extend(jQuery.fn, {
                         //replace login link for comments
                         if($('#popout-container #blog-ajax-container .must-log-in a').length) {
                             //https://alec.local/wp-login.php?redirect_to=https%3A%2F%2Falec.local%2Fpaid-film%2Ftether%2F
-                            $('#popout-container #blog-ajax-container .must-log-in a').attr('href',home_js.blog_url+'wp-login.php?redirect_to='+encodeURIComponent(window.location.href));
+                            $('#popout-container #blog-ajax-container .must-log-in a').attr('href',home_js.blog_url+'my-account/?redirect_to='+encodeURIComponent(window.location.href));
                         }
                         if($('#popout-container #blog-ajax-container .must-log-in a').length) {
                             //https://alec.local/wp-login.php?redirect_to=https%3A%2F%2Falec.local%2Fpaid-film%2Ftether%2F
-                            $('#popout-container #blog-ajax-container .must-log-in a').attr('href',home_js.blog_url+'wp-login.php?redirect_to='+encodeURIComponent(window.location.href));
+                            $('#popout-container #blog-ajax-container .must-log-in a').attr('href',home_js.blog_url+'my-account/?redirect_to='+encodeURIComponent(window.location.href));
                         }
                         //Update the title in the popout bar
                         $('#popout-container .post-title').html(response.post_title);

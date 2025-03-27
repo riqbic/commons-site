@@ -1448,6 +1448,7 @@ cite .fn{
     width: 100%!important;
     float: none;
 }
+ul.products li.product a .price,
 .woocommerce:where(body:not(.woocommerce-uses-block-theme)) ul.products li.product .price,
 .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price, .woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price,
 .woocommerce div.product p.stock,
