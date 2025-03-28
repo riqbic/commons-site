@@ -44,7 +44,7 @@
                     <li class="image-placeholder"></li>
                     <?php 
                     $post_args = array(
-                        'posts_per_page'	=> 9,
+                        'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
                         'category__in' => array(34)
@@ -76,7 +76,7 @@
                     <li class="image-placeholder"></li>
                     <?php 
                     $post_args = array(
-                        'posts_per_page'	=> 9,
+                        'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
                         'category__in' => array(28,31)
