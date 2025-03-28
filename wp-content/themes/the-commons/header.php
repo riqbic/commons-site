@@ -71,7 +71,7 @@
                 </ul>
             </li>
             <li class="menu-item has-children" id="videos-menu-item">
-                <a class="menu-item" href="<?php echo get_bloginfo('url'); ?>/videos/">Features</a>
+                <a class="menu-item" href="<?php echo get_bloginfo('url'); ?>/videos/">Video Features</a>
                 <ul class="has-image-placeholder">
                     <li class="image-placeholder"></li>
                     <?php 
@@ -184,7 +184,7 @@
                 <li><a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/articles/">+ archive +</a></li>
                 </ul>
             </li>
-            <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Features</div>
+            <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Video Features</div>
                 <ul>
                 <?php 
                 $post_args = array(
