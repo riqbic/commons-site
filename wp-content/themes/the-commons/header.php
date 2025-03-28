@@ -47,7 +47,7 @@
                         'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'category__in' => array(34)
+                        'category__in' => array(34,31)
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
@@ -71,7 +71,7 @@
                 </ul>
             </li>
             <li class="menu-item has-children" id="videos-menu-item">
-                <a class="menu-item" href="<?php echo get_bloginfo('url'); ?>/videos/">Videos</a>
+                <a class="menu-item" href="<?php echo get_bloginfo('url'); ?>/videos/">Features</a>
                 <ul class="has-image-placeholder">
                     <li class="image-placeholder"></li>
                     <?php 
@@ -79,7 +79,7 @@
                         'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'category__in' => array(28,31)
+                        'category__in' => array(28)
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
@@ -162,7 +162,7 @@
                     'posts_per_page'	=> 9,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
-                    'category__in' => array(34)
+                    'category__in' => array(34,31)
                 );
                 $posts_query = new WP_Query( $post_args );
                 $blogct = 0;
@@ -184,14 +184,14 @@
                 <li><a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/articles/">+ archive +</a></li>
                 </ul>
             </li>
-            <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Videos</div>
+            <li class="menu-item-mobile has-children" id="videos-menu-item-mobile"><div class="menu-text-mobile">Features</div>
                 <ul>
                 <?php 
                 $post_args = array(
                     'posts_per_page'	=> 9,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
-                    'category__in' => array(28,31)
+                    'category__in' => array(28)
                 );
                 $posts_query = new WP_Query( $post_args );
                 $blogct = 0;
