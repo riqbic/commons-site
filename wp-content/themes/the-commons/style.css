@@ -1479,6 +1479,10 @@ ul.products li.product a .price,
     background-position: calc(100% - 12px) 50%;
     -webkit-background-position: calc(100% - 12px) 50%;
     padding: 10px;
+    border-radius: 0!important;
+  }
+  #wcpay_selected_currency {
+    margin-bottom: 7px!important;
   }
   .woocommerce-variation-add-to-cart.variations_button {
     gap: 6px;
