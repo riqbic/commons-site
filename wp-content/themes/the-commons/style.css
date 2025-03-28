@@ -244,7 +244,7 @@ body{
 }
 
 .site-title-mobile{
-    font-family: Helmswald-Post;
+    font-family: Helmswald-Post !important;
     font-variant-ligatures: none;
     font-feature-settings: 'ss01';
     white-space: nowrap;
@@ -561,9 +561,6 @@ a.restriction-message-link:hover {
 .menu > li > a {
     padding: 15px 20px;
     display: block;
-}
-.menu li:first-child {
-    
 }
 .menu li ul {
     background: #000;
@@ -1514,9 +1511,10 @@ ul.products li.product a .price,
   }*/
   .woocommerce h3,
   .woocommerce h2 {
-    font-family: KarnakProCondBlack;
+    font-family: CenturyOldStyleSmallCapsRegular !important;
     font-size: 1.8rem;
     letter-spacing: 1px;
+    font-weight: bold;
   }
   .woocommerce-account .addresses .title .edit {
     float: none;
