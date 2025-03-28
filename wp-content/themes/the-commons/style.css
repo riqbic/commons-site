@@ -1459,7 +1459,8 @@ ul.products li.product a .price,
     margin-top: 0!important;
     margin-bottom: 1rem!important;
 }
-.woocommerce form select {
+.woocommerce form select,
+#wcpay_selected_currency {
     max-width: 100%;
     min-width: 75%;
     border: 1px solid #000;
@@ -1522,7 +1523,7 @@ ul.products li.product a .price,
     border-radius: 0px!important;
     border-color: #000!important;
   }
-  .account_display_name_description {
+  #account_display_name_description {
     display: inline-block;
     margin-top: 7px;
   }
@@ -1604,13 +1605,37 @@ ul.products li.product a .price,
     width: calc(100% + 40px);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
     grid-gap: 20px;
   }
+ @media (min-width: 1240px) { /* Adjust breakpoint as needed */
+    /* Force 3 columns when exactly 3 items exist */
+.archive-grid:has(> *:nth-child(3)):not(:has(> *:nth-child(4))) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Force 2 columns when exactly 2 items exist */
+.archive-grid:has(> *:nth-child(2)):not(:has(> *:nth-child(3))) {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Ensure 1 item still takes up at least 50% width */
+.archive-grid:has(> *:nth-child(1)):not(:has(> *:nth-child(2))) {
+    grid-template-columns: repeat(4, 1fr);
+}
+}
+
+
+
+  
   @media (max-width: 1240px) {
     .archive-grid {
         margin: 20px auto;
         width: 100%;
     }
+  }
+  .woocommerce-account .archive-grid {
+    margin-top: 0!important;
   }
   .archive-grid a {
     text-decoration: none;
@@ -1634,4 +1659,15 @@ ul.products li.product a .price,
   .wc-proceed-to-checkout {
     position: relative;
     z-index: 2;
+  }
+  .woocommerce .woocommerce-customer-details address {
+    border-radius: 0!important;
+    border: none!important;
+    padding: 0!important;
+  }
+  .woocommerce-customer-details--phone,
+  .woocommerce-customer-details--email {
+    margin: 0!important;
+    display: flex;
+    align-items: center;
   }

@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
-    $version = '1.63'; //For cache busting css/js
+    $version = '1.64'; //For cache busting css/js
     //Theme CSS
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, $version, 'all' );
     //Theme JS
@@ -394,7 +394,7 @@ function my_courses_tab_content() {
     if(empty($customer_orders)) {
         echo 'You have not purchased any videos.';
     } else {
-        echo '<ul class="my-videos-list">';
+        echo '<div class="archive-grid">';
         $purchased_products = array();
         foreach($customer_orders as $order) {
             foreach ( $order->get_items() as $item_id => $item ) {
@@ -407,13 +407,19 @@ function my_courses_tab_content() {
                         foreach ($checkout_links as $link) {
                             $title = esc_html($link['title']);
                             $link_url = esc_url($link['link']);
-                            echo '<li class="my-videos-item"><a href="' . $link_url . '" title="' . $title . '">' . '<img src="' . $image[0] . '">' . '</a></li>';
+                            //echo '<li class="my-videos-item"><a href="' . $link_url . '" title="' . $title . '">' . '<img src="' . $image[0] . '">' . '</a></li>';
+                            echo '<div class="archive-item">';
+                                echo '<a class="archive-link" href="'.$link_url.'" title="'.$title.'">';
+                                    echo '<div class="image"><img src="' . $image[0] . '" /></div>';
+                                    echo '<h2 class="title">'.$title.'</h2>';
+                                echo '</a>';
+                            echo '</div>';
                         }
                     }
                 }
             }
         }
-        echo '</ul>';
+        echo '</div>';
     }
 }
 
