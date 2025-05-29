@@ -203,9 +203,9 @@ img {
     .subpage-container{
         padding: 10px !important;
     }
-    /* #events-preview{
+    #events-preview{
         border-top: 1px solid black;
-    } */
+    }
     .articles-video{
         width: 100% !important;
     }
@@ -766,6 +766,7 @@ a.restriction-message-link:hover {
     "paid-videos paid-videos"
     "shop-title shop-title"
     "shop shop"
+    "events events"
     "articles about-us"
     "articles get-involved"; 
 }
