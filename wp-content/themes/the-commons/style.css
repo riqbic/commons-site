@@ -110,6 +110,7 @@ img {
     grid-auto-rows: minmax(0px,auto) !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-areas:
+    "events events"
     "shop-title shop-title"
     "shop shop"
     "about-us about-us"
