@@ -44,15 +44,7 @@ img {
     box-sizing: border-box;
     height: auto;
 }
-.subpage-container a,
-.popout-container a {
-    color: #ff0000;
-    font-weight: bold;
-}
-.subpage-container a:hover,
-.popout-container a:hover {
-    color: rgba(0,0,0,.7);
-}
+
 /** Single Content **/
 .content-single {
     flex: 3;
