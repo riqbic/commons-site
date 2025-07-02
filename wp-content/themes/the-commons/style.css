@@ -592,14 +592,17 @@ a.restriction-message-link:hover {
     list-style: none;
 }
 .menu li ul.has-image-placeholder li {
-    max-width: calc(100% - 160px);
+    max-width: calc(100% - 265px);
 }
 .menu li ul li.image-placeholder {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 145px;
-    height: 145px;
+    top: 50%;
+    transform: translate(0px, -50%);
+    right: 12px;
+    width: 250px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    max-width: none !important;
 }
 .menu li ul li.image-placeholder img {
     width: 100%;
@@ -924,6 +927,7 @@ ul .blog-item {
     cursor: pointer;
     padding: 5px 5px 5px 0;
     margin-top: 5px;
+    font-size: 1rem;
 }
 .popout-container .blog-item {
     cursor: pointer;
@@ -1648,12 +1652,12 @@ ul.products li.product a .price,
     color: #ff0000;
   }
   .archive-grid h2 {
-    font-size: 1.3em!important;
+    font-size: 1rem !important;
     margin: 0;
   }
   .archive-grid .image {
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/2;
   }
   .archive-grid .image img {
     width: 100%;
