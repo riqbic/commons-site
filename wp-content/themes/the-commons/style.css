@@ -1671,3 +1671,9 @@ ul.products li.product a .price,
     display: flex;
     align-items: center;
   }
+
+  .details-dropdown{
+    background-color: lightgray;
+    padding: 10px;
+    margin-left: 20px;
+  }
