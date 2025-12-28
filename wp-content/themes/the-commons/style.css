@@ -225,23 +225,12 @@ body{
 }
 
 .site-title{
-    font-family: Helmswald-Post !important;
-    font-size: 4.236rem;
-    font-variant-ligatures: none;
-    font-feature-settings: 'ss01';
     margin: 0;
-    white-space: nowrap;
-    text-align: center;
-    color: white !important;
+    width: 100%;
 }
 
 .site-title-mobile{
-    font-family: Helmswald-Post !important;
-    font-variant-ligatures: none;
-    font-feature-settings: 'ss01';
-    white-space: nowrap;
     margin: 0 !important;
-    color: white;
     display: flex;
     align-items: center;
     height: 52px;
@@ -312,7 +301,7 @@ h5{
 
 .block-header{
     margin: 0px;
-    padding: 0px;
+    padding: 0px 0px 15px 0px;
     background-color: black;
     aspect-ratio: 16 / 1.67;
     display: flex;
