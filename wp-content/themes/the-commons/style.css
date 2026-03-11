@@ -239,8 +239,15 @@ p{
     color: black;
 }
 
-h1, h2, h3, h4{
+h1, h2, h4{
     margin: 1rem 0 1.38rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: black;
+}
+
+h3{
+    margin: 1rem 0 1rem;
     font-weight: 400;
     line-height: 1.1;
     color: black;
@@ -669,9 +676,9 @@ a.restriction-message-link:hover {
     top: 91px;
     left: -140%;
     width: 100%;
-    height: calc(100% + 100px); /*this is because of weird ios viewport height changing*/
+    height: calc(100% - 250px); /*this is because of weird ios viewport height changing*/
     margin: 0;
-    padding: 80px 0px 271px 0px;/*see above*/
+    padding: 20%px 0px 50% 0px;/*see above*/
     list-style: none;
     background-color: black;
     transition-duration: .25s;
@@ -697,7 +704,7 @@ a.restriction-message-link:hover {
         list-style: none;
         display: grid;
         align-items: center;
-        height: 100%;
+        height: calc(100% - 40px);
         grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
         padding: 20px;
     }
@@ -1658,4 +1665,8 @@ ul.products li.product a .price,
     background-color: #e6e6e6;
     padding: 10px;
     margin-left: 20px;
+  }
+
+  .product-quantity{
+    min-height: 24.67px;
   }
