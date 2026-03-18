@@ -678,7 +678,7 @@ a.restriction-message-link:hover {
     width: 100%;
     height: 70%; /*this is because of weird ios viewport height changing*/
     margin: 0;
-    padding: 20% 0px 100% 0px;/*see above*/
+    padding: 92px 0px 100% 0px;/*see above*/
     list-style: none;
     background-color: black;
     transition-duration: .25s;
