@@ -154,7 +154,7 @@
 
         <ul class="menu-mobile">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
-            <!-- <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 7</a></li> -->
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 8</a></li>
             <li class="menu-item-mobile has-children" id="articles-menu-item-mobile"><div class="menu-text-mobile">Articles</div>
                 <ul>
                 <?php 
@@ -213,7 +213,7 @@
                 <li><a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/videos/">+ archive +</a></li>
                 </ul>
             </li>
-            <!-- <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">Events</div></li> -->
+            <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">JOD 8</div></li>
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <?php if(is_user_logged_in()) {
                 echo '<li class="menu-item-mobile has-children"><div class="menu-text-mobile">My Account</div>
