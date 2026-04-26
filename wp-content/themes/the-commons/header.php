@@ -37,7 +37,7 @@
     <div class="menu-container">
         <ul class="menu">
             <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
-            <!-- <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 7</a></li> -->
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 8</a></li>
             <li class="menu-item has-children" id="articles-menu-item">
                 <a class="menu-item" href="<?php echo get_bloginfo('url'); ?>/articles/">Articles</a>
                 <ul class="has-image-placeholder">
