@@ -694,21 +694,26 @@ a.restriction-message-link:hover {
     text-decoration: underline;
   }
   
-    .menu-item-mobile.has-children.is-active {
-        flex: 1;
-    }
     .menu-item-mobile.has-children ul {
-        display: none;
-    }
-    .menu-item-mobile.has-children.is-active ul {
+        display: grid;
+        grid-template-rows: repeat(10, auto);
+        justify-items: start;
+        align-items: start;
         position: relative;
         list-style: none;
-        display: grid;
-        align-items: center;
-        height: calc(100% - 40px);
-        grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: max-height .28s ease, opacity .2s ease, padding .28s ease;
+    }
+
+    .menu-item-mobile.has-children.is-active ul {
+        max-height: 1200px;
+        opacity: 1;
         padding: 20px;
     }
+
     .menu-item-mobile.has-children.is-active ul li {
         color: #fff;
     }
