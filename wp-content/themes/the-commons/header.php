@@ -213,7 +213,6 @@
                 <li><a class="posts-archive-text" href="<?php echo get_bloginfo('url'); ?>/videos/">+ archive +</a></li>
                 </ul>
             </li>
-            <li class="menu-item-mobile" onclick="menuHandler('events')"><div class="menu-text-mobile">JOD 8</div></li>
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/cart">Cart</a></li>
             <?php if(is_user_logged_in()) {
                 echo '<li class="menu-item-mobile has-children"><div class="menu-text-mobile">My Account</div>
