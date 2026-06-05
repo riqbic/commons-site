@@ -84,8 +84,8 @@
         point.x = event.clientX;
         point.y = event.clientY;
         const cursorPoint = point.matrixTransform(svg.getScreenCTM().inverse());
-        const dx = cursorPoint.x - 160;
-        const dy = cursorPoint.y - 160;
+        const dx = cursorPoint.x - 180;
+        const dy = cursorPoint.y - 180;
         let angle = Math.atan2(dy, dx) * (180 / Math.PI);
         if (angle < 0) {
             angle += 360;
@@ -95,8 +95,6 @@
 
     function render() {
         const sliceNames = Array.from(svg.querySelectorAll('.slice-name'));
-        const sliceLinesGroup = svg.querySelector('.slice-lines');
-        sliceLinesGroup.innerHTML = '';
 
         boundaries.forEach((startAngle, index) => {
             const endAngle = normalize(boundaries[(index + 1) % 3]);
@@ -108,26 +106,21 @@
             const labelPos = polarToCartesian(midAngle, labelRadius);
             sliceLabels[index].setAttribute('x', labelPos.x);
             sliceLabels[index].setAttribute('y', labelPos.y);
-            const percent = Math.round((span / 360) * 100);
+            const rawPercent = (span / 360) * 100;
+            const percent = Math.round(rawPercent);
             sliceLabels[index].textContent = `${percent}%`;
-
-            const lineStart = polarToCartesian(midAngle, radius + 4);
-            const namePos = polarToCartesian(midAngle, radius + 30);
-            const line = document.createElementNS(svgNS, 'line');
-            line.setAttribute('x1', lineStart.x);
-            line.setAttribute('y1', lineStart.y);
-            line.setAttribute('x2', namePos.x);
-            line.setAttribute('y2', namePos.y);
-            line.classList.add('slice-line');
-            sliceLinesGroup.appendChild(line);
+            const showLabel = rawPercent >= 1;
+            sliceLabels[index].setAttribute('display', showLabel ? 'inline' : 'none');
 
             if (sliceNames[index]) {
+                const namePos = polarToCartesian(midAngle, radius + 30);
                 sliceNames[index].setAttribute('x', namePos.x);
                 sliceNames[index].setAttribute('y', namePos.y);
                 sliceNames[index].setAttribute('text-anchor', namePos.x < 0 ? 'end' : 'start');
                 if (namePos.x === 0) {
                     sliceNames[index].setAttribute('text-anchor', 'middle');
                 }
+                sliceNames[index].setAttribute('display', showLabel ? 'inline' : 'none');
             }
         });
 

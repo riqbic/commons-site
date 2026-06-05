@@ -16,8 +16,8 @@ Template Name: Pie Chart Key Page
             <h1>Pie Chart</h1>
             <p class="pie-chart-instruction">Drag the handles around the edge to change the slice ratios. Tap reset to restore equal thirds.</p>
             <div class="pie-chart-svg-wrapper">
-                <svg id="pieChartSvg" viewBox="0 0 320 320" aria-label="Draggable pie chart" role="img">
-                    <g transform="translate(160 160)">
+                <svg id="pieChartSvg" viewBox="0 0 360 360" aria-label="Draggable pie chart" role="img">
+                    <g transform="translate(180 180)">
                         <path class="slice slice-0" />
                         <path class="slice slice-1" />
                         <path class="slice slice-2" />
@@ -26,7 +26,6 @@ Template Name: Pie Chart Key Page
                             <text class="slice-label slice-label-1"></text>
                             <text class="slice-label slice-label-2"></text>
                         </g>
-                        <g class="slice-lines"></g>
                         <g class="slice-names">
                             <text class="slice-name slice-name-0">SPOT</text>
                             <text class="slice-name slice-name-1">TRICK</text>
