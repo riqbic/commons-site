@@ -134,20 +134,36 @@
 
         handlesGroup.innerHTML = '';
         boundaries.forEach((angle, index) => {
+            const handleGroup = document.createElementNS(svgNS, 'g');
+            handleGroup.setAttribute('data-handle-index', index);
+            handleGroup.setAttribute('class', 'handle-group');
+
+            const hitZone = document.createElementNS(svgNS, 'circle');
+            hitZone.setAttribute('cx', '0');
+            hitZone.setAttribute('cy', '0');
+            hitZone.setAttribute('r', '28');
+            hitZone.classList.add('handle-hit-zone');
+            handleGroup.appendChild(hitZone);
+
             const handle = document.createElementNS(svgNS, 'polygon');
             handle.classList.add('handle');
             handle.setAttribute('points', createTrianglePoints(angle));
-            handle.setAttribute('data-handle-index', index);
             handle.setAttribute('aria-label', 'Drag to adjust slice ratio');
             handle.setAttribute('role', 'slider');
             handle.setAttribute('tabindex', '-1');
-            handlesGroup.appendChild(handle);
+            handleGroup.appendChild(handle);
+
+            handleGroup.addEventListener('pointerdown', onPointerDown);
+            handlesGroup.appendChild(handleGroup);
         });
     }
 
     function findHandleFromEvent(event) {
-        const target = event.target;
-        if (target.matches('.handle')) {
+        let target = event.target;
+        while (target && !target.classList.contains('handle-group')) {
+            target = target.parentElement;
+        }
+        if (target && target.hasAttribute('data-handle-index')) {
             return Number(target.getAttribute('data-handle-index'));
         }
         return null;

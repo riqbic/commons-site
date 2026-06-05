@@ -22,6 +22,17 @@ body.pie-chart-page {
     width: min(100%, 640px);
 }
 
+.handle-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .pie-chart-content h1 {
     margin: 0 0 12px;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -66,7 +77,7 @@ body.pie-chart-page {
 
 .slice-label {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 21px;
     font-weight: 700;
     fill: #000000;
     text-anchor: middle;
@@ -88,6 +99,12 @@ body.pie-chart-page {
     fill: #888888;
     stroke: #555555;
     stroke-width: 1;
+    touch-action: none;
+}
+
+.handle-hit-zone {
+    fill: transparent;
+    cursor: grab;
     touch-action: none;
 }
 

@@ -13,8 +13,7 @@ Template Name: Pie Chart Key Page
 <body <?php body_class( 'pie-chart-page' ); ?>>
     <main class="pie-chart-shell">
         <section class="pie-chart-content" aria-label="Draggable pie chart interface">
-            <h1>Pie Chart</h1>
-            <p class="pie-chart-instruction">Drag the handles around the edge to change the slice ratios. Tap reset to restore equal thirds.</p>
+            <input type="text" class="handle-input" placeholder="@handle" />
             <div class="pie-chart-svg-wrapper">
                 <svg id="pieChartSvg" viewBox="0 0 420 360" aria-label="Draggable pie chart" role="img">
                     <g transform="translate(210 180)">
