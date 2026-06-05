@@ -50,20 +50,16 @@ body.pie-chart-page {
     touch-action: none;
 }
 
-.slice {
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.16));
-}
-
 .slice-0 {
     fill: rgba(255, 255, 255, 0.92);
 }
 
 .slice-1 {
-    fill: rgba(230, 255, 230, 0.95);
+    fill: rgba(255, 230, 230, 0.95);
 }
 
 .slice-2 {
-    fill: rgba(190, 245, 180, 0.96);
+    fill: rgba(245, 190, 190, 0.96);
 }
 
 .slice-label {
@@ -78,8 +74,8 @@ body.pie-chart-page {
 
 .handle {
     cursor: grab;
-    fill: #005800;
-    stroke: #002d00;
+    fill: #cc0000;
+    stroke: #770000;
     stroke-width: 2;
     touch-action: none;
 }

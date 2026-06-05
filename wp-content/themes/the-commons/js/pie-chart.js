@@ -10,6 +10,7 @@
     const minGap = 8;
     let boundaries = [0, 120, 240];
     let activeHandleIndex = null;
+    let pointerAngleOffset = 0;
 
     function normalize(angle) {
         return ((angle % 360) + 360) % 360;
@@ -38,7 +39,12 @@
             'Z'
         ].join(' ');
     }
-
+    function createTrianglePoints(angle) {
+        const tipPos = polarToCartesian(angle, 60);
+        const backLeftPos = polarToCartesian(angle - 150, radius + 12);
+        const backRightPos = polarToCartesian(angle + 150, radius + 12);
+        return `${tipPos.x},${tipPos.y} ${backLeftPos.x},${backLeftPos.y} ${backRightPos.x},${backRightPos.y}`;
+    }
     function clampAngle(rawAngle, low, high) {
         let candidate = normalize(rawAngle);
         while (candidate < low) {
@@ -110,12 +116,9 @@
 
         handlesGroup.innerHTML = '';
         boundaries.forEach((angle, index) => {
-            const pos = polarToCartesian(angle, radius + 8);
-            const handle = document.createElementNS(svgNS, 'circle');
+            const handle = document.createElementNS(svgNS, 'polygon');
             handle.classList.add('handle');
-            handle.setAttribute('cx', pos.x);
-            handle.setAttribute('cy', pos.y);
-            handle.setAttribute('r', 12);
+            handle.setAttribute('points', createTrianglePoints(angle));
             handle.setAttribute('data-handle-index', index);
             handle.setAttribute('aria-label', 'Drag to adjust slice ratio');
             handle.setAttribute('role', 'slider');
@@ -138,6 +141,9 @@
             return;
         }
         activeHandleIndex = index;
+        const pointerAngle = getPointerAngle(event);
+        const boundaryAngle = boundaries[index];
+        pointerAngleOffset = normalize(boundaryAngle - pointerAngle);
         event.target.setPointerCapture(event.pointerId);
         event.preventDefault();
     }
@@ -146,7 +152,8 @@
         if (activeHandleIndex === null) {
             return;
         }
-        const angle = getPointerAngle(event);
+        const rawPointerAngle = getPointerAngle(event);
+        const angle = normalize(rawPointerAngle + pointerAngleOffset);
         updateBoundary(activeHandleIndex, angle);
         render();
         event.preventDefault();
