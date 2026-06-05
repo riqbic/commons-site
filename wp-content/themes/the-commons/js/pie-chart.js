@@ -7,7 +7,7 @@
     const svgNS = 'http://www.w3.org/2000/svg';
     const radius = 140;
     const labelRadius = 84;
-    const minGap = 8;
+    const minGap = 0;
     let boundaries = [0, 120, 240];
     let activeHandleIndex = null;
     let pointerAngleOffset = 0;
@@ -41,8 +41,8 @@
     }
     function createTrianglePoints(angle) {
         const tipPos = polarToCartesian(angle, radius);
-        const backLeftPos = polarToCartesian(angle - 6, radius + 16);
-        const backRightPos = polarToCartesian(angle + 6, radius + 16);
+        const backLeftPos = polarToCartesian(angle - 3, radius + 12);
+        const backRightPos = polarToCartesian(angle + 3, radius + 12);
         return `${tipPos.x},${tipPos.y} ${backLeftPos.x},${backLeftPos.y} ${backRightPos.x},${backRightPos.y}`;
     }
     function clampAngle(rawAngle, low, high) {
@@ -69,14 +69,11 @@
     }
 
     function updateBoundary(index, rawAngle) {
-        const sorted = getSortedBoundaries();
-        const active = sorted.find((item) => item.index === index);
-        const activeIndex = sorted.indexOf(active);
-        const prev = sorted[(activeIndex + 2) % 3];
-        const next = sorted[(activeIndex + 1) % 3];
-        let low = prev.angle + minGap;
-        let high = next.angle - minGap;
-        if (prev.angle >= next.angle) {
+        const prevAngle = normalize(boundaries[(index + 2) % 3]);
+        const nextAngle = normalize(boundaries[(index + 1) % 3]);
+        let low = prevAngle + minGap;
+        let high = nextAngle - minGap;
+        if (prevAngle >= nextAngle) {
             high += 360;
         }
         boundaries[index] = clampAngle(rawAngle, low, high);
@@ -97,33 +94,40 @@
     }
 
     function render() {
-        const sorted = getSortedBoundaries();
-        const arcAngles = [
-            { start: sorted[0].angle, end: sorted[1].angle },
-            { start: sorted[1].angle, end: sorted[2].angle },
-            { start: sorted[2].angle, end: sorted[0].angle + 360 },
-        ];
+        const sliceNames = Array.from(svg.querySelectorAll('.slice-name'));
+        const sliceLinesGroup = svg.querySelector('.slice-lines');
+        sliceLinesGroup.innerHTML = '';
 
-        arcAngles.forEach((arc, index) => {
-            slicePaths[index].setAttribute('d', describeArc(arc.start, arc.end, radius));
-            const midAngle = (arc.start + arc.end) / 2;
+        boundaries.forEach((startAngle, index) => {
+            const endAngle = normalize(boundaries[(index + 1) % 3]);
+            const span = normalize(endAngle - startAngle);
+            const arcEnd = startAngle + span;
+            slicePaths[index].setAttribute('d', describeArc(startAngle, arcEnd, radius));
+
+            const midAngle = startAngle + span / 2;
             const labelPos = polarToCartesian(midAngle, labelRadius);
             sliceLabels[index].setAttribute('x', labelPos.x);
             sliceLabels[index].setAttribute('y', labelPos.y);
-            const percent = Math.round(((arc.end - arc.start) / 360) * 100);
+            const percent = Math.round((span / 360) * 100);
             sliceLabels[index].textContent = `${percent}%`;
-        });
 
-        // Position slice names according to their fixed boundaries
-        boundaries.forEach((angle, index) => {
-            const nextBoundary = boundaries[(index + 1) % 3];
-            const midAngle = (angle + nextBoundary) / 2;
-            const midAngleNorm = normalize(midAngle);
-            const namePos = polarToCartesian(midAngleNorm, labelRadius - 16);
-            const sliceName = document.querySelector(`.slice-name-${index}`);
-            if (sliceName) {
-                sliceName.setAttribute('x', namePos.x);
-                sliceName.setAttribute('y', namePos.y);
+            const lineStart = polarToCartesian(midAngle, radius + 4);
+            const namePos = polarToCartesian(midAngle, radius + 30);
+            const line = document.createElementNS(svgNS, 'line');
+            line.setAttribute('x1', lineStart.x);
+            line.setAttribute('y1', lineStart.y);
+            line.setAttribute('x2', namePos.x);
+            line.setAttribute('y2', namePos.y);
+            line.classList.add('slice-line');
+            sliceLinesGroup.appendChild(line);
+
+            if (sliceNames[index]) {
+                sliceNames[index].setAttribute('x', namePos.x);
+                sliceNames[index].setAttribute('y', namePos.y);
+                sliceNames[index].setAttribute('text-anchor', namePos.x < 0 ? 'end' : 'start');
+                if (namePos.x === 0) {
+                    sliceNames[index].setAttribute('text-anchor', 'middle');
+                }
             }
         });
 
