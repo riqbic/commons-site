@@ -41,8 +41,8 @@
     }
     function createTrianglePoints(angle) {
         const tipPos = polarToCartesian(angle, radius);
-        const backLeftPos = polarToCartesian(angle - 25, radius + 18);
-        const backRightPos = polarToCartesian(angle + 25, radius + 18);
+        const backLeftPos = polarToCartesian(angle - 6, radius + 16);
+        const backRightPos = polarToCartesian(angle + 6, radius + 16);
         return `${tipPos.x},${tipPos.y} ${backLeftPos.x},${backLeftPos.y} ${backRightPos.x},${backRightPos.y}`;
     }
     function clampAngle(rawAngle, low, high) {
@@ -112,6 +112,19 @@
             sliceLabels[index].setAttribute('y', labelPos.y);
             const percent = Math.round(((arc.end - arc.start) / 360) * 100);
             sliceLabels[index].textContent = `${percent}%`;
+        });
+
+        // Position slice names according to their fixed boundaries
+        boundaries.forEach((angle, index) => {
+            const nextBoundary = boundaries[(index + 1) % 3];
+            const midAngle = (angle + nextBoundary) / 2;
+            const midAngleNorm = normalize(midAngle);
+            const namePos = polarToCartesian(midAngleNorm, labelRadius - 16);
+            const sliceName = document.querySelector(`.slice-name-${index}`);
+            if (sliceName) {
+                sliceName.setAttribute('x', namePos.x);
+                sliceName.setAttribute('y', namePos.y);
+            }
         });
 
         handlesGroup.innerHTML = '';
