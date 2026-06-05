@@ -46,20 +46,28 @@
         return `${tipPos.x},${tipPos.y} ${backLeftPos.x},${backLeftPos.y} ${backRightPos.x},${backRightPos.y}`;
     }
     function clampAngle(rawAngle, low, high) {
-        let candidate = normalize(rawAngle);
-        while (candidate < low) {
-            candidate += 360;
+        const angle = normalize(rawAngle);
+        if (high < low) {
+            high += 360;
         }
-        while (candidate > high) {
-            candidate -= 360;
+
+        const candidates = [angle, angle + 360];
+        let best = null;
+        let bestDistance = Infinity;
+
+        for (const candidate of candidates) {
+            if (candidate >= low && candidate <= high) {
+                return normalize(candidate);
+            }
+
+            const distance = candidate < low ? low - candidate : candidate > high ? candidate - high : 0;
+            if (distance < bestDistance) {
+                bestDistance = distance;
+                best = candidate < low ? low : high;
+            }
         }
-        if (candidate < low) {
-            candidate = low;
-        }
-        if (candidate > high) {
-            candidate = high;
-        }
-        return normalize(candidate);
+
+        return normalize(best);
     }
 
     function getSortedBoundaries() {
