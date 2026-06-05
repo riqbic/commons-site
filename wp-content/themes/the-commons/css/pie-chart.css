@@ -40,6 +40,7 @@ body.pie-chart-page {
     width: 100%;
     padding-top: 100%;
     touch-action: none;
+    overflow: visible;
 }
 
 #pieChartSvg {
@@ -48,6 +49,7 @@ body.pie-chart-page {
     width: 100%;
     height: 100%;
     touch-action: none;
+    overflow: visible;
 }
 
 .slice-0 {

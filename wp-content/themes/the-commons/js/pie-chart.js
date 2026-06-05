@@ -7,7 +7,7 @@
     const svgNS = 'http://www.w3.org/2000/svg';
     const radius = 140;
     const labelRadius = 84;
-    const minGap = 0;
+    const minGap = 2;
     let boundaries = [0, 120, 240];
     let activeHandleIndex = null;
     let pointerAngleOffset = 0;
@@ -40,9 +40,9 @@
         ].join(' ');
     }
     function createTrianglePoints(angle) {
-        const tipPos = polarToCartesian(angle, radius);
-        const backLeftPos = polarToCartesian(angle - 3, radius + 12);
-        const backRightPos = polarToCartesian(angle + 3, radius + 12);
+        const tipPos = polarToCartesian(angle, radius + 6);
+        const backLeftPos = polarToCartesian(angle - 3, radius + 16);
+        const backRightPos = polarToCartesian(angle + 3, radius + 16);
         return `${tipPos.x},${tipPos.y} ${backLeftPos.x},${backLeftPos.y} ${backRightPos.x},${backRightPos.y}`;
     }
     function clampAngle(rawAngle, low, high) {
@@ -84,7 +84,7 @@
         point.x = event.clientX;
         point.y = event.clientY;
         const cursorPoint = point.matrixTransform(svg.getScreenCTM().inverse());
-        const dx = cursorPoint.x - 180;
+        const dx = cursorPoint.x - 210;
         const dy = cursorPoint.y - 180;
         let angle = Math.atan2(dy, dx) * (180 / Math.PI);
         if (angle < 0) {
