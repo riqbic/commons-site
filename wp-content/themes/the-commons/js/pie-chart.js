@@ -40,9 +40,9 @@
         ].join(' ');
     }
     function createTrianglePoints(angle) {
-        const tipPos = polarToCartesian(angle, 60);
-        const backLeftPos = polarToCartesian(angle - 150, radius + 12);
-        const backRightPos = polarToCartesian(angle + 150, radius + 12);
+        const tipPos = polarToCartesian(angle, radius);
+        const backLeftPos = polarToCartesian(angle - 25, radius + 18);
+        const backRightPos = polarToCartesian(angle + 25, radius + 18);
         return `${tipPos.x},${tipPos.y} ${backLeftPos.x},${backLeftPos.y} ${backRightPos.x},${backRightPos.y}`;
     }
     function clampAngle(rawAngle, low, high) {

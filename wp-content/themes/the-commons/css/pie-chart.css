@@ -74,9 +74,9 @@ body.pie-chart-page {
 
 .handle {
     cursor: grab;
-    fill: #cc0000;
-    stroke: #770000;
-    stroke-width: 2;
+    fill: #888888;
+    stroke: #555555;
+    stroke-width: 1;
     touch-action: none;
 }
 
