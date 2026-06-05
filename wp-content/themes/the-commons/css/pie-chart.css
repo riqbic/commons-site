@@ -1,0 +1,106 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #00ff00 !important;
+}
+
+body.pie-chart-page {
+    background: #00ff00 !important;
+    color: #000000;
+}
+
+.pie-chart-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.pie-chart-content {
+    width: min(100%, 640px);
+}
+
+.pie-chart-content h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+}
+
+.pie-chart-instruction {
+    margin: 0 0 20px;
+    max-width: 34rem;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.pie-chart-svg-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    touch-action: none;
+}
+
+#pieChartSvg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+}
+
+.slice {
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.16));
+}
+
+.slice-0 {
+    fill: rgba(255, 255, 255, 0.92);
+}
+
+.slice-1 {
+    fill: rgba(230, 255, 230, 0.95);
+}
+
+.slice-2 {
+    fill: rgba(190, 245, 180, 0.96);
+}
+
+.slice-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    fill: #000000;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+.handle {
+    cursor: grab;
+    fill: #005800;
+    stroke: #002d00;
+    stroke-width: 2;
+    touch-action: none;
+}
+
+.handle:active {
+    cursor: grabbing;
+}
+
+#pieChartReset {
+    margin-top: 20px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#pieChartReset:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}

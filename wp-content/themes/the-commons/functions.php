@@ -30,8 +30,16 @@ function commons_theme_assets() {
     if(is_home() || is_front_page() || is_single()) {
         wp_enqueue_script( 'comment-reply' );
     }
+    if ( is_page_template( 'page-pie-chart.php' ) ) {
+        wp_enqueue_script( 'pie-chart' );
+        wp_enqueue_style( 'pie-chart-style' );
+    }
     //Comic
     wp_register_script( 'commons-comic', get_template_directory_uri().'/js/commons-comic.js', array('jquery'), $version, true );
+
+    // Pie chart feature
+    wp_register_script( 'pie-chart', get_template_directory_uri().'/js/pie-chart.js', array(), $version, true );
+    wp_register_style( 'pie-chart-style', get_template_directory_uri() . '/css/pie-chart.css', array(), $version );
 
     //Slick slider
     wp_register_script( 'slick-js', get_template_directory_uri().'/includes/slick/slick.js', array('jquery'), '1.8.1', true );
