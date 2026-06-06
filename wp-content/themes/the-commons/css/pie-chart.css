@@ -106,6 +106,7 @@ body.pie-chart-page {
     fill: transparent;
     cursor: grab;
     touch-action: none;
+    pointer-events: all;
 }
 
 .handle:active {

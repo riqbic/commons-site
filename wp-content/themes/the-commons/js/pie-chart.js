@@ -138,11 +138,17 @@
             handleGroup.setAttribute('data-handle-index', index);
             handleGroup.setAttribute('class', 'handle-group');
 
+            // Compute tip position so the invisible hit zone lines up with the visual handle
+            const tipPos = polarToCartesian(angle, radius + 6);
+
             const hitZone = document.createElementNS(svgNS, 'circle');
-            hitZone.setAttribute('cx', '0');
-            hitZone.setAttribute('cy', '0');
-            hitZone.setAttribute('r', '28');
+            hitZone.setAttribute('cx', String(tipPos.x));
+            hitZone.setAttribute('cy', String(tipPos.y));
+            // Larger radius for easier touch targeting (visual unchanged)
+            hitZone.setAttribute('r', '40');
             hitZone.classList.add('handle-hit-zone');
+            // ensure the hit zone carries the handle index for event lookup
+            hitZone.setAttribute('data-handle-index', index);
             handleGroup.appendChild(hitZone);
 
             const handle = document.createElementNS(svgNS, 'polygon');
@@ -151,9 +157,11 @@
             handle.setAttribute('aria-label', 'Drag to adjust slice ratio');
             handle.setAttribute('role', 'slider');
             handle.setAttribute('tabindex', '-1');
+            handle.setAttribute('data-handle-index', index);
             handleGroup.appendChild(handle);
 
-            handleGroup.addEventListener('pointerdown', onPointerDown);
+            // Attach pointer handlers to the hit zone for larger interactive area
+            hitZone.addEventListener('pointerdown', onPointerDown);
             handlesGroup.appendChild(handleGroup);
         });
     }
