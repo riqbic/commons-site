@@ -63,15 +63,21 @@ body.pie-chart-page {
 }
 
 .slice-0 {
-    fill: rgba(255, 255, 255, 0.92);
+    fill: rgba(0, 116, 255, 0.92);
+    stroke: #000;
+    stroke-width: 2;
 }
 
 .slice-1 {
-    fill: rgba(255, 230, 230, 0.95);
+    fill: rgba(255, 223, 0, 0.92);
+    stroke: #000;
+    stroke-width: 2;
 }
 
 .slice-2 {
-    fill: rgba(245, 190, 190, 0.96);
+    fill: rgba(255, 0, 201, 0.92);
+    stroke: #000;
+    stroke-width: 2;
 }
 
 .slice-label {
@@ -91,6 +97,11 @@ body.pie-chart-page {
     fill: #000000;
     dominant-baseline: middle;
     pointer-events: none;
+}
+
+.slice-name-box {
+    fill: #ffffff;
+    stroke: none;
 }
 
 .handle {

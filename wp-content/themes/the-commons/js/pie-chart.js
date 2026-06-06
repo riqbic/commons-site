@@ -103,6 +103,7 @@
 
     function render() {
         const sliceNames = Array.from(svg.querySelectorAll('.slice-name'));
+        const sliceBoxes = Array.from(svg.querySelectorAll('.slice-name-box'));
 
         boundaries.forEach((startAngle, index) => {
             const endAngle = normalize(boundaries[(index + 1) % 3]);
@@ -122,13 +123,32 @@
 
             if (sliceNames[index]) {
                 const namePos = polarToCartesian(midAngle, radius + 30);
-                sliceNames[index].setAttribute('x', namePos.x);
-                sliceNames[index].setAttribute('y', namePos.y);
-                sliceNames[index].setAttribute('text-anchor', namePos.x < 0 ? 'end' : 'start');
+                const nameText = sliceNames[index];
+                nameText.setAttribute('x', namePos.x);
+                nameText.setAttribute('y', namePos.y);
+                nameText.setAttribute('text-anchor', namePos.x < 0 ? 'end' : 'start');
                 if (namePos.x === 0) {
-                    sliceNames[index].setAttribute('text-anchor', 'middle');
+                    nameText.setAttribute('text-anchor', 'middle');
                 }
-                sliceNames[index].setAttribute('display', showLabel ? 'inline' : 'none');
+                if (showLabel) {
+                    nameText.setAttribute('display', 'inline');
+                    const box = sliceBoxes[index];
+                    if (box) {
+                        const bbox = nameText.getBBox();
+                        const padding = 6;
+                        box.setAttribute('x', String(bbox.x - padding));
+                        box.setAttribute('y', String(bbox.y - padding));
+                        box.setAttribute('width', String(bbox.width + padding * 2));
+                        box.setAttribute('height', String(bbox.height + padding * 2));
+                        box.setAttribute('display', 'inline');
+                    }
+                } else {
+                    nameText.setAttribute('display', 'none');
+                    const box = sliceBoxes[index];
+                    if (box) {
+                        box.setAttribute('display', 'none');
+                    }
+                }
             }
         });
 

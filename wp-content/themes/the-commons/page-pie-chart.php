@@ -26,9 +26,18 @@ Template Name: Pie Chart Key Page
                             <text class="slice-label slice-label-2"></text>
                         </g>
                         <g class="slice-names">
-                            <text class="slice-name slice-name-0">SPOT</text>
-                            <text class="slice-name slice-name-1">TRICK</text>
-                            <text class="slice-name slice-name-2">FIT</text>
+                            <g class="slice-name-group slice-name-group-0">
+                                <rect class="slice-name-box slice-name-box-0" />
+                                <text class="slice-name slice-name-0">SPOT</text>
+                            </g>
+                            <g class="slice-name-group slice-name-group-1">
+                                <rect class="slice-name-box slice-name-box-1" />
+                                <text class="slice-name slice-name-1">TRICK</text>
+                            </g>
+                            <g class="slice-name-group slice-name-group-2">
+                                <rect class="slice-name-box slice-name-box-2" />
+                                <text class="slice-name slice-name-2">FIT</text>
+                            </g>
                         </g>
                         <g class="handles"></g>
                     </g>
