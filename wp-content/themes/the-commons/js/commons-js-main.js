@@ -1,4 +1,3 @@
-/* DEPLOY 2024-10-09 */
 //menu image change
 (function($) {
   // When the dropdown opens, seed the placeholder with the first item's thumbnail

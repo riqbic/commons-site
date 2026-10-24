@@ -1,4 +1,3 @@
-<?php /* DEPLOY 2024-10-09 */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

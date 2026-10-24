@@ -1,4 +1,4 @@
-<?php /* DEPLOY 2024-10-09 */
+<?php
 add_action('wp_enqueue_scripts','commons_theme_assets');
 function commons_theme_assets() {
     $version = '1.65'; //For cache busting css/js

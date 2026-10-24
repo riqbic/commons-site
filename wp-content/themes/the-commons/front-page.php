@@ -1,4 +1,4 @@
-<?php /* DEPLOY 2024-10-09 */ get_header(); ?>
+<?php get_header(); ?>
 
 <div class="newsy-container flex-mobile" id="newsy-container">
     <div class="flex-desktop-sidebar" id="flex-desktop-sidebar">
