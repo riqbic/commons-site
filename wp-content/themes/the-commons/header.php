@@ -250,5 +250,3 @@
 </div>
 
 <div class="header-spacer-mobile hidden-desktop"></div>
-
-<?php /* Force deploy 2024-10-09 */ ?>

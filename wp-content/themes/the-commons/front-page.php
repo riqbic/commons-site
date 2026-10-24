@@ -383,5 +383,3 @@
     
 </div>
 <?php get_footer(); ?>
-
-<?php /* Force deploy 2024-10-09 */ ?>

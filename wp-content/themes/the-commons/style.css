@@ -1803,5 +1803,9 @@ ul.products li.product a .price,
     font-family: "LibreFranklin", sans-serif !important;
 }
 
-
-/* Force deploy 2024-10-09 */
+/* Comment metadata styling */
+.commentlist .comment-metadata {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 10px;
+}
