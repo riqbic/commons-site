@@ -82,8 +82,8 @@ function load_commons_blog_post($paged = NULL) {
     if( $posts_query->have_posts() ) {
         while($posts_query->have_posts() ) {
             $posts_query->the_post(); 
-            echo '<h3>'.$title.'</h3>';
-            echo '<div class="post-content">'.$the_content.'</div>';
+            echo '<h4>'.$title.'</h4>';
+            echo '<div class="post-content newsy">'.$the_content.'</div>';
             if( in_category(31, $post_id) ){
                 echo '<div class="post-author italic">'.$author_name.'</div>';
                 echo '<div class="post-date italic">'.$date.'</div>';
@@ -139,7 +139,7 @@ function get_latest_post_link(){
         'orderby'         => 'post_date',
         'order'           => 'DESC',
         'post_status'     => 'publish',
-        'cat'             => 31  );
+        'category_name'   => 'articles'  );
     $sorted_posts = get_posts( $args );
     $permalink = get_permalink($sorted_posts[0]->ID);
     $post = $placeholder;
@@ -495,5 +495,32 @@ add_action('wp_logout','auto_redirect_after_logout');
 function auto_redirect_after_logout(){
   wp_safe_redirect( home_url().'/my-account/' );
   exit;
+}
+
+/**
+ * Custom comment format: author > comment > metadata
+ */
+function custom_comment_format( $comment, $args, $depth ) {
+    $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+    ?>
+    <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+            <div class="comment-author">
+                <?php echo get_comment_author_link(); ?> says:
+            </div>
+
+            <?php if ( '0' == $comment->comment_approved ) : ?>
+                <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+            <?php endif; ?>
+
+            <div class="comment-content">
+                <?php comment_text(); ?>
+            </div>
+
+            <div class="comment-metadata">
+                <?php printf( __( '%1$s at %2$s' ), get_comment_date(), get_comment_time() ); ?>
+            </div>
+        </article>
+    <?php
 }
 ?>

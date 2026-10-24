@@ -7,10 +7,10 @@
                 <?php 
                     //Query 3 most recent posts that are published
                     $post_args = array(
-                        'posts_per_page'	=> 4,
+                        'posts_per_page'	=> 3,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'cat' => 31,
+                        'category_name' => 'articles',
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
@@ -20,7 +20,7 @@
                             $posts_query->the_post(); 
                             ?>
                             <div class="blog-preview blog-item-1 <?php if($blogct >= 2) echo "hidden-mobile";?>" data-id="<?php echo get_the_ID(); ?>">
-                                <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                                <h2><?php the_title(); ?></h2>
                                 <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                                 <div class="newsy"><?php echo the_excerpt(); ?></div>
                                 <div class="read-more">+ open +</div>
@@ -54,7 +54,7 @@
                         while($posts_query->have_posts() ) {
                             $posts_query->the_post(); 
                             ?>
-                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <h1><?php the_title(); ?></h1>
                             <div class="newsy"><?php echo the_excerpt(); ?></div>
                             <div class="read-more">+ open +</div>
                             <?php 
@@ -72,7 +72,7 @@
                             'posts_per_page'	=> 1,
                             'post_type'		=> 'post',
                             'post_status' => 'publish',
-                            'cat' => 28,
+                            'category_name' => 'videos',
                         );
                         $posts_query = new WP_Query( $post_args );
                         if( $posts_query->have_posts() ) {
@@ -80,7 +80,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <div class="block-header"><h1 class="block-header-text"><?php the_title(); ?></h1></div>
+                                    <div class="block-header"><h1 class="block-header-text">VIDEO FEATURE</h1></div>
                                     <?php echo the_post_thumbnail($size = 'paid-videos-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?></div>
                                     <div class="read-more">+ open +</div>
@@ -105,7 +105,7 @@
                     while($posts_query->have_posts() ) {
                         $posts_query->the_post(); 
                         ?>
-                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                        <h1><?php the_title(); ?></h1>
                         <div class="newsy"><?php echo the_excerpt(); ?></div>
                         <div class="read-more">+ open +</div>
                         <?php 
@@ -118,7 +118,7 @@
         <div class="grid-item" id="shop-title">
             <div class="shop-title-container">
                 <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;"> <!--  data-popup="shop" -->
-                    <h3 class="shop-title">Shop</h3>
+                    <h1 class="shop-title">Shop</h1>
                 </a>
             </div>
         </div>
@@ -127,6 +127,7 @@
                 <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>
         </div>
+        <?php /* EVENTS SECTION — commented out, re-enable when needed
         <div class="grid-item" id="events">
             <div class="grid-preview opens-popup" id="events-preview" data-popup="events">
             <?php 
@@ -153,7 +154,9 @@
             wp_reset_query(); ?>
             </div>
         </div>
+        */ ?>
         <!--alternate method to load the blog content popout-->
+        <!-- ARTICLES PREVIEW — commented out, about-us and get-involved are now side by side
         <div class="grid-item" id="articles">
             <div class="grid-preview" id="articles-preview">
                 <?php 
@@ -172,7 +175,7 @@
                         ++$blogct;
                         ?>
                         <div class="blog-preview blog-item-2 <?php if($blogct >= 2) echo "hidden-mobile";?>" data-id="<?php echo get_the_ID(); ?>">
-                            <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                            <h3><?php the_title(); ?></h3>
                             <div class="newsy"><?php the_excerpt(); ?></div>
                             <div class="read-more">+ open +</div>
                         </div>
@@ -183,6 +186,7 @@
                 <?php } ?>
             </div>
         </div>
+        -->
     </div>
 </div>
 
@@ -195,6 +199,7 @@
 <!-- data needed for popups -->
 <div id="preview-content" style="display: none;">
 
+    <?php /* EVENTS POPOUT — commented out, re-enable when needed
     <div class="grid-content" id="events-html">
         <div class="popout-bar">
             <div class="popout-title">JOD</div>
@@ -212,7 +217,7 @@
                 $posts_query->the_post(); 
                 ?>
                 <div class="event-container">
-                    <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                    <h3><?php the_title(); ?></h3>
                     <?php echo the_content(); ?>
                 </div>
                 <?php 
@@ -222,6 +227,7 @@
         <?php } 
         wp_reset_query(); ?>
     </div>
+    */ ?>
 
     <div class="grid-content" id="get-involved-html">
         <div class="popout-bar">
@@ -240,7 +246,7 @@
                     $posts_query->the_post(); 
                     ?>
                     <div class ="get-involved-container">
-                        <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                        <h3><?php the_title(); ?></h3>
                         <div class="newsy get-involved-content-wrapper"><?php echo the_content(); ?></div>
                     </div>
                     <?php 
@@ -268,7 +274,7 @@
                 $posts_query->the_post(); 
                 ?>
                 <div class ="about-us-container">
-                    <h3 style="text-align: center;"><?php the_title(); ?></h3>
+                    <h3><?php the_title(); ?></h3>
                     <div class="newsy about-us-content-wrapper"><?php echo the_content(); ?></div>
                 </div>
                 <?php 
@@ -287,14 +293,14 @@
         </div>
         <div class="blog-flex-container flex-row">
             <div class="blog-sidebar hidden-mobile">
-            <h4 class="italic" style="padding: 10px;">Up Next</h4>
+            <h5 class="italic" style="padding: 10px;">Up Next</h5>
             <?php 
                 //Query 3 most recent posts that are published
                 $post_args = array(
                     'posts_per_page'	=> -1,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
-                    'category__in' => array(34)
+                    'category_name' => 'articles'
                 );
                 $posts_query = new WP_Query( $post_args );
                 $blogct = 0;
@@ -307,7 +313,7 @@
                         ++$blog_item_count; 
                         ++$blogct; ?>
                         <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <h4><?php the_title(); ?></h4>
+                            <h2><?php the_title(); ?></h2>
                             <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                             <?php if($blogct <= 999) { ?> <!-- Change this number to make fewer excerpts show up -->
                                 <div class="newsy"><?php the_excerpt(); ?></div>
@@ -337,14 +343,14 @@
         </div>
         <div class="blog-flex-container flex-row">
             <div class="blog-sidebar hidden-mobile">
-                <h4 class="italic" style="padding: 10px;">Up Next</h4>
+                <h5 class="italic" style="padding: 10px;">Up Next</h5>
                 <?php 
                 //Query 3 most recent posts that are published
                 $post_args = array(
                     'posts_per_page'	=> -1,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
-                    'category__in' => array(28,31)
+                    'category_name' => 'videos'
                 );
                 $posts_query = new WP_Query( $post_args );
                 $blogct = 0;
@@ -357,7 +363,7 @@
                         //Incremenent blog item count
                         ++$blog_item_count; ?>
                         <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <h4><?php the_title(); ?></h4>
+                            <h2><?php the_title(); ?></h2>
                             <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
                             <div class="newsy"><?php the_excerpt(); ?></div>
                             <div class="read-more">+ open +</div>

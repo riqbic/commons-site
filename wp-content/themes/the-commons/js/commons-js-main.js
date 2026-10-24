@@ -1,21 +1,34 @@
 //menu image change
 (function($) {
-  $(document).on('mouseenter','.has-hover-thumbnail', function() {
-    var $this = $(this);
-    var image = $(this).attr('data-image');
-    if(image != '') {
-      console.log(image);
-      $this.parent().find('.image-placeholder').html('<img src="'+image+'" />');
-    } else {
-      $this.parent().find('.image-placeholder').html('');
+  // When the dropdown opens, seed the placeholder with the first item's thumbnail
+  $(document).on('mouseenter', '.menu li.has-children', function() {
+    var $ul = $(this).find('ul.has-image-placeholder');
+    if ($ul.length) {
+      var $firstItem = $ul.find('.has-hover-thumbnail').first();
+      if ($firstItem.length) {
+        var firstImage = $firstItem.attr('data-image');
+        if (firstImage) {
+          $ul.find('.image-placeholder').html('<img src="' + firstImage + '" />');
+        }
+      }
     }
   });
-  $(document).on('mouseleave','.has-hover-thumbnail', function() {
-    var $this = $(this);
-    $this.parent().find('.image-placeholder').html('');
-    
+
+  // When hovering an item, swap to that item's thumbnail
+  $(document).on('mouseenter', '.has-hover-thumbnail', function() {
+    var image = $(this).attr('data-image');
+    if (image) {
+      $(this).parent().find('.image-placeholder').html('<img src="' + image + '" />');
+    }
   });
-})(jQuery); // Fully reference jQuery after this point.
+
+  // On item mouseleave, do nothing — leave the last hovered image showing
+
+  // When the mouse leaves the whole dropdown, clear the placeholder
+  $(document).on('mouseleave', '.menu li.has-children', function() {
+    $(this).find('.image-placeholder').html('');
+  });
+})(jQuery);
 
 /* mobile menu event listeners, added to top because it wasn't firign lower - guessing there is a bug in your code somewhere... */
 var menuItems = document.getElementsByClassName("has-children");
@@ -28,14 +41,29 @@ var menuItems = document.getElementsByClassName("has-children");
 
 for (let i = 0; i < menuItems.length; i++) {
     menuItems[i].addEventListener('click', function() {
-      if (this.classList.contains('is-active')) {
-        this.classList.remove('is-active');
+      const clickedItem = this;
+      
+      if (clickedItem.classList.contains('is-active')) {
+        // Just close the clicked item
+        clickedItem.classList.remove('is-active');
       } else {
-        this.classList.add('is-active');
+        // Check if another item is currently open
+        let hasOpenItem = false;
         for (let j = 0; j < menuItems.length; j++) {
           if (j !== i && menuItems[j].classList.contains('is-active')) {
+            hasOpenItem = true;
             menuItems[j].classList.remove('is-active');
           }
+        }
+        
+        // If another item was open, wait for it to close before opening the new one
+        if (hasOpenItem) {
+          setTimeout(() => {
+            clickedItem.classList.add('is-active');
+          }, 200); // Slightly more than half the transition time
+        } else {
+          // No other item open, open immediately
+          clickedItem.classList.add('is-active');
         }
       }
     });
@@ -89,16 +117,9 @@ function onPageLoad() {
 //Resize the popout container (and a few other things) when the page is resized
 window.addEventListener('resize',resize);
 function resize(){
-    var about_us_grid_item = document.getElementById("about-us-preview");
-    var get_involved_grid_item = document.getElementById("get-involved-preview");
-    var sidebar_blog = document.getElementById("unpaid-videos-preview");
-    var articles = document.getElementById("articles-preview");
     var flex_desktop_grid = document.getElementById("flex-desktop-grid");
 
     setPopoutSize(); 
-
-    articles.style.maxHeight = about_us_grid_item.offsetHeight+get_involved_grid_item.offsetHeight+20+"px";
-    sidebar_blog.style.maxHeight = flex_desktop_grid.offsetHeight+"px";
 }
 
 //toggle the popout shadow

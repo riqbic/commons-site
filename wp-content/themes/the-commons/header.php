@@ -19,15 +19,15 @@
 <div class="tcb-content">
 <div class="newsy-header hidden-mobile">
     <div class="header-container">
-        <p class="header-item-1" style="color: white">
+        <p class="header-item-1" style="color: black; font-family: CenturyOldStyleRegular;">
             <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
         </p>
         <div class="header-item-2">
             <a href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
-                <img src="https://thecommons.boston/wp-content/uploads/2025/12/Commons_web_logo.jpg" class="site-title">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/Commons_web_logo_inverted.jpg" class="site-title">
             </a>
         </div>
-        <p class="header-item-3" style="color: white; font-style: italic;">By the People, For the People.</p>
+        <p class="header-item-3" style="color: black; font-style: italic; font-family: CenturyOldStyleRegular;">By the People, For the People.</p>
     </div>
 </div>
 
@@ -37,7 +37,9 @@
     <div class="menu-container">
         <ul class="menu">
             <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <!-- EVENTS MENU ITEM — commented out, re-enable when needed
             <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 8</a></li>
+            -->
             <li class="menu-item has-children" id="articles-menu-item">
                 <a class="menu-item" href="<?php echo get_bloginfo('url'); ?>/articles/">Articles</a>
                 <ul class="has-image-placeholder">
@@ -47,7 +49,7 @@
                         'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'category__in' => array(34,31)
+                        'category_name' => 'articles'
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
@@ -79,7 +81,7 @@
                         'posts_per_page'	=> 4,
                         'post_type'		=> 'post',
                         'post_status' => 'publish',
-                        'category__in' => array(28)
+                        'category_name' => 'videos'
                     );
                     $posts_query = new WP_Query( $post_args );
                     $blogct = 0;
@@ -92,7 +94,7 @@
                             //Incremenent blog item count
                             ++$blog_item_count; ?>
                             <li class="pop-item blog-item blog-item-<?php echo $blog_item_count; ?> has-hover-thumbnail" data-id="<?php echo get_the_ID(); ?>" data-image="<?php echo get_the_post_thumbnail_url(); ?>">
-                                <a href="<?php echo get_bloginfo('url'); ?>?pop=videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="paid-videos"><?php the_title(); ?></a>
+                                <a href="<?php echo get_bloginfo('url'); ?>?pop=videos&post_id=<?php echo get_the_ID(); ?>" class="load-from-url" data-category="videos"><?php the_title(); ?></a>
                             </li>
                             <?php 
                         }
@@ -138,13 +140,13 @@
 
 <div class="newsy-header-mobile hidden-desktop">
     <a id="title-link-mobile" href="<?php echo get_bloginfo('url'); ?>" title="The Commons" style="text-decoration:none;">
-        <img src="https://thecommons.boston/wp-content/uploads/2025/12/Commons_web_logo.jpg" class="site-title-mobile">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/Commons_web_logo_inverted.jpg" class="site-title-mobile" style="border: none;">
     </a>
     <div class="menu-extras-mobile">
-        <p class="header-item-mobile-1" style="color: white; font-size: 12px;">
+        <p class="header-item-mobile-1" style="color: black; font-size: 12px !important; font-family: CenturyOldStyleRegular;">
             <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
         </p>
-        <p class="header-item-mobile-2" style="color: white; font-style: italic; font-size: 12px;">By the People, For the People.</p>
+        <p class="header-item-mobile-2" style="color: black; font-style: italic; font-size: 12px !important; font-family: CenturyOldStyleRegular;">By the People, For the People.</p>
     </div>
     <div class="hamburger-menu" >
         <input id="menu-toggle" type="checkbox" />
@@ -154,15 +156,17 @@
 
         <ul class="menu-mobile">
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <!-- EVENTS MENU ITEM — commented out, re-enable when needed
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 8</a></li>
+            -->
             <li class="menu-item-mobile has-children" id="articles-menu-item-mobile"><div class="menu-text-mobile">Articles</div>
                 <ul>
                 <?php 
                 $post_args = array(
-                    'posts_per_page'	=> 9,
+                    'posts_per_page'	=> 5,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
-                    'category__in' => array(34,31)
+                    'category_name' => 'articles'
                 );
                 $posts_query = new WP_Query( $post_args );
                 $blogct = 0;
@@ -188,10 +192,10 @@
                 <ul>
                 <?php 
                 $post_args = array(
-                    'posts_per_page'	=> 9,
+                    'posts_per_page'	=> 5,
                     'post_type'		=> 'post',
                     'post_status' => 'publish',
-                    'category__in' => array(28)
+                    'category_name' => 'videos'
                 );
                 $posts_query = new WP_Query( $post_args );
                 $blogct = 0;
