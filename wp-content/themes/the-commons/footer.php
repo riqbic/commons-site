@@ -1,4 +1,4 @@
-<?php wp_footer(); ?>
+<?php /* DEPLOY 2024-10-09 */ wp_footer(); ?>
 </div>
 <div class="tcb-footer">
     <div class="socials-container">

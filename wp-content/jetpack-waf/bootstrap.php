@@ -1,3 +1,4 @@
+/* DEPLOY 2024-10-09 */
 <?php
 define( 'DISABLE_JETPACK_WAF', false );
 if ( defined( 'DISABLE_JETPACK_WAF' ) && DISABLE_JETPACK_WAF ) return;
