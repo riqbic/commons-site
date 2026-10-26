@@ -115,14 +115,12 @@
                 <?php } ?>
             </div>
         </div>
-        <div class="grid-item" id="shop-title">
+        <div class="grid-item" id="shop">
             <div class="shop-title-container">
-                <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;"> <!--  data-popup="shop" -->
+                <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">
                     <h1 class="shop-title">Shop</h1>
                 </a>
             </div>
-        </div>
-        <div class="grid-item" id="shop">
             <div class="grid-preview" id="shop-preview">
                 <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
             </div>

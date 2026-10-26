@@ -1,4 +1,3 @@
-/* DEPLOY 2024-10-09 */
 <?php
 $waf_allow_list = array (
 );

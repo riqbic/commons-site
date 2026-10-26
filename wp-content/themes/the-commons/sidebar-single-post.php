@@ -1,4 +1,3 @@
-
 <?php 
 global $post;
 $current_post_id = $post->ID;
