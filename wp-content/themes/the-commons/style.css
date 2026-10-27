@@ -1828,3 +1828,16 @@ ul.products li.product a .price,
     color: #cc0000;
     font-weight: 600;
 }
+
+/* Shop grid link wrapper */
+.shop-grid-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Ensure product links take precedence over background link */
+#shop-preview a {
+    position: relative;
+    z-index: 10;
+}

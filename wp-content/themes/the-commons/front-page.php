@@ -115,16 +115,16 @@
                 <?php } ?>
             </div>
         </div>
-        <div class="grid-item" id="shop">
-            <div class="shop-title-container">
-                <a class="shop-title" href="<?php echo get_bloginfo('url'); ?>/shop" style="text-decoration: none;">
+        <a href="<?php echo get_bloginfo('url'); ?>/shop" class="shop-grid-link">
+            <div class="grid-item" id="shop">
+                <div class="shop-title-container">
                     <h1 class="shop-title">Shop</h1>
-                </a>
+                </div>
+                <div class="grid-preview" id="shop-preview">
+                    <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
+                </div>
             </div>
-            <div class="grid-preview" id="shop-preview">
-                <?php echo do_shortcode('[products limit="4" columns="4" visibility="featured"]'); ?>
-            </div>
-        </div>
+        </a>
         <?php /* EVENTS SECTION — commented out, re-enable when needed
         <div class="grid-item" id="events">
             <div class="grid-preview opens-popup" id="events-preview" data-popup="events">

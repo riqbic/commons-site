@@ -74,7 +74,7 @@ function add_sold_out_class_to_products( $classes, $product ) {
  */
 add_filter( 'woocommerce_get_price_html', 'replace_price_with_sold_out', 10, 2 );
 function replace_price_with_sold_out( $price, $product ) {
-    if ( ! is_admin() && ! $product->is_in_stock() && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+    if ( ! is_admin() && ! $product->is_in_stock() && ( is_shop() || is_product_category() || is_product_tag() || is_front_page() ) ) {
         return '<span class="sold-out-text">SOLD OUT</span>';
     }
     return $price;
