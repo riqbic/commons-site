@@ -66,7 +66,7 @@ Version: 1.52
 
 img {
     max-width: 100%;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     box-sizing: border-box;
     height: auto;
 }
@@ -212,12 +212,17 @@ img {
     }
     .shop-title-container{
         height: 30px !important;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-        margin-top: 50px;
+        margin-bottom: 12px !important;
     }
-    #shop{
-        border-bottom: 1px solid black;
+    #shop {
+        padding: 3px 10px;
+        grid-area: shop;
+        background: #ecebeb;
+        border: 1px solid black !important;
+        margin-top: 15px;
+    }
+    #unpaid-videos-preview{
+        display: none;
     }
     .subpage-container{
         padding: 10px !important;
@@ -827,7 +832,7 @@ a.restriction-message-link:hover {
     grid-auto-rows: minmax(0px,auto);
     grid-template-columns: 1fr 1fr;
     height: fit-content;
-    gap: 20px 25px;
+    gap: 0px 25px;
     grid-template-areas:
     "paid-videos paid-videos"
     "shop shop"
@@ -847,7 +852,7 @@ a.restriction-message-link:hover {
 
 #paid-videos { grid-area: paid-videos; }
 #about-us { grid-area: about-us; }
-#shop { grid-area: shop; }
+#shop {padding: 3px 10px;grid-area: shop;background: #ecebeb;border: 1px solid;margin-top: 15px;}
 #get-involved { grid-area: get-involved; }
 
 .grid-item{
@@ -1081,17 +1086,16 @@ ul .blog-item {
 .shop-title-container{
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
-    justify-items: center;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    justify-items: left;
+    /* margin-top: 1rem; */
+    margin-bottom: .5rem;
 }
 
 .shop-title{
     width: fit-content;
-    margin: auto;
+    /* margin: auto; */
     line-height: .75;
 }
 
@@ -1221,6 +1225,10 @@ ul .blog-item {
 
 .woocommerce ul.products li.product{
     margin-bottom: 0;
+}
+
+#shop-preview > div > ul{
+    margin: 0px;
 }
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
@@ -1356,6 +1364,10 @@ cite .fn{
 
 .woocommerce div.product form.cart.variations_form{
     display: block;
+}
+
+#shop-preview > div > ul > li{
+    margin-bottom: 0px;
 }
 
 .input-text.qty.text{
