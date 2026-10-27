@@ -53,6 +53,33 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+/**
+ * Remove "Add to cart" button from shop/archive pages
+ */
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+/**
+ * Add "sold-out" class to out-of-stock products on shop pages
+ */
+add_filter( 'woocommerce_post_class', 'add_sold_out_class_to_products', 10, 2 );
+function add_sold_out_class_to_products( $classes, $product ) {
+    if ( ! $product->is_in_stock() ) {
+        $classes[] = 'sold-out';
+    }
+    return $classes;
+}
+
+/**
+ * Replace price with "SOLD OUT" for out-of-stock products on shop pages
+ */
+add_filter( 'woocommerce_get_price_html', 'replace_price_with_sold_out', 10, 2 );
+function replace_price_with_sold_out( $price, $product ) {
+    if ( ! is_admin() && ! $product->is_in_stock() && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+        return '<span class="sold-out-text">SOLD OUT</span>';
+    }
+    return $price;
+}
+
 add_action( 'wp_ajax_nopriv_load_commons_blog_post', 'load_commons_blog_post' );
 add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {

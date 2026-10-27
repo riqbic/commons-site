@@ -1817,3 +1817,14 @@ ul.products li.product a .price,
     color: #666;
     margin-top: 10px;
 }
+
+/* Sold out product styling */
+.sold-out img {
+    filter: saturate(0.2);
+    opacity: 0.7;
+}
+
+.sold-out-text {
+    color: #cc0000;
+    font-weight: 600;
+}
