@@ -80,6 +80,103 @@ function replace_price_with_sold_out( $price, $product ) {
     return $price;
 }
 
+/**
+ * Remove the "Continue shopping" button from the added-to-cart notice.
+ * WooCommerce only shows it when "Redirect to the cart page after successful addition" is on.
+ * Targets the link inside this one message, because .wc-forward is also used by "Proceed to checkout", "View cart", etc.
+ */
+add_filter( 'wc_add_to_cart_message_html', 'commons_remove_continue_shopping_link' );
+function commons_remove_continue_shopping_link( $message ) {
+    if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
+        $message = trim( preg_replace( '/<a [^>]*class="[^"]*wc-forward[^"]*"[^>]*>.*?<\/a>/s', '', $message ) );
+    }
+    return $message;
+}
+
+/**
+ * Popout sidebar: random mix of in-stock, catalog-visible products and posts from the videos category.
+ * Products render with WooCommerce's loop template (image, title, price), same as the home page shop preview.
+ * Videos render as .blog-item so home.js still loads them into the popout on click.
+ */
+function commons_popout_sidebar_items( $product_count = 4, $video_count = 6 ) {
+    $product_ids = array();
+    if ( function_exists( 'wc_get_product_visibility_term_ids' ) ) {
+        $visibility    = wc_get_product_visibility_term_ids();
+        $exclude_terms = array_filter( array( $visibility['exclude-from-catalog'], $visibility['outofstock'] ) );
+        $product_args  = array(
+            'post_type'      => 'product',
+            'post_status'    => 'publish',
+            'posts_per_page' => $product_count,
+            'orderby'        => 'rand',
+            'fields'         => 'ids',
+        );
+        if ( $exclude_terms ) {
+            $product_args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'product_visibility',
+                    'field'    => 'term_taxonomy_id',
+                    'terms'    => $exclude_terms,
+                    'operator' => 'NOT IN',
+                ),
+            );
+        }
+        $product_ids = get_posts( $product_args );
+    }
+
+    $video_ids = get_posts( array(
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => $video_count,
+        'category_name'  => 'videos',
+        'orderby'        => 'rand',
+        'fields'         => 'ids',
+    ) );
+
+    $item_ids = array_merge( $product_ids, $video_ids );
+    if ( empty( $item_ids ) ) {
+        echo '<p>There are no posts to show right now.</p>';
+        return;
+    }
+    shuffle( $item_ids );
+
+    $items_query = new WP_Query( array(
+        'post_type'           => array( 'post', 'product' ),
+        'post__in'            => $item_ids,
+        'orderby'             => 'post__in',
+        'posts_per_page'      => count( $item_ids ),
+        'ignore_sticky_posts' => true,
+    ) );
+
+    if ( function_exists( 'wc_setup_loop' ) ) {
+        wc_setup_loop( array( 'columns' => 1 ) );
+    }
+
+    $blog_item_count = 0;
+    while ( $items_query->have_posts() ) {
+        $items_query->the_post();
+        if ( get_post_type() === 'product' ) { ?>
+            <div class="woocommerce sidebar-product">
+                <ul class="products columns-1">
+                    <?php wc_get_template_part( 'content', 'product' ); ?>
+                </ul>
+            </div>
+        <?php } else {
+            ++$blog_item_count; ?>
+            <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
+                <h2><?php the_title(); ?></h2>
+                <div class="blog-thumbnail-container"><?php the_post_thumbnail( 'blog-thumbnail' ); ?></div>
+                <div class="newsy"><?php the_excerpt(); ?></div>
+                <div class="read-more">+ open +</div>
+            </div>
+        <?php }
+    }
+
+    wp_reset_postdata();
+    if ( function_exists( 'wc_reset_loop' ) ) {
+        wc_reset_loop();
+    }
+}
+
 add_action( 'wp_ajax_nopriv_load_commons_blog_post', 'load_commons_blog_post' );
 add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {
@@ -232,7 +329,7 @@ function custom_thankyou_page($order_id) {
     // Output the HTML for product links and the "Watch Now" button
     if (!empty($product_links)) {
         echo '<p class="thank-you-message-text">Your purchase gives you access to ' . implode(', ', $product_links) . '.</p>';
-        echo '<button class="watch-now-button"><a href="' . $product_urls[0] . '" title="Watch Now">Watch Now</a></button>';
+        echo '<button class="button watch-now-button"><a href="' . $product_urls[0] . '" title="Watch Now">Watch Now</a></button>';
     }
 }
 
@@ -469,12 +566,12 @@ function wk_new_menu_items( $items ) {
 }
 
 add_action('woocommerce_before_cart', 'common_open_grid');
-add_action('woocommerce_checkout_before_customer_details','common_open_grid', 10);
+add_action('woocommerce_checkout_before_customer_details','common_open_grid', 20);
 function common_open_grid() {
     echo '<div class="common-2-col-grid">';
 }
 
-add_action('woocommerce_checkout_before_customer_details','common_open_group_div', 11);
+add_action('woocommerce_checkout_before_customer_details','common_open_group_div', 21);
 add_action('woocommerce_checkout_before_order_review_heading','common_open_group_div', 11);
 add_action('woocommerce_checkout_before_order_review_heading','common_open_group_div', 11);
 function common_open_group_div() {

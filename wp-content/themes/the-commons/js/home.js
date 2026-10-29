@@ -46,6 +46,10 @@ jQuery.extend(jQuery.fn, {
                             if(activePost != null) {
                                 //we found a post in the url, load that
                                 var $this = $('#popout-container .blog-sidebar .blog-item[data-id='+activePost+']');
+                                //sidebar is a random selection, so the post may not be in it; load it by id instead
+                                if(!$this.length) {
+                                    $this = $('<div>').attr('data-id', activePost);
+                                }
                                 setCurrentPostInActivePopup($this,false);
                             } else {
                                 //no post in url, click the first item in the sidebar

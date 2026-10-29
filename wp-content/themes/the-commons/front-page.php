@@ -80,7 +80,7 @@
                                 $posts_query->the_post(); 
                                 ?>
                                 <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <div class="block-header"><h1 class="block-header-text">VIDEO FEATURE</h1></div>
+                                    <div class="block-header"><h1 class="block-header-text">Video Feature</h1></div>
                                     <?php echo the_post_thumbnail($size = 'paid-videos-thumbnail'); ?>
                                     <div class="newsy"><?php echo the_excerpt(); ?></div>
                                     <div class="read-more">+ open +</div>
@@ -290,39 +290,8 @@
         </div>
         <div class="blog-flex-container flex-row">
             <div class="blog-sidebar hidden-mobile">
-            <h5 class="italic" style="padding: 10px;">Up Next</h5>
-            <?php 
-                //Query 3 most recent posts that are published
-                $post_args = array(
-                    'posts_per_page'	=> -1,
-                    'post_type'		=> 'post',
-                    'post_status' => 'publish',
-                    'category_name' => 'articles'
-                );
-                $posts_query = new WP_Query( $post_args );
-                $blogct = 0;
-                if( $posts_query->have_posts() ) {
-                    //Declare an iterator for blog-item class
-                    $blog_item_count = 0;
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        //Incremenent blog item count
-                        ++$blog_item_count; 
-                        ++$blogct; ?>
-                        <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <h2><?php the_title(); ?></h2>
-                            <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
-                            <?php if($blogct <= 999) { ?> <!-- Change this number to make fewer excerpts show up -->
-                                <div class="newsy"><?php the_excerpt(); ?></div>
-                                <div class="read-more">+ open +</div>
-                            <?php } ?>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
-                <?php }
-                wp_reset_query(); ?>
+            <h5 class="italic" style="padding: 10px;">You might like...</h5>
+            <?php commons_popout_sidebar_items(); ?>
             </div><!-- close sidebar -->
             <div class="blog-single-content" id="blog-ajax-container">
                 <div class="loader"><img src="wp-content\themes\the-commons\img\loader.gif" alt="loader gif" width="200" height="200"></div>
@@ -340,37 +309,8 @@
         </div>
         <div class="blog-flex-container flex-row">
             <div class="blog-sidebar hidden-mobile">
-                <h5 class="italic" style="padding: 10px;">Up Next</h5>
-                <?php 
-                //Query 3 most recent posts that are published
-                $post_args = array(
-                    'posts_per_page'	=> -1,
-                    'post_type'		=> 'post',
-                    'post_status' => 'publish',
-                    'category_name' => 'videos'
-                );
-                $posts_query = new WP_Query( $post_args );
-                $blogct = 0;
-                if( $posts_query->have_posts() ) {
-                    ++$blogct;
-                    //Declare an iterator for blog-item class
-                    $blog_item_count = 0;
-                    while($posts_query->have_posts() ) {
-                        $posts_query->the_post(); 
-                        //Incremenent blog item count
-                        ++$blog_item_count; ?>
-                        <div class="blog-item blog-item-<?php echo $blog_item_count; ?>" data-id="<?php echo get_the_ID(); ?>">
-                            <h2><?php the_title(); ?></h2>
-                            <div class="blog-thumbnail-container"><?php echo the_post_thumbnail($size = 'blog-thumbnail'); ?></div>
-                            <div class="newsy"><?php the_excerpt(); ?></div>
-                            <div class="read-more">+ open +</div>
-                        </div>
-                        <?php 
-                    }
-                } else { ?>
-                    <p>There are no posts to show right now.</p>
-                <?php } 
-                wp_reset_query(); ?>
+                <h5 class="italic" style="padding: 10px;">You might like...</h5>
+                <?php commons_popout_sidebar_items(); ?>
             </div><!-- close sidebar -->
             <div class="blog-single-content" id="blog-ajax-container">
                 <div class="post-ajax-loader"></div>

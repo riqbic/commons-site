@@ -242,6 +242,9 @@ img {
     .youtube-wide > div > iframe{
         width: 100%;
     }
+    .socials-container > .menu-item{
+    font-size: 1rem !important;
+}
 }
 
 @media (min-width: 769px){
@@ -323,7 +326,7 @@ p{
 /*title and banner*/
 h1{
     font-family: KarnakProCondBlack;
-    font-size: 2.618rem;
+    font-size: 2rem;
 }
 
 /*titles*/
@@ -1144,22 +1147,20 @@ ul .blog-item {
 }
 
 .watch-now-button{
-    margin: auto;
+    margin: 0px 0px 3em 0px !important;
     font-size: 2rem;
-    font-family: 'CenturyOldStyleRegular';
-    margin-top: 50px;
-    margin-bottom: 50px;
     display: block;
 }
 
 .thank-you-message-text{
-    margin: auto;
-    text-align: center;
+    /* margin: auto; */
+    /* text-align: center; */
     max-width: 500px;
+    margin: 1rem 0px;
 }
 
 .woocommerce-thankyou-order-received {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .subpage-container{
@@ -1240,7 +1241,8 @@ ul .blog-item {
 }
 
 .woocommerce ul.order_details{
-    margin: auto;
+    padding: 0px;
+    /* margin: auto; */
     list-style: none;
     width: fit-content;
     display: block;
@@ -1852,4 +1854,68 @@ ul.products li.product a .price,
 .shop-title-container {
     position: relative;
     pointer-events: none;
+}
+
+.return-to-shop{
+    display: none;
+}
+
+/* Products in the popout sidebar (match .popout-container .blog-item spacing) */
+.blog-sidebar .sidebar-product {
+    padding: 5px 10px 10px;
+    border-bottom: 1px solid black;
+}
+.blog-sidebar .sidebar-product:last-child {
+    border-bottom: none;
+}
+.blog-sidebar .sidebar-product ul.products {
+    margin: 0;
+}
+.blog-sidebar .sidebar-product ul.products li.product {
+    width: 100%;
+    float: none;
+    margin: 0;
+}
+
+/* Cart coupon on mobile: stack input and button, left aligned.
+   WooCommerce's small-screen CSS adds empty ::before/::after clearfix elements to .coupon,
+   which become grid cells in our .actions .coupon grid and stagger the layout. */
+@media (max-width: 768px) {
+    .woocommerce-cart .woocommerce table.cart td.actions .coupon {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .woocommerce-cart .woocommerce table.cart td.actions .coupon::before,
+    .woocommerce-cart .woocommerce table.cart td.actions .coupon::after {
+        display: none;
+    }
+    .woocommerce-cart .woocommerce table.cart td.actions .coupon .button,
+    .woocommerce-cart .woocommerce table.cart td.actions .coupon .coupon-error-notice {
+        width: auto;
+        float: none;
+    }
+}
+
+/* Replace WooCommerce's loading spinner with the theme loader gif */
+.woocommerce .blockUI.blockOverlay {
+    /* No white wash over the loading area. The overlay stays in place (invisible) so it still blocks clicks while loading.
+       blockUI sets opacity:.6 inline, so force it back to 1 or the loader box would be faded too. */
+    opacity: 1 !important;
+    background: transparent !important;
+}
+.woocommerce .blockUI.blockOverlay::before,
+.woocommerce .loader::before {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    padding: 10px;
+    font-size: inherit;
+    animation: none;
+    border: 1px solid #000;
+    background: #fff url('img/loader.gif') center center / contain no-repeat;
+    background-origin: content-box;
 }
