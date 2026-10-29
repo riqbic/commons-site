@@ -187,7 +187,7 @@ img {
         width: 100% !important;
     }
     .wp-block-woocommerce-memberships-member-content .wc-memberships-restriction-message{
-        font-size: 1rem !important;
+        font-size: .875rem !important;
     }
     .caption-block{
         height: auto !important;
@@ -1392,10 +1392,9 @@ cite .fn{
     padding-left: 0;
     background: transparent;
     color: #000;
-    font-size: .875rem;
+    font-size: .8rem;
     font-family: LibreFranklin;
     font-weight: 600;
-    text-align: center;
 }
 .wp-block-woocommerce-memberships-member-content .wc-memberships-restriction-message:before {
     display: none;
