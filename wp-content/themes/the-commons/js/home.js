@@ -107,18 +107,22 @@ jQuery.extend(jQuery.fn, {
                 $dots.removeClass('is-active').eq(currentIndex()).addClass('is-active');
             }
 
-            //Size the track to the visible slide. Mid-swipe, blend between the two slides' heights
+            //Size the carousel to the visible slide. Mid-swipe, blend between the two slides' heights
             //so the content below moves smoothly with the swipe instead of jumping at the end.
+            //The height goes on the wrapper (.video-carousel, overflow hidden), NOT the scrolling track:
+            //resizing a scroll-snap container mid-scroll makes iOS Safari re-snap every frame,
+            //which breaks the native settle and leaves it stuck between videos.
+            var carousel = this;
             var slides = $(track).children('.video-slide').toArray();
             function syncHeight() {
                 var width = track.clientWidth;
                 if (!width || !slides.length) return;
                 var position = track.scrollLeft / width;
-                var i = Math.min(Math.floor(position), slideCount - 1);
-                var fraction = position - i;
+                var i = Math.max(0, Math.min(Math.floor(position), slideCount - 1));
+                var fraction = Math.max(0, Math.min(position - i, 1));
                 var current = slides[i].offsetHeight;
                 var next = slides[Math.min(i + 1, slideCount - 1)].offsetHeight;
-                track.style.height = (current + (next - current) * fraction) + 'px';
+                carousel.style.height = (current + (next - current) * fraction) + 'px';
             }
 
             //Batch scroll updates to one per animation frame

@@ -1935,6 +1935,7 @@ ul.products li.product a .price,
 }
 #paid-videos-preview .video-carousel {
     position: relative;
+    overflow: hidden; /* JS sets this wrapper's height to the visible slide; the track inside keeps a fixed size */
 }
 /* Native horizontal scroll with snapping: swipe on touch devices, arrows/dots move it via JS */
 #paid-videos-preview .video-carousel-track {
@@ -1942,6 +1943,7 @@ ul.products li.product a .price,
     align-items: flex-start; /* each slide keeps its own height; JS sizes the track to the visible one */
     overflow-x: auto;
     overflow-y: hidden;
+    overscroll-behavior-x: contain; /* swiping past the first/last video doesn't drag the page or trigger browser back */
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Firefox */
 }
@@ -2033,14 +2035,14 @@ ul.products li.product a .price,
     height: 8px;
     padding: 0;
     appearance: none;
-    background: #fff;
+    background: #999;
     border: 1px solid #000;
     border-radius: 50%;
     cursor: pointer;
     pointer-events: auto;
 }
 .carousel-dot.is-active {
-    background: #999;
+    background: #fff;
 }
 
 /* Play icon in the Video Feature header, pushed to the right.
