@@ -640,6 +640,15 @@ a.restriction-message-link:hover {
     margin-left: 0;
     margin-right: -1px;
 }
+/* Right border on .menu while the My Account dropdown is open.
+   Transparent by default so the menu doesn't change width (and shift) on hover. */
+.menu {
+    box-sizing: border-box;
+    border-right: 1px solid transparent;
+}
+.menu:has(> li.sub-right:hover) {
+    border-right-color: #000;
+}
 .menu li:hover > ul {
     display: block;
     background: #fff;
@@ -835,7 +844,7 @@ a.restriction-message-link:hover {
     grid-auto-rows: minmax(0px,auto);
     grid-template-columns: 1fr 1fr;
     height: fit-content;
-    gap: 0px 25px;
+    gap: 10px 25px;
     grid-template-areas:
     "paid-videos paid-videos"
     "shop shop"
@@ -994,7 +1003,6 @@ ul .blog-item {
     padding-right: 10px;
     padding-bottom: 10px;
     padding-top: 5px;
-    border-bottom: 1px solid black;
 }
 .menu > li > ul .blog-item:last-of-type {
     border-bottom: none!important;
@@ -1150,6 +1158,8 @@ ul .blog-item {
     margin: 0px 0px 3em 0px !important;
     font-size: 2rem;
     display: block;
+    width: fit-content; /* a link with display:block would otherwise stretch full width */
+    text-decoration: none;
 }
 
 .thank-you-message-text{
@@ -1840,9 +1850,10 @@ ul.products li.product a .price,
     position: relative;
 }
 
-/* Product links and content sit above the background link */
+/* Product links and content sit above the background link.
+   The hover image is excluded because it must stay absolutely positioned over the main image. */
 #shop-preview,
-#shop-preview * {
+#shop-preview *:not(.product-hover-image) {
     position: relative;
 }
 
@@ -1858,13 +1869,15 @@ ul.products li.product a .price,
 /* Products in the popout sidebar (match .popout-container .blog-item spacing) */
 .blog-sidebar .sidebar-product {
     padding: 5px 10px 10px;
-    border-bottom: 1px solid black;
 }
 .blog-sidebar .sidebar-product:last-child {
     border-bottom: none;
 }
 .blog-sidebar .sidebar-product ul.products {
     margin: 0;
+    border: 1px solid;
+    padding: 10px;
+    background: #f4f4f4;
 }
 .blog-sidebar .sidebar-product ul.products li.product {
     width: 100%;
@@ -1913,4 +1926,161 @@ ul.products li.product a .price,
     border: 1px solid #000;
     background: #fff url('img/loader.gif') center center / contain no-repeat;
     background-origin: content-box;
+}
+
+/* Video Feature carousel (home page only) */
+/* Arrows position against the whole preview (header + carousel); dots against the carousel image */
+#paid-videos-preview {
+    position: relative;
+}
+#paid-videos-preview .video-carousel {
+    position: relative;
+}
+/* Native horizontal scroll with snapping: swipe on touch devices, arrows/dots move it via JS */
+#paid-videos-preview .video-carousel-track {
+    display: flex;
+    align-items: flex-start; /* each slide keeps its own height; JS sizes the track to the visible one */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+}
+#paid-videos-preview .video-carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome and Safari */
+}
+#paid-videos-preview .video-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    cursor: pointer;
+}
+#paid-videos-preview .video-slide img {
+    display: block;
+}
+/* Arrows: filled white chevron with a 1px black outline, no button background */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 25px;
+    padding: 0;
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.carousel-arrow svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+.carousel-arrow polygon {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+}
+.carousel-prev {
+    left: 10px;
+}
+.carousel-prev svg {
+    transform: scaleX(-1);
+}
+.carousel-next {
+    right: 10px;
+}
+/* 30% smaller chevrons on mobile */
+@media (max-width: 768px) {
+    .carousel-arrow {
+        width: 11.2px;
+        height: 17.5px;
+    }
+    /* On mobile each slide also has an excerpt + read more under the image,
+       so keep the arrows and dots aligned to the header + image instead of the full height. */
+    #paid-videos-preview {
+        container-type: inline-size;
+    }
+    /* Header height on mobile = 22px padding + h1 line box (2.074rem x .75 line-height);
+       image height = 16:9 of the preview width (56.25cqw) */
+    #paid-videos-preview .carousel-arrow {
+        top: calc((22px + 1.5555rem + 56.25cqw) / 2);
+    }
+    /* Dots: an invisible 16:9 box over the image, dots at its bottom */
+    #paid-videos-preview .carousel-dots {
+        top: 0;
+        bottom: auto;
+        aspect-ratio: 16 / 9;
+        align-items: flex-end;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+}
+/* Dots: circles sitting inside the image, near the bottom */
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    pointer-events: none; /* clicks between dots still open the video */
+}
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    appearance: none;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.carousel-dot.is-active {
+    background: #999;
+}
+
+/* Play icon in the Video Feature header, pushed to the right.
+   Rendered at the viewBox size (36x24) so the 2px stroke stays exactly 2px. */
+.block-header-play-icon {
+    flex: none;
+    width: 36px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+.block-header-play-icon rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+.block-header-play-icon polygon {
+    fill: #fff;
+}
+
+/* Product listings: alternate (first gallery) image fades in on hover */
+.product-image-wrap {
+    position: relative;
+}
+/* specific enough to beat WooCommerce's ".woocommerce ul.products li.product a img" sizing */
+.woocommerce ul.products li.product .product-image-wrap img.product-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+}
+/* Only when the main input is a mouse/trackpad. On touchscreens the effect is off entirely,
+   so the first tap opens the product instead of triggering the hover state. */
+@media (hover: hover) and (pointer: fine) {
+    .woocommerce ul.products li.product:hover .product-image-wrap img.product-hover-image {
+        opacity: 1;
+    }
 }

@@ -59,6 +59,34 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
 /**
+ * Product listings: show the product's first gallery image on hover (crossfade in CSS).
+ * Applies wherever WooCommerce's product loop is used (home page shop preview, /shop, categories, popout sidebar),
+ * except on single product, cart, and checkout pages. Products without a gallery image are unchanged.
+ */
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'commons_loop_product_thumbnail_with_hover', 10 );
+function commons_loop_product_thumbnail_with_hover() {
+    global $product;
+    $thumbnail = woocommerce_get_product_thumbnail();
+
+    $gallery_ids = $product ? $product->get_gallery_image_ids() : array();
+    // No hover image for sold-out products, or on single product / cart / checkout pages
+    if ( empty( $gallery_ids ) || ! $product->is_in_stock() || is_product() || is_cart() || is_checkout() ) {
+        echo $thumbnail;
+        return;
+    }
+
+    $hover_image = wp_get_attachment_image( $gallery_ids[0], 'woocommerce_thumbnail', false, array(
+        'class'       => 'product-hover-image',
+        'alt'         => '',
+        'aria-hidden' => 'true',
+        'loading'     => 'lazy',
+    ) );
+
+    echo '<div class="product-image-wrap">' . $thumbnail . $hover_image . '</div>';
+}
+
+/**
  * Add "sold-out" class to out-of-stock products on shop pages
  */
 add_filter( 'woocommerce_post_class', 'add_sold_out_class_to_products', 10, 2 );
@@ -329,7 +357,8 @@ function custom_thankyou_page($order_id) {
     // Output the HTML for product links and the "Watch Now" button
     if (!empty($product_links)) {
         echo '<p class="thank-you-message-text">Your purchase gives you access to ' . implode(', ', $product_links) . '.</p>';
-        echo '<button class="button watch-now-button"><a href="' . $product_urls[0] . '" title="Watch Now">Watch Now</a></button>';
+        // A single link styled as a button (a link nested inside <button> is invalid and kept link styling)
+        echo '<a class="button watch-now-button" href="' . $product_urls[0] . '" title="Watch Now">Watch Now</a>';
     }
 }
 

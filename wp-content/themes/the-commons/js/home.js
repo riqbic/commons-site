@@ -88,6 +88,78 @@ jQuery.extend(jQuery.fn, {
             setCurrentPostInActivePopup($this);
         });
 
+        //Video Feature carousel: arrows, dots, and swipe (native scroll-snap). No autoplay.
+        $('#paid-videos-preview .video-carousel').each(function() {
+            var $carousel = $(this);
+            var track = $carousel.find('.video-carousel-track')[0];
+            var slideCount = $(track).children('.video-slide').length;
+            var $dots = $('#paid-videos-preview .carousel-dot');
+
+            function currentIndex() {
+                return track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0;
+            }
+            function goTo(index) {
+                //wrap around at either end
+                index = (index + slideCount) % slideCount;
+                track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
+            }
+            function updateDots() {
+                $dots.removeClass('is-active').eq(currentIndex()).addClass('is-active');
+            }
+
+            //Size the track to the visible slide. Mid-swipe, blend between the two slides' heights
+            //so the content below moves smoothly with the swipe instead of jumping at the end.
+            var slides = $(track).children('.video-slide').toArray();
+            function syncHeight() {
+                var width = track.clientWidth;
+                if (!width || !slides.length) return;
+                var position = track.scrollLeft / width;
+                var i = Math.min(Math.floor(position), slideCount - 1);
+                var fraction = position - i;
+                var current = slides[i].offsetHeight;
+                var next = slides[Math.min(i + 1, slideCount - 1)].offsetHeight;
+                track.style.height = (current + (next - current) * fraction) + 'px';
+            }
+
+            //Batch scroll updates to one per animation frame
+            var frameRequested = false;
+            function onScroll() {
+                if (frameRequested) return;
+                frameRequested = true;
+                requestAnimationFrame(function() {
+                    frameRequested = false;
+                    updateDots();
+                    syncHeight();
+                });
+            }
+
+            track.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            //re-measure once fonts and images have finished loading
+            window.addEventListener('load', syncHeight);
+            syncHeight();
+
+            //stopPropagation so arrow/dot clicks never open the popout
+            //arrows live in #paid-videos-preview (outside .video-carousel) so they center on the header + carousel
+            $('#paid-videos-preview .carousel-prev').on('click', function(e) {
+                e.stopPropagation();
+                goTo(currentIndex() - 1);
+            });
+            $('#paid-videos-preview .carousel-next').on('click', function(e) {
+                e.stopPropagation();
+                goTo(currentIndex() + 1);
+            });
+            $dots.on('click', function(e) {
+                e.stopPropagation();
+                goTo(parseInt($(this).attr('data-index'), 10));
+            });
+
+            //Clicking the "Video Feature" header (title or play icon) opens the video currently shown
+            $('#paid-videos-preview .block-header').on('click', function() {
+                $(slides[currentIndex()]).trigger('click');
+            });
+        });
+
         //clicking unpaid previews
         $('#unpaid-videos-preview .blog-preview').on('click',function() {
             //Load the popout

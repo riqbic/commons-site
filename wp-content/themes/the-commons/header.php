@@ -27,7 +27,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/img/Commons_web_logo_inverted.jpg" class="site-title">
             </a>
         </div>
-        <p class="header-item-3" style="color: black; font-style: italic; font-family: CenturyOldStyleRegular;">By the People, For the People.</p>
+        <p class="header-item-3" style="color: black; font-style: italic; font-family: CenturyOldStyleRegular;">Parkour's grassroots publisher</p>
     </div>
 </div>
 
@@ -36,7 +36,7 @@
 <div class="header-menu hidden-mobile">
     <div class="menu-container">
         <ul class="menu">
-            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/shop">Merch Shop</a></li>
             <!-- EVENTS MENU ITEM — commented out, re-enable when needed
             <li class="menu-item"><a class ="menu-item" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 8</a></li>
             -->
@@ -146,7 +146,7 @@
         <p class="header-item-mobile-1" style="color: black; font-size: 12px !important; font-family: CenturyOldStyleRegular;">
             <?php date_default_timezone_set('America/New York'); echo date("l F j, Y");?>
         </p>
-        <p class="header-item-mobile-2" style="color: black; font-style: italic; font-size: 12px !important; font-family: CenturyOldStyleRegular;">By the People, For the People.</p>
+        <p class="header-item-mobile-2" style="color: black; font-style: italic; font-size: 12px !important; font-family: CenturyOldStyleRegular;">Parkour's grassroots publisher</p>
     </div>
     <div class="hamburger-menu" >
         <input id="menu-toggle" type="checkbox" />
@@ -155,7 +155,7 @@
         </label>
 
         <ul class="menu-mobile">
-            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Shop</a></li>
+            <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/shop">Merch Shop</a></li>
             <!-- EVENTS MENU ITEM — commented out, re-enable when needed
             <li class="menu-item-mobile"><a class ="menu-text-mobile" href="<?php echo get_bloginfo('url'); ?>/?pop=events&post_id=1">JOD 8</a></li>
             -->

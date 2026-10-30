@@ -66,30 +66,55 @@
         </div>
         <div class="grid-item " id="paid-videos">
             <div class="grid-preview" id="paid-videos-preview">
+                <div class="block-header">
+                    <h1 class="block-header-text">Video Feature</h1>
+                    <svg class="block-header-play-icon" viewBox="0 0 36 24" aria-hidden="true">
+                        <rect x="1" y="1" width="34" height="22" rx="5" />
+                        <polygon points="15,7.5 23,12 15,16.5" />
+                    </svg>
+                </div>
                 <?php 
-                        //Query 3 most recent posts that are published
+                        //Query 5 most recent videos for the carousel
                         $post_args = array(
-                            'posts_per_page'	=> 1,
+                            'posts_per_page'	=> 5,
                             'post_type'		=> 'post',
                             'post_status' => 'publish',
                             'category_name' => 'videos',
                         );
                         $posts_query = new WP_Query( $post_args );
                         if( $posts_query->have_posts() ) {
-                            while($posts_query->have_posts() ) {
-                                $posts_query->the_post(); 
-                                ?>
-                                <div class="blog-preview blog-item-1;" data-id="<?php echo get_the_ID(); ?>">
-                                    <div class="block-header"><h1 class="block-header-text">Video Feature</h1></div>
-                                    <?php echo the_post_thumbnail($size = 'paid-videos-thumbnail'); ?>
-                                    <div class="newsy"><?php echo the_excerpt(); ?></div>
-                                    <div class="read-more">+ open +</div>
+                            $slide_count = $posts_query->post_count; ?>
+                            <div class="video-carousel">
+                                <div class="video-carousel-track">
+                                <?php while($posts_query->have_posts() ) {
+                                    $posts_query->the_post(); ?>
+                                    <div class="blog-preview video-slide" data-id="<?php echo get_the_ID(); ?>">
+                                        <?php the_post_thumbnail('paid-videos-thumbnail'); ?>
+                                        <?php //Excerpt and read more: mobile only ?>
+                                        <div class="newsy hidden-desktop"><?php the_excerpt(); ?></div>
+                                        <div class="read-more hidden-desktop">+ open +</div>
+                                    </div>
+                                <?php } ?>
                                 </div>
-                                <?php
-                            }
+                                <?php if($slide_count > 1) { ?>
+                                    <div class="carousel-dots">
+                                        <?php for($i = 0; $i < $slide_count; $i++) { ?>
+                                            <button type="button" class="carousel-dot<?php if($i === 0) echo ' is-active'; ?>" data-index="<?php echo $i; ?>" aria-label="Go to video <?php echo $i + 1; ?>"></button>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <?php if($slide_count > 1) {
+                                //Arrows sit outside .video-carousel so they center on the header + carousel together
+                                //Filled 90-degree chevron (an L-shape rotated 45deg, so the arm ends are square); the prev arrow is mirrored in CSS
+                                $chevron = '<svg viewBox="0 0 16 25" aria-hidden="true"><polygon points="3.83,1 15.14,12.31 3.83,23.62 1,20.8 9.49,12.31 1,3.83" /></svg>'; ?>
+                                <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous video"><?php echo $chevron; ?></button>
+                                <button type="button" class="carousel-arrow carousel-next" aria-label="Next video"><?php echo $chevron; ?></button>
+                            <?php }
                         } else { ?>
                             <p>There are no posts to show right now.</p>
-                        <?php } ?>
+                        <?php }
+                        wp_reset_postdata(); ?>
             </div>
         </div>
         <div class="grid-item" id="get-involved">
