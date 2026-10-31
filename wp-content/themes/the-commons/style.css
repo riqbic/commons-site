@@ -1581,6 +1581,7 @@ ul.products li.product a .price,
     background-position: calc(100% - 12px) 50%;
     -webkit-background-position: calc(100% - 12px) 50%;
     padding: 10px;
+    padding-right: 40px; /* room for the chevron (16px wide, 12px from the edge); must come after "padding" */
     border-radius: 0!important;
   }
   #wcpay_selected_currency {
