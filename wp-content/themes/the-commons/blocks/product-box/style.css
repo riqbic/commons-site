@@ -1,0 +1,49 @@
+/* Product Box block (blocks/product-box) */
+.commons-product-box {
+    box-sizing: border-box;
+    margin: 1.5rem 0;
+    padding: 20px;
+    background: #f4f4f4; /* same grey as the home page shop */
+    border: 1px solid #000;
+}
+
+/* Everything in Libre Franklin, overriding the article's .newsy text styles */
+.commons-product-box,
+.commons-product-box * {
+    font-family: "LibreFranklin", sans-serif;
+}
+
+/* The product card: same markup as the shop, kept at a card size instead of the full box width.
+   Selectors are long so they beat WooCommerce's column widths (including its mobile 48% rule). */
+.woocommerce.commons-product-box ul.products {
+    margin: 0 0 15px;
+    padding: 0;
+}
+.woocommerce.commons-product-box ul.products.columns-1 li.product {
+    float: none;
+    width: 250px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.commons-product-box-description {
+    margin-bottom: 15px;
+}
+.commons-product-box-description > :first-child {
+    margin-top: 0;
+}
+.commons-product-box-description > :last-child {
+    margin-bottom: 0;
+}
+
+.commons-product-box-cart form.cart {
+    margin-bottom: 0;
+}
+
+/* Editor preview: show the form, but don't let clicks submit it from inside the editor */
+.commons-product-box.is-preview .commons-product-box-cart {
+    pointer-events: none;
+}
+.commons-product-box.is-empty {
+    font-style: italic;
+}

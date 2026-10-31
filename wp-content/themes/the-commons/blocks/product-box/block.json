@@ -1,0 +1,24 @@
+{
+    "name": "product-box",
+    "title": "Product Box",
+    "description": "A shop product (image, title, price) with its short description and add to cart button.",
+    "style": "file:./style.css",
+    "category": "tcb-blocks",
+    "icon": "products",
+    "apiVersion": 2,
+    "keywords": ["product", "shop", "woocommerce", "merch"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "product-box.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "html": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

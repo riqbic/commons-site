@@ -21,6 +21,8 @@ function commons_theme_assets() {
     wp_register_script( 'commons-home', get_template_directory_uri().'/js/home.js', array('jquery'), $version, true );
     if(is_home() || is_front_page()) {
         wp_enqueue_script( 'commons-home' );
+        // Popouts can contain Product Box blocks with variation dropdowns; the script must already be on the page
+        wp_enqueue_script( 'wc-add-to-cart-variation' );
         $localized = array( 
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'blog_url' => home_url('/'),
@@ -134,7 +136,9 @@ function add_sold_out_class_to_products( $classes, $product ) {
  */
 add_filter( 'woocommerce_get_price_html', 'replace_price_with_sold_out', 10, 2 );
 function replace_price_with_sold_out( $price, $product ) {
-    if ( ! is_admin() && ! $product->is_in_stock() && ( is_shop() || is_product_category() || is_product_tag() || is_front_page() ) ) {
+    // Product Box blocks set commons_rendering_product_box while rendering (they can appear in popouts, which load over AJAX)
+    $in_product_box = ! empty( $GLOBALS['commons_rendering_product_box'] );
+    if ( ! $product->is_in_stock() && ( $in_product_box || ( ! is_admin() && ( is_shop() || is_product_category() || is_product_tag() || is_front_page() ) ) ) ) {
         return '<span class="sold-out-text">SOLD OUT</span>';
     }
     return $price;
@@ -260,6 +264,28 @@ function commons_get_block_styles_since( $queue_before ) {
     return ob_get_clean();
 }
 
+/**
+ * WooCommerce 11.1+ skips registering its block types on AJAX requests (see BlockRegistrationContext),
+ * so WooCommerce blocks in a popout rendered empty. Register them on demand, the same way WooCommerce
+ * does for product descriptions. Guarded so a future WooCommerce change just makes this do nothing.
+ */
+function commons_register_woocommerce_blocks_for_ajax() {
+    if ( ! class_exists( '\Automattic\WooCommerce\Blocks\Package' ) || ! class_exists( '\Automattic\WooCommerce\Blocks\BlockTypesController' ) ) {
+        return;
+    }
+    $controller = \Automattic\WooCommerce\Blocks\Package::container()->get( \Automattic\WooCommerce\Blocks\BlockTypesController::class );
+    if ( ! method_exists( $controller, 'register_blocks' ) ) {
+        return;
+    }
+    if ( method_exists( $controller, 'register_blocks_has_run' ) && $controller->register_blocks_has_run() ) {
+        return;
+    }
+    // admin-ajax counts as an admin request, where WooCommerce swaps each block's front-end CSS for one editor
+    // stylesheet. Keep the front-end CSS so it's queued when the blocks render and sent back with the popout.
+    remove_filter( 'block_type_metadata_settings', array( $controller, 'use_single_block_editor_style' ), 10 );
+    $controller->register_blocks();
+}
+
 add_action( 'wp_ajax_nopriv_load_commons_blog_post', 'load_commons_blog_post' );
 add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {
@@ -268,6 +294,8 @@ function load_commons_blog_post($paged = NULL) {
     $author_id = get_post_field( 'post_author', $post_id );
     $author_name = get_the_author_meta( 'display_name', $author_id );
     $date = get_the_date("l F j, Y", $post_id);
+    //WooCommerce doesn't register its blocks on AJAX requests anymore; do it so in-article products render
+    commons_register_woocommerce_blocks_for_ajax();
     //Note which styles are queued before rendering, so we can send back the ones the post's blocks add
     $styles_before = wp_styles()->queue;
     $the_content = apply_filters('the_content', get_post_field('post_content', $post_id));
@@ -325,6 +353,7 @@ function load_commons_blog_post($paged = NULL) {
 add_action( 'init', 'register_acf_blocks' );
 function register_acf_blocks() {
     register_block_type( __DIR__ . '/blocks/blog-caption' );
+    register_block_type( __DIR__ . '/blocks/product-box' );
 }
 
 //Remove admin bar for all users

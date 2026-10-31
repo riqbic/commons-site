@@ -283,6 +283,12 @@ jQuery.extend(jQuery.fn, {
                         var response = JSON.parse(data);
                         //load post into container, with the CSS its blocks need (see commons_get_block_styles_since)
                         $('#popout-container #blog-ajax-container').html((response.post_styles || '') + response.post_content);
+                        //WooCommerce only sets up variation dropdowns on page load, so set up any in the new content
+                        if($.fn.wc_variation_form) {
+                            $('#popout-container #blog-ajax-container .variations_form').each(function() {
+                                $(this).wc_variation_form();
+                            });
+                        }
                         //replace login link for comments
                         if($('#popout-container #blog-ajax-container .must-log-in a').length) {
                             //https://alec.local/wp-login.php?redirect_to=https%3A%2F%2Falec.local%2Fpaid-film%2Ftether%2F
