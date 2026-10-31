@@ -44,6 +44,38 @@ function commons_theme_assets() {
     //Slick slider
     wp_register_script( 'slick-js', get_template_directory_uri().'/includes/slick/slick.js', array('jquery'), '1.8.1', true );
     wp_register_style( 'slick-css', get_template_directory_uri().'/includes/slick/slick.css', array(), '1.8.1' );
+
+    //Hover image text (posts and popouts)
+    wp_enqueue_script( 'commons-hover-image', get_template_directory_uri().'/js/hover-image.js', array(), filemtime( get_template_directory().'/js/hover-image.js' ), true );
+}
+
+/**
+ * Hover image: toolbar button in the block editor (js/hover-image-editor.js)
+ */
+add_action( 'enqueue_block_editor_assets', 'commons_hover_image_editor_script' );
+function commons_hover_image_editor_script() {
+    wp_enqueue_script(
+        'commons-hover-image-editor',
+        get_template_directory_uri().'/js/hover-image-editor.js',
+        array( 'wp-rich-text', 'wp-block-editor', 'wp-element', 'wp-components' ),
+        filemtime( get_template_directory().'/js/hover-image-editor.js' ),
+        true
+    );
+}
+
+/**
+ * Hover image: editor styling. enqueue_block_assets also reaches the editor's content iframe.
+ */
+add_action( 'enqueue_block_assets', 'commons_hover_image_editor_style' );
+function commons_hover_image_editor_style() {
+    if ( is_admin() ) {
+        wp_enqueue_style(
+            'commons-hover-image-editor',
+            get_template_directory_uri().'/css/hover-image-editor.css',
+            array(),
+            filemtime( get_template_directory().'/css/hover-image-editor.css' )
+        );
+    }
 }
 
 /**

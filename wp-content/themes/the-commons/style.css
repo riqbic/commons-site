@@ -2086,3 +2086,25 @@ ul.products li.product a .price,
         opacity: 1;
     }
 }
+
+/* Hover image text: link color with a dotted underline, so it reads as "shows something" rather than "goes somewhere" */
+.hover-image {
+    color: #0000EE;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+    cursor: default;
+}
+/* The floating preview (created by js/hover-image.js) */
+.hover-image-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: auto;
+    display: none;
+    pointer-events: none; /* never steals the hover from the text */
+    z-index: 1000; /* above the popout */
+}
+.hover-image-preview.is-visible {
+    display: block;
+}

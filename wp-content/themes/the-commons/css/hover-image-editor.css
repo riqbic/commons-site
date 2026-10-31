@@ -1,0 +1,6 @@
+/* Block editor: mark hover-image text the same way it looks on the site */
+.hover-image {
+    color: #0000EE;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+}
