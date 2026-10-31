@@ -237,6 +237,29 @@ function commons_popout_sidebar_items( $product_count = 4, $video_count = 6 ) {
     }
 }
 
+/**
+ * Popouts load posts by AJAX, so CSS that blocks queue while rendering (e.g. WooCommerce's Single Product
+ * block, column layout gaps) is never printed. This returns that CSS as HTML so home.js can add it to the popout.
+ */
+function commons_get_block_styles_since( $queue_before ) {
+    $styles = wp_styles();
+    $new_handles = array_diff( $styles->queue, $queue_before );
+
+    ob_start();
+    if ( $new_handles ) {
+        // Prints <link> tags (plus any inline CSS) for these styles and their dependencies
+        $styles->do_items( $new_handles );
+    }
+    // Layout CSS generated per block while rendering (e.g. .wp-container-* gap and alignment rules)
+    if ( function_exists( 'wp_style_engine_get_stylesheet_from_context' ) ) {
+        $support_css = wp_style_engine_get_stylesheet_from_context( 'block-supports', array( 'optimize' => true ) );
+        if ( $support_css ) {
+            echo '<style>' . $support_css . '</style>';
+        }
+    }
+    return ob_get_clean();
+}
+
 add_action( 'wp_ajax_nopriv_load_commons_blog_post', 'load_commons_blog_post' );
 add_action( 'wp_ajax_load_commons_blog_post', 'load_commons_blog_post' );
 function load_commons_blog_post($paged = NULL) {
@@ -245,7 +268,10 @@ function load_commons_blog_post($paged = NULL) {
     $author_id = get_post_field( 'post_author', $post_id );
     $author_name = get_the_author_meta( 'display_name', $author_id );
     $date = get_the_date("l F j, Y", $post_id);
+    //Note which styles are queued before rendering, so we can send back the ones the post's blocks add
+    $styles_before = wp_styles()->queue;
     $the_content = apply_filters('the_content', get_post_field('post_content', $post_id));
+    $post_styles = commons_get_block_styles_since( $styles_before );
 
     //only display author and date for articles
     /*if( in_category(31, $post_id) ){
@@ -287,6 +313,7 @@ function load_commons_blog_post($paged = NULL) {
     echo json_encode(
         array(
             'post_content'  =>  $content,
+            'post_styles'   =>  $post_styles,
             'post_title'    =>  $title,
             'post_author'   =>  $author_name,
             'post_date'     =>  $date
